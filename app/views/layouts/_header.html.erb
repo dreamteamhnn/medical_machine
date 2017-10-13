@@ -1,4 +1,5 @@
 <header id="masthead" class="site-header default" role="banner">
+  <!-- Mobile panel -->
   <div class="mobile-panel">
     <button class="menu-toggle mobile-toggle" aria-controls="main-menu" aria-expanded="false">
     <span class="menu-toggle-box">
@@ -8,6 +9,8 @@
     <div class="mobile-panel__right">
       <div class="header-search">
         <span class="search-form__toggle"></span>
+
+        <!-- Search form -->
         <form role="search" method="get" class="search-form woocommerce-product-search" action="https://ld-wp.template-help.com/woocommerce_58679/">
           <div class="search-form__input-wrap">
             <label class="screen-reader-text" for="woocommerce-product-search-field">Search for:</label>
@@ -19,64 +22,20 @@
         </form>
         <span class="search-form__close"></span>
       </div>
-      <form method="post" action="https://ld-wp.template-help.com/woocommerce_58679/" class="woocommerce-currency-switcher-form " data-ver="1.1.9">
-        <input type="hidden" name="woocommerce-currency-switcher" value="USD">
-        <div id="undefined" class="dd-container" style="width: 70px;">
-          <div class="dd-select" style="width: 70px; background: rgb(238, 238, 238);">
-            <input class="dd-selected-value" type="hidden" value="USD">
-            <a class="dd-selected">
-            <label class="dd-selected-text">USD, $</label><small class="dd-selected-description dd-desc dd-selected-description-truncated">USA dollar</small></a><span class="dd-pointer dd-pointer-down"></span>
-          </div>
-          <ul class="dd-options dd-click-off-close" style="width: 70px;">
-            <li>
-              <a class="dd-option dd-option-selected">
-              <input class="dd-option-value" type="hidden" value="USD">
-              <label class="dd-option-text">USD, $</label> <small class="dd-option-description dd-desc">USA dollar</small></a>
-            </li>
-            <li>
-              <a class="dd-option">
-              <input class="dd-option-value" type="hidden" value="EUR">
-              <label class="dd-option-text">EUR, €</label> <small class="dd-option-description dd-desc">European Euro</small></a>
-            </li>
-          </ul>
-        </div>
-        <div style="display: none;">WOOCS 1.1.9</div>
-      </form>
-      <div class="site-header-cart menu navbar-header-cart menu">
-        <div class="site-header-cart__wrapper">
-          <div class="cart-contents" title="View your shopping cart">
-            <span class="linearicon linearicon-cart"></span>
-            <span class="cart-text">Cart</span>
-            <span class="count">0</span>
-          </div>
-          <div class="shopping_cart-dropdown-wrap products_in_cart_0">
-            <div class="shopping_cart-header">
-              <h5>My Cart</h5>
-            </div>
-            <div class="widget woocommerce widget_shopping_cart">
-              <div class="widget_shopping_cart_content">
-                <ul class="cart_list product_list_widget ">
-                  <li class="empty">No products in the cart.</li>
-                </ul>
-                <!-- end product list -->
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
       <div class="mobile-panel__menu-wrap dropdown-wrap__block dropdown">
         <i class="linearicon linearicon-cog icon-drodown"></i>
         <div class="top-panel__menu">
           <ul id="menu-shop-menu" class="top-panel__menu-list">
-            <li id="menu-item-789" class="wishlist-icon menu-item menu-item-type-post_type menu-item-object-page menu-item-789"><a href="https://ld-wp.template-help.com/woocommerce_58679/wishlist/">Wishlist</a></li>
-            <li id="menu-item-790" class="compare-icon menu-item menu-item-type-post_type menu-item-object-page menu-item-790"><a href="https://ld-wp.template-help.com/woocommerce_58679/compare/">Compare</a></li>
-            <li id="menu-item-31" class="my-account-icon menu-item menu-item-type-post_type menu-item-object-page menu-item-31"><a href="https://ld-wp.template-help.com/woocommerce_58679/my-account/">My Account</a></li>
-            <li id="menu-item-30" class="checkout-icon menu-item menu-item-type-post_type menu-item-object-page menu-item-30"><a href="https://ld-wp.template-help.com/woocommerce_58679/checkout/">Checkout</a></li>
+            <li id="menu-item-31" class="my-account-icon menu-item menu-item-type-post_type menu-item-object-page menu-item-31"><a href="">My Account</a></li>
           </ul>
         </div>
       </div>
     </div>
   </div>
+  <!-- End Mobile panel -->
+  
+  <!-- Web Panel -->
   <div class="top-panel ">
     <div class="top-panel__container container">
       <div class="top-panel__top">
@@ -85,49 +44,33 @@
             <div class="contact-block__inner">
               <div class="contact-block__item contact-block__item--icon">
                 <i class="contact-block__icon linearicon linearicon-telephone"></i>
-                <div class="contact-block__value-wrap"><span class="contact-block__label">+3(800) 2345-6789</span><span class="contact-block__text">7 Days a week from 9:00 am to 7:00 pm</span></div>
+                <div class="contact-block__value-wrap">
+                  <span class="contact-block__label"><%= @company.phone %></span><span class="contact-block__text">
+                    <%= @company.work_time %>
+                  </span>
+                  </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="top-panel__right">
-          <form method="post" action="https://ld-wp.template-help.com/woocommerce_58679/" class="woocommerce-currency-switcher-form " data-ver="1.1.9">
-            <input type="hidden" name="woocommerce-currency-switcher" value="USD">
-            <div id="undefined" class="dd-container" style="width: 70px;">
-              <div class="dd-select" style="width: 70px; background: rgb(238, 238, 238);">
-                <input class="dd-selected-value" type="hidden" value="USD">
-                <a class="dd-selected">
-                <label class="dd-selected-text">USD, $</label><small class="dd-selected-description dd-desc dd-selected-description-truncated">USA dollar</small></a><span class="dd-pointer dd-pointer-down"></span>
-              </div>
-              <ul class="dd-options dd-click-off-close" style="width: 70px;">
-                <li>
-                  <a class="dd-option dd-option-selected">
-                  <input class="dd-option-value" type="hidden" value="USD">
-                  <label class="dd-option-text">USD, $</label> <small class="dd-option-description dd-desc">USA dollar</small></a>
-                </li>
-                <li>
-                  <a class="dd-option">
-                  <input class="dd-option-value" type="hidden" value="EUR">
-                  <label class="dd-option-text">EUR, €</label> <small class="dd-option-description dd-desc">European Euro</small></a>
-                </li>
-              </ul>
-            </div>
-            <div style="display: none;">WOOCS 1.1.9</div>
-          </form>
-        </div>
       </div>
     </div>
   </div>
+
+  <!-- Header content -->
   <div class="header-container">
     <div class="header-container_wrap container">
       <div class="header-container__flex">
         <div class="site-branding">
           <div class="site-logo">
-            <a class="site-logo__link" href="https://ld-wp.template-help.com/woocommerce_58679/" rel="home"><img src="./Willard – Enhanced E-store_files/logo.png" alt="Willard" class="site-link__img"></a>
+            <a class="site-logo__link" href="" rel="home">
+            <img src="https://ld-wp.template-help.com/woocommerce_58679/wp-content/themes/tm-willard/assets/images/logo.png" alt="Vật tư thí nghiệm" class="site-link__img"></a>
           </div>
         </div>
+        
+        <!-- Search form -->
         <div class="header-search">
-          <form role="search" method="get" class="search-form woocommerce-product-search" action="https://ld-wp.template-help.com/woocommerce_58679/">
+          <form role="search" method="get" class="search-form woocommerce-product-search" action="">
             <div class="search-form__input-wrap">
               <label class="screen-reader-text" for="woocommerce-product-search-field">Search for:</label>
               <i class="linearicon linearicon-magnifier"></i>
@@ -137,43 +80,22 @@
             <input type="hidden" name="post_type" value="product">
           </form>
         </div>
+        <!-- End Search form -->
+
         <div class="shop-menu__cart">
           <div class="top-panel__menu-wrap dropdown-wrap__block">
             <i class="linearicon linearicon-cog icon-drodown"></i>
             <div class="top-panel__menu">
               <ul id="menu-shop-menu-1" class="top-panel__menu-list">
-                <li class="wishlist-icon menu-item menu-item-type-post_type menu-item-object-page menu-item-789"><a href="https://ld-wp.template-help.com/woocommerce_58679/wishlist/">Wishlist</a></li>
-                <li class="compare-icon menu-item menu-item-type-post_type menu-item-object-page menu-item-790"><a href="https://ld-wp.template-help.com/woocommerce_58679/compare/">Compare</a></li>
                 <li class="my-account-icon menu-item menu-item-type-post_type menu-item-object-page menu-item-31"><a href="https://ld-wp.template-help.com/woocommerce_58679/my-account/">My Account</a></li>
-                <li class="checkout-icon menu-item menu-item-type-post_type menu-item-object-page menu-item-30"><a href="https://ld-wp.template-help.com/woocommerce_58679/checkout/">Checkout</a></li>
               </ul>
-            </div>
-          </div>
-          <div class="site-header-cart menu navbar-header-cart menu">
-            <div class="site-header-cart__wrapper">
-              <div class="cart-contents" title="View your shopping cart">
-                <span class="linearicon linearicon-cart"></span>
-                <span class="cart-text">Cart</span>
-                <span class="count">0</span>
-              </div>
-              <div class="shopping_cart-dropdown-wrap products_in_cart_0">
-                <div class="shopping_cart-header">
-                  <h5>My Cart</h5>
-                </div>
-                <div class="widget woocommerce widget_shopping_cart">
-                  <div class="widget_shopping_cart_content">
-                    <ul class="cart_list product_list_widget ">
-                      <li class="empty">No products in the cart.</li>
-                    </ul>
-                    <!-- end product list -->
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Menu -->
     <div class="header-main-menu">
       <div class="container">
         <nav id="site-navigation" class="main-navigation" role="navigation">
@@ -794,5 +716,7 @@
         <!-- #site-navigation -->
       </div>
     </div>
+    <!-- End Menu -->
+
   </div>
 </header>
