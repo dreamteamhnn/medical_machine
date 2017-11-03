@@ -11,4 +11,8 @@ Rails.application.routes.draw do
   resources :medias, only: [:show, :index]
   resources :contacts, only: [:index, :create]
   get "/products" => "products#index", as: :search_product
+
+  namespace :admin do
+    resources :home, only: [:show]
+  end
 end
