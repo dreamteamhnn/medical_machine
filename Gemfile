@@ -49,12 +49,13 @@ gem "ckeditor"
 # Rails server
 gem "unicorn", "~> 4.8.3"
 
+# Fake data
+gem "faker", git: "git://github.com/stympy/faker.git", branch: "master"
+
 group :development, :test do
   # Debug
   gem "pry-rails"
   gem "pry-byebug"
-  # Fake data
-  gem "faker", git: "git://github.com/stympy/faker.git", branch: "master"
 end
 
 group :development do
