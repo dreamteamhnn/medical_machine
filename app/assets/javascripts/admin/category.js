@@ -13,6 +13,7 @@ $(document).on('turbolinks:load', function(){
     var categoryOrder = $(this)[0].getAttribute("data-category-order");
     var homeBlock = $(this)[0].getAttribute("data-home-block-id");
     var homeOrder = $(this)[0].getAttribute("data-home-order-id");
+    var highest = $(this)[0].getAttribute("data-highest");
 
     $("#category_id").val(id);
     $(".category-title-update").html(name);
@@ -21,6 +22,13 @@ $(document).on('turbolinks:load', function(){
     $(".category-order-update").val(categoryOrder);
     $(".category-block-update").val(homeBlock);
     $(".category-order-block-update").val(homeOrder);
+    if (highest) {
+      $(".category-order-block-update-div")[0].style.display = 'none';
+      $(".category-block-update-div")[0].style.display = 'none';
+    } else {
+      $(".category-order-block-update-div")[0].style.display = 'block';
+      $(".category-block-update-div")[0].style.display = 'block';
+    }
   });
 
   $("#button-update-category-confirm").click(function() {

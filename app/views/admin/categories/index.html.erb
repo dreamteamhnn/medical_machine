@@ -6,9 +6,6 @@
   </div>
   <div class="row" id="category-table">
     <div class="col-lg-12">
-      <div class="create-div">
-        <%= link_to "Tạo mới", new_admin_category_path(), class: "btn btn-success" %>
-      </div>
       <%= render "shared/flash" %>
       <div class="alert alert-success hidden fade in flash-notice" id="flash-category">
         <a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
@@ -107,15 +104,15 @@
               <strong>Mô tả</strong></br>
               <textarea rows="2" class="form-control category-des-update" placeholder="Mô tả" required></textarea>
             </div>
-            <div class="form-group">
-              <strong>Thứ tự hiển thị trong danh mục cha</strong></br>
-              <input class="form-control category-order-update" type="number" placeholder="Thứ tự hiển thị trong danh mục cha" required>
+            <div class="form-group category-order-update-div">
+              <strong>Thứ tự hiển thị</strong></br>
+              <input class="form-control category-order-update" type="number" placeholder="Thứ tự hiển thị" required>
             </div>
-            <div class="form-group">
+            <div class="form-group category-block-update-div">
               <strong>Hiển thị trên trang chủ (1: trên hoặc 2: dưới)</strong></br>
               <input class="form-control category-block-update" type="number" placeholder="Hiển thị trên trang chủ">
             </div>
-            <div class="form-group">
+            <div class="form-group category-order-block-update-div">
               <strong>Thứ tự hiển thị trên trang chủ</strong></br>
               <input class="form-control category-order-block-update" type="number" placeholder="Thứ tự hiển thị trên trang chủ">
             </div>

@@ -23,6 +23,12 @@ class Category < ApplicationRecord
   CATEGORY_ATTRS = [:name, :description, :category_order, :home_block_id,
     :home_order_id]
 
+  enum level: {
+    highest: 1,
+    middle: 2,
+    lowest: 3
+  }
+
   scope :top_categories,-> do
     where("level = ?", Settings.category.highest_level).order "category_order"
   end

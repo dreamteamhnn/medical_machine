@@ -1,6 +1,14 @@
 <div class="col-md-2"></div>
 <div class="category-div col-md-8">
-  <a class="btn btn-success btn-add-category btn-sm" data-name="<%= category.name %>" data-id="<%= category.id %>" title="Thêm danh mục con"><span class="fa fa-plus" data-toggle="modal" data-target="#create-category"> Thêm danh mục con</span></a>
+  <div class="highest-category-block">
+    <a class="btn btn-primary btn-sm btn-update-category" title="Sửa" data-id="<%= category.id %>" data-name="<%= category.name %>" data-des="<%= category.description %>"
+      data-category-order="<%= category.category_order %>" data-home-block-id="<%= category.home_block_id%>"
+      data-home-order-id="<%= category.home_order_id %>"
+      data-highest="<%= category.highest? %>" data-toggle="modal" data-target="#update-category">
+      <span class="fa fa-edit" data-id="<%= category.id %>"></span>
+    </a>
+    <a class="btn btn-success btn-add-category btn-sm" data-name="<%= category.name %>" data-id="<%= category.id %>" title="Thêm danh mục con"><span class="fa fa-plus" data-toggle="modal" data-target="#create-category"> Thêm danh mục con</span></a>
+  </div>
   <% category.childrens.order(:category_order).each do |second| %>
     <p>
       <a class="btn btn-warning btn-circle"><span class="fa category-order<%= second.id %>"><%= second.category_order %></span></a>
