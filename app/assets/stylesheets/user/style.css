@@ -30818,7 +30818,7 @@ body.wcvendors.wcvendors_vendor .entry-content>h2:nth-child(2):before {
     .woocommerce.single-product div.product form.cart .variations select {
         width: 50%
     }
-    .woocommerce .single-product div.product .posted_in
+    .woocommerce .single-product div.product .posted_in {
         max-width: 50%
     }
     .woocommerce.single-product div.product .posted_in {
