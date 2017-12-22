@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171221025418) do
+ActiveRecord::Schema.define(version: 20171221091014) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
@@ -137,6 +137,10 @@ ActiveRecord::Schema.define(version: 20171221025418) do
     t.float "map_lat", limit: 24
     t.float "map_lng", limit: 24
     t.string "contact_name"
+    t.string "logo"
+    t.string "logo_title"
+    t.string "logo_alt"
+    t.string "watermark"
   end
 
   create_table "fields", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -165,6 +169,7 @@ ActiveRecord::Schema.define(version: 20171221025418) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "product_id"
+    t.string "video_url"
   end
 
   create_table "product_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

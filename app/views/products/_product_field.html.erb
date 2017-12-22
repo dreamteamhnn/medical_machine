@@ -5,8 +5,8 @@
         <div class="tm-thumbs-wrap effect-fade">
           <div class="tm-thumbs-wrap__inner">
             <%= link_to product_path(product), title: product.name do %>
-              <%= image_tag product.product_images.first.url, size: '340' if product.product_images.first.try(:url)%>
-              <%= image_tag product.product_images.second.url, size: '340' if product.product_images.second.try(:url)%>
+              <%= image_tag product.product_images.first.url, size: '340', title: product.product_images.first.title, alt: product.product_images.first.alt if product.product_images.first.try(:url)%>
+              <%= image_tag product.product_images.second.url, size: '340', title: product.product_images.second.title, alt: product.product_images.second.alt if product.product_images.second.try(:url)%>
             <% end %>
           </div>
         </div>

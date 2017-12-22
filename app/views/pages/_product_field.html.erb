@@ -4,18 +4,20 @@
       <a href="">
         <div class="tm-thumbs-wrap effect-fade">
           <div class="tm-thumbs-wrap__inner">
+            <% first = product.product_images.first %>
+            <% second = product.product_images.second %>
             <%= link_to product_path(product), title: product.name do %>
-              <%= image_tag product.product_images.first.url, size: '340' if product.product_images.first.url%>
-              <%= image_tag product.product_images.second.url, size: '340' if product.product_images.second.url%>
+              <%= image_tag first.url, size: '340', title: first.title, alt: first.alt if first && first.url %>
+              <%= image_tag second.url, size: '340', title: second.title, alt: second.alt if second && second.url%>
             <% end %>
           </div>
         </div>
       </a>
     </div>
     <div class="block_product_content">
-      <h3>
+      <span>
         <%= link_to product.name, product_path(product), class: "woocommerce-LoopProduct-link", title: product.name %>
-      </h3>
+      </span>
       <span class="price">
         <span class="woocs_price_code" data-product-id="215">
           <span class="woocommerce-Price-amount amount"><%= product.price_currency %>

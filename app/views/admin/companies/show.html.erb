@@ -16,6 +16,34 @@
           </div>
           <%= form_for([:admin, @company], html: {multipart: true}) do |f| %>
             <div class="form-group">
+              <strong>Logo</strong> </br>
+              <div class="preview-company-image-div">
+                <% if @company.logo %>
+                  <%= image_tag @company.logo, height: 100, class: "preview-company-image" %>
+                <% else %>
+                  <img src="/preview_no_image.jpg" height="100" class="preview-company-image">
+                <% end %>
+              </div>
+            </div>
+            <div class="form-group">
+              <strong>Tiêu đề logo</strong> </br>
+              <%= f.text_field :logo_title, class: "form-control", readonly: true %>
+            </div>
+            <div class="form-group">
+              <strong>Alt logo</strong> </br>
+              <%= f.text_field :logo_alt, class: "form-control", readonly: true %>
+            </div>
+            <div class="form-group">
+              <strong>Watermark</strong> </br>
+              <div class="preview-company-watermark-image-div">
+                <% if @company.watermark %>
+                  <%= image_tag @company.watermark, height: 60, class: "preview-company-watermark-image" %>
+                <% else %>
+                  <img src="/preview_no_image.jpg" height="60" class="preview-company-watermark-image">
+                <% end %>
+              </div>
+            </div>
+            <div class="form-group">
               Tên công ty </br>
               <%= f.text_field :name, class: "form-control", readonly: true %>
             </div>

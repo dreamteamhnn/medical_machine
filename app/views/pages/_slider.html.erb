@@ -2,7 +2,7 @@
   <div data-u="slides" class="slides">
     <% @sliders.each do |slider| %>
       <div>
-        <%= link_to "#{image_tag slider.url, height: 240}".html_safe, products_path() %>
+        <%= link_to "#{image_tag slider.url, height: 240, title: slider.title, alt: slider.alt}".html_safe, products_path() %>
       </div>
     <% end %>
   </div>

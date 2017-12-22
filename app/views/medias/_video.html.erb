@@ -4,7 +4,7 @@
       <tr>
         <% block.each do |video| %>
           <td class="video-td-product">
-            <iframe width="374" height="284" src="<%= video.url %>" frameborder="0" allowfullscreen></iframe>
+            <iframe width="374" height="284" src="<%= video.video_url %>" frameborder="0" allowfullscreen></iframe>
             <div class="content-video">
               <strong><%= video.title %></strong><br/>
               <%= video.description %><br/>

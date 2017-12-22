@@ -6,6 +6,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Choose what kind of storage to use for this uploader:
   storage :file
+  process :watermark
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
@@ -18,7 +19,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   def default_url(*args)
     # For Rails 3.1+ asset pipeline compatibility:
     # ActionController::Base.helpers.asset_path("fallback/default.png")
-  
+
     "/preview_no_image.jpg"
   end
 
@@ -42,6 +43,33 @@ class ImageUploader < CarrierWave::Uploader::Base
     %w(jpg jpeg png)
   end
 
+  def watermark
+    # manipulate! do |img|
+    #   img.combine_options do |cmd|
+    #     draw_text = Company.first.mark
+    #     cmd.gravity 'south'
+    #     cmd.draw "text 10,10 '#{draw_text}'"
+    #     cmd.font '-*-helvetica-*-r-*-*-25-*-*-*-*-*-*-2'
+    #     cmd.fill 'black'
+    #   end
+    #   img
+    # end
+    # manipulate! do |img|
+    #   img.combine_options do |cmd|
+    #     cmd.draw 'image Over 0,0 0,0 "public/watermark.png"'
+    #   end
+    #   img
+    # end
+    unless is_company?
+      watermark = Company.first.watermark.url || "public/watermark.png"
+      manipulate! do |img|
+        img = img.composite(MiniMagick::Image.open(watermark), "png") do |c|
+          c.gravity "South"
+        end
+      end
+    end
+  end
+
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   # def extension_whitelist
@@ -60,5 +88,9 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   def is_product_img? _pic
     model.is_a? ProductImage
+  end
+
+  def is_company?
+    model.is_a? Company
   end
 end

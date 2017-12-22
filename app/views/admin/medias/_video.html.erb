@@ -63,8 +63,8 @@
                   <textarea rows="2" id="video-des<%= video.id %>" class="form-control video-des hidden"><%= video.description %></textarea>
                 </td>
                 <td class="td-video-link">
-                  <p class="p-video-link" id="p-video-link<%= video.id %>"><%= video.url %></p>
-                  <input type='text' id="video-link<%= video.id %>" class="form-control video-link hidden" value='<%= video.url %>'/>
+                  <p class="p-video-link" id="p-video-link<%= video.id %>"><%= video.video_url %></p>
+                  <input type='text' id="video-link<%= video.id %>" class="form-control video-link hidden" value='<%= video.video_url %>'/>
                 </td>
                 <td class="td-video-field">
                   <%= select_tag "video-field#{video.id}", options_for_select(Field.all.map{|field| [field.name, field.id]}, selected: video.field_id),

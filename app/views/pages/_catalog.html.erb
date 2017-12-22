@@ -3,7 +3,7 @@
     <% @catalogs.each do |catalog| %>
       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
         <div class="tm_banners_grid_widget_banner tm_banners_grid_widget_banner_height_1">
-          <%= link_to "#{image_tag catalog.url}".html_safe, catalog.link, class: "tm_banners_grid_widget_banner_link"%>
+          <%= link_to "#{image_tag catalog.url, title: catalog.title, alt: catalog.alt}".html_safe, catalog.link, class: "tm_banners_grid_widget_banner_link"%>
         </div>
       </div>
     <% end %>

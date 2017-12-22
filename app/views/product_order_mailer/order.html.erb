@@ -10,7 +10,7 @@
 <% @product.product_images.each do |img| %>
   <span>
     <%= link_to product_url(@product) do %>
-      <%= image_tag img.url_url(:product_thumb) %>
+      <%= image_tag img.url_url(:product_thumb), title: img.title, alt: img.alt %>
     <% end %>
   </span> &nbsp;&nbsp;
 <% end %>

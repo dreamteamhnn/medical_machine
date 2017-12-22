@@ -1,7 +1,7 @@
 <div class="images">
   <div class="easyzoom is-ready easyzoom--overlay easyzoom--with-thumbnails">
     <a href="" class="woocommerce-main-image">
-      <%= image_tag @product.product_images.first.url, size: '400', 'data-zoom-image': @product.product_images.first.url, id: 'zoom' %>
+      <%= image_tag @product.product_images.first.url, size: '400', title: @product.product_images.first.title, alt: @product.product_images.first.alt, 'data-zoom-image': @product.product_images.first.url, id: 'zoom' %>
     </a>
   </div>
 
@@ -10,7 +10,7 @@
       <div class="swiper-wrapper" id="gallery_01">
         <% @product.product_images.each do |image| %>
           <a href="" data-image="<%= image.url %>" data-zoom-image="<%= image.url %>" class="thumb-image-product">
-            <%= image_tag image.url, size: "10" %>
+            <%= image_tag image.url, size: "10", title: image.title, alt: image.alt %>
           </a>
         <% end %>
       </div>

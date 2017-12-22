@@ -39,7 +39,7 @@
         <div class="site-branding">
           <div class="site-logo">
             <%= link_to root_path, class: "site-logo__link", rel: "home" do %>
-              <img src="https://ld-wp.template-help.com/woocommerce_58679/wp-content/themes/tm-willard/assets/images/logo.png" alt="Vật tư thí nghiệm" class="site-link__img">
+              <%= image_tag @company.logo, size: '184x45', title: @company.logo_title, alt: @company.logo_alt, class: "site-link__img" if @company.logo %>
             <% end %>
           </div>
         </div>
