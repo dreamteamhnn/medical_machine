@@ -65,7 +65,7 @@
   margin-top: 15px;
 }
 
-#create-video, #delete, #create, #create-brand {
+#create-video, #delete, #create, #create-brand, #doc-table {
   .btn-default {
     width: 100px;
     height: 43px;
@@ -83,10 +83,14 @@
   }
 }
 
-#create-video, #delete, #field-table, #create, #create-brand {
+#create-video, #delete, #field-table, #create, #create-brand{
   .modal-footer {
     text-align: center;
   }
+}
+
+.text-center {
+  text-align: center;
 }
 
 #product-table {
@@ -98,13 +102,17 @@
   }
 }
 
+#product-new, #video-table, #doc-table {
+  .panel-body {
+    padding: 0;
+  }
+}
+
 #product-new, #video-table {
   .form-group-part {
     padding-left: 0;
   }
-  .panel-body {
-    padding: 0;
-  }
+
   .block-image {
     padding-bottom: 20px;
     padding-top: 10px;

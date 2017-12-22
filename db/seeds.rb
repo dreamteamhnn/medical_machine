@@ -228,7 +228,7 @@ Company.create! about: Faker::Lorem.paragraph, name: Faker::Lorem.sentence,
   phone: "0987.657.234", work_time:"7AM-9PM", email:"vattuthinghiem@gmail.com",
   facebook: "http://facebook.com", instagram:"http://instagram.com",
   contact_info:"Nguyen Thanh Tu", address:"Nhà N02F, KĐT Mễ Trì Thượng, Phường Mễ Trì, Quận Nam Từ Liêm - Hà Nội",
-  website:"http://thiendiahoi.com"
+  website:"http://thiendiahoi.com", contact_name: "Nguyen Xuan Tu"
 puts "Create Company information OK"
 
 10.times do |i|
@@ -298,18 +298,27 @@ puts "product_fields OK"
 puts "Create media..."
 Medium.create!title: Faker::Lorem.sentence, description: Faker::Lorem.paragraph, url: "/uploads/media/admin_export_candidate.xlsx", media_type: 0, field_id: 2
 Medium.create!title: Faker::Lorem.sentence, description: Faker::Lorem.paragraph, url: "/uploads/media/report_3.doc", media_type: 0, field_id: 2
-Medium.create!title: Faker::Lorem.sentence, description: Faker::Lorem.paragraph, url: "/uploads/media/resume_search.doc", media_type: 0, field_id: 1
-Medium.create!title: Faker::Lorem.sentence, description: Faker::Lorem.paragraph, url: "/uploads/media/Rails_4_in_Action_v11_MEAP.pdf", media_type: 0, field_id: 2
-Medium.create!title: Faker::Lorem.sentence, description: Faker::Lorem.paragraph, url: "/uploads/media/Pro React.pdf", media_type: 0, field_id: 3
+Medium.create!title: Faker::Lorem.sentence, description: Faker::Lorem.paragraph, url: "/uploads/media/report_3.doc", media_type: 0, field_id: 1
+Medium.create!title: Faker::Lorem.sentence, description: Faker::Lorem.paragraph, url: "/uploads/media/scala.pdf", media_type: 0, field_id: 2
+Medium.create!title: Faker::Lorem.sentence, description: Faker::Lorem.paragraph, url: "/uploads/media/scala.pdf", media_type: 0, field_id: 3
 Medium.create!title: Faker::Lorem.sentence, description: Faker::Lorem.paragraph, url: "/uploads/media/admin_export_candidate.xlsx", media_type: 0, field_id: 1
 Medium.create!title: Faker::Lorem.sentence, description: Faker::Lorem.paragraph, url: "/uploads/media/report_3.doc", media_type: 0, field_id: 4
-Medium.create!title: Faker::Lorem.sentence, description: Faker::Lorem.paragraph, url: "/uploads/media/resume_search.doc", media_type: 0, field_id: 1
-Medium.create!title: Faker::Lorem.sentence, description: Faker::Lorem.paragraph, url: "/uploads/media/Rails_4_in_Action_v11_MEAP.pdf", media_type: 0, field_id: 1
-Medium.create!title: Faker::Lorem.sentence, description: Faker::Lorem.paragraph, url: "/uploads/media/Pro React.pdf", media_type: 0, field_id: 4
+Medium.create!title: Faker::Lorem.sentence, description: Faker::Lorem.paragraph, url: "/uploads/media/report_3.doc", media_type: 0, field_id: 1
+Medium.create!title: Faker::Lorem.sentence, description: Faker::Lorem.paragraph, url: "/uploads/media/scala.pdf", media_type: 0, field_id: 1
+Medium.create!title: Faker::Lorem.sentence, description: Faker::Lorem.paragraph, url: "/uploads/media/scala.pdf", media_type: 0, field_id: 4
+
+puts "Create Document's file..."
+  doc_files = Dir.glob "public/media/*"
+  Medium.where(media_type: 0).each_with_index do |doc, index|
+    File.open(doc_files.sample) do |f|
+      doc.url = f
+    end
+    doc.save validate: false
+  end
 
 10.times do |i|
   field = i < 5 ? 1 : 2
-  Medium.create!title: Faker::Lorem.sentence, description: Faker::Lorem.paragraph, url: "https://www.youtube.com/embed/ptLFrU_zrEQ", media_type: 1, field_id: field
+  Medium.create!title: Faker::Lorem.sentence, description: Faker::Lorem.paragraph, video_url: "https://www.youtube.com/embed/ptLFrU_zrEQ", media_type: 1, field_id: field
 end
 
 5.times do |i|

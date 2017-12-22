@@ -13,7 +13,7 @@ $(document).on('turbolinks:load', function(){
       data: {
         title: videoName,
         description: videoDes,
-        url: videoUrl,
+        video_url: videoUrl,
         field_id: videoField
       },
       type: "PATCH",
@@ -29,7 +29,7 @@ $(document).on('turbolinks:load', function(){
 
         $("#p-video-name"+videoId)[0].innerHTML = response.title;
         $("#p-video-des"+videoId)[0].innerHTML = response.description;
-        $("#p-video-link"+videoId)[0].innerHTML = response.url;
+        $("#p-video-link"+videoId)[0].innerHTML = response.video_url;
       } else if (response.status == "update-fail") {
         console.log(response.status);
         $("#video-table .alert-danger-update").removeClass("hidden");

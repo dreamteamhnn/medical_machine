@@ -7,11 +7,11 @@
             <strong><%= doc.title %></strong><br/>
             <%= doc.description %><br/>
             <a href="<%= doc.url %>">
-              <% if doc.url.split(//).last(3).join("") == "pdf" %>
+              <% if doc.document_type == "pdf" %>
                 <%= image_tag "/small-pdf.png", title: "pdf" %>
-              <% elsif doc.url.split(//).last(3).join("") == "doc" || doc.url.split(//).last(3).join("") == "ocx" %>
+              <% elsif doc.document_type == "doc" || doc.document_type == "ocx" %>
                 <%= image_tag "/small-word.png", title: "doc" %>
-              <% elsif doc.url.split(//).last(3).join("") == "xls" || doc.url.split(//).last(3).join("") == "lsx" %>
+              <% elsif doc.document_type == "xls" || doc.document_type == "lsx" %>
                 <%= image_tag "/small-excell.png", title: "excel" %>
               <% end %>
               <%= doc.title %>
