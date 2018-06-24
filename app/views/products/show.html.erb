@@ -49,7 +49,7 @@
                                 <span class="woocommerce-Price-currencySymbol">₫</span>
                               </span>
                             </ins>
-                          <% else %>
+                          <% elsif @product.price_currency.present? %>
                             <span class="woocommerce-Price-amount amount"><%= @product.price_currency %>
                               <span class="woocommerce-Price-currencySymbol">₫</span>
                             </span>

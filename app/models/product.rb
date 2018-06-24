@@ -34,9 +34,8 @@ class Product < ApplicationRecord
   PRODUCT_FIELD_ATTRIBUTES = [:id, :field_id, :menu_order, :list_order, :_destroy]
   PRODUCT_MEDIA_ATTRIBUTES = [:id, :medium_id, :_destroy]
 
-  validates :name, presence: true
-  validates :model, presence: true
-  validates :price, presence: true
+  validates :name, presence: true, length: {maximum: 44}
+  validates :model, presence: true, length: {maximum: 10}
   validates :description, presence: true
   validates :short_description, presence: true
   validates :parameter, presence: true
@@ -84,13 +83,20 @@ class Product < ApplicationRecord
   }
 
   def price_currency
-    return unless price
+    return nil unless price
     helper.number_to_currency(price*1000, unit: "", delimiter: ".", precision: 0)
   end
 
   def discount_price_currency
-    return unless (discount_price && discount_price < price)
+    return nil unless (discount_price.present? && price.present? && discount_price < price)
     helper.number_to_currency(discount_price*1000, unit: "", delimiter: ".", precision: 0)
+  end
+
+  def name_multi
+    length = name.length
+    return name unless length < 44
+    space = " "
+    name + space*(44-length)
   end
 
   def param_table
