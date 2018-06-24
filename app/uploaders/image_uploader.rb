@@ -60,7 +60,8 @@ class ImageUploader < CarrierWave::Uploader::Base
     #   end
     #   img
     # end
-    unless is_company?
+    
+    if is_product?
       watermark = Company.first.watermark.url || "public/watermark.png"
       manipulate! do |img|
         img = img.composite(MiniMagick::Image.open(watermark), "png") do |c|
@@ -92,5 +93,9 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   def is_company?
     model.is_a? Company
+  end
+
+  def is_product?
+    model.is_a? ProductImage
   end
 end

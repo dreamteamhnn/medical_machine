@@ -1,12 +1,12 @@
 <table class="table table-bordered">
   <tbody>
     <% @medias.each_slice(3).to_a.each do |block| %>
-      <tr>
+      <tr class="media-tr-mm">
         <% block.each do |doc| %>
           <td>
-            <strong><%= doc.title %></strong><br/>
-            <%= doc.description %><br/>
-            <a href="<%= doc.url %>">
+            <strong class="media-title-mm"><%= doc.title %></strong><br/>
+            <span class="media-content-mm"><%= doc.description %></span><br/>
+            <a class="media-doc-mm" href="<%= doc.url %>">
               <% if doc.document_type == "pdf" %>
                 <%= image_tag "/small-pdf.png", title: "pdf" %>
               <% elsif doc.document_type == "doc" || doc.document_type == "ocx" %>
@@ -16,7 +16,7 @@
               <% end %>
               <%= doc.title %>
             </a><br/>
-            <p>Ngày tạo : <%=doc.created_at %></p>
+            <!-- <p class="media-date-mm">Ngày tạo : <%=doc.created_at %></p> -->
           </td>
         <% end %>
       </tr>
@@ -27,3 +27,4 @@
   <%= paginate @medias %>
   <%= page_entries_info @medias, entry_name: "document" %>
 </div>
+

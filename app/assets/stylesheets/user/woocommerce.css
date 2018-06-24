@@ -2467,3 +2467,77 @@ body:not(.search-results) .twentysixteen .entry-summary {
     background: inherit;
     color: inherit
 }
+
+.fa-phone-mm {
+  font-size: 55px !important;
+  color: blue;
+  margin-right: 10px!important;
+}
+
+.contact-block__value-wrap {
+  line-height: 1!important;
+}
+
+.site-header.default .site-branding {
+  margin-bottom: -9px!important;
+}
+
+.add_to_cart_button:before {
+  content: ""!important;
+}
+
+.woocommerce-LoopProduct-link {
+  height: 40px!important;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.site-footer.default .social-list {
+  text-align: right;
+}
+
+.menu-item>a::before {
+  font-size: 1.94rem!important;
+}
+
+.social-list .menu-item>a[href*="youtube.com"]::before {
+  content: "\f166"!important;
+}
+
+.media-title-mm {
+  height: 40px!important;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.media-content-mm {
+  height: 60px!important;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.media-doc-mm {
+  height: 40px!important;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.media-date-mm {
+  height: 20px!important;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.media-tr-mm {
+  margin-bottom: 50px!important;
+}
