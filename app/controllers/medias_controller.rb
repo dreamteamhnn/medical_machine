@@ -9,8 +9,7 @@ class MediasController < ApplicationController
     end
 
     if params[:query].present?
-      @media_ids = Medium.search(body: {query: {bool: {must: [{match: {_all: params[:query]}}, {match: {media_type: params[:media_type].to_i}}]}}})
-        .map(&:id)
+      @media_ids = Medium.search(search_query_body).map(&:id)
       unless @media_ids.present?
         @medias = []
         return
@@ -39,5 +38,21 @@ class MediasController < ApplicationController
     elsif params[:media_type] == "1"
       @breads = [{title: "Video", link: ""}]
     end
+  end
+
+  def search_query_body
+    q = params[:query]
+    {
+      body: {
+        query: {
+          bool: {
+            must: [
+              {
+                bool: {
+                  should: [{match: {title: q}}, {match: {description: q}}, {match: {field: q}}]
+                }
+              },
+              {match: {media_type: params[:media_type].to_i}}]}}}
+    }
   end
 end

@@ -1,12 +1,11 @@
 class Product < ApplicationRecord
   searchkick mappings: {
     product: {
-      _all: {enabled: true},
       properties: {
-        title: {type: "string", analyzer: "default", include_in_all: true, boost: 2},
-        category: {type: "string", analyzer: "default", include_in_all: true},
-        brand: {type: "string", analyzer: "default", include_in_all: true},
-        field: {type: "string", analyzer: "default", include_in_all: true},
+        title: {type: "text", analyzer: "default", boost: 2},
+        category: {type: "text", analyzer: "default"},
+        brand: {type: "text", analyzer: "default"},
+        field: {type: "text", analyzer: "default"},
       }
     }
   }, settings: {
