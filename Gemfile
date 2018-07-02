@@ -39,7 +39,7 @@ gem "carrierwave", "~> 1.0"
 gem "config"
 
 # Elasticsearch
-gem "searchkick", "~> 2.3", ">= 2.3.2"
+gem "searchkick", '~> 3'
 
 # Setting evironment variables
 gem "dotenv-rails"

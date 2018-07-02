@@ -20,7 +20,7 @@ class ImageUploader < CarrierWave::Uploader::Base
     # For Rails 3.1+ asset pipeline compatibility:
     # ActionController::Base.helpers.asset_path("fallback/default.png")
 
-    "/preview_no_image.jpg"
+    "public/preview_no_image.jpg"
   end
 
   # Process files as they are uploaded:
@@ -60,7 +60,7 @@ class ImageUploader < CarrierWave::Uploader::Base
     #   end
     #   img
     # end
-    
+
     if is_product?
       watermark = Company.first.watermark.url || "public/watermark.png"
       manipulate! do |img|
