@@ -12,12 +12,11 @@ class Medium < ApplicationRecord
 
   searchkick mappings: {
     medium: {
-      _all: {enabled: true},
       properties: {
-        title: {type: "string", analyzer: "default", include_in_all: true, boost: 2},
-        description: {type: "string", analyzer: "default", include_in_all: true},
-        field: {type: "string", analyzer: "default", include_in_all: true},
-        media_type: {type: "integer", index: "not_analyzed", include_in_all: false}
+        title: {type: "text", analyzer: "default", boost: 2},
+        description: {type: "text", analyzer: "default"},
+        field: {type: "text", analyzer: "default"},
+        media_type: {type: "integer"}
       }
     }
   }
@@ -32,7 +31,7 @@ class Medium < ApplicationRecord
       media_type: media_type
     }
   end
-  
+
   def document_type
     return unless name = File.basename(url.path)
     name.split(//).last(3).join("")

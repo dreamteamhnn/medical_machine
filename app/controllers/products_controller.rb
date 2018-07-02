@@ -185,7 +185,7 @@ class ProductsController < ApplicationController
     end
 
     if (q = params[:query]).present?
-      found_products = Product.search(body: {query: {match: {_all: q}}})
+      found_products = Product.search(body: {query: {bool: {should: [{match: {title: q}}, {match: {category: q}}, {match: {brand: q}}, {match: {field: q}}]}}})
       @products_from_menu = get_products(Product.by_ids(found_products.map(&:id)))
         .page(params[:page]).per(Settings.limit.paginate.products)
       get_number_show_product if @products_from_menu.present?
