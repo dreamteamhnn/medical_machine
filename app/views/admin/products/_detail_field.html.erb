@@ -36,7 +36,7 @@
     </div>
     <div class="col-xs-6 price-form">
       <strong>Hãng</strong> </br>
-      <%= f.select :brand_id, options_for_select(Brand.all.map{|c| [c.name, c.id]}), {include_blank: "Chọn hãng"}, { :class => 'form-control' } %>
+      <%= f.collection_select(:brand_id, Brand.all, :id, :name, {include_blank: 'Chọn hãng'}, {class: 'form-control'}) %>
     </div>
   </div>
 </div>

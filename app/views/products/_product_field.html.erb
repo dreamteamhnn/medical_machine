@@ -14,19 +14,22 @@
     </div>
     <div class="block_product_content">
       <h3>
-        <%= link_to product.name, product_path(product), class: "woocommerce-LoopProduct-link", title: product.name %>
+        <%= link_to product.name, product_path(product), class: "woocommerce-LoopProduct-link", maxlength: 44, title: product.name %>
       </h3>
       <span class="price">
         <span class="woocs_price_code" data-product-id="215">
-          <span class="woocommerce-Price-amount amount"><%= product.price_currency %>
-            <span class="woocommerce-Price-currencySymbol">₫</span>
-          </span>
+          <% if product.price_currency.present? %>
+            <span class="woocommerce-Price-amount amount"><%= product.price_currency %>
+              <span class="woocommerce-Price-currencySymbol">₫</span>
+            </span>
+          <% else %>
+            <span class="woocommerce-Price-amount amount">Liên hệ</span>
+          <% end %>
         </span>
       </span>
 
       <div class="price-add-to-cart-wrap">
-        <%= link_to "MUA", order_product_path(product), remote: true, rel: "nofollow",
-          "data-product-id": product.id, class: "button product_type_variable add_to_cart_button" %>
+        <a href="javascript:void(0)" class="button add_to_cart_button" maxlength="10"><%= product.model %></a>
       </div>
     </div>
   </div>
