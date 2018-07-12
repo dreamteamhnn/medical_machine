@@ -14,7 +14,7 @@
     <% end %>
   </span> &nbsp;&nbsp;
 <% end %>
-<p><strong>Tên sản phẩm: </strong><%= @product.name %></p>
+<p><strong>Tên sản phẩm: </strong><%= ActionController::Base.helpers.strip_tags(@product.name) %></p>
 <p><strong>Giá bán: </strong><%= @product.price_currency %> ₫</p>
 <p><strong>Giá khuyến mãi: </strong><%= @product.discount_price_currency %> ₫</p>
 <p><strong>Model: </strong><%= @product.model %></p>

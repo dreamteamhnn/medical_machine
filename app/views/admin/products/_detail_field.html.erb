@@ -1,8 +1,10 @@
 <div class="row show-grid">
-  <div class="form-group form-group-part col-xs-6">
+  <div class="form-group form-group-part col-xs-12">
     <strong>Tên sản phẩm</strong> </br>
-    <%= f.text_field :name, class: "form-control" %>
+    <%= f.cktext_area :name, class: "form-control" %>
   </div>
+</div>
+<div class="row show-grid">
   <div class="form-group form-group-part col-xs-6">
     <div class="col-xs-6 price-form">
       <strong>Giá (.000 ₫)</strong> </br>
@@ -41,15 +43,17 @@
   </div>
 </div>
 
+<div class="row show-grid">
+  <div class="form-group form-group-part col-xs-12">
+    <strong>Mô tả ngắn</strong> </br>
+    <%= f.cktext_area :short_description, class: "form-control", rows: 5 %>
+  </div>
+</div>
 
 <div class="row show-grid">
-  <div class="form-group form-group-part col-xs-6">
-    <strong>Mô tả ngắn</strong> </br>
-    <%= f.text_area :short_description, class: "form-control", rows: 5 %>
-  </div>
-  <div class="form-group form-group-part col-xs-6">
+  <div class="form-group form-group-part col-xs-12">
     <strong>Mô tả</strong> </br>
-    <%= f.text_area :description, class: "form-control", rows: 5 %>
+    <%= f.cktext_area :description, class: "form-control", rows: 5 %>
   </div>
 </div>
 
