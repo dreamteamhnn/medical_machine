@@ -17,7 +17,7 @@
   <div class="tab-content">
     <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--description panel entry-content wc-tab tab-pane active" id="tab-description" role="tabpanel" aria-labelledby="tab-title-description">
       <h2></h2>
-      <p><%= @product.description %></p>
+      <p><%= @product.description.html_safe %></p>
     </div>
 
     <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--additional_information panel entry-content wc-tab tab-pane" id="tab-parameter" role="tabpanel" aria-labelledby="tab-title-parameter">

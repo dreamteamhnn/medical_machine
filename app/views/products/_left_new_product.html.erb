@@ -4,7 +4,7 @@
     <ul class="product_list_widget">
       <% @new_products.each do |product| %>
         <li>
-          <%= link_to product_path(product), title: product.name do %>
+          <%= link_to product_path(product), title: strip_tags(product.name) do %>
             <%= image_tag product.product_images.first.url, size: '210', title: product.product_images.first.title, alt: product.product_images.first.alt if product.product_images.first.url%>
           <% end %>
           <!-- <div class="product-widget-categories">
@@ -18,7 +18,7 @@
             <% end %>
           </div>
           <span class="product-title">
-            <%= link_to product.name, product_path(product), title: product.name, class: "product-title-custom" %>
+            <%= link_to strip_tags(product.name), product_path(product), title: strip_tags(product.name), class: "product-title-custom" %>
           </span>
           <span class="woocs_price_code" data-product-id="274">
             <% if product.discount_price_currency.present? %>

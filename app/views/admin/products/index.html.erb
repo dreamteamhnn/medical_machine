@@ -75,7 +75,7 @@
                   <p><%= product.try(:price_currency) %></p>
                 </td>
                 <td>
-                  <p><%= product.try(:short_description) %></p>
+                  <p><%= product.try(:short_description).try(:html_safe) %></p>
                 </td>
                 <td>
                   <p><%= product.try(:brand).try(:name) %></p>
@@ -96,7 +96,7 @@
                       data-toggle="modal"
                       data-target="#delete-product"
                       data-product-id="<%= product.id %>"
-                      data-product-name="<%= product.name %>">
+                      data-product-name="<%= strip_tags(product.name) %>">
                       Xóa
                     </button>
                   </p>

@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  include ActionView::Helpers::SanitizeHelper
+
   before_action :load_data_show, only: :show
   before_action :load_data_index, only: :index
   before_action :load_left_menu_by_category, only: [:show, :index]
@@ -132,7 +134,7 @@ class ProductsController < ApplicationController
       @breads << {title: "Tất cả sản phẩm", link: products_path}
       @breads = @breads.reverse
     elsif params[:id]
-      @breads = [{title: @product.name, link: ""}]
+      @breads = [{title: strip_tags(@product.name), link: ""}]
       if category = @product.categories.first
         @breads << {title: category.name, link: products_path(category_id: category.id)}
         if parent = category.parents.first
