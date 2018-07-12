@@ -1,4 +1,6 @@
 class Admin::ProductsController < Admin::BaseController
+  include ActionView::Helpers::SanitizeHelper
+
   before_action :load_products, only: :index
   before_action :load_product, only: [:new, :create, :edit, :update, :destroy]
 
@@ -15,7 +17,7 @@ class Admin::ProductsController < Admin::BaseController
   def create
     @product = Product.new(product_params)
     if @product.save
-      flash[:success] = "Tạo mới sản phẩm #{@product.name} thành công!"
+      flash[:success] = "Tạo mới sản phẩm #{strip_tags(@product.name)} thành công!"
       redirect_to admin_products_path
     else
       @category_attrs = category_params
@@ -40,7 +42,7 @@ class Admin::ProductsController < Admin::BaseController
 
   def update
     if @product.update_attributes(product_params)
-      flash[:success] = "Sửa sản phẩm #{@product.name} thành công!"
+      flash[:success] = "Sửa sản phẩm #{strip_tags(@product.name)} thành công!"
       redirect_to admin_products_path
     else
       @category_attrs = category_params
@@ -54,7 +56,7 @@ class Admin::ProductsController < Admin::BaseController
 
   def destroy
     if @product.destroy
-      flash[:success] = "Xóa sản phẩm #{@product.name} thành công!"
+      flash[:success] = "Xóa sản phẩm #{strip_tags(@product.name)} thành công!"
     else
       flash[:danger] = "Lỗi! Xóa sản phẩm không thành công."
     end

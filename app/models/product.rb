@@ -33,8 +33,8 @@ class Product < ApplicationRecord
   PRODUCT_FIELD_ATTRIBUTES = [:id, :field_id, :menu_order, :list_order, :_destroy]
   PRODUCT_MEDIA_ATTRIBUTES = [:id, :medium_id, :_destroy]
 
-  validates :name, presence: true, length: {maximum: 44}
-  validates :model, presence: true, length: {maximum: 10}
+  validates :name, presence: true, length: {maximum: 500}
+  validates :model, presence: true, length: {maximum: 100}
   validates :description, presence: true
   validates :short_description, presence: true
   validates :parameter, presence: true

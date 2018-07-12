@@ -4,6 +4,6 @@ wb.add_worksheet(name: "Product") do |sheet|
   # this is the head row of your spreadsheet
   sheet.add_row ["Id", "Tên", "Mã sản phẩm", "Giá (nghìn đồng)", "Giá sale (nghìn đồng)", "Mô tả", "Mô tả ngắn", "Thông số"]
   @products.each do |p|
-    sheet.add_row [p.id, p.name, p.model, p.price, p.discount_price, p.description, p.short_description, p.parameter]
+    sheet.add_row [p.id, p.name, p.model, p.price, p.discount_price, ActionController::Base.helpers.strip_tags(p.description), ActionController::Base.helpers.strip_tags(p.short_description), p.parameter]
   end
 end
