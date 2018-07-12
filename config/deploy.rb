@@ -1,3 +1,5 @@
+lock '3.4.0'
+
 set :application, 'medical_machine'
 set :deploy_user, 'deploy'
 
@@ -16,10 +18,10 @@ set :rbenv_map_bins, %w{rake gem bundle ruby rails}
 set :keep_releases, 3
 
 # files we want symlinking to specific entries in shared
-set :linked_files, %w{config/database.yml config/secrets.yml .env}
+set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml', '.env')
 
 # dirs we want symlinking to shared
-set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 
 # which config files should be copied by deploy:setup_config
 # see documentation in lib/capistrano/tasks/setup_config.cap
