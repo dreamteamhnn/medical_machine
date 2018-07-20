@@ -40,7 +40,7 @@ class Admin::BrandsController < Admin::BaseController
       end
       if request.xhr?
         render json: {
-          src: @brand.image
+          src: @brand.image.url
         }
       end
     end

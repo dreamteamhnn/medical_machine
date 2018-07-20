@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180624112746) do
+ActiveRecord::Schema.define(version: 20180720091741) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string "email", default: "", null: false
@@ -152,6 +152,18 @@ ActiveRecord::Schema.define(version: 20180624112746) do
     t.text "description"
   end
 
+  create_table "friendly_id_slugs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
+    t.string "slug", null: false
+    t.integer "sluggable_id", null: false
+    t.string "sluggable_type", limit: 50
+    t.string "scope"
+    t.datetime "created_at"
+    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+    t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
+    t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+  end
+
   create_table "labels", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string "title"
     t.string "short_title"
@@ -232,8 +244,10 @@ ActiveRecord::Schema.define(version: 20180624112746) do
     t.integer "home_order"
     t.text "parameter"
     t.boolean "is_parameter_table"
+    t.string "slug"
     t.index ["brand_id"], name: "index_products_on_brand_id"
     t.index ["label_id"], name: "index_products_on_label_id"
+    t.index ["slug"], name: "index_products_on_slug", unique: true
   end
 
   create_table "slider_catalogs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
