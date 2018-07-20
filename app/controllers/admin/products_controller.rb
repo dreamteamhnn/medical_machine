@@ -77,7 +77,7 @@ class Admin::ProductsController < Admin::BaseController
   end
 
   def load_product
-    @product = Product.find_by id: params[:id]
+    @product = Product.friendly.find params[:id]
     get_categories
     get_fields
     get_medias
