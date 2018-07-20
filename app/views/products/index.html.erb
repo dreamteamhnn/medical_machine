@@ -31,11 +31,10 @@
                 <% end %>
               </div>
 
-              <% unless @products_from_menu.blank? || @childs %>
-                <nav class="woocommerce-pagination">
-                  <%= paginate @products_from_menu %>
-                </nav>
-              <% end %>
+              <nav class="woocommerce-pagination">
+                <%= paginate @products_from_menu %>
+              </nav>
+
               <% if @childs.present? && @products.present? %>
                 <nav class="woocommerce-pagination">
                   <%= paginate @products %>
