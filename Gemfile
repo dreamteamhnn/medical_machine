@@ -55,6 +55,9 @@ gem "unicorn", "~> 4.8.3"
 
 # Fake data
 gem "faker", git: "git://github.com/stympy/faker.git", branch: "master"
+
+# Friendly URL
+gem 'friendly_id', '~> 5.1.0'
 group :development, :test do
   # Debug
   gem "pry-rails"

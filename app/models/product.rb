@@ -1,4 +1,7 @@
 class Product < ApplicationRecord
+  extend FriendlyId
+  friendly_id :beauty_slug, use: :slugged
+
   searchkick mappings: {
     product: {
       properties: {
@@ -155,5 +158,9 @@ class Product < ApplicationRecord
     @helper ||= Class.new do
       include ActionView::Helpers::NumberHelper
     end.new
+  end
+
+  def beauty_slug
+    name.convert_vietnamese_to_unicode
   end
 end

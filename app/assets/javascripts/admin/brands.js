@@ -93,17 +93,20 @@ $(document).on('turbolinks:load', function(){
   $("#button-update-logo-brand-confirm").click(function() {
     var brandId =  $("#update-logo").data("id");
     var selectedFile = document.getElementById('upload-logo').files[0];
-    form
+    var formData = new FormData();
+    formData.append('image', selectedFile);
     $.ajax({
-      data: {
-        image: selectedFile
-      },
-      type: "PATCH",
-      url: "brands/" + brandId
+      url: "/admin/brands/" + brandId,
+      method: 'put',
+      data: formData,
+      processData: false,
+      contentType: false
     }).done(function(response) {
       $(".logo-brand"+brandId).attr('src', response.src);
+      $('#update-logo-brand').modal('hide');
     }).fail(function(errors) {
       $("#brand-table .alert-danger-update").removeClass("hidden");
+      $('#update-logo-brand').modal('hide');
     });
   });
 });

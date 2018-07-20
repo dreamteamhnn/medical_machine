@@ -57,6 +57,7 @@ class ProductsController < ApplicationController
   end
 
   def load_products_block
+    @childs = []
     if category = Category.find_by(id: params[:category_id])
       if category.level == Settings.category.middle_level
         if category.childrens
@@ -113,7 +114,7 @@ class ProductsController < ApplicationController
     if @category.level == Settings.category.middle_level
       @category_lv_1 = @category.parents.first
     elsif @category.level == Settings.category.lowest_level
-      @category_lv_1 = @category.parents.first.parents.first
+      @category_lv_1 = @category.parents.first&.parents&.first
     elsif @category.level == Settings.category.highest_level
       @category_lv_1 = @category
     end
@@ -159,7 +160,7 @@ class ProductsController < ApplicationController
   end
 
   def load_data_show
-    @product = Product.find_by id: params[:id]
+    @product = Product.friendly.find params[:id]
     @documents = @product.mediums.where(media_type: 0)
     @videos = @product.mediums.where(media_type: 1)
     @related_products = []
