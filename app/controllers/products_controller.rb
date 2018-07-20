@@ -57,6 +57,7 @@ class ProductsController < ApplicationController
   end
 
   def load_products_block
+    @childs = []
     if category = Category.find_by(id: params[:category_id])
       if category.level == Settings.category.middle_level
         if category.childrens
@@ -105,7 +106,6 @@ class ProductsController < ApplicationController
   end
 
   def load_left_menu_by_category
-    binding.pry
     @category = Category.find_by id: params[:category_id]
     if product = Product.find_by(id: params[:id])
       @category = product.categories.first
@@ -160,7 +160,7 @@ class ProductsController < ApplicationController
   end
 
   def load_data_show
-    @product = Product.find_by id: params[:id]
+    @product = Product.friendly.find params[:id]
     @documents = @product.mediums.where(media_type: 0)
     @videos = @product.mediums.where(media_type: 1)
     @related_products = []

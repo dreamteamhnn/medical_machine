@@ -24,23 +24,23 @@
             <% if product.discount_price_currency.present? %>
               <del>
                 <span class="woocommerce-Price-amount amount"><%= product.price_currency %>
-                  <span class="woocommerce-Price-currencySymbol">₫</span>
+                  <span class="woocommerce-Price-currencySymbol">VNĐ</span>
                 </span>
               </del>
               <ins>
                 <span class="woocommerce-Price-amount amount"><%= product.discount_price_currency %>
-                  <span class="woocommerce-Price-currencySymbol">₫</span>
+                  <span class="woocommerce-Price-currencySymbol">VNĐ</span>
                 </span>
               </ins>
             <% else %>
               <span class="woocommerce-Price-amount amount"><%= product.price_currency %>
-                <span class="woocommerce-Price-currencySymbol">₫</span>
+                <span class="woocommerce-Price-currencySymbol">VNĐ</span>
               </span>
             <% end %>
           </span>
-          <div class="add_to_cart_button-wrap">
-            <%= link_to "MUA", order_product_path(product), remote: true, rel: "nofollow",
-              "data-product-id": product.id, class: "button product_type_variable add_to_cart_button" %>
+          <div class="price-add-to-cart-wrap">
+            <%= link_to truncate(product&.model.to_s, length: 12, separator: ' ', omission: ''), 'javascript:void(0)', rel: "nofollow",
+              class: "button product_type_variable add_to_cart_button" %>
           </div>
         </li>
       <% end %>

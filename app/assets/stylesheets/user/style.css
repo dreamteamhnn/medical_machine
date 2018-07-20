@@ -28700,7 +28700,9 @@ body.wcvendors.wcvendors_vendor .entry-content>h2:nth-child(2):before {
     overflow: hidden;
     -ms-text-overflow: ellipsis;
     text-overflow: ellipsis;
-    white-space: nowrap
+    white-space: nowrap;
+    width: 100%;
+    text-align: center;
 }
 
 .woocommerce .products .product .price {

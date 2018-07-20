@@ -41,17 +41,17 @@
                           <% if @product.discount_price_currency.present? %>
                             <del>
                               <span class="woocommerce-Price-amount amount"><%= @product.price_currency %>
-                                <span class="woocommerce-Price-currencySymbol">₫</span>
+                                <span class="woocommerce-Price-currencySymbol">VNĐ</span>
                               </span>
                             </del>
                             <ins>
                               <span class="woocommerce-Price-amount amount"><%= @product.discount_price_currency %>
-                                <span class="woocommerce-Price-currencySymbol">₫</span>
+                                <span class="woocommerce-Price-currencySymbol">VNĐ</span>
                               </span>
                             </ins>
                           <% elsif @product.price_currency.present? %>
                             <span class="woocommerce-Price-amount amount"><%= @product.price_currency %>
-                              <span class="woocommerce-Price-currencySymbol">₫</span>
+                              <span class="woocommerce-Price-currencySymbol">VNĐ</span>
                             </span>
                           <% end %>
                         </span>

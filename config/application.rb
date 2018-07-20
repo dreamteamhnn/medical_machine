@@ -25,5 +25,8 @@ module MedicalMachine
     #don't auto generate test file
     config.generators.test_framework false
     config.action_controller.include_all_helpers = false
+
+    config.autoload_paths << Rails.root.join('lib/')
+    require 'monkey_patch/string'
   end
 end
