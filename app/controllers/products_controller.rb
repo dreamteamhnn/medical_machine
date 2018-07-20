@@ -105,6 +105,7 @@ class ProductsController < ApplicationController
   end
 
   def load_left_menu_by_category
+    binding.pry
     @category = Category.find_by id: params[:category_id]
     if product = Product.find_by(id: params[:id])
       @category = product.categories.first
@@ -113,7 +114,7 @@ class ProductsController < ApplicationController
     if @category.level == Settings.category.middle_level
       @category_lv_1 = @category.parents.first
     elsif @category.level == Settings.category.lowest_level
-      @category_lv_1 = @category.parents.first.parents.first
+      @category_lv_1 = @category.parents.first&.parents&.first
     elsif @category.level == Settings.category.highest_level
       @category_lv_1 = @category
     end

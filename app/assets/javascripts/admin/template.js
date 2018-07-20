@@ -11,7 +11,7 @@ $(document).on('turbolinks:load', function(){
     var templateContent = $(this).prev().html();
     var templateName = $(this).siblings('h3').text();
     var templateId = $(this).data('id');
-    CKEDITOR.instances.template_content.setData(templateContent); 
+    CKEDITOR.instances.template_content.setData(templateContent);
     $('#template-modal #name_template').val(templateName);
     $('#template-modal').data('id', templateId);
     $('#template-modal').modal('show');
@@ -21,9 +21,7 @@ $(document).on('turbolinks:load', function(){
     var templateId = $('#template-modal').data('id');
     var templateName = $('#name_template').val();
     var templateContent = CKEDITOR.instances.template_content.getData();
-    console.log(templateId)
     if(templateId.toString().length) {
-      console.log('ok')
       $.ajax({
         url: '/admin/templates/' + templateId,
         method: 'put',
