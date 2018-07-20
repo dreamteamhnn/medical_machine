@@ -37733,3 +37733,13 @@ body.woocommerce-cart .cart-content .cross-sells,
 body.woocommerce-cart .cart-content .up-sells {
     background: 0 0
 }
+
+.add_to_cart_button.add_to_cart_button-left-menu {
+    width: 100%;
+    display: inline-block !important;
+    margin: 0 auto !important;
+}
+
+.add_to_cart_button.add_to_cart_button-left-menu::before {
+    margin-right: 0 !important;
+}

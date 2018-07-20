@@ -6,7 +6,7 @@
           <div class="tm-thumbs-wrap__inner">
             <% first = product.product_images.first %>
             <% second = product.product_images.second %>
-            <%= link_to product_path(product), title: strip_tags(product.name) do %>
+            <%= link_to friendly_product_path(product), title: strip_tags(product.name) do %>
               <%= image_tag first.url, size: '340', title: first.title, alt: first.alt if first && first.url %>
               <%= image_tag second.url, size: '340', title: second.title, alt: second.alt if second && second.url%>
             <% end %>
@@ -16,7 +16,7 @@
     </div>
     <div class="block_product_content">
       <span>
-        <%= link_to strip_tags(product.name), product_path(product), class: "woocommerce-LoopProduct-link", maxlength: 44, title: strip_tags(product.name) %>
+        <%= link_to strip_tags(product.name), friendly_product_path(product), class: "woocommerce-LoopProduct-link", maxlength: 44, title: strip_tags(product.name) %>
       </span>
       <span class="price">
         <span class="woocs_price_code" data-product-id="215">

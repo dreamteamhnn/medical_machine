@@ -4,7 +4,7 @@
     <ul class="product_list_widget">
       <% @new_products.each do |product| %>
         <li>
-          <%= link_to product_path(product), title: strip_tags(product.name) do %>
+          <%= link_to friendly_product_path(product), title: strip_tags(product.name) do %>
             <%= image_tag product.product_images.first.url, size: '210', title: product.product_images.first.title, alt: product.product_images.first.alt if product.product_images.first.url%>
           <% end %>
           <!-- <div class="product-widget-categories">
@@ -18,7 +18,7 @@
             <% end %>
           </div>
           <span class="product-title">
-            <%= link_to strip_tags(product.name), product_path(product), title: strip_tags(product.name), class: "product-title-custom" %>
+            <%= link_to strip_tags(product.name), friendly_product_path(product), title: strip_tags(product.name), class: "product-title-custom" %>
           </span>
           <span class="woocs_price_code" data-product-id="274">
             <% if product.discount_price_currency.present? %>
@@ -40,7 +40,7 @@
           </span>
           <div class="price-add-to-cart-wrap">
             <%= link_to truncate(product&.model.to_s, length: 12, separator: ' ', omission: ''), 'javascript:void(0)', rel: "nofollow",
-              class: "button product_type_variable add_to_cart_button" %>
+              class: "button product_type_variable add_to_cart_button add_to_cart_button-left-menu" %>
           </div>
         </li>
       <% end %>
