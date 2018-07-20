@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
   end
 
   def order
-    @product = Product.find params[:id]
+    @product = Product.friendly.find params[:id]
     respond_to do |format|
       format.js{render layout: false}
     end
@@ -22,7 +22,7 @@ class ProductsController < ApplicationController
 
   def send_order
     respond_to do |format|
-      @product = Product.find params[:id]
+      @product = Product.friendly.find params[:id]
       @data_valid = ORDER_ATTRS.all?{|type| params[type].present?}
       user_info = params.as_json(only: ORDER_ATTRS).symbolize_keys
       return unless @data_valid
@@ -107,7 +107,7 @@ class ProductsController < ApplicationController
 
   def load_left_menu_by_category
     @category = Category.find_by id: params[:category_id]
-    if product = Product.find_by(id: params[:id])
+    if product = Product.friendly.find(params[:id])
       @category = product.categories.first
     end
     return load_left_menu_data unless @category
