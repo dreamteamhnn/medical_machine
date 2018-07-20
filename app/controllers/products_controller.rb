@@ -107,7 +107,7 @@ class ProductsController < ApplicationController
 
   def load_left_menu_by_category
     @category = Category.find_by id: params[:category_id]
-    if product = Product.friendly.find(params[:id])
+    if product = Product.find_by_slug(params[:id])
       @category = product.categories.first
     end
     return load_left_menu_data unless @category
