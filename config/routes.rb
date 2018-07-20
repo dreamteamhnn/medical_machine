@@ -11,6 +11,9 @@ Rails.application.routes.draw do
       post :send_order
     end
   end
+
+  get '/san-pham/:id' => 'products#show', as: :friendly_product
+
   resources :blogs, only: [:show, :index]
   resources :medias, only: [:show, :index]
   resources :contacts, only: [:index, :create]
