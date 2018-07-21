@@ -63,7 +63,8 @@ $(document).on('turbolinks:load', function(){
 
   $(document).on("click","#update-logo",function() {
     var brandId = $(this).data("id");
-    $("#update-logo-brand-id"+brandId).val(brandId);
+    // $("#update-logo-brand-id"+brandId).val(brandId);
+    $('.update-logo-brand-id').val(brandId);
     $(".heading-logo-brand").html($(this).data("name"));
     $(".preview-logo-brand")[0].src = $(".logo-brand"+brandId)[0].src;
   });
@@ -91,7 +92,7 @@ $(document).on('turbolinks:load', function(){
   });
 
   $("#button-update-logo-brand-confirm").click(function() {
-    var brandId =  $("#update-logo").data("id");
+    var brandId =  $(".update-logo-brand-id").val();
     var selectedFile = document.getElementById('upload-logo').files[0];
     var formData = new FormData();
     formData.append('image', selectedFile);
@@ -104,9 +105,11 @@ $(document).on('turbolinks:load', function(){
     }).done(function(response) {
       $(".logo-brand"+brandId).attr('src', response.src);
       $('#update-logo-brand').modal('hide');
+      $(".update-logo-brand-id").val(null)
     }).fail(function(errors) {
       $("#brand-table .alert-danger-update").removeClass("hidden");
       $('#update-logo-brand').modal('hide');
+      $(".update-logo-brand-id").val(null);
     });
   });
 });
