@@ -14,10 +14,10 @@
           <% @blogs.each do |blog| %>
             <article id="post-73" class="posts-list__item card post-73 post type-post status-publish format-standard has-post-thumbnail hentry category-accessories category-diy-home category-tips tag-drill tag-hammer tag-hand-tools tag-power-tools has-thumb">
               <figure class="post-thumbnail">
-                <%= link_to "#{image_tag blog.blog_images.first.url, alt: blog.feature_image_alt, title: blog.feature_image_title}".html_safe, blog_path(blog), class: "post-thumbnail__link post-thumbnail--fullwidth" %>
+                <%= link_to "#{image_tag blog.blog_images.first.url, alt: blog.feature_image_alt, title: blog.feature_image_title}".html_safe, blog_detail_path(blog), class: "post-thumbnail__link post-thumbnail--fullwidth" %>
                 <span class="post-cats">
                   <% blog.blog_categories.uniq.each do |category| %>
-                    <%= link_to category.name, blogs_path(blog_category_id: category.id) %>
+                    <%= link_to category.name, blog_list_path(blog_category_id: category.id) %>
                   <% end %>
                 </span>
               </figure>
@@ -25,7 +25,7 @@
               <div class="post-list__item-content ">
                 <header class="entry-header">
                   <h3 class="entry-title">
-                    <%= link_to blog.title, blog_path(blog) %>
+                    <%= link_to blog.title, blog_detail_path(blog) %>
                   </h3>
                 </header>
                 <!-- .entry-header -->
@@ -38,11 +38,11 @@
                 <footer class="entry-footer">
                   <div class="entry-meta">
                     <span class="post__date">
-                      <%= link_to blog.created_at.strftime(Settings.format.created_at), blogs_path(time: blog.time_param[:value]) %>
+                      <%= link_to blog.created_at.strftime(Settings.format.created_at), blog_list_path(time: blog.time_param[:value]) %>
                     </span>
                     <span class="post__tags">
                       <% blog.tags.uniq.each do |tag|%>
-                        <%= link_to tag.name, blogs_path(tag_id: tag.id) %>
+                        <%= link_to tag.name, blog_list_path(tag_id: tag.id) %>
                         <% unless tag == blog.tags.last %>
                           ,
                         <% end %>
@@ -52,7 +52,7 @@
                     </div>
                   </div>
                   <!-- .entry-meta -->
-                  <%= link_to blog_path(blog), class: 'btn btn-secondary' do %>
+                  <%= link_to blog_detail_path(blog), class: 'btn btn-secondary' do %>
                       <span class="link__text">Xem thêm</span>
                   <% end %>
                 </footer>

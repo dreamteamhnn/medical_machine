@@ -5,7 +5,7 @@
       <div class="tm_pb_posts tm_pb_posts_0 tm_pb_module" data-atts="" data-page="1" data-pages="4">
         <div class="tm-posts_title_group">
           <h5 class="tm-posts_title">
-            <%= link_to "Tin Tức", blogs_path() %>
+            <%= link_to "Tin Tức", blog_list_path %>
           </h5>
         </div>
         <div class="tm-posts_listing">
@@ -14,12 +14,12 @@
               <div class="tm_pb_column col-xl-3 col-lg-3 col-md-6 col-sm-12">
                 <div class="tm-posts_item">
                   <div class="tm-posts_item_content_wrap">
-                    <%= link_to "#{image_tag(blog.feature_image_thumb_url, alt: blog.feature_image_alt, title: blog.feature_image_title)}".html_safe, blog_path(blog), class: "tm-posts_img" %>
+                    <%= link_to "#{image_tag(blog.feature_image_thumb_url, alt: blog.feature_image_alt, title: blog.feature_image_title)}".html_safe, blog_detail_path(blog), class: "tm-posts_img" %>
                     <h5 class="tm-posts_item_title">
-                      <%= link_to blog.title, blog_path(blog) %>
+                      <%= link_to blog.title, blog_detail_path(blog) %>
                     </h5>
                     <div class="tm-posts_item_meta entry-meta">
-                      <%= link_to blog.created_at.strftime(Settings.format.created_at), blogs_path(time: blog.time_param[:value]), class: "post__date" %>
+                      <%= link_to blog.created_at.strftime(Settings.format.created_at), blog_list_path(time: blog.time_param[:value]), class: "post__date" %>
                     </div>
                   </div>
                   <div class="posts_item_content_footer">

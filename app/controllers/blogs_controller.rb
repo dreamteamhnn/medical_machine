@@ -31,7 +31,7 @@ class BlogsController < ApplicationController
   end
 
   def load_blog
-    @blog = Blog.find_by id: params[:id]
+    @blog = Blog.friendly.find params[:id]
     @next = next_blog
     @prev = prev_blog
     @blog_relate_1 = Blog.find_by id: @blog.relation_blog_id_1

@@ -23,7 +23,7 @@
                     <div class="summary entry-summary">
                       <span class="posted_in">
                         <% @product.categories.each do |category| %>
-                          <%= link_to "#{category.name} ", products_path(category_id: category.id), rel: "tag" %>
+                          <%= link_to "#{category.name} ", product_category_path(category), rel: "tag" %>
                         <% end %>
                       </span>
 

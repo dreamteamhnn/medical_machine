@@ -12,7 +12,12 @@ Rails.application.routes.draw do
     end
   end
 
+  get '/loai-san-pham/:category_id' => 'products#index', as: :product_category
+  get '/linh-vuc/:field_id' => 'products#index', as: :product_field
+  get '/hang-san-xuat/:brand_id' => 'products#index', as: :product_brand
   get '/san-pham/:id' => 'products#show', as: :friendly_product
+  get '/tin-tuc/:id' => 'blogs#show', as: :blog_detail
+  get '/tin-tuc' => 'blogs#index', as: :blog_list
 
   resources :blogs, only: [:show, :index]
   resources :medias, only: [:show, :index]

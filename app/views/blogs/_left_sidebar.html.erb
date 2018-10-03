@@ -4,7 +4,7 @@
     <ul>
       <% @blog_categories.each do |category| %>
         <li class="cat-item <%= 'current-cat' if category.id == params[:blog_category_id].to_i %>">
-          <%= link_to category.name, blogs_path(blog_category_id: category.id) %>
+          <%= link_to category.name, blog_list_path(blog_category_id: category.id) %>
         </li>
       <% end %>
     </ul>
@@ -13,9 +13,9 @@
     <h5 class="widget-title">Tháng</h5>
     <label class="screen-reader-text" for="archives-dropdown-4">Archives</label>
     <select id="archives-dropdown-4">
-      <option value="<%= blogs_path() %>">Chọn tháng</option>
+      <option value="<%= blog_list_path() %>">Chọn tháng</option>
       <% @times.each do |time| %>
-        <option value="<%= blogs_path(time: time[:value]) %>" <%= 'selected' if params[:time] == time[:value] %>><%= time[:title] %></option>
+        <option value="<%= blog_list_path(time: time[:value]) %>" <%= 'selected' if params[:time] == time[:value] %>><%= time[:title] %></option>
       <% end %>
     </select>
   </aside>
@@ -24,7 +24,7 @@
     <h5 class="widget-title">Tags</h5>
     <div class="tagcloud">
       <% @tags.each do |tag| %>
-        <%= link_to tag.name, blogs_path(tag_id: tag.id), class: "tag-link-99 tag-link-position-1 #{'tag-active' if tag.id == params[:tag_id].to_i}"%>
+        <%= link_to tag.name, blog_list_path(tag_id: tag.id), class: "tag-link-99 tag-link-position-1 #{'tag-active' if tag.id == params[:tag_id].to_i}"%>
       <% end %>
     </div>
   </aside>

@@ -7,7 +7,7 @@
           <header class="entry-header">
             <span class="post-cats">
               <% @blog.blog_categories.uniq.each do |category| %>
-                <%= link_to category.name, blogs_path(blog_category_id: category.id) %>
+                <%= link_to category.name, blog_list_path(blog_category_id: category.id) %>
               <% end %>
             </span>
             <h2 class="entry-title"><%= @blog.title %></h2>
@@ -34,11 +34,11 @@
             <% if @blog_relate_1 %>
               <article class="inner-article hzol-clear story">
                 <figure class="cover image-cover">
-                  <%= link_to "#{image_tag(@blog_relate_1.blog_images.first.url, width: '145')}".html_safe, blog_path(@blog_relate_1) %>
+                  <%= link_to "#{image_tag(@blog_relate_1.blog_images.first.url, width: '145')}".html_safe, blog_detail_path(@blog_relate_1) %>
                 </figure>
                 <header>
                   <h2 class="title">
-                    <%= link_to @blog_relate_1.title, blog_path(@blog_relate_1) %>
+                    <%= link_to @blog_relate_1.title, blog_detail_path(@blog_relate_1) %>
                   </h2>
                   <div class="summary">
                     <%= @blog_relate_1.content[0..99] %>
@@ -65,11 +65,11 @@
             <% if @blog_relate_2 %>
               <article class="inner-article hzol-clear story">
                 <figure class="cover image-cover">
-                  <%= link_to "#{image_tag(@blog_relate_2.blog_images.first.url, width: '145')}".html_safe, blog_path(@blog_relate_2) %>
+                  <%= link_to "#{image_tag(@blog_relate_2.blog_images.first.url, width: '145')}".html_safe, blog_detail_path(@blog_relate_2) %>
                 </figure>
                 <header>
                   <h2 class="title">
-                    <%= link_to @blog_relate_2.title, blog_path(@blog_relate_2) %>
+                    <%= link_to @blog_relate_2.title, blog_detail_path(@blog_relate_2) %>
                   </h2>
                   <div class="summary">
                     <%= @blog_relate_2.content[0..99] %>
@@ -86,7 +86,7 @@
             <div class="entry-meta entry-meta-right">
               <span class="post__tags">
                 <% @blog.tags.uniq.each do |tag|%>
-                  <%= link_to tag.name, blogs_path(tag_id: tag.id) %>
+                  <%= link_to tag.name, blog_list_path(tag_id: tag.id) %>
                   <% unless tag == @blog.tags.last %>
                     ,
                   <% end %>
@@ -100,12 +100,12 @@
           <div class="nav-links">
             <% if @prev.present? %>
               <div class="nav-previous">
-                <%= link_to @prev.title, blog_path(@prev) %>
+                <%= link_to @prev.title, blog_detail_path(@prev) %>
               </div>
             <% end %>
             <% if @next.present? %>
               <div class="nav-next">
-                <%= link_to @next.title, blog_path(@next) %>
+                <%= link_to @next.title, blog_detail_path(@next) %>
               </div>
             <% end %>
           </div>

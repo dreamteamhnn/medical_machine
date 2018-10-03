@@ -1,5 +1,6 @@
 class Category < ApplicationRecord
   include CategoryDecorator
+  include FriendlyidConfiguration
 
   has_many :product_categories, dependent: :destroy
   has_many :products, :through => :product_categories
