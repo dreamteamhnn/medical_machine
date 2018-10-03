@@ -1,11 +1,16 @@
 class Blog < ApplicationRecord
   include BlogDecorator
+  extend FriendlyId
+
+  validates :title, presence: true, uniqueness: true
+
+  friendly_id :beauty_slug, use: :slugged
 
   paginates_per Settings.limit.paginate.admin_blog
 
   belongs_to :template
   has_many :blog_images, dependent: :destroy
-  has_many :feature_images, ->{where(is_feature: true)}, 
+  has_many :feature_images, ->{where(is_feature: true)},
     class_name: BlogImage.name
 
   has_many :blog_category_relations, dependent: :destroy
@@ -47,5 +52,11 @@ class Blog < ApplicationRecord
     m = created_at.month
     y = created_at.year
     {value: "#{m}_#{y}", title: "Tháng #{m}/#{y}"}
+  end
+
+  private
+
+  def beauty_slug
+    title.convert_vietnamese_to_unicode
   end
 end

@@ -6,7 +6,7 @@
         <% @categories.each do |category| %>
           <li class="left-navigation-li">
             <% if category.second.blank? %>
-              <%= link_to category.first.name, products_path(category_id: category.first.id),
+              <%= link_to category.first.name, product_category_path(category.first),
                 class: "category-item-select #{'item-active' if params[:category_id].to_i == category.first.id}", id: "category-id-#{category.first.id}" %>
             <% else %>
               <input id="group-<%= category.first.id %>" type="checkbox" hidden />
@@ -18,7 +18,7 @@
                 <% category.second.each_with_index do |sub_category, j| %>
                   <input type="hidden" id="parent-<%= sub_category.first.id %>" value="<%= category.first.id %>">
                   <% if sub_category.second.blank? %>
-                    <li class="left-navigation-li"><%= link_to sub_category.first.name, products_path(category_id: sub_category.first.id),
+                    <li class="left-navigation-li"><%= link_to sub_category.first.name, product_category_path(sub_category.first),
                       class: "category-item-select #{'item-active' if (params[:category_id].to_i == sub_category.first.id || (@product && sub_category.first.id == @product.categories.first.id))}", id: "category-id-#{sub_category.first.id}" %></li>
                   <% else %>
                     <li class="left-navigation-li">
@@ -29,7 +29,7 @@
                       </label>
                       <ul class="sub-group-list">
                         <% sub_category.second.each do |sub_sub_category| %>
-                          <li class="left-navigation-li"><%= link_to sub_sub_category.name, products_path(category_id: sub_sub_category.id),
+                          <li class="left-navigation-li"><%= link_to sub_sub_category.name, product_category_path(sub_sub_category),
                             class: "category-item-select #{'item-active' if (params[:category_id].to_i == sub_sub_category.id || (@product && sub_sub_category.id == @product.categories.first.id))}", id: "category-id-#{sub_sub_category.id}" %></li>
                           <input type="hidden" id="parent-<%= sub_sub_category.id %>" value="<%= sub_category.first.id %>">
                         <% end %>
@@ -48,7 +48,7 @@
         <h5 class="widget-title">Hãng</h5>
         <div class="tagcloud">
           <% @brands.each do |brand| %>
-            <%= link_to brand.name, products_path(category_id: params[:category_id], brand_id: brand.id),
+            <%= link_to brand.name, product_brand_path(brand, category_id: params[:category_id]),
               class: "tag-link-99 tag-link-position-1 #{'tag-active' if brand.id == params[:brand_id].to_i}"%>
           <% end %>
         </div>

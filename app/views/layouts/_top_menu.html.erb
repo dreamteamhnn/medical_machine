@@ -35,7 +35,7 @@
                             <ul class="tm-mega-menu-sub sub-menu level-1 effect-slide-top simple-sub">
                               <% categories[i].each do |category| %>
                                 <li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat tm-mega-menu-sub-item item-nested-sub item-nested-sub-2 sub-column-item">
-                                  <%= link_to category.name, products_path(category_id: category.id), class: "product-item" %>
+                                  <%= link_to category.name, product_category_path(category), class: "product-item" %>
                                 </li>
                               <% end %>
                             </ul>
@@ -63,7 +63,7 @@
           <ul class="tm-mega-menu-sub sub-menu level-0 effect-slide-top simple-sub">
             <% @fields.each do |field| %>
               <li class="menu-item menu-item-type-custom menu-item-object-custom tm-mega-menu-sub-item item-nested-sub item-nested-sub-1">
-                <%= link_to field.name, products_path(field_id: field.id) %>
+                <%= link_to field.name, product_field_path(field) %>
               </li>
             <% end %>
           </ul>
@@ -84,7 +84,7 @@
                 <ul class="tm-mega-menu-sub sub-menu level-1 effect-slide-top simple-sub">
                   <% brands.each do |brand| %>
                     <li class="menu-item menu-item-type-custom menu-item-object-custom tm-mega-menu-sub-item item-nested-sub item-nested-sub-1">
-                      <%= link_to [brand.name, brand.location].join(" - "), products_path(brand_id: brand.id) %>
+                      <%= link_to [brand.name, brand.location].join(" - "), product_brand_path(brand) %>
                     </li>
                   <% end %>
                 </ul>
@@ -94,7 +94,7 @@
         </li>
 
         <li id="menu-item-234" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-232 tm-mega-menu-top-item item-submenu-position-fullwidth">
-          <%= link_to "Dịch vụ sửa chữa", @service ? blog_path(@service) : blog_path(Blog.first) %>
+          <%= link_to "Dịch vụ sửa chữa", @service ? blog_detail_path(@service) : blog_detail_path(Blog.first) %>
         </li>
 
         <li id="menu-item-230" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-230 tm-mega-menu-top-item item-submenu-position-fullwidth">
@@ -110,7 +110,7 @@
         </li>
 
         <li id="menu-item-233" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-232 tm-mega-menu-top-item item-submenu-position-fullwidth">
-          <%= link_to "Blog", blogs_path() %>
+          <%= link_to "Blog", blog_list_path() %>
         </li>
       </ul>
     </nav>

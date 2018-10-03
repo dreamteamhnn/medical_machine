@@ -1,6 +1,5 @@
 class Product < ApplicationRecord
-  extend FriendlyId
-  friendly_id :beauty_slug, use: :slugged
+  include FriendlyidConfiguration
 
   searchkick mappings: {
     product: {
@@ -158,9 +157,5 @@ class Product < ApplicationRecord
     @helper ||= Class.new do
       include ActionView::Helpers::NumberHelper
     end.new
-  end
-
-  def beauty_slug
-    name.convert_vietnamese_to_unicode
   end
 end

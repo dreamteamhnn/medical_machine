@@ -124,7 +124,7 @@ class ProductsController < ApplicationController
 
   def load_breadcrum
     if params[:category_id]
-      category = Category.find_by id: params[:category_id]
+      category = Category.friendly.find params[:category_id]
       @breads = [{title: category.name, link: ""}]
       if parent = category.parents.first
         @breads << {title: parent.name, link: products_path(category_id: parent.id)}
@@ -147,11 +147,11 @@ class ProductsController < ApplicationController
       end
       @breads = @breads.reverse
     elsif params[:brand_id]
-      brand = Brand.find_by id: params[:brand_id]
+      brand = Brand.friendly.find params[:brand_id]
       @breads = [{title: "Hãng sản xuất", link: products_path()}]
       @breads << {title: brand.name, link: ""}
     elsif params[:field_id]
-      field = Field.find_by id: params[:field_id]
+      field = Field.friendly.find params[:field_id]
       @breads = [{title: "Lĩnh vực", link: products_path()}]
       @breads << {title: field.name, link: ""}
     else
@@ -173,11 +173,11 @@ class ProductsController < ApplicationController
   def load_data_index
     params[:page] ||= 1
     if params[:category_id]
-      menu_item = Category.find_by id: params[:category_id]
+      menu_item = Category.friendly.find params[:category_id]
     elsif params[:field_id]
-      menu_item = Field.find_by id: params[:field_id]
+      menu_item = Field.friendly.find params[:field_id]
     elsif params[:brand_id]
-      menu_item = Brand.find_by id: params[:brand_id]
+      menu_item = Brand.friendly.find params[:brand_id]
     end
     @products_from_menu = get_products(menu_item).page(params[:page])
       .per(Settings.limit.paginate.products)
