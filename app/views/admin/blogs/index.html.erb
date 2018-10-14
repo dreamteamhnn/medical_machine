@@ -50,26 +50,26 @@
                   </div>
                 </td>
                 <td>
-                  <%= blog.template.name %>
+                  <%= blog.template&.name %>
                 </td>
                 <td colspan="2">
                   <%= blog.blog_categories.pluck(:name).join(", ") %>
                 </td>
                 <td class="center">
                   <p data-placement="top" data-toggle="tooltip" title="Sửa">
-                    <%= link_to "Xem", admin_blog_path(blog), 
+                    <%= link_to "Xem", admin_blog_path(blog),
                       class: "btn btn-primary button-edit-blog", "data-title": "Xem" %>
                   </p>
                 </td>
                 <td class="center">
                   <p data-placement="top" data-toggle="tooltip" title="Sửa">
-                    <%= link_to "Sửa", edit_admin_blog_path(blog), 
+                    <%= link_to "Sửa", edit_admin_blog_path(blog),
                       class: "btn btn-info button-edit-blog", "data-title": "Sửa" %>
                   </p>
                 </td>
                 <td class="center">
                   <p data-placement="top" data-toggle="tooltip" title="Xóa">
-                    <button class="btn btn-danger button-delete-blog" data-title="Xóa" 
+                    <button class="btn btn-danger button-delete-blog" data-title="Xóa"
                       id="delete-blog-<%= blog.id %>" data-blog-id="<%= blog.id %>" >
                       Xóa
                     </button>
@@ -87,7 +87,7 @@
   </div>
 </div>
 
-<div class="modal fade" id="delete-blog" tabindex="-1" role="dialog" 
+<div class="modal fade" id="delete-blog" tabindex="-1" role="dialog"
   aria-labelledby="delete" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -98,7 +98,7 @@
         </div>
         <div class="modal-body">
           <div class="alert alert-danger">
-            Bạn có chắc chắn xóa bài viết 
+            Bạn có chắc chắn xóa bài viết
             <strong class="delete-brand-name"></strong> không?</div>
         </div>
         <div class="modal-footer ">
