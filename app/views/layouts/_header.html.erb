@@ -11,7 +11,7 @@
         <span class="search-form__toggle"></span>
 
         <!-- Search form -->
-        <%= form_tag (controller_name != "medias" ? search_product_path : medias_path), method: "get", class: "search-form woocommerce-product-search" do %>
+        <%= form_tag (controller_name != "medias" ? products_path : medias_path), method: "get", class: "search-form woocommerce-product-search" do %>
           <div class="search-form__input-wrap">
             <label class="screen-reader-text" for="woocommerce-product-search-field">Search for:</label>
             <i class="linearicon linearicon-magnifier"></i>
@@ -46,7 +46,7 @@
 
         <!-- Search form -->
         <div class="header-search">
-         <%= form_tag (controller_name != "medias" ? search_product_path : medias_path), method: "get", class: "search-form woocommerce-product-search" do %>
+         <%= form_tag (controller_name != "medias" ? products_path : medias_path), method: "get", class: "search-form woocommerce-product-search" do %>
             <div class="search-form__input-wrap">
               <label class="screen-reader-text" for="woocommerce-product-search-field">Search for:</label>
               <i class="linearicon linearicon-magnifier"></i>
