@@ -34,12 +34,21 @@ class Admin::FieldsController < Admin::BaseController
   def destroy
     field = Field.find_by id: params[:id]
     if field
-      field.destroy
+      field_name = field.name
+      Product.where(id: ProductField.where(field_id: field.id).map(&:product_id)).destroy_all
+      ProductField.where(field_id: field.id).destroy_all
+      if field.destroy
+        respond_to do |format|
+          format.html
+          format.json { render json: {status: true} }
+        end
+      else
+        respond_to do |format|
+          format.html
+          format.json { render json: {status: false} }
+        end
+      end
     end
-    respond_to do |format|
-      format.html
-      format.json { render json: nil }
-     end
   end
 
   private

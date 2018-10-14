@@ -1,21 +1,5 @@
 $(document).on('turbolinks:load', function(){
-  function removeParam(key, sourceURL) {
-    var rtn = sourceURL.split("?")[0],
-      param,
-      params_arr = [],
-      queryString = (sourceURL.indexOf("?") !== -1) ? sourceURL.split("?")[1] : "";
-    if (queryString !== "") {
-      params_arr = queryString.split("&");
-      for (var i = params_arr.length - 1; i >= 0; i -= 1) {
-          param = params_arr[i].split("=")[0];
-          if (param === key) {
-              params_arr.splice(i, 1);
-          }
-      }
-      rtn = rtn + "?" + params_arr.join("&");
-    }
-    return rtn;
-  }
+  
 
   $("#upload-product-image-1, #upload-product-image-2").change(function() {
     var imgId = $(this)[0].id.replace("upload-product-image-", "");
@@ -276,10 +260,27 @@ $(document).on('turbolinks:load', function(){
     }
   });
 
+  var deleteProductIds = [];
+
+  $('#dataTables-product').on('click', '.product-cb-delete-id', function () {
+    var index = deleteProductIds.indexOf(this.value);
+    if (index != -1) {
+      deleteProductIds.splice(index, 1);
+    } else {
+      deleteProductIds.push(this.value);
+    }
+  });
+
   $("#button-export-products").click(function() {
     var url = removeParam("ids", this.href);
     var p = url.substr(url.length - 1) == "?" ? "" : "?";
     this.href = url + p + "ids=" + exportProductIds.join(",");
+  })
+
+  $("#button-delete-products").click(function() {
+    var url = removeParam("ids", this.href);
+    var p = url.substr(url.length - 1) == "?" ? "" : "?";
+    this.href = url + p + "delete_product_ids=" + deleteProductIds.join(",");
   })
 
   //video
@@ -362,3 +363,21 @@ $(document).on('turbolinks:load', function(){
   });
 
 });
+
+function removeParam(key, sourceURL) {
+  var rtn = sourceURL.split("?")[0],
+    param,
+    params_arr = [],
+    queryString = (sourceURL.indexOf("?") !== -1) ? sourceURL.split("?")[1] : "";
+  if (queryString !== "") {
+    params_arr = queryString.split("&");
+    for (var i = params_arr.length - 1; i >= 0; i -= 1) {
+        param = params_arr[i].split("=")[0];
+        if (param === key) {
+            params_arr.splice(i, 1);
+        }
+    }
+    rtn = rtn + "?" + params_arr.join("&");
+  }
+  return rtn;
+}

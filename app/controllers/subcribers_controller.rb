@@ -2,7 +2,7 @@ class SubcribersController < ApplicationController
   def create
     @subcriber = Subcriber.new(subcriber_params)
     if @subcriber.save
-      flash[:success] = "Bạn đã đăng kí theo dõi thành công!"
+      flash[:success] = "Đăng ký thành công!"
     else
       flash[:danger] = "Đã có lỗi xảy ra"
     end

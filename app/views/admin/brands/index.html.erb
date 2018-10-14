@@ -10,6 +10,7 @@
         <button class="btn btn-success" data-title="Tạo mới" data-toggle="modal" data-target="#create-brand" >
           Tạo mới
         </button>
+        <%= link_to "Xoá nhiều", admin_imports_path(), class: "btn btn-danger", type: "button", id: "button-delete-brands" %>
       </div>
       <div class="alert alert-success alert-success-update hidden">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -25,6 +26,7 @@
           <thead>
             <tr>
               <th>Id</th>
+              <th>Xoá</th>
               <th>Logo</th>
               <th>Tên hãng</th>
               <th>Nước</th>
@@ -38,6 +40,9 @@
             <% @brands.each do |brand| %>
               <tr class="odd gradeX" id="brand<%= brand.id %>">
                 <td><%= brand.id %></td>
+                <td class="brand-cb-delete">
+                  <input type="checkbox" value="<%= brand.id %>" class="brand-cb-delete-id">
+                </td>
                 <td data-toggle="modal" data-id="<%= brand.id %>" data-name="<%= brand.name %>" id="update-logo" data-target="#update-logo-brand">
                   <%= image_tag brand.image, height: 30, class: "logo-brand#{brand.id}"  %>
                 </td>
@@ -84,7 +89,7 @@
           <h4 class="modal-title custom_align" id="Heading">Xóa hãng</h4>
         </div>
         <div class="modal-body">
-          <div class="alert alert-danger">Bạn có chắc chắn xóa hãng <strong class="delete-brand-name"></strong> không?</div>
+          <div class="alert alert-danger">Bạn có chắc chắn xóa hãng <strong class="delete-brand-name"></strong> không? Các sản phẩm thuộc hãng cũng sẽ bị xoá</div>
         </div>
         <div class="modal-footer ">
           <button type="button" class="btn btn-success" id="button-delete-brand-confirm" >Có</button>

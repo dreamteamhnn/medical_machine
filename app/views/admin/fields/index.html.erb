@@ -10,6 +10,7 @@
         <button class="btn btn-success" data-title="Tạo mới" data-toggle="modal" data-target="#create" >
           Tạo mới
         </button>
+        <%= link_to "Xoá nhiều", admin_imports_path(), class: "btn btn-danger", type: "button", id: "button-delete-fields" %>
       </div>
       <div class="alert alert-success alert-success-update hidden">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -40,6 +41,7 @@
           <thead>
             <tr>
               <th>Id</th>
+              <th>Xoá</th>
               <th>Lĩnh vực</th>
               <th>Mô tả</th>
               <th>Thứ tự trên menu</th>
@@ -51,6 +53,9 @@
             <% @fields.each do |field| %>
               <tr class="odd gradeX" id="field<%= field.id %>">
                 <td><%= field.id %></td>
+                <td class="field-cb-delete">
+                  <input type="checkbox" value="<%= field.id %>" class="field-cb-delete-id">
+                </td>
                 <td class="td-field-name">
                   <p class="p-field-name" id="p-field-name<%= field.id %>"><%= field.name %></p>
                   <input type='text' id="field-name<%= field.id %>" class="form-control field-name hidden" value='<%= field.name %>'/>
@@ -90,7 +95,7 @@
           <h4 class="modal-title custom_align" id="Heading">Xóa lĩnh vực</h4>
         </div>
         <div class="modal-body">
-          <div class="alert alert-danger">Bạn có chắc chắn xóa lĩnh vực <strong class="delete-field-name"></strong> không?</div>
+          <div class="alert alert-danger">Bạn có chắc chắn xóa lĩnh vực <strong class="delete-field-name"></strong> không? Các sản phẩm thuộc lĩnh vực cũng sẽ bị xoá</div>
         </div>
         <div class="modal-footer ">
           <button type="button" class="btn btn-success" id="button-delete-field-confirm" >Có</button>

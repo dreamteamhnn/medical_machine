@@ -50,7 +50,8 @@ $(document).on('turbolinks:load', function(){
     }
     var sym = url.indexOf("?") != -1 ? "&" : "?";
     url += sym + "category_id=" + categoryId;
-    location.href = url;
+    var path = location.href.split('/')[0]
+    location.href = path + '/san-pham?category_id=' + categoryId;
   });
 
   function sortByPrice() {

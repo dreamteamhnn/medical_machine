@@ -3,7 +3,7 @@
   <div class="swiper-carousel-container">
     <div id="swiper-carousel-59e9bc5f37e5e" class="tm-willard-carousel swiper-container swiper-container-horizontal" style="cursor: -webkit-grab;">
       <div class="swiper-wrapper">
-        <% @related_products.each do |product| %>
+        <% @related_products[0..3].each do |product| %>
           <div class="post-264 product type-product status-publish has-post-thumbnail hentry product_shipping_class-class-2 has-thumb swiper-slide swiper-slide-next <%= product == @related_products.last ? 'relate-last' : 'relate' %>" style="width: 23%;">
             <div class="block_product_inner">
               <div class="block_product_thumbnail">
@@ -46,8 +46,51 @@
             </div>
           </div>
         <% end %>
+      </div>
+      <div class="swiper-wrapper">
+        <% @related_products[4..7].each do |product| %>
+          <div class="post-264 product type-product status-publish has-post-thumbnail hentry product_shipping_class-class-2 has-thumb swiper-slide swiper-slide-next <%= product == @related_products.last ? 'relate-last' : 'relate' %>" style="width: 23%;">
+            <div class="block_product_inner">
+              <div class="block_product_thumbnail">
+                <a href="" class="woocommerce-LoopProduct-link">
+                  <div class="tm-thumbs-wrap effect-fade">
+                    <div class="tm-thumbs-wrap__inner">
+                      <%= link_to friendly_product_path(product), title: strip_tags(product.name) do %>
+                        <%= image_tag product.product_images.first.url, size: '340', title: product.product_images.first.title, alt: product.product_images.first.alt if product.product_images.first.url%>
+                        <%= image_tag product.product_images.second.url, size: '340', title: product.product_images.second.title, alt: product.product_images.second.alt if product.product_images.second.url%>
+                      <% end %>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="block_product_content">
+                <h3><%= link_to strip_tags(product.name), friendly_product_path(product), class: "woocommerce-LoopProduct-link" %></h3>
+                <div class="price-add-to-cart-wrap">
+                  <span class="price">
+                    <span class="woocs_price_code" data-product-id="264">
+                      <span class="woocommerce-Price-amount amount"><%= product.model %>
+                      </span>
+                    </span>
+                  </span>
+                  <%= link_to product.price_currency || "Liên hệ", friendly_product_path(product), remote: true, rel: "nofollow",
+                    "data-product-id": product.id, class: "button product_type_simple add_to_cart_button ajax_add_to_cart" %>
+                </div>
 
-
+                <!-- <span class="price">
+                  <span class="woocs_price_code" data-product-id="215">
+                    <span class="woocommerce-Price-amount amount">154.00
+                      <span class="woocommerce-Price-currencySymbol">$</span>
+                    </span>
+                     –
+                    <span class="woocommerce-Price-amount amount">198.00
+                      <span class="woocommerce-Price-currencySymbol">$</span>
+                    </span>
+                  </span>
+                </span> -->
+              </div>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
     <div id="swiper-carousel-59e9bc5f37e5e-next" class="swiper-button-next button-next swiper-button-disabled" style="display: block;"></div>
