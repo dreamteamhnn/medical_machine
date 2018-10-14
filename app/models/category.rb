@@ -20,9 +20,10 @@ class Category < ApplicationRecord
   has_many :childrens,
     through: :children_relations,
     class_name: Category.name
+  before_validation :set_slug
 
   CATEGORY_ATTRS = [:name, :description, :category_order, :home_block_id,
-    :home_order_id]
+    :home_order_id, :slug]
 
   scope :top_categories,-> do
     where("level = ?", Settings.category.highest_level).order "category_order"
@@ -77,5 +78,9 @@ class Category < ApplicationRecord
       end
     end
     child_products
+  end
+
+  def set_slug
+    self.slug ||= name.convert_vietnamese_to_unicode
   end
 end
