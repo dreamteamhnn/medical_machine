@@ -9,6 +9,7 @@
       <div class="create-div">
         <%= link_to "Tạo mới", new_admin_product_path(), class: "btn btn-success" %>
         <%= link_to "Export", admin_imports_path(format: "xlsx"), class: "btn btn-primary", id: "button-export-products" %>
+        <%= link_to "Xoá nhiều", admin_imports_path(), class: "btn btn-danger", id: "button-delete-products" %>
         <input type="hidden" id="product-export-ids" value="">
       </div>
       <%= render "shared/flash" %>
@@ -44,6 +45,7 @@
           <thead>
             <tr>
               <th>Export</th>
+              <th>Xoá</th>
               <th>Ảnh</th>
               <th>Tên</th>
               <th>Mã sản phẩm</th>
@@ -61,6 +63,9 @@
               <tr class="odd gradeX" id="product<%= product.id %>">
                 <td class="product-cb">
                   <input type="checkbox" value="<%= product.id %>" class="product-cb-id">
+                </td>
+                <td class="product-cb-delete">
+                  <input type="checkbox" value="<%= product.id %>" class="product-cb-delete-id">
                 </td>
                 <td>
                   <%= image_tag(product.product_images.first.try(:url), size: 100) if product.product_images.first.try(:url) %>

@@ -2479,7 +2479,29 @@ body:not(.search-results) .twentysixteen .entry-summary {
 }
 
 .site-header.default .site-branding {
-  margin-bottom: -9px!important;
+  /*margin-bottom: -9px!important;*/
+}
+
+.header-container__flex {
+  padding: 6px !important;
+}
+
+.fa-phone-square {
+    color: #ffd71a;
+}
+
+.telephone-header {
+    padding-left: 5px;
+}
+
+.search-form__submit:hover {
+    color: #ffd71a !important;
+    background-color: #222 !important;
+}
+
+.search-form__submit {
+    color: #222 !important;
+    background-color: #ffd71a !important;
 }
 
 .add_to_cart_button:before {

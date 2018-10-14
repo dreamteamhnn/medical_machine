@@ -15,9 +15,9 @@
       </a>
     </div>
     <div class="block_product_content">
-      <span>
+      <h3>
         <%= link_to strip_tags(product.name), friendly_product_path(product), class: "woocommerce-LoopProduct-link", maxlength: 44, title: strip_tags(product.name) %>
-      </span>
+      </h3>
       <span class="price">
         <span class="woocs_price_code" data-product-id="215">
           <% if product.price_currency.present? %>

@@ -31,13 +31,13 @@
                 <% end %>
               </div>
 
-              <nav class="woocommerce-pagination">
-                <%= paginate @products_from_menu %>
-              </nav>
-
               <% if @childs.present? && @products.present? %>
                 <nav class="woocommerce-pagination">
                   <%= paginate @products %>
+                </nav>
+              <% else %>
+                <nav class="woocommerce-pagination">
+                  <%= paginate @products_from_menu %>
                 </nav>
               <% end %>
               <div class="tm-wc-ajax-filters-loader">

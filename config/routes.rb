@@ -22,7 +22,6 @@ Rails.application.routes.draw do
   resources :blogs, only: [:show, :index]
   resources :medias, only: [:show, :index]
   resources :contacts, only: [:index, :create]
-  get "/products" => "products#index", as: :search_product
 
   namespace :admin do
     root "home#show"

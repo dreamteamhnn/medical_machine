@@ -59,6 +59,22 @@ img.emoji {
     }
 }
 
+#support-block {
+    .support, .instock, .shipping, .warranty {
+      background-color: #ffd71a !important;
+      &:hover {
+        background-color: #222 !important;
+        color: #ffd71a !important;
+      }
+    }
+}
+
+.price-add-to-cart-wrap .add_to_cart_button {
+    // overflow: hidden !important;
+    // -ms-text-overflow: ellipsis !important;
+    // text-overflow: ellipsis !important;
+}
+
 .cherry-popup-734 .cherry-popup-container {
     width: 570px;
     height: 349px;
@@ -6979,8 +6995,8 @@ body.wcvendors.wcvendors_vendor .entry-content > h2:nth-child(2):before {
   margin: 0 10px !important;
   margin-bottom: 10px;
   .brand-logo {
-    height: 50px !important;
-    width: 100px !important;
+    height: 75px !important;
+    width: 150px !important;
     position: relative !important;
   }
   .brand-logo-border {
@@ -7075,7 +7091,7 @@ body.wcvendors.wcvendors_vendor .entry-content > h2:nth-child(2):before {
   top:0px;
   left:0px;
   width:1800px;
-  height:65px;
+  height:70px !important;
   overflow:hidden;
   visibility:hidden;
 

@@ -22,6 +22,8 @@ config/settings.local.yml
 config/settings/*.local.yml
 config/environments/*.local.yml
 public/girl
+public/assets
+yarn.lock
 public/uploads
 config/database.yml
 config/secrets.yml

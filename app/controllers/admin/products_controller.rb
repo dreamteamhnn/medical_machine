@@ -43,15 +43,14 @@ class Admin::ProductsController < Admin::BaseController
   def update
     if @product.update_attributes(product_params)
       flash[:success] = "Sửa sản phẩm #{strip_tags(@product.name)} thành công!"
-      redirect_to admin_products_path
     else
       @category_attrs = category_params
       @field_attrs = field_params
       @video_attrs = media_params
       @document_attrs = media_params
       flash[:danger] = @product.errors.full_messages
-      render :edit
     end
+    redirect_to edit_admin_product_path(@product)
   end
 
   def destroy
@@ -77,7 +76,7 @@ class Admin::ProductsController < Admin::BaseController
   end
 
   def load_product
-    @product = Product.friendly.find params[:id]
+    @product = Product.friendly.find(params[:id]) if params[:id].present?
     get_categories
     get_fields
     get_medias

@@ -24,6 +24,31 @@ class Admin::ImportsController < Admin::BaseController
         format.html
         format.xlsx {render xlsx: 'export',filename: "export_products.xlsx"}
       end
+    elsif params[:delete_product_ids]
+      ids = params[:delete_product_ids].split(",")
+      @products = Product.where(id: ids)
+      @products.destroy_all if @products
+      redirect_to admin_products_path()
+    elsif params[:delete_brand_ids]
+      ids = params[:delete_brand_ids].split(",")
+      @brands = Brand.where(id: ids)
+      if Product.where(brand_id: ids).count > 0
+        flash[:warning] = "Không xoá được! Tồn tại sản phẩm thuộc hãng"
+      else
+        flash[:success] = "Xoá thành công hãng #{@brands.map(&:name).join(', ')}"
+        @brands.destroy_all
+      end
+      redirect_to admin_brands_path()
+    elsif params[:delete_field_ids]
+      ids = params[:delete_field_ids].split(",")
+      @fields = Field.where(id: ids)
+      if Product.joins(:product_fields).where("product_fields.field_id IN (?)", ids.join(',')).count > 0
+        flash[:warning] = "Không xoá được! Tồn tại sản phẩm thuộc lĩnh vực"
+      else
+        flash[:success] = "Xoá thành công lĩnh vực #{@fields.map(&:name).join(', ')}"
+        @fields.destroy_all
+      end
+      redirect_to admin_fields_path()
     else
       @products = Product.order(:id).limit(1)
       respond_to do |format|

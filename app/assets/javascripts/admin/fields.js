@@ -55,7 +55,8 @@ $(document).on('turbolinks:load', function(){
     }).done(function(response) {
       $("#field-table .alert-success-delete").removeClass("hidden");
       $("#field-table .alert-danger-delete").addClass("hidden");
-      window.location.reload(true);
+      $('#delete').modal('hide');
+      $('#dataTables-example').dataTable().ajax.reload();
     }).fail(function(errors) {
       $("#field-table .alert-danger-delete").removeClass("hidden");
       $("#field-table .alert-success-delete").addClass("hidden");
@@ -78,7 +79,8 @@ $(document).on('turbolinks:load', function(){
     }).done(function(response) {
       $("#field-table .alert-success-create").removeClass("hidden");
       $("#field-table .alert-danger-create").addClass("hidden");
-      window.location.reload(true);
+      // window.location.reload(true);
+      $('#dataTables-example').dataTable().ajax.reload();
     }).fail(function(errors) {
       $("#field-table .alert-danger-create").removeClass("hidden");
       $("#field-table .alert-success-create").addClass("hidden");
@@ -87,5 +89,21 @@ $(document).on('turbolinks:load', function(){
 
   $('#dataTables-example').DataTable({
     responsive: true
+  });
+
+  var deleteFieldIds = [];
+  $('#dataTables-example').on('click', '.field-cb-delete-id', function () {
+    var index = deleteFieldIds.indexOf(this.value);
+    if (index != -1) {
+      deleteFieldIds.splice(index, 1);
+    } else {
+      deleteFieldIds.push(this.value);
+    }
+  });
+
+  $("#button-delete-fields").click(function() {
+    var url = removeParam("ids", this.href);
+    var p = url.substr(url.length - 1) == "?" ? "" : "?";
+    this.href = url + p + "delete_field_ids=" + deleteFieldIds.join(",");
   });
 });

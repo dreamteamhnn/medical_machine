@@ -50,6 +50,7 @@ class Admin::BrandsController < Admin::BaseController
     brand = Brand.find_by id: params[:id]
     if brand
       brand_name = brand.name
+      brand.products.destroy_all
       if brand.destroy
         flash[:success] = "Xóa hãng #{brand_name} thành công!"
       else
