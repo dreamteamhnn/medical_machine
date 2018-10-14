@@ -3,7 +3,9 @@
 
 <head>
   <%= csrf_meta_tags %>
-  <%= render 'layouts/google_analytic' if Rails.env.production? %>
+  <meta name="robots" content="noindex">
+  <meta name="googlebot" content="noindex, nofollow">
+  <%#= render 'layouts/google_analytic' if Rails.env.production? %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
