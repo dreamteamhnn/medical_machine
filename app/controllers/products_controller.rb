@@ -207,7 +207,7 @@ class ProductsController < ApplicationController
 
   def get_products menu_item
     products = menu_item.respond_to?(:size) ? menu_item :
-      (menu_item.present? ? get_products_for_menu_item(menu_item) : Product.all)
+      (menu_item.present? ? get_products_for_menu_item(menu_item) : Product.friendly.all)
     if params[:sort_by] == Product::SORT_FIELDS[:name]
       sort_by_price products.order(name: :asc)
     elsif params[:sort_by] == Product::SORT_FIELDS[:date]
@@ -242,7 +242,7 @@ class ProductsController < ApplicationController
       end
     end
     list_categories = list_categories.flatten
-    Product.by_categories list_categories
+    Product.friendly.by_categories list_categories
   end
 
   def sort_by_price products

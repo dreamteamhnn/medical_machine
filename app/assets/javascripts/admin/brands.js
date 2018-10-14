@@ -58,6 +58,7 @@ $(document).on('turbolinks:load', function(){
       type: "DELETE",
       url: "brands/" + brandId
     }).done(function(response) {
+      window.location.reload(true);
     });
   });
 
@@ -111,5 +112,21 @@ $(document).on('turbolinks:load', function(){
       $('#update-logo-brand').modal('hide');
       $(".update-logo-brand-id").val(null);
     });
+  });
+
+  var deleteBrandIds = [];
+  $('#dataTables-brand').on('click', '.brand-cb-delete-id', function () {
+    var index = deleteBrandIds.indexOf(this.value);
+    if (index != -1) {
+      deleteBrandIds.splice(index, 1);
+    } else {
+      deleteBrandIds.push(this.value);
+    }
+  });
+
+  $("#button-delete-brands").click(function() {
+    var url = removeParam("ids", this.href);
+    var p = url.substr(url.length - 1) == "?" ? "" : "?";
+    this.href = url + p + "delete_brand_ids=" + deleteBrandIds.join(",");
   });
 });
