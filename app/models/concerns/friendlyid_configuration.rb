@@ -7,7 +7,7 @@ concern :FriendlyidConfiguration do
 
     friendly_id :beauty_slug, use: :slugged
 
-    before_update do
+    before_save do
       if name_changed?
         self.slug = beauty_slug
       end
