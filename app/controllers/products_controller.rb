@@ -114,7 +114,7 @@ class ProductsController < ApplicationController
     if @category.level == Settings.category.middle_level
       @category_lv_1 = @category.parents.first
     elsif @category.level == Settings.category.lowest_level
-      @category_lv_1 = @category.parents.first&.parents&.first
+      @category_lv_1 = @category.parents.first.parents.first
     elsif @category.level == Settings.category.highest_level
       @category_lv_1 = @category
     end
@@ -164,9 +164,13 @@ class ProductsController < ApplicationController
     @documents = @product.mediums.where(media_type: 0)
     @videos = @product.mediums.where(media_type: 1)
     @related_products = []
+    @related_products_1 = []
+    @related_products_2 = []
     if category = @product.categories.first
       @related_products = Product.where(id: category.products.pluck(:id).uniq)
         .limit Settings.limit.related_products
+      @related_products_1 = @related_products[0..3] if @related_products[0..3]
+      @related_products_2 = @related_products[4..7] if @related_products[4..7]
     end
   end
 
