@@ -18,7 +18,7 @@ class String
   ];
 
   def convert_vietnamese_to_unicode
-    result = ActionController::Base.helpers.strip_tags(self.dup)
+    result = ActionController::Base.helpers.strip_tags(self.dup).downcase
     VIETNAMESE_CHARS.each_with_index do |segment, i|
       next if i == 0
       segment.split('').each do |c|
@@ -26,6 +26,6 @@ class String
       end
     end
     result.gsub(/[^\x00-\x7F]/, '').gsub(/(\s-*)+/, '-')
-      .gsub(/^-[\p{P}\p{S}]/, '').downcase
+      .gsub(/[\/\|\\\!\?\*\;:'"<>@#\$%\^\&\(\)]/, '').gsub '.', ','
   end
 end
