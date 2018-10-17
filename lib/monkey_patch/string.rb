@@ -25,6 +25,6 @@ class String
         result.gsub! c, VIETNAMESE_CHARS[0][i - 1]
       end
     end
-    result.gsub(/\s+/, '-')
+    result.gsub(/[^\x00-\x7F]/, '').gsub(/(\s-*)+/, '-')
   end
 end
