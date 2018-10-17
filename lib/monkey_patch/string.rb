@@ -26,5 +26,6 @@ class String
       end
     end
     result.gsub(/[^\x00-\x7F]/, '').gsub(/(\s-*)+/, '-')
+      .gsub(/^-[\p{P}\p{S}]/, '').downcase
   end
 end
