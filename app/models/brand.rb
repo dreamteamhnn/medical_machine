@@ -1,7 +1,7 @@
 class Brand < ApplicationRecord
   include FriendlyidConfiguration
 
-  has_many :products
+  has_many :products, dependent: :destroy
   mount_uploader :image, ImageUploader
 
   BRAND_ATTRIBUTES = %i(name location description image home_order)

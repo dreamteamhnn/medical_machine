@@ -41,7 +41,7 @@ class Product < ApplicationRecord
   validates :short_description, presence: true
   validates :parameter, presence: true
 
-  belongs_to :brand
+  belongs_to :brand, optional: true
 
   has_many :product_images, dependent: :destroy
   accepts_nested_attributes_for :product_images
