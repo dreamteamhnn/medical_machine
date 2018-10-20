@@ -35,7 +35,7 @@ class Category < ApplicationRecord
   end
 
   def list_home_products
-    return unless level == Settings.category.middle_level
+    # return unless level == Settings.category.middle_level
     list_categories = [id]
     if c = childrens
       list_categories << c.pluck(:id)

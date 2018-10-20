@@ -28,3 +28,5 @@ public/uploads
 config/database.yml
 config/secrets.yml
 .env
+.DS_Store
+app/assets/.DS_Store

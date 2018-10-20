@@ -19,7 +19,7 @@
 	white-space: inherit !important;
 }
 
-.home, #tm_willard_products-4, .woocommerce-LoopProduct-link, .product_title, h1, h2, h3, h4, h5, div, aside, ul, li, a, button, span:not(.fa, .icon) {
+.home, #tm_willard_products-4, .woocommerce-LoopProduct-link, .product_title, h1, h2, h3, h4, h5, div, aside, ul, li, a, button, span:not(.fa, .icon, .glyphicon) {
 	font-family: sans-serif !important;
 }
 

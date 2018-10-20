@@ -18,8 +18,7 @@ class PagesController < ApplicationController
   private
   (1..2).each do |i|
     define_method"home_block_#{i}" do
-      categories = Category.where(level: Settings.category.middle_level)
-        .where(home_block_id: i).order(:home_order_id)
+      categories = Category.where(home_block_id: i).order(:home_order_id)
         .limit(Settings.limit.home_block_category)
       home_block_arr = []
       categories.each do |category|
