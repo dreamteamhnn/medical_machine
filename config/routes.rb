@@ -33,6 +33,8 @@ Rails.application.routes.draw do
     resources :catalogs
     resources :products
     resources :categories
+    resources :multiple_categories
+    resources :home_categories, only: [:index, :update, :edit]
     resources :imports
     resources :tags
     resources :subscribers

@@ -56,7 +56,10 @@
               <%= link_to "Tất cả danh mục", admin_categories_path() %>
             </li>
             <li>
-              <%= link_to "Danh mục trên trang chủ", admin_root_url() %>
+              <%= link_to "Thêm sản phẩm cho danh mục", admin_multiple_categories_path() %>
+            </li>
+            <li>
+              <%= link_to "Danh mục trên trang chủ", edit_admin_home_category_path(Category.first) %>
             </li>
           </ul>
         </li>

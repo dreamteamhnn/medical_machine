@@ -26,7 +26,7 @@ limit:
   label_block: 10
   category_home_block: 12
   home_block_element: 2
-  home_block_category: 4
+  home_block_category: 5
 format:
   created_at: "%d/%m/%Y"
 media_type:
