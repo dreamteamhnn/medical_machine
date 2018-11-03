@@ -1,0 +1,5 @@
+if($('#edit-blog-category-modal').length) {
+  $('#edit-blog-category-modal').remove();
+}
+$('#delete-blog-category-modal').after('<%= j render("form") %>');
+$('#edit-blog-category-modal').modal('show');

@@ -1,0 +1,57 @@
+<% content_for :admin_body_class, "blog-categories-page" %>
+<div id="page-wrapper">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Danh mục bài viết</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <%= render "shared/flash" %>
+      <%= link_to "Tạo mới", new_admin_blog_category_path, remote: true,
+        class: "btn btn-success" %>
+    </div>
+  </div>
+  <div class="row list">
+    <% @categories.each do |category| %>
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <div class="caption">
+            <h3 class="text-center"><%= category.c_name %></h3>
+            <div class="text-center">
+              <button class="btn btn-primary" type="button">
+                Số bài viết <span class="badge"><%= category.blog_num %></span>
+              </button>
+
+              <%= link_to "Sửa", edit_admin_blog_category_path(category.c_id), remote: true, class: "btn btn-info" %>
+              <button class="btn btn-danger blog-cate-delete-btn" data-title="Xóa" data-blog-cate-id="<%= category.c_id %>">
+                Xóa
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <%= paginate @categories %>
+</div>
+
+<div class="modal fade" id="delete-blog-category-modal" tabindex="-1" role="dialog" aria-labelledby="delete" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <a href="#" class="close" data-dismiss="modal" aria-label="close">&times;</a>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        <h4 class="modal-title custom_align" id="Heading">Xóa danh mục bài viết</h4>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-danger">Bạn có chắc chắn xóa danh mục bài viết <strong class="delete-brand-name"></strong> không?</div>
+      </div>
+      <div class="modal-footer ">
+        <a href="#" data-method="delete" class="btn btn-success" id="button-delete-blog-cate-confirm">Có</a>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Không</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+</div>
