@@ -64,7 +64,7 @@
                   <%= f.text_field :name, class: "form-control category-name-create", placeholder: "Tên danh mục", required: true%>
                 </div>
                 <div class="form-group">
-                  <%= f.text_area :description, class: "form-control category-des-create", placeholder: "Mô tả", required: true%>
+                  <%= f.cktext_area :description, class: "form-control category-des-create", placeholder: "Mô tả", required: true%>
                 </div>
                 <div class="form-group">
                   <%= f.number_field :category_order, class: "form-control category-order-create", placeholder: "Thứ tự hiển thị trong danh mục cha", required: true%>
@@ -102,7 +102,7 @@
             </div>
             <div class="form-group">
               <strong>Mô tả</strong></br>
-              <textarea rows="2" class="form-control category-des-update" placeholder="Mô tả" required></textarea>
+              <%= cktext_area nil, nil, ckeditor: {toolbar: 'mini'}, class: "form-control category-des-update", id: "category-des-update" %>
             </div>
             <div class="form-group category-order-update-div">
               <strong>Thứ tự hiển thị</strong></br>

@@ -18,7 +18,8 @@ $(document).on('turbolinks:load', function(){
     $("#category_id").val(id);
     $(".category-title-update").html(name);
     $(".category-name-update").val(name);
-    $(".category-des-update").val(des);
+    $(".category-des-update").val("aaaaaaa");
+    CKEDITOR.instances['category-des-update'].setData(des);
     $(".category-order-update").val(categoryOrder);
     $(".category-block-update").val(homeBlock);
     $(".category-order-block-update").val(homeOrder);
@@ -34,7 +35,7 @@ $(document).on('turbolinks:load', function(){
   $("#button-update-category-confirm").click(function() {
     var id = $("#category_id")[0].value;
     var name = $(".category-name-update")[0].value;
-    var des = $(".category-des-update")[0].value;
+    var des = CKEDITOR.instances['category-des-update'].getData();
     var categoryOrder = $(".category-order-update")[0].value;
     var homeBlock = $(".category-block-update")[0].value;
     var homeOrder = $(".category-order-block-update")[0].value;

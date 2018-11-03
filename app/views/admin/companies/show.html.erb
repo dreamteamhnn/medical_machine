@@ -49,7 +49,7 @@
             </div>
             <div class="form-group">
               Mô tả </br>
-              <%= f.text_area :about, class: "form-control", readonly: true %>
+              <%= f.object.about.html_safe %>
             </div>
             <div class="form-group">
               Địa chỉ </br>

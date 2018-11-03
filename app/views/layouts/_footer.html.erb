@@ -4,7 +4,7 @@
       <section id="second-footer-area" class="second-footer-area widget-area footer-area--4-cols row">
         <aside id="text-4" class="col-xs-12 col-sm-12 col-md-6 col-lg-3  widget footer-aside-index">
           <h5 class="widget-title">Giới thiệu</h5>
-          <div class="textwidget"><%= @company.about %></div>
+          <div class="textwidget company-about"><%= @company.about.html_safe %></div>
         </aside>
 
         <!-- Column tag -->

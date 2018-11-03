@@ -55,7 +55,7 @@
                   <textarea rows="2" id="brand-location<%= brand.id %>" class="form-control brand-location hidden"><%= brand.location %></textarea>
                 </td>
                 <td class="td-brand-des">
-                  <p class="p-brand-des" id="p-brand-des<%= brand.id %>"><%= brand.description %></p>
+                  <div class="p-brand-des" id="p-brand-des<%= brand.id %>"><%= brand.description&.html_safe %></div>
                   <textarea rows="2" id="brand-des<%= brand.id %>" class="form-control brand-des hidden"><%= brand.description %></textarea>
                 </td>
                 <td class="td-brand-order">
@@ -116,7 +116,7 @@
                 <%= f.text_field :location, class: "form-control brand-location-create", placeholder: "Tên nước"%>
               </div>
               <div class="form-group">
-                <%= f.text_area :description, class: "form-control brand-des-create", placeholder: "Mô tả"%>
+                <%= f.cktext_area :description, class: "form-control brand-des-create", ckeditor: {toolbar: 'mini'}, placeholder: "Mô tả"%>
               </div>
               <div class="form-group">
                 <%= f.number_field :home_order, class: "form-control brand-order-create", placeholder: "Thứ tự hiển thị"%>
@@ -165,3 +165,5 @@
     </div>
   </div>
 </div>
+
+<%= render 'admin/shared/ckeditor_modal' %>

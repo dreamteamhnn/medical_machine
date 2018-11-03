@@ -86,6 +86,8 @@ group :development do
   gem "capistrano-rbenv", "~> 2.0"
   # include helper tasks
   gem "capistrano-cookbook", require: false
+  # view partial view path
+  gem "view_source_map"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
