@@ -47,11 +47,10 @@ $(document).on('turbolinks:load', function(){
       method: 'post',
       success: function(result, status, xhr) {
         if(result.status === 'success') {
-          console.log(result)
           var templateConent = result.content;
           var ckContent = CKEDITOR.instances.blog_content.getData();
           var ckNewContent = templateConent.replace('[blog_content]', ckContent);
-          CKEDITOR.instances.blog_content.setData(ckNewContent); 
+          CKEDITOR.instances.blog_content.setData(ckNewContent);
         }
       },
       error: function() {

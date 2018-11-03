@@ -15283,6 +15283,10 @@ header .page-title {
     font-size: .875rem
 }
 
+.widget .company-about {
+    text-transform: none;
+}
+
 #tm_builder_outer_content .tm_pb_module.tm_pb_widget_area .widget.tm_about_store_widget,
 .widget.tm_about_store_widget,
 .widget>.widget {
