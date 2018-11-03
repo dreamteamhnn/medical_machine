@@ -61,7 +61,7 @@
                   <input type='text' id="field-name<%= field.id %>" class="form-control field-name hidden" value='<%= field.name %>'/>
                 </td>
                 <td class="td-field-des">
-                  <p class="p-field-des" id="p-field-des<%= field.id %>"><%= field.description %></p>
+                  <div class="p-field-des" id="p-field-des<%= field.id %>"><%= field.description&.html_safe %></div>
                   <textarea rows="2" id="field-des<%= field.id %>" class="form-control field-des hidden"><%= field.description %></textarea>
                 </td>
                 <td class="td-field-order">
@@ -118,7 +118,7 @@
             <input class="form-control field-name-create" type="text" placeholder="Tên lĩnh vực">
           </div>
           <div class="form-group">
-            <textarea rows="2" class="form-control field-des-create" placeholder="Mô tả"></textarea>
+            <%= cktext_area nil, nil, class: "form-control field-des-create", id: "field-des-create", ckeditor: {toolbar: 'mini'} %>
           </div>
           <div class="form-group">
             <input class="form-control field-order-create" type="text" placeholder="Thứ tự hiển thị">
@@ -134,3 +134,5 @@
     <!-- /.modal-dialog -->
   </div>
 </div>
+
+<%= render 'admin/shared/ckeditor_modal' %>

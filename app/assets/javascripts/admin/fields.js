@@ -30,7 +30,7 @@ $(document).on('turbolinks:load', function(){
     });
   });
 
-  $(".td-field-name, .td-field-order, .td-field-des").click(function() {
+  $(".td-field-name, .td-field-order").click(function() {
     var fieldId = $(this)[0].parentElement.id.replace("field", "");
     var inputClass = $(this)[0].className.replace("td-", "");
     $("#p-"+inputClass+fieldId).addClass("hidden");
@@ -39,6 +39,24 @@ $(document).on('turbolinks:load', function(){
     var strLength = searchInput.val().length * 2;
     searchInput.focus();
     searchInput[0].setSelectionRange(strLength, strLength);
+  });
+
+  $('.td-field-des').click(function() {
+    var fieldId = $(this)[0].parentElement.id.replace("field", "");
+    var searchInput = $("#field-des"+fieldId);
+    $('#ckeditor-modal').attr('data-field-id', fieldId);
+    CKEDITOR.instances['tmp-ckeditor-content'].setData(searchInput.val());
+    $('#ckeditor-modal').modal('show');
+    $("#p-field-des"+fieldId).addClass("hidden");
+    searchInput.removeClass("hidden");
+  });
+
+  $('#apply-content-btn').click(function() {
+    var fieldDes = CKEDITOR.instances['tmp-ckeditor-content'].getData();
+    var fieldId = $('#ckeditor-modal').attr('data-field-id');
+    var searchInput = $("#field-des"+fieldId);
+    searchInput.val(fieldDes);
+    $('#ckeditor-modal').modal('hide');
   });
 
   $(".button-delete-field").click(function() {
@@ -56,7 +74,7 @@ $(document).on('turbolinks:load', function(){
       $("#field-table .alert-success-delete").removeClass("hidden");
       $("#field-table .alert-danger-delete").addClass("hidden");
       $('#delete').modal('hide');
-      $('#dataTables-example').dataTable().ajax.reload();
+      window.location.reload(true);
     }).fail(function(errors) {
       $("#field-table .alert-danger-delete").removeClass("hidden");
       $("#field-table .alert-success-delete").addClass("hidden");
@@ -66,7 +84,7 @@ $(document).on('turbolinks:load', function(){
   $("#button-create-field-confirm").click(function() {
     var fieldName = $("#create .field-name-create").val();
     var fieldOrder = $("#create .field-order-create").val();
-    var fieldDes = $("#create .field-des-create").val();
+    var fieldDes = CKEDITOR.instances['field-des-create'].getData();
     $.ajax({
       data: {
         name: fieldName,
@@ -80,7 +98,7 @@ $(document).on('turbolinks:load', function(){
       $("#field-table .alert-success-create").removeClass("hidden");
       $("#field-table .alert-danger-create").addClass("hidden");
       // window.location.reload(true);
-      $('#dataTables-example').dataTable().ajax.reload();
+      window.location.reload(true);
     }).fail(function(errors) {
       $("#field-table .alert-danger-create").removeClass("hidden");
       $("#field-table .alert-success-create").addClass("hidden");
