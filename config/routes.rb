@@ -46,5 +46,6 @@ Rails.application.routes.draw do
     resources :blogs
     post "/templates/:id" => "templates#show", defaults: {format: "json"}, as: :template
     resources :templates, only: [:index, :create, :update, :destroy]
+    resources :blog_categories
   end
 end

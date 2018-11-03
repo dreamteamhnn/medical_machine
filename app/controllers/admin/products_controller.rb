@@ -15,7 +15,6 @@ class Admin::ProductsController < Admin::BaseController
   end
 
   def create
-    binding.pry
     @product = Product.new(product_params)
     if @product.save
       flash[:success] = "Tạo mới sản phẩm #{strip_tags(@product.name)} thành công!"
