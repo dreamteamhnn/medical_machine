@@ -1,6 +1,12 @@
+<% content_for :admin_body_class, 'admin-blog-form-page' %>
 <div id="page-wrapper">
   <div class="row">
     <div class="col-lg-12">
+      <div class="back-link">
+        <%= link_to admin_blogs_path do %>
+          <span class="glyphicon glyphicon-chevron-left"></span> Danh sách bài viết
+        <% end %>
+      </div>
       <h1 class="page-header"><%= blog_page_title %></h1>
     </div>
   </div>
@@ -17,10 +23,10 @@
               <%= f.text_field :title, class: "form-control" %>
             </div>
             <table class="table table-default table-inline-blog-form">
-              <tr>
+              <!-- <tr>
                 <td><strong>Template</strong></td>
-                <td><%= f.select :template_id, @template_options, class: "form-control" %></td>
-              </tr>
+                <td><%#= f.select :template_id, @template_options, class: "form-control" %></td>
+              </tr> -->
               <tr>
                 <td>
                   <label for="blog_is_important">Bài viết nổi bật:</label>

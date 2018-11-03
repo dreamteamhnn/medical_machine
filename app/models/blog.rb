@@ -8,7 +8,7 @@ class Blog < ApplicationRecord
 
   paginates_per Settings.limit.paginate.admin_blog
 
-  belongs_to :template
+  # belongs_to :template
   has_many :blog_images, dependent: :destroy
   has_many :feature_images, ->{where(is_feature: true)},
     class_name: BlogImage.name

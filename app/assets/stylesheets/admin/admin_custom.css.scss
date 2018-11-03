@@ -221,6 +221,9 @@
   .page-header {
     font-size: 22px;
   }
+  .back-link {
+    margin-top: 10px;
+  }
   .blog-content {
     margin-top: 40px;
     .content-label {
@@ -239,6 +242,12 @@
     &.panel-body {
       padding-bottom: 0;
     }
+  }
+}
+
+.admin-blog-form-page {
+  .back-link {
+    margin-top: 10px;
   }
 }
 
