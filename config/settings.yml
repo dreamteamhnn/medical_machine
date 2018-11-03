@@ -20,6 +20,7 @@ limit:
     documents: 12
     videos: 12
     admin_blog: 10
+    admin_blog_category: 18
   menu_block:
     a_to_z: 3.0
     brand: 4.0

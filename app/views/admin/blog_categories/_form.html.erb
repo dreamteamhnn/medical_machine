@@ -1,0 +1,24 @@
+<div class="modal fade" id="<%= action_name %>-blog-category-modal" tabindex="-1" role="dialog" aria-labelledby="delete" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <%= form_for [:admin, @category] do |f| %>
+      <div class="modal-header">
+        <a href="#" class="close" data-dismiss="modal" aria-label="close">&times;</a>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        <h4 class="modal-title custom_align" id="Heading"><%= action_name == 'new' ? 'Thêm mới' : 'Sửa' %> danh mục bài viết</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <strong>Tên danh mục</strong> </br>
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+      </div>
+      <div class="modal-footer ">
+        <%= f.submit "#{action_name == 'new' ? 'Tạo' : 'Sửa'}", class: "btn btn-success" %>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+      </div>
+      <% end %>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+</div>

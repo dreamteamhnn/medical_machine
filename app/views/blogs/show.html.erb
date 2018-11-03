@@ -20,7 +20,7 @@
           </header>
 
           <figure class="post-thumbnail">
-            <%= image_tag @blog.blog_images.first.url, alt: @blog.feature_image_alt, title: @blog.feature_image_title, class: "post-thumbnail__img wp-post-image" %>
+            <%= image_tag @blog.blog_images.first.url, alt: @blog.feature_image_alt, title: @blog.feature_image_title, class: "post-thumbnail__img wp-post-image" if @blog.blog_images.first %>
           </figure>
           <!-- .post-thumbnail -->
           <div class="entry-content">
@@ -28,9 +28,9 @@
             <p>
               <%= @blog.content.html_safe.html_safe %>
             </p>
-            <p>
+            <%= content_tag :p if @blog.blog_images.second do %>
               <%= image_tag @blog.blog_images.second.url, alt: @blog.feature_image_alt, title: @blog.feature_image_title, class: "post-thumbnail__img" %>
-            </p>
+            <% end %>
             <% if @blog_relate_1 %>
               <article class="inner-article hzol-clear story">
                 <figure class="cover image-cover">
