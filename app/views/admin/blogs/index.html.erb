@@ -19,7 +19,6 @@
               <th colspan="3">Ảnh đại diện bài viết</th>
               <th>Bài viết nổi bật</th>
               <th>Bài viết dịch vụ sửa chữa</th>
-              <th>Template</th>
               <th colspan="2">Loại bài viết</th>
             </tr>
           </thead>
@@ -48,9 +47,6 @@
                       <%= check_box_tag :is_service, 1, blog.is_service, disabled: true %>
                     </label>
                   </div>
-                </td>
-                <td>
-                  <%= blog.template&.name %>
                 </td>
                 <td colspan="2">
                   <%= blog.blog_categories.pluck(:name).join(", ") %>
