@@ -1,75 +1,44 @@
 <%= render "layouts/breadcrumbs" %>
-<div class="site-content_wrap container">
-  <div class="row">
-    <div id="primary" class="col-xs-12 col-lg-10 col-lg-push-2">
-      <main id="main" class="site-main" role="main">
-        <header class="page-header">
-          <h1 class="page-title screen-reader-text">Category: Accessories</h1>
-        </header>
-        <!-- .page-header -->
-        <div class="posts-list posts-list--default content-excerpt one-left-sidebar featured-image--fullwidth <%= 'non-blog' unless @blogs.present?%>">
-          <% unless @blogs.present? %>
-            <span>Bài viết đang được cập nhật.</span>
-          <% end %>
+<div class="site-content_wrap container article-list-page">
+  <main id="main" class="site-main" role="main">
+    <div class="row">
+      <div class="col-md-10 col-md-push-2">
+        <% unless @blogs.present? %>
+          <span>Bài viết đang được cập nhật.</span>
+        <% end %>
+        <h5 class="tm-posts_title">
+          Tin Tức
+        </h5>
+        <div class="row">
           <% @blogs.each do |blog| %>
-            <article id="post-73" class="posts-list__item card post-73 post type-post status-publish format-standard has-post-thumbnail hentry category-accessories category-diy-home category-tips tag-drill tag-hammer tag-hand-tools tag-power-tools has-thumb">
-              <figure class="post-thumbnail">
-                <%= link_to "#{image_tag blog.blog_images.first.url, alt: blog.feature_image_alt, title: blog.feature_image_title}".html_safe, blog_detail_path(blog), class: "post-thumbnail__link post-thumbnail--fullwidth" %>
-                <span class="post-cats">
-                  <% blog.blog_categories.uniq.each do |category| %>
-                    <%= link_to category.name, blog_list_path(blog_category_id: category.id) %>
+            <div class="col-sm-6 col-md-4">
+              <div class="thumbnail">
+                <div class="blog-image">
+                  <%= link_to blog_detail_path(blog) do %>
+                    <%= image_tag blog.feature_image_thumb_url, alt: blog.feature_image_alt, title: blog.feature_image_title %>
                   <% end %>
-                </span>
-              </figure>
-              <!-- .post-thumbnail -->
-              <div class="post-list__item-content ">
-                <header class="entry-header">
-                  <h3 class="entry-title">
-                    <%= link_to blog.title, blog_detail_path(blog) %>
-                  </h3>
-                </header>
-                <!-- .entry-header -->
-                <div class="entry-content">
-                  <p>
-                    <%= blog.content[0..500] %>
-                  </p>
                 </div>
-                <!-- .entry-content -->
-                <footer class="entry-footer">
-                  <div class="entry-meta">
-                    <span class="post__date">
-                      <%= link_to blog.created_at.strftime(Settings.format.created_at), blog_list_path(time: blog.time_param[:value]) %>
-                    </span>
-                    <span class="post__tags">
-                      <% blog.tags.uniq.each do |tag|%>
-                        <%= link_to tag.name, blog_list_path(tag_id: tag.id) %>
-                        <% unless tag == blog.tags.last %>
-                          ,
-                        <% end %>
-                      <% end %>
-                    </span>
-                    <div class="share-btns__list-wrap">
-                    </div>
+                <div class="caption">
+                  <h3><%= link_to blog.title, blog_detail_path(blog) %></h3>
+                  <div class="tm-posts_item_meta entry-meta pull-right">
+                    <a class="text-right text-sm"><small>Ngày đăng: <%= blog.created_at.strftime(Settings.format.created_at) %></small></a>
                   </div>
-                  <!-- .entry-meta -->
-                  <%= link_to blog_detail_path(blog), class: 'btn btn-secondary' do %>
-                      <span class="link__text">Xem thêm</span>
+                  <div class="clearfix"></div>
+                  <div class="short-desc"><%= truncate(blog.content, length: 150, separator: ' ', escape: false) {link_to '<em><strong>Xem thêm</strong></em>'.html_safe, blog_detail_path(blog)} %></div>
+                  <% blog.blog_categories.limit(3).uniq.each do |category| %>
+                    <%= content_tag :span, category.name, class: "label label-#{cycle('success', 'info', 'warning', name: 'colors')}" %>
                   <% end %>
-                </footer>
-                <!-- .entry-footer -->
+                  <% reset_cycle('colors') %>
+                </div>
               </div>
-              <!-- .post-list__item-content -->
-            </article>
+            </div>
           <% end %>
         </div>
-        <nav class="woocommerce-pagination">
-          <%= paginate @blogs %>
-        </nav>
-      </main>
-      <!-- #main -->
+      </div>
+        <%= render 'left_sidebar' %>
     </div>
-    <!-- #primary -->
-    <%= render "left_sidebar" %>
-  </div>
-  <!-- .row -->
+    <nav class="woocommerce-pagination">
+      <%= paginate @blogs %>
+    </nav>
+  </main>
 </div>
