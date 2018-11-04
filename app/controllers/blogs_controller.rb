@@ -3,8 +3,7 @@ class BlogsController < ApplicationController
   before_action :load_blogs, only: :index
   before_action :load_left_menu, only: [:show, :index]
 
-  def index
-  end
+  def index;end
 
   def show
   end
@@ -21,7 +20,7 @@ class BlogsController < ApplicationController
       @blogs = Blog.all
     end
     @blogs = @blogs.page(params[:page]).per(Settings.limit.paginate.blogs)
-    @breads = [{title: "Blog", link: ""}]
+    @breads = [{title: "Tin Tức", link: ""}]
   end
 
   def load_left_menu

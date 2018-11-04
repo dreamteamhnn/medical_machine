@@ -20,24 +20,24 @@
     </select>
   </aside>
 
-  <aside id="tag_cloud-5" class="widget widget_tag_cloud">
+  <!-- <aside id="tag_cloud-5" class="widget widget_tag_cloud">
     <h5 class="widget-title">Tags</h5>
     <div class="tagcloud">
-      <% @tags.each do |tag| %>
-        <%= link_to tag.name, blog_list_path(tag_id: tag.id), class: "tag-link-99 tag-link-position-1 #{'tag-active' if tag.id == params[:tag_id].to_i}"%>
-      <% end %>
+      <%# @tags.each do |tag| %>
+        <%#= link_to tag.name, blog_list_path(tag_id: tag.id), class: "tag-link-99 tag-link-position-1 #{'tag-active' if tag.id == params[:tag_id].to_i}"%>
+      <%# end %>
     </div>
-  </aside>
+  </aside> -->
 
-  <aside id="calendar-4" class="widget widget_calendar">
+  <<!-- aside id="calendar-4" class="widget widget_calendar">
     <div id="calendar_wrap" class="calendar_wrap">
-      <%= month_calendar do |date| %>
-        <%= date.day %>
-      <% end %>
+      <%#= month_calendar do |date| %>
+        <%#= date.day %>
+      <%# end %>
     </div>
-  </aside>
+  </aside> -->
 
-  <aside id="tm_willard_widget_subscribe_follow-1" class="widget widget-subscribe">
+  <!-- <aside id="tm_willard_widget_subscribe_follow-1" class="widget widget-subscribe">
     <div class="subscribe-follow__wrap">
       <div class="follow-block">
         <div class="follow-block-content">
@@ -62,5 +62,5 @@
         <% end %>
       </div>
     </div>
-  </aside>
+  </aside> -->
 </div>
