@@ -1,0 +1,37 @@
+.article-list-page, .home-blog-part {
+  .thumbnail {
+    height: 410px;
+    overflow: hidden;
+    .blog-image {
+      height: 150px;
+      display: flex;
+      display:flex;
+      align-items:center;
+      overflow: hidden;
+      > a {
+        margin: 0 auto;
+        overflow: hidden;
+        img {
+          overflow: hidden;
+        }
+      }
+    }
+    .caption {
+      h3 {
+        background-color: #fff;
+        padding-top: 10px;
+        margin-bottom: 0;
+        font-size: 14px;
+      }
+      .short-desc {
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+.home-blog-part {
+  .thumbnail {
+    height: 300px;
+  }
+}

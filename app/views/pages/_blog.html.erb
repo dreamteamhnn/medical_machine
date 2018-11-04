@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container home-blog-part">
   <div class=" row tm_pb_row tm_pb_row_3">
     <div class="tm_pb_column tm_pb_column_4_4  tm_pb_column_5 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 tm_pb_vertical_alligment_start">
       <hr class="tm_pb_module tm_pb_space tm_pb_divider_2">
@@ -9,25 +9,31 @@
           </h5>
         </div>
         <div class="tm-posts_listing">
-          <div class="row tm-posts_layout-1">
-            <% @blogs.each do |blog| %>
-              <div class="tm_pb_column col-xl-3 col-lg-3 col-md-6 col-sm-12">
-                <div class="tm-posts_item">
-                  <div class="tm-posts_item_content_wrap">
-                    <%= link_to "#{image_tag(blog.feature_image_thumb_url, alt: blog.feature_image_alt, title: blog.feature_image_title)}".html_safe, blog_detail_path(blog), class: "tm-posts_img" %>
-                    <h5 class="tm-posts_item_title">
-                      <%= link_to blog.title, blog_detail_path(blog) %>
-                    </h5>
-                    <div class="tm-posts_item_meta entry-meta">
-                      <%= link_to blog.created_at.strftime(Settings.format.created_at), blog_list_path(time: blog.time_param[:value]), class: "post__date" %>
-                    </div>
+          <div class="row">
+          <% @blogs.each do |blog| %>
+            <div class="col-sm-6 col-md-3">
+              <div class="thumbnail">
+                <div class="blog-image">
+                  <%= link_to blog_detail_path(blog) do %>
+                    <%= image_tag blog.feature_image_thumb_url, alt: blog.feature_image_alt, title: blog.feature_image_title %>
+                  <% end %>
+                </div>
+                <div class="caption">
+                  <h3><%= link_to blog.title, blog_detail_path(blog) %></h3>
+                  <div class="tm-posts_item_meta entry-meta pull-right">
+                    <a class="text-right text-sm"><small>Ngày đăng: <%= blog.created_at.strftime(Settings.format.created_at) %></small></a>
                   </div>
-                  <div class="posts_item_content_footer">
-                  </div>
+                  <div class="clearfix"></div>
+
+                  <% blog.blog_categories.limit(3).uniq.each do |category| %>
+                    <%= content_tag :span, category.name, class: "label label-#{cycle('success', 'info', 'warning', name: 'colors')}" %>
+                  <% end %>
+                  <% reset_cycle('colors') %>
                 </div>
               </div>
-            <% end %>
-          </div>
+            </div>
+          <% end %>
+        </div>
         </div>
       </div>
       <!-- .tm_pb_posts -->
