@@ -21,6 +21,10 @@
             <li><strong>Bài viết dịch vụ sửa chữa:</strong>
               <%= check_box_tag :is_service, 1, @blog.is_service, disabled: true %>
             </li>
+            <li>
+              <strong>Thứ tự hiển thị:</strong>
+              <strong class="text-danger"><%= @blog.order %></strong>
+            </li>
           </ul>
           <div class="blog-img">
             <div class="row">

@@ -38,6 +38,12 @@
                 </td>
               </tr>
               <tr>
+                <td><strong>Thứ tự hiển thị của bài viết</strong></td>
+                <td>
+                  <%= f.number_field :order, class: 'form-control', placeholder: 'Là các số (ví dụ 1,2,20,30,...)' %>
+                </td>
+              </tr>
+              <tr>
                 <td><strong>Loại bài viết</strong></td>
                 <td>
                   <%= f.collection_check_boxes :blog_category_ids, @blog_categories, :id, :name do |cb| %>
@@ -78,7 +84,7 @@
             </div>
 
             <div>
-              <%= f.submit "Sửa", class: "btn btn-primary" %>
+              <%= f.submit "#{action_name == 'new' ? 'Tạo' : 'Sửa'}", class: "btn btn-primary" %>
             </div>
           <% end %>
         </div>
