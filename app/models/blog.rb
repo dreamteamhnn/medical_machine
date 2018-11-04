@@ -21,9 +21,11 @@ class Blog < ApplicationRecord
 
   accepts_nested_attributes_for :blog_images, allow_destroy: true
 
+  scope :take_ordered_list, ->{order('IF(`order` IS NULL, 99999, `order`) ASC, created_at DESC')}
+
   scope :new_articles_for_home, -> do
     where(is_important: true)
-      .order("created_at DESC").limit(Settings.limit.blog_home_page)
+      .take_ordered_list.limit(Settings.limit.blog_home_page)
       .includes :blog_images
   end
 
@@ -52,6 +54,19 @@ class Blog < ApplicationRecord
     m = created_at.month
     y = created_at.year
     {value: "#{m}_#{y}", title: "Tháng #{m}/#{y}"}
+  end
+
+  class << self
+    def bulk_delete_execute ids
+      self.transaction do
+        ids.each do |blog_id|
+          Blog.find(blog_id).destroy
+        end
+      end
+    result = {ok: true}
+    rescue ActiveRecord::RecordNotFound => e
+      result = {ok: false, error_msg: e.message}
+    end
   end
 
   private

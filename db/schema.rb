@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181003182759) do
+ActiveRecord::Schema.define(version: 20181104092916) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string "email", default: "", null: false
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 20181003182759) do
     t.integer "relation_blog_id_2"
     t.boolean "is_service"
     t.string "slug"
+    t.integer "order"
     t.index ["blog_category_id"], name: "index_blogs_on_blog_category_id"
     t.index ["slug"], name: "index_blogs_on_slug", unique: true
     t.index ["template_id"], name: "index_blogs_on_template_id"

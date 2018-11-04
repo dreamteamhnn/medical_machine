@@ -53,10 +53,24 @@ class Admin::BlogsController < Admin::BaseController
     redirect_to admin_blogs_path
   end
 
+  def bulk_delete
+    unless params[:blog_ids].present?
+      flash[:danger] = "Không có bài viết nào được chọn để xóa, vui lòng chọn các bài viết trước khi xóa"
+      redirect_to admin_blogs_path and return
+    end
+    result = Blog.bulk_delete_execute params[:blog_ids]
+    if result[:ok]
+      flash[:success] = "Xóa các bài viết thành công"
+    else
+      flash[:danger] = result[:error_msg]
+    end
+    redirect_to admin_blogs_path
+  end
+
   private
   def blog_params
     params.require(:blog).permit(:title, :content,
-      :is_important, :is_service, :relation_blog_id_1,
+      :is_important, :is_service, :relation_blog_id_1, :order,
       :relation_blog_id_2, blog_category_ids: [],
       blog_images_attributes: [:id, :url, :is_feature, :_destroy])
   end
