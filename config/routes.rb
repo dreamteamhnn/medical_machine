@@ -43,7 +43,9 @@ Rails.application.routes.draw do
     resources :medias
     devise_for :admins, :controllers => {:sessions => 'admin/sessions',
       :passwords => 'admin/passwords' }, path: '', path_names: { sign_in: 'login', sign_out: 'logout'}
-    resources :blogs
+    resources :blogs do
+      post 'bulk_delete', on: :collection
+    end
     # post "/templates/:id" => "templates#show", defaults: {format: "json"}, as: :template
     # resources :templates, only: [:index, :create, :update, :destroy]
     resources :blog_categories

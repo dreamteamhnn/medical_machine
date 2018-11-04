@@ -38,4 +38,21 @@ $(document).on('turbolinks:load', function(){
       currentDom.prev().find('img').attr('src', '/preview_no_image.jpg');
     }
   });
+
+  // bulk delete
+
+  $('#bulk-delete-blogs-confirm-btn').on('click', function() {
+    if(checkSelectedBlogsExist()) {
+      $('#bulk-delete-blogs-modal').modal('hide');
+      $('#bulk_delete_form').submit();
+    } else {
+      $('#bulk-delete-blogs-modal').modal('hide');
+      $('#no-selected-blogs-alert-modal').modal('show');
+    }
+  });
+
+  function checkSelectedBlogsExist() {
+    var selectedBlogCount = $('.will-delete-blog-cb:checked').length;
+    return selectedBlogCount > 0;
+  }
 });
