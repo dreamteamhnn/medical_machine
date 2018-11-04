@@ -3,7 +3,7 @@
     <% @medias.each_slice(3).to_a.each do |block| %>
       <tr>
         <% block.each do |video| %>
-          <td class="video-td-product">
+          <td class="click-video video-td-product video-td-product-<%= video.id %>">
             <iframe width="374" height="284" src="<%= video.video_url %>" frameborder="0" allowfullscreen></iframe>
             <div class="content-video">
               <strong><%= video.title %></strong><br/>

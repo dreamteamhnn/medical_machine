@@ -1,0 +1,73 @@
+<%= render "layouts/breadcrumbs" %>
+<div class="site-content_wrap container">
+  <div class="row">
+    <div id="primary" class="col-xs-12 col-lg-10 col-lg-push-2">
+      <main id="main" class="site-main" role="main">
+        <div id="woo-primary" class="content-area willard">
+          <div id="woo-main" class="site-main" role="main">
+            <div id="video-detail">
+
+              <div id="video-detail-left">
+                <div id="video-detail-origin">
+                  <iframe src="<%= @video.video_url %>" width="560" height="495" frameborder="0" allowfullscreen class="video"></iframe>
+                  <div class="content-video">
+                    <strong><%= @video.title %></strong><br/>
+                    <%= @video.description %><br/>
+                    <p>Ngày tạo : <%= @video.created_at %></p>
+                  </div>
+                </div>
+                <div id="video-related">
+                  <div class="panel-group">
+                    <div class="panel panel-warning">
+                      <div class="panel-heading">Video cùng danh mục</div>
+                      <div class="panel-body">
+                        <table class="table table-bordered">
+                          <tbody>
+                            <% @videos_related.each_slice(3).to_a.each do |block| %>
+                              <tr>
+                                <% block.each do |video| %>
+                                  <td class="click-video video-td-product video-td-product-<%= video.id %>">
+                                    <iframe width="374" height="284" src="<%= video.video_url %>" frameborder="0" allowfullscreen class="video-related"></iframe>
+                                    <div class="content-video">
+                                      <strong><%= video.title %></strong>
+                                    </div>
+                                  </td>
+                                <% end %>
+                              </tr>
+                            <% end %>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="video-random">
+                <div class="panel-group">
+                  <div class="panel panel-warning">
+                    <div class="panel-heading">Video sản phẩm</div>
+                    <div class="panel-body">
+                      <% @medias.each_slice(3).to_a.each do |block| %>
+                        <% block.each do |video| %>
+                          <div class="click-video video-random video-td-product-<%= video.id %>">
+                            <iframe src="<%= video.video_url %>" height="230" frameborder="0" allowfullscreen class="video"></iframe>
+                            <div class="content-video">
+                              <strong><%= video.title %></strong>
+                            </div>
+                          </div>
+                        <% end %>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <%= render "left_navigator" %>
+  </div>
+</div>

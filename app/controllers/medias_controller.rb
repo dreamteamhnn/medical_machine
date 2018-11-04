@@ -1,5 +1,5 @@
 class MediasController < ApplicationController
-  before_action :load_breadcrum, only: :index
+  before_action :load_breadcrum, only: [:index, :show]
 
   def index
     if params[:media_type] == "0"
@@ -29,6 +29,12 @@ class MediasController < ApplicationController
       @medias.where("media_type = ?", params[:media_type])
         .page(params[:page]).per(per_page_medias)
     end
+  end
+
+  def show
+    @video = Medium.find_by(id: params["id"])
+    @medias = Medium.where(media_type: 1)
+    @videos_related = @medias.where(field_id: @video.field_id)
   end
 
   private
