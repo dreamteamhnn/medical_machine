@@ -41,7 +41,9 @@ Rails.application.routes.draw do
     resources :products
     resources :categories
     resources :multiple_categories
-    resources :home_categories, only: [:index, :update, :edit]
+    resources :home_categories, only: [:update, :edit]
+    put "/product_quick_save/:product_id" => "products#quick_save", as: :product_quick_save
+    get "/products_by_category/:category_id" => "multiple_categories#products_by_category", as: :products_by_category
     resources :imports
     resources :tags
     resources :subscribers
