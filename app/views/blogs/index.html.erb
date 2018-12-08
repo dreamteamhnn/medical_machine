@@ -20,12 +20,11 @@
                 </div>
                 <div class="caption">
                   <h3><%= link_to blog.title, blog_detail_path(blog) %></h3>
-                  <div class="tm-posts_item_meta entry-meta pull-right">
+                  <div class="tm-posts_item_meta entry-meta">
                     <a class="text-right text-sm"><small>Ngày đăng: <%= blog.created_at.strftime(Settings.format.created_at) %></small></a>
                   </div>
-                  <div class="clearfix"></div>
                   <% if blog.content %>
-                    <div class="short-desc"><%= truncate(blog.content, length: 150, separator: ' ', escape: false) {link_to '<em><strong>Xem thêm</strong></em>'.html_safe, blog_detail_path(blog)} %>
+                    <div class="short-desc"><%= truncate(strip_tags(blog.content), length: 150, separator: ' ', escape: false) {link_to 'Xem thêm'.html_safe, blog_detail_path(blog)} %>
                     </div>
                   <% end %>
                   <% blog.blog_categories.limit(3).uniq.each do |category| %>
