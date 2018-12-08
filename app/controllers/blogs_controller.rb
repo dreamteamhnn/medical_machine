@@ -19,7 +19,7 @@ class BlogsController < ApplicationController
     else
       @blogs = Blog.all
     end
-    @blogs = @blogs.take_ordered_list.page(params[:page]).per(Settings.limit.paginate.blogs)
+    @blogs = @blogs.distinct.take_ordered_list.page(params[:page]).per(Settings.limit.paginate.blogs)
     @breads = [{title: "Tin Tức", link: ""}]
   end
 

@@ -50,6 +50,10 @@ class Blog < ApplicationRecord
     where("MONTH(created_at) = ? AND YEAR(created_at) = ?", time[0], time[1])
   end
 
+  scope :by_keyword, -> keyword do
+    where("title LIKE ? OR content LIKE ?", "%#{keyword}%", "%#{keyword}%")
+  end
+
   def time_param
     m = created_at.month
     y = created_at.year

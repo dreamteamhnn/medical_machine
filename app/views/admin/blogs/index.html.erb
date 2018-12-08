@@ -5,6 +5,10 @@
     </div>
   </div>
   <div class="row" id="blog-table">
+    <%= form_tag admin_blogs_path, method: :get, id: "search_blog_form" do %>
+      <%= text_field_tag :keyword, params[:keyword], placeholder: "Tìm theo tên bài viết" %>
+      <%= button_tag "Tìm" %>
+    <% end %>
     <%= form_tag bulk_delete_admin_blogs_path, id: "bulk_delete_form" do %>
       <div class="col-lg-12">
         <div class="create-div panel-body">
