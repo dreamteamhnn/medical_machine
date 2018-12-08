@@ -1,9 +1,11 @@
 <div class="images">
-  <div class="easyzoom is-ready easyzoom--overlay easyzoom--with-thumbnails">
-    <a href="" class="woocommerce-main-image">
-      <%= image_tag @product.product_images.first.url, size: '400', title: @product.product_images.first.title, alt: @product.product_images.first.alt, 'data-zoom-image': @product.product_images.first.url, id: 'zoom' %>
-    </a>
-  </div>
+  <% if @product.product_images.present? %>
+    <div class="easyzoom is-ready easyzoom--overlay easyzoom--with-thumbnails">
+      <a href="" class="woocommerce-main-image">
+        <%= image_tag @product.product_images.first.url, size: '400', title: @product.product_images.first.title, alt: @product.product_images.first.alt, 'data-zoom-image': @product.product_images.first.url, id: 'zoom' %>
+      </a>
+    </div>
+  <% end %>
 
   <div class="swiper-carousel-container">
     <div id="swiper-carousel-59e9bc5f03f8c" class="tm-willard-carousel swiper-container swiper-container-horizontal" style="cursor: -webkit-grab;">

@@ -24,11 +24,6 @@
                     <a class="text-right text-sm"><small>Ngày đăng: <%= blog.created_at.strftime(Settings.format.created_at) %></small></a>
                   </div>
                   <div class="clearfix"></div>
-
-                  <% blog.blog_categories.limit(3).uniq.each do |category| %>
-                    <%= content_tag :span, category.name, class: "label label-#{cycle('success', 'info', 'warning', name: 'colors')}" %>
-                  <% end %>
-                  <% reset_cycle('colors') %>
                 </div>
               </div>
             </div>

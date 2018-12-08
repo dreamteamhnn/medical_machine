@@ -65,11 +65,11 @@
                       </div>
 
                       <div class="woocommerce-product-details__short-description">
-                        <p>Hãng sản xuất: <%= @product.brand.name %></p>
+                        <p>Hãng sản xuất: <%= @product&.brand&.name %></p>
                       </div>
 
                       <div class="woocommerce-product-details__short-description">
-                        <p><%= @product.short_description.html_safe %></p>
+                        <p><%= @product.short_description&.html_safe %></p>
                       </div>
 
                       <form class="cart" method="post" enctype="multipart/form-data" data-product_id="215" data-product_variations="[hash_array]" current-image="">
