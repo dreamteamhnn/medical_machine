@@ -53,20 +53,35 @@
               <%= f.cktext_area :about, ckeditor: {toolbar: 'mini'}, class: "form-control" %>
             </div>
             <div class="form-group">
-              <strong>Địa chỉ</strong> </br>
-              <%= f.text_area :address, class: "form-control" %>
+              <strong>Địa chỉ Hà Nội</strong> </br>
+              <%= f.text_area :hn_address, class: "form-control" %>
             </div>
             <div class="form-group">
               <div class="col-xs-6">
                 <strong>Vĩ độ (Latitude)</strong></br>
-                <%= f.number_field :map_lat, class: "form-control", step: :any %>
+                <%= f.number_field :hn_map_lat, class: "form-control", step: :any %>
               </div>
               <div class="col-xs-6">
                 <strong>Kinh độ (Longtide)</strong></br>
-                <%= f.number_field :map_lng, class: "form-control", step: :any %>
+                <%= f.number_field :hn_map_lng, class: "form-control", step: :any %>
               </div>
               </br>
+            </div><br>
+            <div class="form-group">
+              <strong>Địa chỉ Sài Gòn</strong> </br>
+              <%= f.text_area :sg_address, class: "form-control" %>
             </div>
+            <div class="form-group">
+              <div class="col-xs-6">
+                <strong>Vĩ độ (Latitude)</strong></br>
+                <%= f.number_field :sg_map_lat, class: "form-control", step: :any %>
+              </div>
+              <div class="col-xs-6">
+                <strong>Kinh độ (Longtide)</strong></br>
+                <%= f.number_field :sg_map_lng, class: "form-control", step: :any %>
+              </div>
+              </br>
+            </div><br> 
             <div class="form-group">
               <strong>Số điện thoại</strong> </br>
               <%= f.text_field :phone, class: "form-control" %>
