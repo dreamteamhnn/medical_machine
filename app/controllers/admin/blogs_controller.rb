@@ -5,6 +5,9 @@ class Admin::BlogsController < Admin::BaseController
   def index
     @blogs = Blog.all.includes(:feature_images, :blog_categories)
       .page(params[:page]).per(params[:per_page]).order "created_at DESC"
+    if params[:keyword]
+      @blogs = @blogs.by_keyword params[:keyword]
+    end
   end
 
   def show
