@@ -2,13 +2,14 @@ class Company < ApplicationRecord
   mount_uploader :logo, ImageUploader
   mount_uploader :watermark, ImageUploader
 
-  COMPANY_ATTRIBUTES = [:name, :about, :address, :phone, :contact_info, :work_time,
-    :email, :facebook, :instagram, :website, :map_lat, :map_lng, :contact_name, :logo,
-    :logo_title, :logo_alt, :watermark]
+  COMPANY_ATTRIBUTES = [:name, :about, :hn_address, :sg_address, :phone, :contact_info, :work_time,
+    :email, :facebook, :instagram, :website, :hn_map_lat, :hn_map_lng, :contact_name, :logo,
+    :logo_title, :logo_alt, :watermark, :sg_map_lat, :sg_map_lng]
 
   validates :name, presence: true
   validates :about, presence: true
-  validates :address, presence: true
+  validates :hn_address, presence: true
+  validates :sg_address, presence: true
   validates :phone, presence: true
   validates :contact_info, presence: true
   validates :contact_name, presence: true

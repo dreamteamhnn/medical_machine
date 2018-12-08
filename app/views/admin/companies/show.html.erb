@@ -52,20 +52,35 @@
               <%= f.object.about.html_safe %>
             </div>
             <div class="form-group">
-              Địa chỉ </br>
-              <%= f.text_area :address, class: "form-control", readonly: true %>
+              Địa chỉ Hà Nội</br>
+              <%= f.text_area :hn_address, class: "form-control", readonly: true %>
             </div>
             <div class="form-group">
               <div class="col-xs-6">
                 Vĩ độ (Latitude)</br>
-                <%= f.number_field :map_lat, class: "form-control", step: :any, readonly: true %>
+                <%= f.number_field :hn_map_lat, class: "form-control", step: :any, readonly: true %>
               </div>
               <div class="col-xs-6">
                 Kinh độ (Longtide)</br>
-                <%= f.number_field :map_lng, class: "form-control", step: :any, readonly: true %>
+                <%= f.number_field :hn_map_lng, class: "form-control", step: :any, readonly: true %>
               </div>
               </br>
             </div>
+            <div class="form-group">
+              Địa chỉ Sài Gòn</br>
+              <%= f.text_area :sg_address, class: "form-control", readonly: true %>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-6">
+                Vĩ độ (Latitude)</br>
+                <%= f.number_field :sg_map_lat, class: "form-control", step: :any, readonly: true %>
+              </div>
+              <div class="col-xs-6">
+                Kinh độ (Longtide)</br>
+                <%= f.number_field :sg_map_lng, class: "form-control", step: :any, readonly: true %>
+              </div>
+              </br>
+            </div>            
             <div class="form-group">
               Số điện thoại </br>
               <%= f.text_field :phone, class: "form-control", readonly: true %>
