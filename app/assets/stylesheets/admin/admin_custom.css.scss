@@ -233,6 +233,7 @@
 }
 
 #blog-table {
+  position: relative;
   .blog-table-heading {
     th {
       border-bottom: none !important;
@@ -242,6 +243,12 @@
     &.panel-body {
       padding-bottom: 0;
     }
+  }
+  #search_blog_form {
+    position: absolute;
+    right: 30px;
+    top: 22px;
+    z-index: 1000;
   }
 }
 

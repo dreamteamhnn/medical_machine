@@ -6,38 +6,45 @@
         <div id="woo-primary" class="content-area willard">
           <div id="woo-main" class="site-main" role="main">
             <div id="media-table">
-              <h1 style="text-align: center;">LIÊN HỆ</h1>
+              <div class="row" style="margin-top: 50px;">
+                <div class="col-md-4 col-md-offset-5" style="margin-top: 50px;">
+                  <h1>LIÊN HỆ</h1>
+                  <h2 style="color: blue; font-size: 150%">
+                    STECH INTERNATIONAL ., LTD<br>
+                  </h2>
+                  <h3>
+                    Điện thoại: <%= Company.first.phone %> - Hotline: 096.840.6636 Mr.Tú<br>
+                  </h3>
+                  <h3 class="text-align-none">
+                    EMAIL: <%= Company.first.email %><br>
+                  </h3>
+                  <h3 class="text-align-none">
+                    WEBSITE: <%= Company.first.website %><br>
+                  </h3>
+                  <h2 style="color: red;">Rất vui lòng được phục vụ quý khách !!!</h2>
+                </div>
+              </div>
+
               <div class="row" style="margin-top: 50px;">
                 <div class="col-md-5 col-md-offset-1" style="margin-top: 50px;">
-                <h2 style="color: blue; font-size: 150%">
-                  STECH INTERNATIONAL ., LTD<br>
-                </h2>
-                <h3>
-                  Văn phòng: <%= Company.first.address %><br>
-                </h3>
-                <h3>
-                  Điện thoại: <%= Company.first.phone %> - Hotline: 096.840.6636 Mr.Tú<br>
-                </h3>
-                <h3 class="text-align-none">
-                  EMAIL: <%= Company.first.email %><br>
-                </h3>
-                <h3 class="text-align-none">
-                  WEBSITE: <%= Company.first.website %><br>
-                </h3>
-                <h2 style="color: red;">Rất vui lòng được phục vụ quý khách !!!</h2>
-                </div>
-                <div class="col-md-5">
-                  <div id="map" style="height: 500px; width: 100%"></div>
+                  <h3>
+                    Văn phòng: <%= Company.first.hn_address %><br>
+                  </h3>
+                  <div id="map_hn" style="height: 500px; width: 100%"></div>
+                  <input type="hidden" id="hn_map_lat" value="<%= Company.first.hn_map_lat %>">
+                  <input type="hidden" id="hn_map_lng" value="<%= Company.first.hn_map_lng %>">
                   <script>
                     function initMap() {
-                      var uluru = {lat: 21.006571, lng: 105.777818};
-                      var map = new google.maps.Map(document.getElementById('map'), {
+                      var hn_lat = parseFloat($("#hn_map_lat").val());
+                      var hn_lng = parseFloat($("#hn_map_lng").val());
+                      var uluru = {lat: hn_lat, lng: hn_lng};
+                      var map_hn = new google.maps.Map(document.getElementById('map_hn'), {
                         zoom: 15,
                         center: uluru
                       });
                       var marker = new google.maps.Marker({
                         position: uluru,
-                        map: map
+                        map: map_hn
                       });
                     }
                   </script>
@@ -45,7 +52,35 @@
                   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbEWIklaDSw8BsgQhkabXXYnM3DcKFNyQ&callback=initMap">
                   </script>
                 </div>
+
+                <div class="col-md-5 col-md-offset-1" style="margin-top: 50px;">
+                  <h3>
+                    Văn phòng: <%= Company.first.hn_address %><br>
+                  </h3>
+                  <div id="map_sg" style="height: 500px; width: 100%"></div>
+                  <input type="hidden" id="sg_map_lat" value="<%= Company.first.sg_map_lat %>">
+                  <input type="hidden" id="sg_map_lng" value="<%= Company.first.sg_map_lng %>">
+                  <script>
+                    function initMap() {
+                      var sg_lat = parseFloat($("#sg_map_lat").val());
+                      var sg_lng = parseFloat($("#sg_map_lng").val());
+                      var uluru = {lat: sg_lat, lng: sg_lng};
+                      var map_sg = new google.maps.Map(document.getElementById('map_sg'), {
+                        zoom: 15,
+                        center: uluru
+                      });
+                      var marker = new google.maps.Marker({
+                        position: uluru,
+                        map: map_sg
+                      });
+                    }
+                  </script>
+                  <script async defer
+                  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbEWIklaDSw8BsgQhkabXXYnM3DcKFNyQ&callback=initMap">
+                  </script>
+                </div>               
               </div>
+
               <h1 style="text-align: center; margin-top: 50px;">GỬI LIÊN HỆ</h1>
               <h2 style="text-align: center;">Nếu bạn có bất cứ thắc mắc hay câu hỏi gì? Hãy liên hệ với Chúng tôi ngay</h2>
               <%= form_for @contact, url: contacts_path, html: {class: "width-100"} do |f| %>
