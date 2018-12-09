@@ -42,6 +42,7 @@ $(document).on('turbolinks:load', function(){
     var categoryId = $(this).attr("name").replace("category-", "");
     var url = removeParam("category_id", location.href);
     var id = parseInt(url.substring(url.lastIndexOf('/') + 1)) || 0;
+    var slug = $(this).attr('data-slug');
     if (id > 0) {
       url = url.replace("/" + id, "");
     }
@@ -51,7 +52,7 @@ $(document).on('turbolinks:load', function(){
     var sym = url.indexOf("?") != -1 ? "&" : "?";
     url += sym + "category_id=" + categoryId;
     var path = location.href.split('/')[0]
-    location.href = path + '/loai-san-pham/' + categoryId;
+    location.href = path + '/loai-san-pham/' + slug;
   });
 
   function sortByPrice() {
