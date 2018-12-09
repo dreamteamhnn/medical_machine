@@ -1,5 +1,6 @@
 class Brand < ApplicationRecord
   include FriendlyidConfiguration
+  include BrandDecorator
 
   has_many :products, dependent: :destroy
   mount_uploader :image, ImageUploader

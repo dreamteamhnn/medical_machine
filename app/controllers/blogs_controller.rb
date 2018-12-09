@@ -6,18 +6,22 @@ class BlogsController < ApplicationController
   def index;end
 
   def show
+    set_meta_tags @blog
   end
 
   private
   def load_blogs
     if params[:blog_category_id]
-      @blogs = Blog.by_category(params[:blog_category_id].to_i)
+      @category = BlogCategory.friendly.find params[:blog_category_id]
+      @blogs = Blog.by_category(@category.id)
+      set_meta_tags @category
     elsif params[:tag_id]
       @blogs = Blog.by_tag(params[:tag_id].to_i)
     elsif params[:time]
       @blogs = Blog.by_time(params[:time].split("_").map(&:to_i))
     else
       @blogs = Blog.all
+      set_meta_tags meta_tags_hash
     end
     @blogs = @blogs.distinct.take_ordered_list.page(params[:page]).per(Settings.limit.paginate.blogs)
     @breads = [{title: "Tin Tức", link: ""}]
@@ -45,5 +49,31 @@ class BlogsController < ApplicationController
 
   def prev_blog
     Blog.where("id < ?", params[:id]).last
+  end
+
+  def meta_tags_hash
+    simple_title = 'Tin tức'
+    description = simple_title
+    url = request.url
+    {
+      title: simple_title,
+      description: description,
+      keywords: ['Tin tức', t("site_name")],
+      index: true,
+      og: {
+        title: simple_title,
+        type: "article",
+        description: description,
+        url: url,
+        site_name: I18n.t('site_name')
+      },
+      twitter: {
+        card: "summary",
+        site: "@publisher_handle",
+        title: simple_title,
+        description: description,
+        creator: "@author_handle"
+      }
+    }
   end
 end

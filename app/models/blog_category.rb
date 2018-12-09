@@ -1,6 +1,20 @@
 class BlogCategory < ApplicationRecord
+  include BlogCategoryDecorator
+
   has_many :blog_category_relations, dependent: :destroy
   has_many :blogs, through: :blog_category_relations
+
+  validates :name, presence: true, uniqueness: true
+
+  extend FriendlyId
+
+  friendly_id :beauty_slug, use: :slugged
+
+  private
+
+  def beauty_slug
+    name.convert_vietnamese_to_unicode
+  end
 
   class << self
     def category_list_with_blog_count

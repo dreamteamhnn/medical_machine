@@ -3,6 +3,8 @@ class ContactsController < ApplicationController
 
   def index
     @contact = Subcriber.new
+    @company = Company.first
+    set_meta_tags @company
   end
 
   def create

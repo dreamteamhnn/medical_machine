@@ -1,6 +1,6 @@
 class Blog < ApplicationRecord
-  include BlogDecorator
   extend FriendlyId
+  include BlogDecorator
 
   validates :title, presence: true, uniqueness: true
 

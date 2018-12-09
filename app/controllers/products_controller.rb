@@ -175,6 +175,7 @@ class ProductsController < ApplicationController
 
   def load_data_index
     params[:page] ||= 1
+    menu_item = nil
     if params[:category_id]
       menu_item = Category.friendly.find params[:category_id]
     elsif params[:field_id]
@@ -182,6 +183,9 @@ class ProductsController < ApplicationController
     elsif params[:brand_id]
       menu_item = Brand.friendly.find params[:brand_id]
     end
+
+    set_meta_tags(menu_item) if menu_item
+
     @products_from_menu = get_products(menu_item).page(params[:page])
       .per(Settings.limit.paginate.products)
 
@@ -191,6 +195,7 @@ class ProductsController < ApplicationController
     end
 
     if (q = params[:query]).present?
+      set_meta_tags noindex: true, follow: true
       found_products = Product.search(body: {query: {bool: {should: [{match: {title: q}}, {match: {category: q}}, {match: {brand: q}}, {match: {field: q}}]}}})
       @products_from_menu = get_products(Product.by_ids(found_products.map(&:id)))
         .page(params[:page]).per(Settings.limit.paginate.products)

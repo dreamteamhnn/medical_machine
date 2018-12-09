@@ -2,11 +2,18 @@ class MediasController < ApplicationController
   before_action :load_breadcrum, only: [:index, :show]
 
   def index
+    if params[:media_type].blank? && request.path.include?("tai-lieu")
+      params[:media_type] = "0"
+    elsif params[:media_type].blank?
+      params[:media_type] = "1"
+    end
+
     if params[:media_type] == "0"
       per_page_medias = Settings.limit.paginate.documents
     else
       per_page_medias = Settings.limit.paginate.videos
     end
+
 
     if params[:query].present?
       @media_ids = Medium.search(search_query_body).map(&:id)
@@ -23,12 +30,14 @@ class MediasController < ApplicationController
     end
 
     @medias = if params[:field_id].present?
-      @medias.where("media_type = ? AND field_id = ?", params[:media_type], params[:field_id])
+      @field = Field.friendly.find(params[:field_id])
+      @medias.where("media_type = ? AND field_id = ?", params[:media_type], @field.id)
         .page(params[:page]).per(per_page_medias)
     else
       @medias.where("media_type = ?", params[:media_type])
         .page(params[:page]).per(per_page_medias)
     end
+    set_meta_tags_with_condition
   end
 
   def show
@@ -59,6 +68,47 @@ class MediasController < ApplicationController
                 }
               },
               {match: {media_type: params[:media_type].to_i}}]}}}
+    }
+  end
+
+  def set_meta_tags_with_condition
+    return set_meta_tags(noindex: true, follow: true) if params[:query].present?
+    if params[:field_id].present?
+      meta_tags_hash = default_meta_tags
+      media_type_name = default_meta_tags[:title]
+      meta_tags_hash[:title] = "#{media_type_name} lĩnh vực #{@field.name}"
+      meta_tags_hash[:description] = @field.description ? @field.simple_text(@field.description, Settings.seo.max_length.description) : "#{meta_tags_hash[:title]} - #{I18n.t('site_name')}"
+      meta_tags_hash[:keywords] = [media_type_name, @field.name, I18n.t('site_name')]
+      meta_tags_hash[:twitter][:title] = meta_tags_hash[:og][:title] = meta_tags_hash[:title]
+      meta_tags_hash[:twitter][:description] = meta_tags_hash[:og][:description] = meta_tags_hash[:description]
+      set_meta_tags meta_tags_hash
+    else
+      set_meta_tags default_meta_tags
+    end
+  end
+
+  def default_meta_tags
+    title = params[:media_type] == "0" ? "Tài liệu" : "Video"
+    description = "#{title} - #{t('site_name')}"
+    {
+      title: title,
+      description: description,
+      keywords: ["#{title}", I18n.t('site_name')],
+      index: true,
+      og: {
+        title: title,
+        type: "article",
+        description: description,
+        url: request.url,
+        site_name: I18n.t('site_name')
+      },
+      twitter: {
+        card: "summary",
+        site: "@publisher_handle",
+        title: title,
+        description: description,
+        creator: "@author_handle",
+      }
     }
   end
 end
