@@ -38,7 +38,7 @@
 		    </tbody>
 		</table>
 	</div>
-	<%= form_for @home_category, url: admin_home_category_path(@home_category), html: {id: 'home-categories'} do |f| %>
+	<%= form_for @home_category, url: admin_home_category_path(id: 1), html: {id: 'home-categories'} do |f| %>
 		<input type="hidden" name="home_top" id="home-top">
 		<input type="hidden" name="home_bottom" id="home-bottom" >
     <% end %>

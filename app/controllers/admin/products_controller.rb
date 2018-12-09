@@ -61,7 +61,30 @@ class Admin::ProductsController < Admin::BaseController
     end
     redirect_to admin_products_path()
   end
+
+  def quick_save
+    product = Product.find_by(id: params[:product_id])
+    if product.present?
+      data = JSON.parse(params[:data])
+      product.name = data["name"] if data["name"].present?
+      product.model = data["model"] if data["model"].present?
+      product.price = data["price"].try(&:to_i) if data["price"].present?
+      product.short_description = data["short_description"] if data["short_description"].present?
+      product.save
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: {status: true} }
+      end
+    else
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: {status: false} }
+      end
+    end
+  end
+
   private
+
   def product_params
     params.require(:product).permit(Product::PRODUCT_ATTRIBUTES,
       product_images_attributes: Product::PRODUCT_IMAGE_ATTRIBUTES,

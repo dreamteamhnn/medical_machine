@@ -1,0 +1,118 @@
+<div id="page-wrapper">
+	<div class="row">
+	  <div class="col-lg-12">
+	    <h1 class="page-header">Thêm sản phẩm cho danh mục</h1>
+	  </div>
+	</div>
+	<div class="row col-md-12" id="multiple-category">
+		<div class="col-md-6">
+			<select id="multiple-category-select" class="selectpicker col-md-12" multiple title="Chọn danh mục" data-live-search="true" data-max-options="1">
+				<% @all_categories.each do |group| %>
+					<% if group.first.id == params[:category_id].try(&:to_i) %>
+						<option value="<%= edit_admin_multiple_category_path(category_id: group.first.id) %>" selected="selected" class="option-fisrt">
+							<%= group.first.name %>
+						</option>
+					<% else %>
+						<option value="<%= edit_admin_multiple_category_path(category_id: group.first.id) %>" class="option-fisrt">
+							<%= group.first.name %>
+						</option>
+					<% end %>
+					<% group.second.each do |child_group| %>
+						<% if child_group.first.id == params[:category_id].try(&:to_i) %>
+							<option value="<%= edit_admin_multiple_category_path(category_id: child_group.first.id) %>" selected="selected" class="option-first-child">
+								<%= child_group.first.name %>
+							</option>
+						<% else %>
+							<option value="<%= edit_admin_multiple_category_path(category_id: child_group.first.id) %>" class="option-first-child">
+								<%= child_group.first.name %>
+							</option>
+						<% end %>
+						<%= child_group.second.each do |item| %>
+							<% if item.id == params[:category_id].try(&:to_i) %>
+								<option value="<%= edit_admin_multiple_category_path(category_id: item.id) %>" selected="selected" class="option-second-child">
+									<%= item.name %>
+								</option>
+							<% else %>
+								<option value="<%= edit_admin_multiple_category_path(category_id: item.id) %>" class="option-second-child">
+									<%= item.name %>
+								</option>
+							<% end %>
+						<% end %>
+					<% end %>
+				<% end %>
+			</select>
+		</div>
+	</div>
+	<div class="row col-md-12 move-group-button">
+		<div class="col-md-5"></div>
+		<div class="col-md-1 button-left">
+			<button id="chevron-left" onclick="tab2_To_tab1();" class="chevron-button"><i class="fa fa-chevron-left"></i></button>
+		</div>
+		<div class="col-md-1">
+			<button id="chevron-right" onclick="tab1_To_tab2();" class="chevron-button"><i class="fa fa-chevron-right"></i></button>
+		</div>
+		<div class="col-md-5"></div>
+	</div>
+	<div class="row col-md-12">
+		<div class="col-md-6" style="text-align: center;">
+			<p class="product-table-title">Sản phẩm trong danh mục</p>
+			<table id="table1" cellspacing="0" class="table table-striped table-bordered table-sm" width="100%">
+				<thead>
+					<tr>
+					    <th>Id</th>
+					    <th>TT</th>
+					    <th>Image</th>
+					    <th>Name</th>
+					    <th>Model</th>
+					    <th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @selected_products.each do |product| %>
+						<tr>
+						    <td><%= product.id %></td>
+						    <td><input type="text" style="width: 40px;" name="selected-order" value="<%= ProductCategory.find_by(category_id: params[:category_id], product_id: product.id).try(&:list_order) %>"></td>
+						    <td><img src="<%= product.product_images.first.url.url %>" style='height:30px; width:30px'></td>
+						    <td title="<%= product.name.html_safe %>"><p><%= product.name.html_safe %></p></td>
+						    <td><p><%= product.model %></p></td>
+						    <td><input type="checkbox" onclick='handleClickSelected("<%= product.id %>");' name="check-tab1"></td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+			<button id="save-change" type="button" class="btn btn-primary" style="margin-bottom: 30px;">Lưu thay đổi</button>
+		</div>
+		<div class="col-md-6">
+			<p class="product-table-title">Sản phẩm không trong danh mục</p>
+			<table id="table2" cellspacing="0" class="table table-striped table-bordered table-sm" width="100%">
+				<thead>
+					<tr>
+					    <th>Id</th>
+					    <th>Image</th>
+					    <th>Name</th>
+					    <th>Model</th>
+					    <th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @unselected_products.each do |product| %>
+						<tr>
+						    <td><%= product.id %></td>
+						    <td><img src="<%= product.product_images.first.url.url %>" style='height:30px; width:30px'></td>
+						    <td title="<%= product.name %>"><p><%= product.name.html_safe %></p></td>
+						    <td><p><%= product.model %></p></td>
+						    <td><input type="checkbox" onclick='handleClickUnselected("<%= product.id %>");' name="check-tab2"></td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<%= form_for :multiple_category, url: {action: "update", params: {id: 1}}, method: :patch do |f| %>
+		<input type="hidden" id="order-ids" name="order_id" value="">
+		<input type="hidden" id="category-id" name="category_id" value="">
+		<input type="hidden" id="list-selected-id" name="selectedIds" value="">
+		<input type="hidden" id="list-unselected-id" name="unselectedIds" value="">
+		<input type="submit" name="commit" value="" id="multiple-submit" hidden="true" />
+    <% end %>
+</div>
