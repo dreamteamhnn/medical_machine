@@ -367,8 +367,8 @@ $(document).on('turbolinks:load', function(){
 var productQuickSave = [];
 
 var changePName = function(id) {
-  let obj = productQuickSave.find(x => x.id === id);
-  let updatedValue = $("#p-name-" + id).val();
+  var obj = productQuickSave.find(x => x.id === id);
+  var updatedValue = $("#p-name-" + id).val();
   if (!_.isUndefined(obj)) {
     obj["name"] = updatedValue;
   } else {
@@ -377,8 +377,8 @@ var changePName = function(id) {
 }
 
 var changePModel = function(id) {
-  let obj = productQuickSave.find(x => x.id === id);
-  let updatedValue = $("#p-model-" + id).val();
+  var obj = productQuickSave.find(x => x.id === id);
+  var updatedValue = $("#p-model-" + id).val();
   if (!_.isUndefined(obj)) {
     obj["model"] = updatedValue;
   } else {
@@ -387,8 +387,8 @@ var changePModel = function(id) {
 }
 
 var changePPrice = function(id) {
-  let obj = productQuickSave.find(x => x.id === id);
-  let updatedValue = $("#p-price-" + id).val();
+  var obj = productQuickSave.find(x => x.id === id);
+  var updatedValue = $("#p-price-" + id).val();
   if (!_.isUndefined(obj)) {
     obj["price"] = updatedValue;
   } else {
@@ -397,8 +397,8 @@ var changePPrice = function(id) {
 }
 
 var changePShortDesc = function(id) {
-  let obj = productQuickSave.find(x => x.id === id);
-  let updatedValue = $("#p-short-description-" + id).val();
+  var obj = productQuickSave.find(x => x.id === id);
+  var updatedValue = $("#p-short-description-" + id).val();
   if (!_.isUndefined(obj)) {
     obj["short_description"] = updatedValue;
   } else {
@@ -407,7 +407,7 @@ var changePShortDesc = function(id) {
 }
 
 var quickSave = function(id) {
-  let sendData = productQuickSave.find(x => x.id === id);
+  var sendData = productQuickSave.find(x => x.id === id);
   if (!_.isUndefined(sendData)) {
     $.ajax({
       url: '/admin/product_quick_save/' + id,
