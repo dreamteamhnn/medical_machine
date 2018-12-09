@@ -367,7 +367,7 @@ $(document).on('turbolinks:load', function(){
 var productQuickSave = [];
 
 var changePName = function(id) {
-  var obj = productQuickSave.find(x => x.id === id);
+  var obj = productQuickSave.find(function(name){return name.id === id});
   var updatedValue = $("#p-name-" + id).val();
   if (!_.isUndefined(obj)) {
     obj["name"] = updatedValue;
@@ -377,7 +377,7 @@ var changePName = function(id) {
 }
 
 var changePModel = function(id) {
-  var obj = productQuickSave.find(x => x.id === id);
+  var obj = productQuickSave.find(function(name){return name.id === id});
   var updatedValue = $("#p-model-" + id).val();
   if (!_.isUndefined(obj)) {
     obj["model"] = updatedValue;
@@ -387,7 +387,7 @@ var changePModel = function(id) {
 }
 
 var changePPrice = function(id) {
-  var obj = productQuickSave.find(x => x.id === id);
+  var obj = productQuickSave.find(function(name){return name.id === id});
   var updatedValue = $("#p-price-" + id).val();
   if (!_.isUndefined(obj)) {
     obj["price"] = updatedValue;
@@ -397,7 +397,7 @@ var changePPrice = function(id) {
 }
 
 var changePShortDesc = function(id) {
-  var obj = productQuickSave.find(x => x.id === id);
+  var obj = productQuickSave.find(function(name){return name.id === id});
   var updatedValue = $("#p-short-description-" + id).val();
   if (!_.isUndefined(obj)) {
     obj["short_description"] = updatedValue;
