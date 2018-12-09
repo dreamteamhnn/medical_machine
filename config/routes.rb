@@ -20,8 +20,15 @@ Rails.application.routes.draw do
   get '/tin-tuc' => 'blogs#index', as: :blog_list
 
   resources :blogs, only: [:show, :index]
+  get '/loai-tin-tuc/:blog_category_id' => 'blogs#index', as: :blog_list_category
   resources :medias, only: [:show, :index]
+  get '/tai-lieu' => 'medias#index', as: :friendly_document
+  get '/tai-lieu/:field_id' => 'medias#index', as: :friendly_field_document
+  get '/video' => 'medias#index', as: :friendly_video
+  get '/video/:field_id' => 'medias#index', as: :friendly_field_video
+
   resources :contacts, only: [:index, :create]
+  get '/lien-he' => 'contacts#index', as: :friendly_contact
 
   namespace :admin do
     root "home#show"

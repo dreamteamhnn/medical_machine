@@ -153,11 +153,4 @@ class Product < ApplicationRecord
   def self.accessible_attributes
    [:name, :model, :price, :discount_price, :description, :short_description, :parameter]
   end
-
-  private
-  def helper
-    @helper ||= Class.new do
-      include ActionView::Helpers
-    end.new
-  end
 end

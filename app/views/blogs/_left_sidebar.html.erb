@@ -4,7 +4,7 @@
     <ul>
       <% @blog_categories.each do |category| %>
         <li class="cat-item <%= 'current-cat' if category.id == params[:blog_category_id].to_i %>">
-          <%= link_to category.name, blog_list_path(blog_category_id: category.id) %>
+          <%= link_to category.name, blog_list_category_path(category) %>
         </li>
       <% end %>
     </ul>
