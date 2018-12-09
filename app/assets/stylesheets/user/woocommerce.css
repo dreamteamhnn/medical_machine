@@ -2509,7 +2509,7 @@ body:not(.search-results) .twentysixteen .entry-summary {
 }
 
 .woocommerce-LoopProduct-link {
-  height: 40px!important;
+  height: 40px;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 2;

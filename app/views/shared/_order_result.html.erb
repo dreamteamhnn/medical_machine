@@ -15,7 +15,11 @@
           <% if data_valid %>
             CHÚNG TÔI SẼ LIÊN LẠC VỚI BẠN ĐỂ XÁC NHẬN THÔNG TIN TRONG THỜI GIAN SỚM NHẤT
           <% else %>
-            XIN VUI LÒNG NHẬP ĐẦY ĐỦ THÔNG TIN CÁ NHÂN TRƯỚC KHI GỬI ĐƠN HÀNG
+            <ul class="error-msg-list alert alert-danger">
+              <% @error_messages.each do |msg| %>
+                <li class="error-msg-item"><%= msg %></li>
+              <% end %>
+            </ul>
           <% end %>
         </div>
     </div>

@@ -33,16 +33,16 @@
     <div class="sidebar-nav navbar-collapse">
       <ul class="nav" id="side-menu">
         <li>
-          <%= link_to admin_company_path() do %>
-            <i class="fa fa-dashboard fa-fw"></i>
-            Công ty
+          <%= link_to admin_customer_orders_path() do %>
+            <i class="fa fa-shopping-cart fa-fw"></i>
+            Quản lý đơn hàng
           <% end %>
         </li>
 
         <li>
-          <%= link_to admin_subscribers_path() do %>
+          <%= link_to admin_company_path() do %>
             <i class="fa fa-dashboard fa-fw"></i>
-            Khách hàng
+            Công ty
           <% end %>
         </li>
 
@@ -144,6 +144,12 @@
           <%= link_to admin_medias_url(media_type: "1") do %>
             <i class="fa fa-files-o fa-fw"></i>
             Video
+          <% end %>
+        </li>
+        <li>
+          <%= link_to admin_subscribers_path() do %>
+            <i class="fa fa-dashboard fa-fw"></i>
+            Câu hỏi của khách hàng
           <% end %>
         </li>
       </ul>

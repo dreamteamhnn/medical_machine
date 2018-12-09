@@ -1,0 +1,8 @@
+$('.modal').remove();
+$('.alert').remove();
+<% if params[:order_ids].blank? %>
+  $('#customer-orders').prepend("<%= j render('shared/flash') %>");
+<% else %>
+  $('#customer-orders').append("<%= j render('confirm_bulk_delete_modal', order_ids: params[:order_ids]) %>");
+  $('#confirm-bulk-delete-order-modal').modal('show');
+<% end %>

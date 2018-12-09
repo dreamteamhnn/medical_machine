@@ -1,0 +1,9 @@
+<% if @result[:status] == "success" %>
+  <% params[:order_ids].each do |id| %>
+    $('#customer_order_' + '<%= id %>').remove();
+  <% end %>
+<% end %>
+
+$('#confirm-bulk-delete-order-modal').modal('hide');
+$('#customer-orders').prepend("<%= j render('shared/flash') %>");
+$('html, body').animate({scrollTop: 0}, '300');

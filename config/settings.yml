@@ -21,6 +21,7 @@ limit:
     videos: 12
     admin_blog: 10
     admin_blog_category: 18
+    admin_customer_order: 12
   menu_block:
     a_to_z: 3.0
     brand: 4.0
@@ -34,3 +35,4 @@ media_type:
   document: 0
   video: 1
 production_host: "thietbithinghiem.top"
+email_regex: !ruby/regexp /\A[^@\s]+@[^@\s]+\z/
