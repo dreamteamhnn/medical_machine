@@ -1,0 +1,4 @@
+$('#confirm-delete-order-modal').modal('hide');
+$('#customer_order_' + "<%= @order.id %>").remove();
+$('#customer-orders').prepend("<%= j render('shared/flash') %>");
+$('html, body').animate({scrollTop: 0}, '300');

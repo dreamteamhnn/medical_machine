@@ -30,7 +30,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
   views:
     pagination:
       first: "ĐẦU"
@@ -47,3 +46,29 @@ en:
           other: "Hiển thị <b>tất cả %{count}</b> %{entry_name}"
       more_pages:
         display_entries: "Hiển thị <b>%{first}&nbsp;-&nbsp;%{last}</b>&nbsp;%{entry_name} trong tổng số <b>%{total}</b>"
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      short: "%b %d"
+      long: "%B %d, %Y"
+  time:
+    formats:
+      with_time: "Lúc %k:%M Ngày %d/%m/%Y"
+
+  activerecord:
+    models:
+      customer_order: "Đơn hàng"
+    attributes:
+      customer_order:
+        customer_name: "Tên khách hàng"
+        phone_number: "Số điện thoại"
+        shipping_address: "Địa chỉ giao hàng"
+        billing_address: "Địa chỉ thanh toán"
+        email: "Email"
+    errors:
+      models:
+        customer_order:
+          blank: "%{attribute} không được bỏ trống"
+          too_long: "%{attribute} quá ngắn  vui lòng nhập nhiều hơn %{count} ký tự"
+          too_short: "%{attribute} quá dài  vui lòng nhập nhập tối đa là %{count} ký tự"
+          invalid: "%{attribute} không hợp lệ"

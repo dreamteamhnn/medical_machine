@@ -21,16 +21,14 @@ class ProductsController < ApplicationController
   end
 
   def send_order
-    respond_to do |format|
-      @product = Product.friendly.find params[:id]
-      @data_valid = ORDER_ATTRS.all?{|type| params[type].present?}
-      user_info = params.as_json(only: ORDER_ATTRS).symbolize_keys
-      return unless @data_valid
-      ProductOrderMailer.order(user_info, @product).deliver_later
-      format.js do
-        render layout: false
-      end
-    end
+    @product = Product.friendly.find params[:id]
+    @order = @product.customer_orders.build order_params
+    @data_valid = @order.valid?
+    @error_messages = @order.errors.messages.values.flatten unless @data_valid
+    return unless @data_valid
+    @order.save
+    user_info = params.as_json(only: ORDER_ATTRS).symbolize_keys
+    ProductOrderMailer.order(user_info, @product).deliver_later
   end
 
   private
@@ -265,5 +263,9 @@ class ProductsController < ApplicationController
     label_id = Label.where(short_title: "hot").first.id
     @new_products = Product.where(label_id: label_id)
       .limit(Settings.limit.new_products)
+  end
+
+  def order_params
+    params.permit ORDER_ATTRS
   end
 end

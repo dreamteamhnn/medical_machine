@@ -7265,19 +7265,19 @@ body.wcvendors.wcvendors_vendor .entry-content > h2:nth-child(2):before {
   }
 
   .support {
-    background: url(/assets/support/support-b.png) 15px center no-repeat #fcfcfc;
+    background: image-url("support/support-b.png") 15px center no-repeat #fcfcfc;
     background-size: 35px;
     margin-right: 5px;
   }
 
   .instock {
-    background: url(/assets/support/instock-b.png) 15px center no-repeat #fcfcfc;
+    background: image-url("support/instock-b.png") 15px center no-repeat #fcfcfc;
     background-size: 35px;
     margin-right: 5px;
   }
 
   .shipping {
-    background: url(/assets/support/free-shipping-b.png) 15px center no-repeat #fcfcfc;
+    background: image-url("support/free-shipping-b.png") 15px center no-repeat #fcfcfc;
     background-size: 35px;
     margin-right: 5px;
   }

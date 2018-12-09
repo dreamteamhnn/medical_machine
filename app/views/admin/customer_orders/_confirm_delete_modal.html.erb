@@ -1,0 +1,22 @@
+<div class="modal fade" id="confirm-delete-order-modal" tabindex="-1" role="dialog"
+  aria-labelledby="delete" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <a href="#" class="close" data-dismiss="modal" aria-label="close">&times;</a>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        <h4 class="modal-title custom_align" id="Heading">Xóa đơn hàng</h4>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-danger">
+          Bạn có chắc chắn muốn xóa đơn hàng này không?
+        </div>
+      </div>
+      <div class="modal-footer ">
+        <%= link_to "Có", admin_customer_order_path(order), method: :delete, remote: true, class: "btn btn-success" %>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Không</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+</div>
