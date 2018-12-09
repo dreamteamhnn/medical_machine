@@ -22,6 +22,8 @@ module MedicalMachine
     config.assets.enabled = true
     config.assets.paths << Rails.root.join('/app/assets/fonts')
 
+    config.time_zone = "Asia/Ho_Chi_Minh"
+
     #don't auto generate test file
     config.generators.test_framework false
     config.action_controller.include_all_helpers = false

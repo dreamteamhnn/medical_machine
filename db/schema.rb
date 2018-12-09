@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181208125220) do
+ActiveRecord::Schema.define(version: 20181208160255) do
 
-  create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -29,13 +29,13 @@ ActiveRecord::Schema.define(version: 20181208125220) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
-  create_table "blog_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "blog_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "blog_category_relations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "blog_category_relations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.bigint "blog_id"
     t.bigint "blog_category_id"
     t.datetime "created_at", null: false
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20181208125220) do
     t.index ["blog_id"], name: "index_blog_category_relations_on_blog_id"
   end
 
-  create_table "blog_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "blog_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string "title"
     t.string "url"
     t.text "description"
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 20181208125220) do
     t.index ["blog_id"], name: "index_blog_images_on_blog_id"
   end
 
-  create_table "blog_tag_relations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "blog_tag_relations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.bigint "blog_id"
     t.bigint "tag_id"
     t.datetime "created_at", null: false
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 20181208125220) do
     t.index ["tag_id"], name: "index_blog_tag_relations_on_tag_id"
   end
 
-  create_table "blogs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "blogs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string "title"
     t.bigint "template_id"
     t.text "content"
@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(version: 20181208125220) do
     t.index ["template_id"], name: "index_blogs_on_template_id"
   end
 
-  create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string "name"
     t.string "location"
     t.datetime "created_at", null: false
@@ -96,7 +96,7 @@ ActiveRecord::Schema.define(version: 20181208125220) do
     t.index ["slug"], name: "index_brands_on_slug", unique: true
   end
 
-  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string "name"
     t.integer "level"
     t.integer "category_order"
@@ -109,14 +109,14 @@ ActiveRecord::Schema.define(version: 20181208125220) do
     t.index ["slug"], name: "index_categories_on_slug", unique: true
   end
 
-  create_table "category_relations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "category_relations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.integer "parent_id"
     t.integer "children_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "ckeditor_assets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "ckeditor_assets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string "data_file_name", null: false
     t.string "data_content_type"
     t.integer "data_file_size"
@@ -128,7 +128,7 @@ ActiveRecord::Schema.define(version: 20181208125220) do
     t.index ["type"], name: "index_ckeditor_assets_on_type"
   end
 
-  create_table "companies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "companies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.text "about"
     t.string "phone"
     t.string "work_time"
@@ -153,7 +153,19 @@ ActiveRecord::Schema.define(version: 20181208125220) do
     t.float "sg_map_lng", limit: 24
   end
 
-  create_table "fields", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "customer_orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
+    t.bigint "product_id"
+    t.string "customer_name"
+    t.string "phone_number"
+    t.string "email"
+    t.string "shipping_address"
+    t.string "billing_address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_customer_orders_on_product_id"
+  end
+
+  create_table "fields", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string "name"
     t.integer "product_field_id"
     t.datetime "created_at", null: false
@@ -164,7 +176,7 @@ ActiveRecord::Schema.define(version: 20181208125220) do
     t.index ["slug"], name: "index_fields_on_slug", unique: true
   end
 
-  create_table "friendly_id_slugs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "friendly_id_slugs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string "slug", null: false
     t.integer "sluggable_id", null: false
     t.string "sluggable_type", limit: 50
@@ -176,7 +188,7 @@ ActiveRecord::Schema.define(version: 20181208125220) do
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
   end
 
-  create_table "labels", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "labels", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string "title"
     t.string "short_title"
     t.integer "block_order"
@@ -184,7 +196,7 @@ ActiveRecord::Schema.define(version: 20181208125220) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "media", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "media", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string "title"
     t.text "description"
     t.string "url"
@@ -196,7 +208,7 @@ ActiveRecord::Schema.define(version: 20181208125220) do
     t.string "video_url"
   end
 
-  create_table "product_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "product_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.bigint "product_id"
     t.bigint "category_id"
     t.datetime "created_at", null: false
@@ -207,7 +219,7 @@ ActiveRecord::Schema.define(version: 20181208125220) do
     t.index ["product_id"], name: "index_product_categories_on_product_id"
   end
 
-  create_table "product_fields", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "product_fields", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.bigint "product_id"
     t.bigint "field_id"
     t.datetime "created_at", null: false
@@ -217,7 +229,7 @@ ActiveRecord::Schema.define(version: 20181208125220) do
     t.index ["product_id"], name: "index_product_fields_on_product_id"
   end
 
-  create_table "product_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "product_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.bigint "product_id"
     t.string "title"
     t.string "url"
@@ -229,7 +241,7 @@ ActiveRecord::Schema.define(version: 20181208125220) do
     t.index ["product_id"], name: "index_product_images_on_product_id"
   end
 
-  create_table "product_media_relations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "product_media_relations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.bigint "product_id"
     t.bigint "medium_id"
     t.datetime "created_at", null: false
@@ -238,7 +250,7 @@ ActiveRecord::Schema.define(version: 20181208125220) do
     t.index ["product_id"], name: "index_product_media_relations_on_product_id"
   end
 
-  create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.bigint "brand_id"
     t.bigint "label_id"
     t.text "name"
@@ -262,7 +274,7 @@ ActiveRecord::Schema.define(version: 20181208125220) do
     t.index ["slug"], name: "index_products_on_slug", unique: true
   end
 
-  create_table "slider_catalogs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "slider_catalogs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string "title"
     t.string "url"
     t.text "desc"
@@ -275,7 +287,7 @@ ActiveRecord::Schema.define(version: 20181208125220) do
     t.integer "home_order"
   end
 
-  create_table "subcribers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "subcribers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -285,14 +297,14 @@ ActiveRecord::Schema.define(version: 20181208125220) do
     t.text "content"
   end
 
-  create_table "tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string "name"
     t.string "tag_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "templates", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "templates", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -304,6 +316,7 @@ ActiveRecord::Schema.define(version: 20181208125220) do
   add_foreign_key "blog_images", "blogs"
   add_foreign_key "blog_tag_relations", "blogs"
   add_foreign_key "blog_tag_relations", "tags"
+  add_foreign_key "customer_orders", "products"
   add_foreign_key "product_categories", "categories"
   add_foreign_key "product_categories", "products"
   add_foreign_key "product_fields", "fields"

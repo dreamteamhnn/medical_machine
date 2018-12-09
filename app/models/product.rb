@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
   include FriendlyidConfiguration
+  include ProductDecorator
 
   searchkick mappings: {
     product: {
@@ -57,6 +58,7 @@ class Product < ApplicationRecord
   has_many :product_media_relations, dependent: :destroy
   has_many :mediums, through: :product_media_relations
   accepts_nested_attributes_for :product_media_relations
+  has_many :customer_orders, dependent: :destroy
 
   scope :sort_from_price, -> min_price do
     where "price >= ?", min_price

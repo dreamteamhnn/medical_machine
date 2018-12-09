@@ -49,5 +49,12 @@ Rails.application.routes.draw do
     # post "/templates/:id" => "templates#show", defaults: {format: "json"}, as: :template
     # resources :templates, only: [:index, :create, :update, :destroy]
     resources :blog_categories
+    resources :customer_orders, only: [:index, :destroy] do
+      collection do
+        post "bulk_delete"
+        post "confirm_bulk_delete"
+      end
+      post "confirm_delete", on: :member
+    end
   end
 end

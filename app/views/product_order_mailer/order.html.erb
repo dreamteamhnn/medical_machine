@@ -6,6 +6,15 @@
 <p><strong>Địa chỉ thanh toán: </strong><%= @user_info[:pay_address] %></p>
 
 <h2>Thông tin sản phẩm:</h2>
+
+<p><strong>Tên sản phẩm: </strong><%= link_to ActionController::Base.helpers.strip_tags(@product.name), friendly_product_url(@product), target: "_blank" %></p>
+<p><strong>Giá bán: </strong><%= @product.showed_price %></p>
+<p><strong>Model: </strong><%= @product.model %></p>
+<p><strong>Loại sản phẩm: </strong><%= @product.categories.map(&:name).join(", ") %></p>
+<p><strong>Hãng sản xuất: </strong><%= @product.brand.try(:name) %></p>
+<p><strong>Xuất xứ: </strong><%= @product.location %></p>
+<p><strong>Lĩnh vực: </strong><%= @product.fields.map(&:name).join(", ") %></p>
+
 <h3>Ảnh sản phẩm</h3>:
 <% @product.product_images.each do |img| %>
   <span>
@@ -14,12 +23,3 @@
     <% end %>
   </span> &nbsp;&nbsp;
 <% end %>
-<p><strong>Tên sản phẩm: </strong><%= ActionController::Base.helpers.strip_tags(@product.name) %></p>
-<p><strong>Giá bán: </strong><%= @product.price_currency %> VNĐ</p>
-<p><strong>Giá khuyến mãi: </strong><%= @product.discount_price_currency %> VNĐ</p>
-<p><strong>Model: </strong><%= @product.model %></p>
-<p><strong>Loại sản phẩm: </strong><%= @product.categories.map(&:name).join(", ") %></p>
-<p><strong>Hãng sản xuất: </strong><%= @product.brand.try(:name) %></p>
-<p><strong>Xuất xứ: </strong><%= @product.location %></p>
-<p><strong>Lĩnh vực: </strong><%= @product.fields.map(&:name).join(", ") %></p>
-<p><strong>Xuất xứ: </strong><%= @product.location %></p>

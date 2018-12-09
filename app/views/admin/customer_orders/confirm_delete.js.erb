@@ -1,0 +1,4 @@
+$('.modal').remove();
+$('.alert').remove();
+$('#customer-orders').append("<%= j render('confirm_delete_modal', order: @order) %>");
+$('#confirm-delete-order-modal').modal('show');

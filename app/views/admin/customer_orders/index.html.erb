@@ -1,0 +1,43 @@
+<div id="page-wrapper">
+  <%= form_tag confirm_bulk_delete_admin_customer_orders_path, remote: true do %>
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="page-header">Danh sách đơn hàng</h1>
+        <div class="text-right"><%= button_tag "Xóa nhiều", class: "btn btn-danger" %></div>
+      </div>
+    </div>
+    <div class="row" id="customer-orders">
+      <div class="col-md-12 customer-order-list">
+        <% @orders.each do |order| %>
+          <div class="panel panel-default" id="<%= dom_id(order) %>">
+            <div class="panel-heading">
+              <div class="row">
+                <div class="col-md-6">
+                  <strong>
+                  Đơn hàng #<%= order.id %> |
+                  <%= l order.created_at, format: :with_time %>
+                </strong>
+                </div>
+                <div class="col-md-6 text-right">
+                  <%= link_to "Xóa", confirm_delete_admin_customer_order_path(order), remote: true, method: :post, class: "btn btn-danger text-right" %>
+                  <%= check_box_tag "order_ids[]", order.id %>
+                </div>
+              </div>
+            </div>
+            <ul class="list-group">
+              <li class="list-group-item"><strong>Họ Tên:</strong> <%= order.customer_name %></li>
+              <li class="list-group-item"><strong>Số điện thoại:</strong> <%= order.phone_number %></li>
+              <li class="list-group-item"><strong>Email:</strong> <%= order.email %></li>
+              <li class="list-group-item"><strong>Tên sản phẩm:</strong> <%= link_to ActionController::Base.helpers.strip_tags(order.product.name), friendly_product_path(order.product), target: "_blank" %></li>
+
+              <li class="list-group-item"><strong>Model:</strong> <%= order.product.model %></li>
+              <li class="list-group-item"><strong>Địa chỉ giao hàng:</strong> <%= order.shipping_address %></li>
+              <li class="list-group-item"><strong>Địa chỉ thanh toán:</strong> <%= order.billing_address %></li>
+            </ul>
+          </div>
+          <div class="pagination-wrap text-center"><%= paginate @orders %></div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
