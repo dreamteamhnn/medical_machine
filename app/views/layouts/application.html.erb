@@ -4,6 +4,7 @@
 <head>
   <%= csrf_meta_tags %>
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <%= display_meta_tags site: 'Thiết bị thí nghiệm' %>
   <%= render 'layouts/google_analytic' if Rails.env.production? %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -11,9 +12,6 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>Thiết bị thí nghiệm</title>
-
-  <meta name="msapplication-TileImage" content="https://ld-wp.template-help.com/woocommerce_58679/wp-content/uploads/2017/01/cropped-FAV-300x300.png">
 </head>
 
 <body class="home page-template-default page page-id-48 custom-background use-tm-pb-builder header-layout-fullwidth content-layout-boxed footer-layout-fullwidth blog-default position-fullwidth sidebar-1-4 header-default footer-default tm_pb_builder currency-usd woocommerce <%= 'single-product' if params[:controller] == 'products'%>">

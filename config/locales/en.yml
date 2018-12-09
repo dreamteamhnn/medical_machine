@@ -30,6 +30,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  site_name: "Thiết bị thí nghiệm"
   views:
     pagination:
       first: "ĐẦU"

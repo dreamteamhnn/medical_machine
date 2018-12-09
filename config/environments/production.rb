@@ -64,7 +64,7 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
 
-  config.action_mailer.default_url_options = {host: "http://#{Settings.production_host}"}
+  config.action_mailer.default_url_options = {host: Settings.production_host}
 
   # Gmail SMTP server setup
   ActionMailer::Base.smtp_settings = {

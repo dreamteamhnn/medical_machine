@@ -11,6 +11,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    set_meta_tags @product
   end
 
   def order

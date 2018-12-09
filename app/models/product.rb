@@ -157,7 +157,7 @@ class Product < ApplicationRecord
   private
   def helper
     @helper ||= Class.new do
-      include ActionView::Helpers::NumberHelper
+      include ActionView::Helpers
     end.new
   end
 end
