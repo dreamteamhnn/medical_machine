@@ -7,11 +7,11 @@
           <li class="left-navigation-li">
             <% if category.second.blank? %>
               <%= link_to category.first.name, product_category_path(category.first),
-                class: "category-item-select #{'item-active' if params[:category_id].to_i == category.first.id}", id: "category-id-#{category.first.id}" %>
+                class: "category-item-select #{'item-active' if params[:category_id] == category.first.slug}", id: "category-id-#{category.first.id}" %>
             <% else %>
               <input id="group-<%= category.first.id %>" type="checkbox" hidden />
               <label for="group-<%= category.first.id %>"
-                class="select-category <%= 'item-active' if params[:category_id].to_i == category.first.id %>" name="category-<%= category.first.id %>">
+                class="select-category <%= 'item-active' if params[:category_id] == category.first.slug %>" data-slug="<%= category.first.slug %>" name="category-<%= category.first.id %>">
                 <span class="fa fa-angle-right"></span><%= category.first.name %>
               </label>
               <ul class="group-list">
@@ -19,18 +19,18 @@
                   <input type="hidden" id="parent-<%= sub_category.first.id %>" value="<%= category.first.id %>">
                   <% if sub_category.second.blank? %>
                     <li class="left-navigation-li"><%= link_to sub_category.first.name, product_category_path(sub_category.first),
-                      class: "category-item-select #{'item-active' if (params[:category_id].to_i == sub_category.first.id || (@product && sub_category.first.id == @product.categories.first&.id))}", id: "category-id-#{sub_category.first.id}" %></li>
+                      class: "category-item-select #{'item-active' if (params[:category_id] == sub_category.first.slug || (@product && sub_category.first.id == @product.categories.first&.id))}", id: "category-id-#{sub_category.first.id}" %></li>
                   <% else %>
                     <li class="left-navigation-li">
                       <input id="sub-group-<%= sub_category.first.id %>" type="checkbox" hidden />
                       <label for="sub-group-<%= sub_category.first.id %>"
-                        class="select-category <%= 'item-active' if params[:category_id].to_i == sub_category.first.id %>" name="category-<%= sub_category.first.id %>">
+                        class="select-category <%= 'item-active' if params[:category_id] == sub_category.first.slug %>" name="category-<%= sub_category.first.id %>">
                         <span class="fa fa-angle-right"></span><%= sub_category.first.name %>
                       </label>
                       <ul class="sub-group-list">
                         <% sub_category.second.each do |sub_sub_category| %>
                           <li class="left-navigation-li"><%= link_to sub_sub_category.name, product_category_path(sub_sub_category),
-                            class: "category-item-select #{'item-active' if (params[:category_id].to_i == sub_sub_category.id || (@product && sub_sub_category.id == @product.categories.first&.id))}", id: "category-id-#{sub_sub_category.id}" %></li>
+                            class: "category-item-select #{'item-active' if (params[:category_id] == sub_sub_category.slug || (@product && sub_sub_category.id == @product.categories.first&.id))}", id: "category-id-#{sub_sub_category.id}" %></li>
                           <input type="hidden" id="parent-<%= sub_sub_category.id %>" value="<%= sub_category.first.id %>">
                         <% end %>
                       </ul>

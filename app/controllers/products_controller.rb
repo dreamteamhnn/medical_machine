@@ -131,7 +131,7 @@ class ProductsController < ApplicationController
           @breads << {title: grand_parent.name, link: products_path(category_id: grand_parent.id)}
         end
       end
-      @breads << {title: "Tất cả sản phẩm", link: products_path}
+      @breads << {title: "Tất cả sản phẩm", link: all_products_path}
       @breads = @breads.reverse
     elsif params[:id]
       @breads = [{title: strip_tags(@product.name), link: ""}]
@@ -147,11 +147,11 @@ class ProductsController < ApplicationController
       @breads = @breads.reverse
     elsif params[:brand_id]
       brand = Brand.friendly.find params[:brand_id]
-      @breads = [{title: "Hãng sản xuất", link: products_path()}]
+      @breads = [{title: "Hãng sản xuất", link: all_products_path()}]
       @breads << {title: brand.name, link: ""}
     elsif params[:field_id]
       field = Field.friendly.find params[:field_id]
-      @breads = [{title: "Lĩnh vực", link: products_path()}]
+      @breads = [{title: "Lĩnh vực", link: all_products_path()}]
       @breads << {title: field.name, link: ""}
     else
       @breads = [{title: "Tất cả sản phẩm", link: ""}]
