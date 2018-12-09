@@ -36,3 +36,7 @@ media_type:
   video: 1
 production_host: "thietbithinghiem.top"
 email_regex: !ruby/regexp /\A[^@\s]+@[^@\s]+\z/
+seo:
+  max_length:
+    title: 70
+    description: 300
