@@ -9,6 +9,8 @@ class PagesController < ApplicationController
     @brand_logos = Brand.where("image IS NOT NULL AND home_order IS NOT NULL")
       .order(:home_order)
     get_home_category
+    @company = Company.first
+    set_meta_tags meta_tags_hash
   end
 
   def get_home_category
@@ -30,5 +32,28 @@ class PagesController < ApplicationController
       end
       home_block_arr
     end
+  end
+
+  def meta_tags_hash
+    description = "#{@company.logo_alt}. #{@company.about}"
+    {
+      description: description,
+      keywords: ["thiết bị thí nghiệm", "thiết bị y tế", "thiết bị khoa học kỹ thuật"],
+      index: true,
+      og: {
+        title: I18n.t("site_name"),
+        type: "article",
+        description: description,
+        url: request.url,
+        site_name: I18n.t('site_name')
+      },
+      twitter: {
+        card: "summary",
+        site: "@publisher_handle",
+        title: I18n.t("site_name"),
+        description: description,
+        creator: "@author_handle",
+      }
+    }
   end
 end

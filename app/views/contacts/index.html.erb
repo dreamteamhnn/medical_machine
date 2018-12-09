@@ -13,13 +13,13 @@
                     STECH INTERNATIONAL ., LTD<br>
                   </h2>
                   <h3>
-                    Điện thoại: <%= Company.first.phone %> - Hotline: 096.840.6636 Mr.Tú<br>
+                    Điện thoại: <%= @company.phone %> - Hotline: 096.840.6636 Mr.Tú<br>
                   </h3>
                   <h3 class="text-align-none">
-                    EMAIL: <%= Company.first.email %><br>
+                    EMAIL: <%= @company.email %><br>
                   </h3>
                   <h3 class="text-align-none">
-                    WEBSITE: <%= Company.first.website %><br>
+                    WEBSITE: <%= @company.website %><br>
                   </h3>
                   <h2 style="color: red;">Rất vui lòng được phục vụ quý khách !!!</h2>
                 </div>
@@ -28,11 +28,11 @@
               <div class="row" style="margin-top: 50px;">
                 <div class="col-md-5 col-md-offset-1" style="margin-top: 50px;">
                   <h3>
-                    Văn phòng: <%= Company.first.hn_address %><br>
+                    Văn phòng: <%= @company.hn_address %><br>
                   </h3>
                   <div id="map_hn" style="height: 500px; width: 100%"></div>
-                  <input type="hidden" id="hn_map_lat" value="<%= Company.first.hn_map_lat %>">
-                  <input type="hidden" id="hn_map_lng" value="<%= Company.first.hn_map_lng %>">
+                  <input type="hidden" id="hn_map_lat" value="<%= @company.hn_map_lat %>">
+                  <input type="hidden" id="hn_map_lng" value="<%= @company.hn_map_lng %>">
                   <script>
                     function initMap() {
                       var hn_lat = parseFloat($("#hn_map_lat").val());
@@ -55,11 +55,11 @@
 
                 <div class="col-md-5 col-md-offset-1" style="margin-top: 50px;">
                   <h3>
-                    Văn phòng: <%= Company.first.hn_address %><br>
+                    Văn phòng: <%= @company.hn_address %><br>
                   </h3>
                   <div id="map_sg" style="height: 500px; width: 100%"></div>
-                  <input type="hidden" id="sg_map_lat" value="<%= Company.first.sg_map_lat %>">
-                  <input type="hidden" id="sg_map_lng" value="<%= Company.first.sg_map_lng %>">
+                  <input type="hidden" id="sg_map_lat" value="<%= @company.sg_map_lat %>">
+                  <input type="hidden" id="sg_map_lng" value="<%= @company.sg_map_lng %>">
                   <script>
                     function initMap() {
                       var sg_lat = parseFloat($("#sg_map_lat").val());
@@ -78,7 +78,7 @@
                   <script async defer
                   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbEWIklaDSw8BsgQhkabXXYnM3DcKFNyQ&callback=initMap">
                   </script>
-                </div>               
+                </div>
               </div>
 
               <h1 style="text-align: center; margin-top: 50px;">GỬI LIÊN HỆ</h1>

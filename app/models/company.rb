@@ -1,4 +1,6 @@
 class Company < ApplicationRecord
+  include CompanyDecorator
+
   mount_uploader :logo, ImageUploader
   mount_uploader :watermark, ImageUploader
 
