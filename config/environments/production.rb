@@ -62,9 +62,9 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "medical_machine_#{Rails.env}"
   config.action_mailer.perform_caching = false
 
-  config.asset_host = "http://#{Settings.production_host}"
+  config.action_mailer.delivery_method = :smtp
 
-  config.action_mailer.default_url_options = {host: Settings.production_host}
+  config.action_mailer.default_url_options = {host: "http://#{Settings.production_host}"}
 
   # Gmail SMTP server setup
   ActionMailer::Base.smtp_settings = {

@@ -22,6 +22,12 @@ module MedicalMachine
     config.assets.enabled = true
     config.assets.paths << Rails.root.join('/app/assets/fonts')
 
+    # Fix issue environment variables be not loaded in production.rb file
+    # Load defaults from config/*.env in config
+    Dotenv.load *Dir.glob(Rails.root.join("**/*.env"), File::FNM_DOTMATCH)
+    # Override any existing variables if an environment-specific file exists
+    Dotenv.overload *Dir.glob(Rails.root.join("**/*.env.#{Rails.env}"), File::FNM_DOTMATCH)
+
     config.time_zone = "Asia/Ho_Chi_Minh"
 
     #don't auto generate test file
