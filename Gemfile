@@ -58,6 +58,9 @@ gem "faker", git: "git://github.com/stympy/faker.git", branch: "master"
 
 # Friendly URL
 gem 'friendly_id', '~> 5.1.0'
+
+# Seo support
+gem "meta-tags"
 group :development, :test do
   # Debug
   gem "pry-rails"
