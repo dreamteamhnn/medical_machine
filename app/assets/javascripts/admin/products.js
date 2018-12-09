@@ -370,7 +370,7 @@ var changePName = function(id) {
   let obj = productQuickSave.find(x => x.id === id);
   let updatedValue = $("#p-name-" + id).val();
   if (!_.isUndefined(obj)) {
-    obj.name = updatedValue;
+    obj["name"] = updatedValue;
   } else {
     productQuickSave.push({id: id, name: updatedValue})
   }
@@ -380,7 +380,7 @@ var changePModel = function(id) {
   let obj = productQuickSave.find(x => x.id === id);
   let updatedValue = $("#p-model-" + id).val();
   if (!_.isUndefined(obj)) {
-    obj.model = updatedValue;
+    obj["model"] = updatedValue;
   } else {
     productQuickSave.push({id: id, model: updatedValue})
   }
@@ -390,7 +390,7 @@ var changePPrice = function(id) {
   let obj = productQuickSave.find(x => x.id === id);
   let updatedValue = $("#p-price-" + id).val();
   if (!_.isUndefined(obj)) {
-    obj.price = updatedValue;
+    obj["price"] = updatedValue;
   } else {
     productQuickSave.push({id: id, price: updatedValue})
   }
@@ -400,7 +400,7 @@ var changePShortDesc = function(id) {
   let obj = productQuickSave.find(x => x.id === id);
   let updatedValue = $("#p-short-description-" + id).val();
   if (!_.isUndefined(obj)) {
-    obj.short_description = updatedValue;
+    obj["short_description"] = updatedValue;
   } else {
     productQuickSave.push({id: id, short_description: updatedValue})
   }
