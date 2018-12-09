@@ -249,14 +249,14 @@ $(document).on('turbolinks:load', function(){
     showSelectedField();
   });
 
-  var exportProductIds = [];
+  var selectedProductIds = [];
 
   $('#dataTables-product').on('click', '.product-cb-id', function () {
-    var index = exportProductIds.indexOf(this.value);
+    var index = selectedProductIds.indexOf(this.value);
     if (index != -1) {
-      exportProductIds.splice(index, 1);
+      selectedProductIds.splice(index, 1);
     } else {
-      exportProductIds.push(this.value);
+      selectedProductIds.push(this.value);
     }
   });
 
@@ -274,13 +274,13 @@ $(document).on('turbolinks:load', function(){
   $("#button-export-products").click(function() {
     var url = removeParam("ids", this.href);
     var p = url.substr(url.length - 1) == "?" ? "" : "?";
-    this.href = url + p + "ids=" + exportProductIds.join(",");
+    this.href = url + p + "ids=" + selectedProductIds.join(",");
   })
 
   $("#button-delete-products").click(function() {
     var url = removeParam("ids", this.href);
     var p = url.substr(url.length - 1) == "?" ? "" : "?";
-    this.href = url + p + "delete_product_ids=" + deleteProductIds.join(",");
+    this.href = url + p + "delete_product_ids=" + selectedProductIds.join(",");
   })
 
   //video
@@ -363,6 +363,68 @@ $(document).on('turbolinks:load', function(){
   });
 
 });
+
+var productQuickSave = [];
+
+var changePName = function(id) {
+  let obj = productQuickSave.find(x => x.id === id);
+  let updatedValue = $("#p-name-" + id).val();
+  if (!_.isUndefined(obj)) {
+    obj.name = updatedValue;
+  } else {
+    productQuickSave.push({id: id, name: updatedValue})
+  }
+}
+
+var changePModel = function(id) {
+  let obj = productQuickSave.find(x => x.id === id);
+  let updatedValue = $("#p-model-" + id).val();
+  if (!_.isUndefined(obj)) {
+    obj.model = updatedValue;
+  } else {
+    productQuickSave.push({id: id, model: updatedValue})
+  }
+}
+
+var changePPrice = function(id) {
+  let obj = productQuickSave.find(x => x.id === id);
+  let updatedValue = $("#p-price-" + id).val();
+  if (!_.isUndefined(obj)) {
+    obj.price = updatedValue;
+  } else {
+    productQuickSave.push({id: id, price: updatedValue})
+  }
+}
+
+var changePShortDesc = function(id) {
+  let obj = productQuickSave.find(x => x.id === id);
+  let updatedValue = $("#p-short-description-" + id).val();
+  if (!_.isUndefined(obj)) {
+    obj.short_description = updatedValue;
+  } else {
+    productQuickSave.push({id: id, short_description: updatedValue})
+  }
+}
+
+var quickSave = function(id) {
+  let sendData = productQuickSave.find(x => x.id === id);
+  if (!_.isUndefined(sendData)) {
+    $.ajax({
+      url: '/admin/product_quick_save/' + id,
+      method: 'put',
+      dataType: "json",
+      data: {
+        data: JSON.stringify(sendData)
+      },
+      success: function(result,status,xhr) {
+        alert("Sửa nhanh thành công!");
+      },
+      error: function(xhr,status,error) {
+        alert("Lỗi...!")
+      }
+    });
+  }
+}
 
 function removeParam(key, sourceURL) {
   var rtn = sourceURL.split("?")[0],

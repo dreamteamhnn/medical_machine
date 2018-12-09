@@ -26,7 +26,7 @@
           <div class="entry-content">
             <h3><%= @blog.title %></h3>
             <p>
-              <%= @blog.content.html_safe.html_safe %>
+              <%= @blog.content.html_safe %>
             </p>
             <%= content_tag :p if @blog.blog_images.second do %>
               <%= image_tag @blog.blog_images.second.url, alt: @blog.feature_image_alt, title: @blog.feature_image_title, class: "post-thumbnail__img" %>
@@ -46,16 +46,6 @@
                 </header>
               </article>
             <% end %>
-            <p>
-              <%= @blog.content.html_safe %>
-            </p>
-            <blockquote>
-              <p><strong>“<%= @blog.title %>”</strong></p>
-            </blockquote>
-
-            <p>
-              <%= @blog.content.html_safe %>
-            </p>
             <p>
               <% if @blog.blog_images.third %>
                 <%= image_tag @blog.blog_images.third.try(:url), alt: @blog.feature_image_alt,
@@ -77,9 +67,6 @@
                 </header>
               </article>
             <% end %>
-            <p>
-              <%= @blog.content.html_safe %>
-            </p>
           </div>
           <!-- .entry-content -->
           <footer class="entry-footer">

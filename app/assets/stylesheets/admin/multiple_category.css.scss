@@ -1,0 +1,62 @@
+// .chevron-group-button {
+// 	width: 3%;
+// }
+
+.product-table {
+	width: 48.5%;
+}
+
+.product-table-title {
+	text-align: center;
+	font-weight: bold;
+}
+
+.chevron-button {
+	font-size: 24px;
+}
+
+.chevron-button:hover {
+	color: blue;
+}
+
+.option-group {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.option-first {
+	padding: 3px 20px !important;
+}
+    
+.option-first-child {
+    padding-left: 2.25em !important;
+}
+
+.option-second-child {
+    padding-left: 4.5em !important;
+}
+
+#table1 td p, #table1 td, #table2 td, #table2 td p {
+  width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#table2_paginate, #table1_paginate {
+	.paginate_button {
+		padding: 0;
+	}
+}
+
+#table1_info, #table2_info {
+  display: none;
+}
+
+.move-group-button {
+	margin-top: 20px;
+}
+
+.button-left {
+	text-align: right;
+}
