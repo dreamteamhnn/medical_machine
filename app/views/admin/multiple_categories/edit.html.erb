@@ -98,7 +98,9 @@
 					<% @unselected_products.each do |product| %>
 						<tr>
 						    <td><%= product.id %></td>
-						    <td><img src="<%= product.product_images.first.url.url %>" style='height:30px; width:30px'></td>
+						    <% if product.product_images.first %>
+						      <td><img src="<%= product.product_images.first.url.url %>" style='height:30px; width:30px'></td>
+						    <% end %>
 						    <td title="<%= product.name %>"><p><%= product.name.html_safe %></p></td>
 						    <td><p><%= product.model %></p></td>
 						    <td><input type="checkbox" onclick='handleClickUnselected("<%= product.id %>");' name="check-tab2"></td>
