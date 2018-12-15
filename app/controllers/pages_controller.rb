@@ -38,7 +38,7 @@ class PagesController < ApplicationController
     description = "#{@company.logo_alt}. #{@company.about}"
     {
       description: description,
-      keywords: ["thiết bị thí nghiệm", "thiết bị y tế", "thiết bị khoa học kỹ thuật"],
+      keywords: ["stechsaigon.com", "thiết bị thí nghiệm", "thiết bị y tế", "thiết bị khoa học kỹ thuật"],
       index: true,
       og: {
         title: I18n.t("site_name"),

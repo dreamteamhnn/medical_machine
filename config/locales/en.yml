@@ -30,7 +30,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  site_name: "Thiết bị thí nghiệm"
+  site_name: "stechsaigon.com"
   views:
     pagination:
       first: "ĐẦU"
