@@ -4,7 +4,7 @@ set :branch, "release"
 # This is used in the Nginx VirtualHost to specify which domains
 # the app should appear on. If you don't yet have DNS setup, you'll
 # need to create entries in your local Hosts file for testing.
-set :server_name, "thietbithinghiem.top"
+set :server_name, "stechsaigon.com"
 
 # used in case we're deploying multiple versions of the same
 # app side by side. Also provides quick sanity checks when looking
