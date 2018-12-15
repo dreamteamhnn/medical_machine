@@ -34,7 +34,7 @@ format:
 media_type:
   document: 0
   video: 1
-production_host: "thietbithinghiem.top"
+production_host: "stechsaigon.com"
 email_regex: !ruby/regexp /\A[^@\s]+@[^@\s]+\z/
 seo:
   max_length:
