@@ -3,7 +3,7 @@ module BlogDecorator
   include SeoSupport
 
   def feature_image
-    @feature_image ||= blog_images.find(&:is_feature).primary_content
+    @feature_image ||= blog_images.find(&:is_feature)&.primary_content
   end
 
   BlogImage::SELECTED_ATTRS.push(:thumb_url).each do |attr|
@@ -14,7 +14,7 @@ module BlogDecorator
     simple_title = simple_text(title, Settings.seo.max_length.title)
     description = simple_text(content, Settings.seo.max_length.description)
     url = Rails.application.routes.url_helpers.blog_detail_url(self, host: Settings.current_host)
-    image = feature_image[:thumb_url]
+    image = feature_image ? feature_image[:thumb_url] : nil
     {
       title: simple_title,
       description: description,

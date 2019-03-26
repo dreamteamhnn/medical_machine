@@ -24,7 +24,7 @@
                     <li class="left-navigation-li">
                       <input id="sub-group-<%= sub_category.first.id %>" type="checkbox" hidden />
                       <label for="sub-group-<%= sub_category.first.id %>"
-                        class="select-category <%= 'item-active' if params[:category_id] == sub_category.first.slug %>" name="category-<%= sub_category.first.id %>">
+                        class="select-category <%= 'item-active' if params[:category_id] == sub_category.first.slug %>" name="category-<%= sub_category.first.id %>" data-slug="<%= category.first.slug %>">
                         <span class="fa fa-angle-right"></span><%= sub_category.first.name %>
                       </label>
                       <ul class="sub-group-list">
