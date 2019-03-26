@@ -20,7 +20,7 @@
           </header>
 
           <figure class="post-thumbnail">
-            <%= image_tag @blog.blog_images.first.url, alt: @blog.feature_image_alt, title: @blog.feature_image_title, class: "post-thumbnail__img wp-post-image" if @blog.blog_images.first %>
+            <%= image_tag @blog.blog_images.first.url, alt: @blog.blog_images.first.alt, title: @blog.blog_images.first.title, class: "post-thumbnail__img wp-post-image" if @blog.blog_images.first %>
           </figure>
           <!-- .post-thumbnail -->
           <div class="entry-content">
@@ -34,14 +34,14 @@
             <% if @blog_relate_1 %>
               <article class="inner-article hzol-clear story">
                 <figure class="cover image-cover">
-                  <%= link_to "#{image_tag(@blog_relate_1.blog_images.first.url, width: '145')}".html_safe, blog_detail_path(@blog_relate_1) %>
+                  <%= link_to "#{image_tag(@blog_relate_1.blog_images.first.url, width: '145')}".html_safe, blog_detail_path(@blog_relate_1) if @blog_relate_1.blog_images.any? %>
                 </figure>
                 <header>
                   <h2 class="title">
                     <%= link_to @blog_relate_1.title, blog_detail_path(@blog_relate_1) %>
                   </h2>
                   <div class="summary">
-                    <%= @blog_relate_1.content[0..99] %>
+                    <%= @blog_relate_1.content[0..99].html_safe %>
                   </div>
                 </header>
               </article>
@@ -55,14 +55,14 @@
             <% if @blog_relate_2 %>
               <article class="inner-article hzol-clear story">
                 <figure class="cover image-cover">
-                  <%= link_to "#{image_tag(@blog_relate_2.blog_images.first.url, width: '145')}".html_safe, blog_detail_path(@blog_relate_2) %>
+                  <%= link_to "#{image_tag(@blog_relate_2.blog_images.first.url, width: '145')}".html_safe, blog_detail_path(@blog_relate_2) if @blog_relate_2.blog_images.any? %>
                 </figure>
                 <header>
                   <h2 class="title">
                     <%= link_to @blog_relate_2.title, blog_detail_path(@blog_relate_2) %>
                   </h2>
                   <div class="summary">
-                    <%= @blog_relate_2.content[0..99] %>
+                    <%= @blog_relate_2.content[0..99].html_safe %>
                   </div>
                 </header>
               </article>
