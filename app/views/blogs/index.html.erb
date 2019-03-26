@@ -15,7 +15,11 @@
               <div class="thumbnail">
                 <div class="blog-image">
                   <%= link_to blog_detail_path(blog) do %>
-                    <%= image_tag blog.feature_image_thumb_url, alt: blog.feature_image_alt, title: blog.feature_image_title %>
+                    <% if blog.feature_image %>
+                      <%= image_tag blog.feature_image_thumb_url, alt: blog.feature_image_alt, title: blog.feature_image_title %>
+                    <% else %>
+                      <%= image_tag "/preview_no_image.jpg" %>
+                    <% end %>
                   <% end %>
                 </div>
                 <div class="caption">
