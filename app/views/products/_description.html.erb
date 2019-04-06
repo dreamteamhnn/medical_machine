@@ -47,19 +47,19 @@
               <tr>
                 <% block.each do |doc| %>
                   <td>
-                    <strong><%= doc.title %></strong><br/>
-                    <%= doc.description %><br/>
+                    <strong><%= truncate(doc.title.html_safe, length:45) %></strong><br/>
+                    <%= truncate(doc.description.html_safe, length:45) %><br/>
                     <a href="<%= doc.url %>">
-                      <% if doc.url.split(//).last(3).join("") == "pdf" %>
+                      <% if doc.url.to_s.split(//).last(3).join("") == "pdf" %>
                         <%= image_tag "/small-pdf.png", title: "pdf" %>
-                      <% elsif doc.url.split(//).last(3).join("") == "doc" || doc.url.split(//).last(3).join("") == "ocx" %>
+                      <% elsif doc.url.to_s.split(//).last(3).join("") == "doc" || doc.url.to_s.split(//).last(3).join("") == "ocx" %>
                         <%= image_tag "/small-word.png", title: "doc" %>
-                      <% elsif doc.url.split(//).last(3).join("") == "xls" || doc.url.split(//).last(3).join("") == "lsx" %>
+                      <% elsif doc.url.to_s.split(//).last(3).join("") == "xls" || doc.url.to_s.split(//).last(3).join("") == "lsx" %>
                         <%= image_tag "/small-excell.png", title: "excel" %>
                       <% end %>
-                      <%= doc.title %>
+                      <%= truncate(doc.title.html_safe, length:45) %>
                     </a><br/>
-                    <p>Ngày tạo : <%=doc.created_at %></p>
+                    <p>Ngày tạo : <%= doc.created_at.strftime("%m/%d/%Y") %></p>
                   </td>
                 <% end %>
               </tr>
@@ -77,11 +77,11 @@
               <tr>
                 <% block.each do |video| %>
                   <td class="video-td-product">
-                    <iframe width="374" height="284" src="<%= video.url %>" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="374" height="284" src="<%= video.video_url %>" frameborder="0" allowfullscreen></iframe>
                     <div class="content-video">
-                      <strong><%= video.title %></strong><br/>
-                      <%= video.description %><br/>
-                      <p>Ngày tạo : <%= video.created_at %></p>
+                      <strong><%= truncate(video.title.html_safe, length:45) %></strong><br/>
+                      <%= truncate(video.description.html_safe, length:45) %><br/>
+                      <p>Ngày tạo : <%= video.created_at.strftime("%m/%d/%Y") %></p>
                     </div>
                   </td>
                 <% end %>
