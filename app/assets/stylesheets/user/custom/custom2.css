@@ -28,3 +28,7 @@
     overflow: hidden !important;
     text-overflow: ellipsis !important;
 }
+
+.product-row-block {
+    margin-bottom: 15px;
+}
