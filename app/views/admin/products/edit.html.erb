@@ -16,6 +16,8 @@
             <%= render "detail_field", f: f %>
             <%= render "category_modal", f: f %>
             <%= render "field_modal", f: f %>
+            <%= render "document_modal", f: f %>
+            <%= render "video_modal", f: f %>
             <div class="row show-grid">
               <div class="form-group form-group-part col-xs-2">
                 <%= link_to "Chọn danh mục", "#product-category", :class => "btn btn-success", "data-toggle" => "modal" %>
@@ -28,6 +30,21 @@
               </div>
               <div class="form-group form-group-part col-xs-4">
                 <p class="selected-field-product multi-line"></p>
+              </div>
+            </div>
+
+            <div class="row show-grid">
+              <div class="form-group form-group-part col-xs-2">
+                <%= link_to "Chọn video", "#product-video", :class => "btn btn-success", "data-toggle" => "modal" %>
+              </div>
+              <div class="form-group form-group-part col-xs-4">
+                <p class="selected-video-product multi-line"></p>
+              </div>
+              <div class="form-group form-group-part col-xs-2">
+                <%= link_to "Chọn tài liệu", "#product-document", :class => "btn btn-success", "data-toggle" => "modal" %>
+              </div>
+              <div class="form-group form-group-part col-xs-4">
+                <p class="selected-document-product multi-line"></p>
               </div>
             </div>
 

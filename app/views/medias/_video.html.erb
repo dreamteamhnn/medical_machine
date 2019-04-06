@@ -8,7 +8,7 @@
             <div class="content-video">
               <strong><%= video.title %></strong><br/>
               <%= video.description %><br/>
-              <p>Ngày tạo : <%= video.created_at %></p>
+              <p>Ngày tạo : <%= video.created_at.strftime("%m/%d/%Y") %></p>
             </div>
           </td>
         <% end %>
