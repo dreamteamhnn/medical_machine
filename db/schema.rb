@@ -155,7 +155,7 @@ ActiveRecord::Schema.define(version: 20181209160302) do
     t.float "sg_map_lng", limit: 24
   end
 
-  create_table "customer_orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
+  create_table "customer_orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.bigint "product_id"
     t.string "customer_name"
     t.string "phone_number"
