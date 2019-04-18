@@ -12669,7 +12669,8 @@ body:not(.position-fullwidth).single-timeline_post .post-author-bio {
 }
 
 .sidebar-1-4 .sidebar {
-    padding-right: 30px
+    /*padding-right: 30px*/
+    padding-right: 5px
 }
 
 .site-header {
