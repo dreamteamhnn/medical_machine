@@ -1,48 +1,32 @@
 <div id="sidebar" class="col-xs-12 col-lg-2 col-lg-pull-10 sidebar widget-area sidebar category-product" role="complementary">
   <aside id="tm_willard_products-4" class="widget woocommerce tm_willard_widget_products">
     <h2 class="widget-title title-font-em">Danh mục</h2>
-    <nav id="left-navigation" class="nav" role="navigation">
-      <ul class="nav__list">
-        <% @categories.each do |category| %>
-          <li class="left-navigation-li">
-            <% if category.second.blank? %>
-              <%= link_to category.first.name, product_category_path(category.first),
-                class: "category-item-select #{'item-active' if params[:category_id] == category.first.slug}", id: "category-id-#{category.first.id}" %>
-            <% else %>
-              <input id="group-<%= category.first.id %>" type="checkbox" hidden />
-              <label for="group-<%= category.first.id %>"
-                class="select-category <%= 'item-active' if params[:category_id] == category.first.slug %>" data-slug="<%= category.first.slug %>" name="category-<%= category.first.id %>">
-                <span class="fa fa-angle-right"></span><%= category.first.name %>
-              </label>
-              <ul class="group-list">
-                <% category.second.each_with_index do |sub_category, j| %>
-                  <input type="hidden" id="parent-<%= sub_category.first.id %>" value="<%= category.first.id %>">
-                  <% if sub_category.second.blank? %>
-                    <li class="left-navigation-li"><%= link_to sub_category.first.name, product_category_path(sub_category.first),
-                      class: "category-item-select #{'item-active' if (params[:category_id] == sub_category.first.slug || (@product && sub_category.first.id == @product.categories.first&.id))}", id: "category-id-#{sub_category.first.id}" %></li>
-                  <% else %>
-                    <li class="left-navigation-li">
-                      <input id="sub-group-<%= sub_category.first.id %>" type="checkbox" hidden />
-                      <label for="sub-group-<%= sub_category.first.id %>"
-                        class="select-category <%= 'item-active' if params[:category_id] == sub_category.first.slug %>" name="category-<%= sub_category.first.id %>" data-slug="<%= category.first.slug %>">
-                        <span class="fa fa-angle-right"></span><%= sub_category.first.name %>
-                      </label>
-                      <ul class="sub-group-list">
-                        <% sub_category.second.each do |sub_sub_category| %>
-                          <li class="left-navigation-li"><%= link_to sub_sub_category.name, product_category_path(sub_sub_category),
-                            class: "category-item-select #{'item-active' if (params[:category_id] == sub_sub_category.slug || (@product && sub_sub_category.id == @product.categories.first&.id))}", id: "category-id-#{sub_sub_category.id}" %></li>
-                          <input type="hidden" id="parent-<%= sub_sub_category.id %>" value="<%= sub_category.first.id %>">
-                        <% end %>
-                      </ul>
-                    </li>
-                  <% end %>
-                <% end %>
-              </ul>
+    <aside class="aside-1">
+      <div class="aside-panel aside-categories">
+        <div class="as-panel-body">
+          <div class="uk-accordion" data-uk-accordion="">
+            <% @categories.each do |category| %>
+              <h3 class="uk-accordion-title as-heading-2">
+                <%= link_to category.first.name, product_category_path(category.first), title: "#{category.first.name}" %>
+              </h3>
+              <% if category.second.present? %>
+                <div data-wrapper="true" style="overflow:hidden;height:0;position:relative;" aria-expanded="false">
+                  <div class="uk-accordion-content as-body">
+                    <ul class="uk-list uk-clearfix">
+                      <% category.second.each_with_index do |sub_category, j| %>
+                        <li>
+                          <%= link_to sub_category.first.name, product_category_path(sub_category.first), title: "#{sub_category.first.name}" %>
+                        </li>
+                      <% end %>
+                    </ul>
+                  </div>
+                </div>
+              <% end %>
             <% end %>
-          </li>
-        <% end %>
-      </ul>
-    </nav>
+          </div>
+        </div>
+      </div>
+    </aside>
     <% if @brands %>
       <aside id="tag_cloud-5" class="widget widget_tag_cloud">
         <h5 class="widget-title">Hãng</h5>
