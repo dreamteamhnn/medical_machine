@@ -12784,7 +12784,7 @@ body:not(.position-fullwidth).single-timeline_post .post-author-bio {
 
 .site-header .woocommerce-currency-switcher-form .dd-container .dd-select {
     font-size: 12px;
-    line-height: 35px
+    line-height: 35px;
 }
 
 .header-elements-wrap {
@@ -13583,7 +13583,7 @@ body:not(.position-fullwidth).single-timeline_post .post-author-bio {
     font-feature-settings: "liga";
     opacity: 0;
     visibility: hidden;
-    line-height: 34px
+    line-height: 34px;
 }
 
 .mobile-panel__menu-wrap.dropdown i:after,
@@ -13639,12 +13639,12 @@ body:not(.position-fullwidth).single-timeline_post .post-author-bio {
 
 .site-logo {
     margin: 0;
-    line-height: 1
+    line-height: 1;
 }
 
 .site-logo__link {
     text-decoration: none;
-    line-height: 1
+    line-height: 1;
 }
 
 .site-description {
@@ -13829,7 +13829,7 @@ body:not(.position-fullwidth).single-timeline_post .post-author-bio {
     font-feature-settings: "liga";
     opacity: 0;
     visibility: hidden;
-    line-height: 34px
+    line-height: 34px;
 }
 
 .entry-meta,
@@ -14596,7 +14596,7 @@ body:not(.position-fullwidth).single-timeline_post .post-author-bio>* {
     width: 30px;
     height: 30px;
     font-size: 20px;
-    line-height: 28px
+    line-height: 28px;
 }
 
 .sticky__label.type-both,
@@ -14608,7 +14608,7 @@ body:not(.position-fullwidth).single-timeline_post .post-author-bio>* {
 .sticky__label.type-both i {
     display: inline-block;
     margin-right: 5px;
-    line-height: 30px
+    line-height: 30px;
 }
 
 .post-gallery {
@@ -14928,7 +14928,7 @@ a[data-popup=magnificPopup]:focus {
 .site-footer {
     font-size: 14px;
     font-size: .875rem;
-    line-height: 1.714285
+    line-height: 1.714285;
 }
 
 .footer-area-wrap,
@@ -15259,7 +15259,7 @@ body.error404 .site-content {
 
 .not-found .page-title {
     margin: 0 0 20px;
-    line-height: .8
+    line-height: .8;
 }
 
 @media (min-width:992px) {
@@ -15645,7 +15645,7 @@ header .page-title {
 
 .widget.widget_calendar tfoot td {
     font-size: 0;
-    line-height: 0
+    line-height: 0;
 }
 
 .widget.widget_calendar #next,
@@ -15993,7 +15993,7 @@ header .page-title {
 .widget-about__content {
     margin-top: 15px;
     text-transform: none;
-    line-height: 28px
+    line-height: 28px;
 }
 
 .widget-about__tagline {
@@ -16016,7 +16016,7 @@ header .page-title {
     text-transform: none;
     font-size: 16px;
     font-weight: 400;
-    line-height: 28px
+    line-height: 28px;
 }
 
 .widget-banner__link:hover {
