@@ -42,30 +42,13 @@
             <li class="contact-information__item contact-information__item--icon">
               <span class="icon linearicon linearicon-home4"></span>
               <%= "Địa chỉ Sài Gòn: #{@company.sg_address}" %>
-            </li>                        
+            </li>
           </ul>
         </aside>
 
         <aside id="text-5" class="col-xs-12 col-sm-12 col-md-6 col-lg-3 widget footer-aside-index">
           <h5 class="widget-title">Chỉ đường</h5>
-            <div id="map" style="height: 300px;"></div>
-            <input type="hidden" id="map_lat" value="<%= @company.hn_map_lat %>">
-            <input type="hidden" id="map_lng" value="<%= @company.hn_map_lng %>">
-            <script>
-              function initMap() {
-                var lat = parseFloat($("#map_lat").val());
-                var lng = parseFloat($("#map_lng").val());
-                var uluru = {lat: lat, lng: lng};
-                var map = new google.maps.Map(document.getElementById('map'), {
-                  zoom: 15,
-                  center: uluru
-                });
-                var marker = new google.maps.Marker({
-                  position: uluru,
-                  map: map
-                });
-              }
-            </script>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d639.6932932253281!2d105.77759553508089!3d21.005208795088073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa5c120bc17dc1344!2zU3RlY2ggLSBDaHV5w6puIGN1bmcgY-G6pXAga8OtbmggaGnhu4NuIHZp!5e0!3m2!1svi!2s!4v1559888706384!5m2!1svi!2s" width="450" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
         </aside>
       </section>
     </div>
