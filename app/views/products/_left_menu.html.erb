@@ -5,24 +5,30 @@
       <div class="aside-panel aside-categories">
         <div class="as-panel-body">
           <div class="uk-accordion" data-uk-accordion="">
-            <% @categories.each do |category| %>
-              <h3 class="uk-accordion-title as-heading-2">
-                <%= link_to category.first.name, product_category_path(category.first), title: "#{category.first.name}" %>
-              </h3>
-              <% if category.second.present? %>
-                <div data-wrapper="true" style="overflow:hidden;height:0;position:relative;" aria-expanded="false">
-                  <div class="uk-accordion-content as-body">
-                    <ul class="uk-list uk-clearfix">
-                      <% category.second.each_with_index do |sub_category, j| %>
-                        <li>
-                          <%= link_to sub_category.first.name, product_category_path(sub_category.first), title: "#{sub_category.first.name}" %>
-                        </li>
-                      <% end %>
-                    </ul>
-                  </div>
-                </div>
-              <% end %>
-            <% end %>
+            <div id='cssmenu'>
+              <ul>
+                <% @categories.each do |category| %>
+                  <% unless category.second.present? %>
+                    <li class='active'>
+                      <%= link_to category.first.name, product_category_path(category.first), title: "#{category.first.name}" %>
+                    </li>
+                  <% else %>
+                    <li class='has-sub'>
+                      <%= link_to category.first.name, "#", title: "#{category.first.name}" %>
+
+                      <ul>
+                        <% category.second.each_with_index do |sub_category, j| %>
+                          <li>
+                            <%= link_to sub_category.first.name, product_category_path(sub_category.first), title: "#{sub_category.first.name}" %>
+                          </li>
+                        <% end %>
+                      </ul>
+                    </li>
+                  <% end %>
+                <% end %>
+              </ul>
+            </div>
+            
           </div>
         </div>
       </div>
