@@ -28,56 +28,16 @@
               <div class="row" style="margin-top: 50px;">
                 <div class="col-md-5 col-md-offset-1" style="margin-top: 50px;">
                   <h3>
-                    Văn phòng: <%= @company.hn_address %><br>
+                    Văn phòng: <%= @company.sg_address %><br>
                   </h3>
-                  <div id="map_hn" style="height: 500px; width: 100%"></div>
-                  <input type="hidden" id="hn_map_lat" value="<%= @company.hn_map_lat %>">
-                  <input type="hidden" id="hn_map_lng" value="<%= @company.hn_map_lng %>">
-                  <script>
-                    function initMap() {
-                      var hn_lat = parseFloat($("#hn_map_lat").val());
-                      var hn_lng = parseFloat($("#hn_map_lng").val());
-                      var uluru = {lat: hn_lat, lng: hn_lng};
-                      var map_hn = new google.maps.Map(document.getElementById('map_hn'), {
-                        zoom: 15,
-                        center: uluru
-                      });
-                      var marker = new google.maps.Marker({
-                        position: uluru,
-                        map: map_hn
-                      });
-                    }
-                  </script>
-                  <script async defer
-                  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbEWIklaDSw8BsgQhkabXXYnM3DcKFNyQ&callback=initMap">
-                  </script>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2075.897630917652!2d106.70190050289487!3d10.828679771053443!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528c4eaaf21bd%3A0x4c09b4b7864a7d3d!2zU3RlY2ggU8OgaSBHw7JuIC0gQ04gbWnhu4FuIE5hbSBDw7RuZyB0eSBW4bqtdCB0xrAga2hvYSBo4buNYyBRdeG7kWMgdOG6vw!5e0!3m2!1svi!2s!4v1559890348624!5m2!1svi!2s" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                 </div>
 
                 <div class="col-md-5 col-md-offset-1" style="margin-top: 50px;">
                   <h3>
                     Văn phòng: <%= @company.hn_address %><br>
                   </h3>
-                  <div id="map_sg" style="height: 500px; width: 100%"></div>
-                  <input type="hidden" id="sg_map_lat" value="<%= @company.sg_map_lat %>">
-                  <input type="hidden" id="sg_map_lng" value="<%= @company.sg_map_lng %>">
-                  <script>
-                    function initMap() {
-                      var sg_lat = parseFloat($("#sg_map_lat").val());
-                      var sg_lng = parseFloat($("#sg_map_lng").val());
-                      var uluru = {lat: sg_lat, lng: sg_lng};
-                      var map_sg = new google.maps.Map(document.getElementById('map_sg'), {
-                        zoom: 15,
-                        center: uluru
-                      });
-                      var marker = new google.maps.Marker({
-                        position: uluru,
-                        map: map_sg
-                      });
-                    }
-                  </script>
-                  <script async defer
-                  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbEWIklaDSw8BsgQhkabXXYnM3DcKFNyQ&callback=initMap">
-                  </script>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.6915496438987!2d105.77569831493226!3d21.004997986011176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313453524dc911a7%3A0xf4266d4f7d434c5e!2zVGhp4bq_dCBi4buLIHRow60gbmdoaeG7h20gU3RlY2g!5e0!3m2!1sen!2s!4v1559890490197!5m2!1sen!2s" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                 </div>
               </div>
 
