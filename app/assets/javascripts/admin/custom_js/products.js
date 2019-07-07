@@ -1,5 +1,8 @@
 $(document).on('turbolinks:load', function(){
   
+  $("#show-limit").on("change", function(){
+    $(this).closest("form").trigger("submit");
+  });
 
   $("#upload-product-image-1, #upload-product-image-2").change(function() {
     var imgId = $(this)[0].id.replace("upload-product-image-", "");

@@ -93,7 +93,7 @@ class Admin::ProductsController < Admin::BaseController
       product_images_attributes: Product::PRODUCT_IMAGE_ATTRIBUTES,
       product_categories_attributes: Product::PRODUCT_CATEGORY_ATTRIBUTES,
       product_fields_attributes: Product::PRODUCT_FIELD_ATTRIBUTES,
-      product_media_relations_attributes: Product::PRODUCT_MEDIA_ATTRIBUTES)
+      product_media_relations_attributes: Product::PRODUCT_MEDIA_ATTRIBUTES).permit(:term)
   end
 
   def load_products
@@ -208,7 +208,9 @@ class Admin::ProductsController < Admin::BaseController
       end
     end
     category_arr = category_arr.flatten
-    return Product.all unless category_arr.size > 0
-    Product.by_categories category_arr
+    params[:limit] = 5 if params[:limit] == nil
+    @search = Product.all.ransack params[:q]
+    return @search.result.where('name LIKE ?', "%#{params[:term]}%").page(params[:page]).per(params[:limit]) unless category_arr.size > 0
+    Product.by_categories(category_arr).ransack(params[:q]).result.page(params[:page]).per(params[:limit])
   end
 end

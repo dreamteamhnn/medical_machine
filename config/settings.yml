@@ -40,3 +40,10 @@ seo:
   max_length:
     title: 70
     description: 300
+show_limit:
+  show_5: 5
+  show_10: 10
+  show_15: 15
+  show_20: 20
+  show_30: 30
+  show_50: 50
