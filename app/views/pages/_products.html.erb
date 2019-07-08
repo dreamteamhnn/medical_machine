@@ -2,9 +2,7 @@
   <ul class="nav nav-tabs mema-tabs home-nav block-tab" role="tablist">
     <% block.each_with_index do |category, index| %>
       <li role="presentation" class="<%= 'active' if index == 0 %>">
-        <%= link_to category[:title], "#home-#{category[:id]}",
-          "aria-controls": "home-#{category[:id]}", role: "tab",
-          "data-toggle": "tab" %>
+        <%= link_to category[:title], "#home-#{category[:id]}", "data-toggle": "tab" %>
       </li>
     <% end %>
   </ul>
@@ -25,3 +23,5 @@
     <% end %>
   </div>
 </div>
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
