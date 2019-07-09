@@ -71,7 +71,7 @@ $(document).on('turbolinks:load', function(){
           parameter.push(key+":"+value);
         }
       }
-      $("#product_parameter").val(parameter.join());
+      $("#product_parameter").val(parameter.join(";"));
     }
     $(".product-parameter-span")[0].innerHTML = $("#product_parameter").val();
   });
@@ -100,7 +100,7 @@ $(document).on('turbolinks:load', function(){
   function formatDataParamTable() {
     var paramValue = $("#product_parameter").val();
     if (paramValue != "") {
-      var paramArr = paramValue.split(",");
+      var paramArr = paramValue.split(";");
       for (var i in paramArr) {
         paramArr[i] = paramArr[i].split(":");
       }
