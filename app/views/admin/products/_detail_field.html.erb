@@ -18,8 +18,8 @@
 </div>
 
 <div class="row show-grid">
-  <div class="form-group form-group-part col-xs-6">
-    <div class="col-xs-6 parameter-form">
+  <div class="form-group form-group-part col-xs-12">
+    <div class="col-xs-3 parameter-form">
       <strong>Định dạng thông số</strong> </br>
       <%= f.select :is_parameter_table, [['Dạng text', false], ['Dạng bảng', true]], {}, { class: "form-control"} %>
     </div>
@@ -27,10 +27,13 @@
       <strong>Thông số</strong> </br>
       <%= link_to "Nhập", "#product-parameter", :class => "btn btn-success", "data-toggle" => "modal" %>
     </div>
-    <div class="col-xs-4">
+    <div class="col-xs-5">
       <p class="product-parameter-span multi-line"></p>
     </div>
   </div>
+</div>
+
+<div class="row show-grid">
   <div class="form-group form-group-part col-xs-6">
     <div class="col-xs-6 price-form">
       <strong>Mã sản phẩm</strong> </br>
@@ -77,36 +80,13 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td><input type="text" class="form-control"/></td>
-                <td><input type="text" class="form-control"/></td>
-                <td><button type="button" class="btn btn-danger delete-param-product">Xóa</button></td>
-              </tr>
-              <tr>
-                <td><input type="text" class="form-control"/></td>
-                <td><input type="text" class="form-control"/></td>
-                <td><button type="button" class="btn btn-danger delete-param-product">Xóa</button></td>
-              </tr>
-              <tr>
-                <td><input type="text" class="form-control"/></td>
-                <td><input type="text" class="form-control"/></td>
-                <td><button type="button" class="btn btn-danger delete-param-product">Xóa</button></td>
-              </tr>
-              <tr>
-                <td><input type="text" class="form-control"/></td>
-                <td><input type="text" class="form-control"/></td>
-                <td><button type="button" class="btn btn-danger delete-param-product">Xóa</button></td>
-              </tr>
-              <tr>
-                <td><input type="text" class="form-control"/></td>
-                <td><input type="text" class="form-control"/></td>
-                <td><button type="button" class="btn btn-danger delete-param-product">Xóa</button></td>
-              </tr>
-              <tr>
-                <td><input type="text" class="form-control"/></td>
-                <td><input type="text" class="form-control"/></td>
-                <td><button type="button" class="btn btn-danger delete-param-product">Xóa</button></td>
-              </tr>
+              <% @product.parameter.split(";").count.times do |n|%>
+                <tr>
+                  <td><input type="text" class="form-control"/></td>
+                  <td><input type="text" class="form-control"/></td>
+                  <td><button type="button" class="btn btn-danger delete-param-product">Xóa</button></td>
+                </tr>
+              <% end %>
             </tbody>
           </table>
           <button type="button" class="btn btn-success" id="add-param-product">Thêm thuộc tính</button>

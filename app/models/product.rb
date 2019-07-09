@@ -28,8 +28,7 @@ class Product < ApplicationRecord
     }
   end
 
-  PRODUCT_ATTRIBUTES = [:name, :model, :price, :discount_price, :description,
-    :short_description, :parameter, :brand_id, :is_parameter_table]
+  PRODUCT_ATTRIBUTES = %i(name model price discount_price description short_description parameter brand_id is_parameter_table)
 
   PRODUCT_IMAGE_ATTRIBUTES = [:id, :title, :url, :desc, :caption, :alt, :_destroy]
   PRODUCT_CATEGORY_ATTRIBUTES = [:id, :category_id, :home_order, :list_order, :_destroy]
