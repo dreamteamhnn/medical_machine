@@ -62,7 +62,7 @@ img.emoji {
 #support-block {
     .support, .instock, .shipping, .warranty {
       background-color: #ffd71a !important;
-      &:hover {
+      &:hover, h3:hover {
         background-color: #222 !important;
         color: #ffd71a !important;
       }
@@ -875,7 +875,7 @@ a:hover {
 @media (min-width: 1200px) {
     .site .container,
     .blog-default.position-fullwidth.single-post .post img:not(.swiper-image) {
-        max-width: 1800px
+        max-width: 1920px
     }
 }
 
@@ -7292,7 +7292,7 @@ body.wcvendors.wcvendors_vendor .entry-content > h2:nth-child(2):before {
     border: 1px solid #f2f2f2;
     border-radius: 4px;
     padding: 5px 10px 5px 55px;
-    height: 60px;
+    height: 100%;
   }
   .support:hover, .shipping:hover, .warranty:hover, .instock:hover{
     background-color: #ffd71a;

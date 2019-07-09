@@ -42,7 +42,7 @@ class Admin::ProductsController < Admin::BaseController
 
   def update
     if @product.update_attributes(product_params)
-      flash[:success] = "Sửa sản phẩm #{strip_tags(@product.name)} thành công!"
+      flash[:success] = "Sửa sản phẩm [#{strip_tags(@product.name)}] thành công!"
     else
       @category_attrs = category_params
       @field_attrs = field_params
@@ -55,7 +55,7 @@ class Admin::ProductsController < Admin::BaseController
 
   def destroy
     if @product.destroy
-      flash[:success] = "Xóa sản phẩm #{strip_tags(@product.name)} thành công!"
+      flash[:success] = "Xóa sản phẩm [#{strip_tags(@product.name)}] thành công!"
     else
       flash[:danger] = "Lỗi! Xóa sản phẩm không thành công."
     end
@@ -89,11 +89,12 @@ class Admin::ProductsController < Admin::BaseController
     params[:product][:name] = strip_tags(params[:product][:name]).strip
     params[:product][:short_description] = strip_tags(params[:product][:short_description]).strip
     params[:product][:description] = strip_tags(params[:product][:description]).strip
+    params[:product][:parameter] = strip_tags(params[:product][:parameter]).strip
     params.require(:product).permit(Product::PRODUCT_ATTRIBUTES,
       product_images_attributes: Product::PRODUCT_IMAGE_ATTRIBUTES,
       product_categories_attributes: Product::PRODUCT_CATEGORY_ATTRIBUTES,
       product_fields_attributes: Product::PRODUCT_FIELD_ATTRIBUTES,
-      product_media_relations_attributes: Product::PRODUCT_MEDIA_ATTRIBUTES).permit(:term)
+      product_media_relations_attributes: Product::PRODUCT_MEDIA_ATTRIBUTES)
   end
 
   def load_products
