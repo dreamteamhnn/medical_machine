@@ -80,12 +80,14 @@
               </tr>
             </thead>
             <tbody>
-              <% @product.parameter.split(";").count.times do |n|%>
-                <tr>
-                  <td><input type="text" class="form-control"/></td>
-                  <td><input type="text" class="form-control"/></td>
-                  <td><button type="button" class="btn btn-danger delete-param-product">Xóa</button></td>
-                </tr>
+              <% if @product.parameter.present? %>
+                <% @product.parameter.split(";").count.times do |n|%>
+                  <tr>
+                    <td><input type="text" class="form-control"/></td>
+                    <td><input type="text" class="form-control"/></td>
+                    <td><button type="button" class="btn btn-danger delete-param-product">Xóa</button></td>
+                  </tr>
+                <% end %>
               <% end %>
             </tbody>
           </table>

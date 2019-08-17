@@ -3,12 +3,12 @@
     <div class="block_product_thumbnail">
       <a href="">
         <div class="tm-thumbs-wrap effect-fade">
-          <div class="tm-thumbs-wrap__inner">
+          <div class="tm-thumbs-wrap__inner product-image-box">
             <% first = product.product_images.first %>
-            <% second = product.product_images.second %>
+            <% second = product.product_images.second.url.present? ? product.product_images.second : first %>
             <%= link_to friendly_product_path(product), title: strip_tags(product.name) do %>
-              <%= image_tag first.url, size: '340', title: first.title, alt: first.alt if first && first.url %>
-              <%= image_tag second.url, size: '340', title: second.title, alt: second.alt if second && second.url%>
+              <%= image_tag first.url, size: "340x500", title: first.title, alt: first.alt if first && first.url %>
+              <%= image_tag second.url, size: "340x500", title: second.title, alt: second.alt if second && second.url%>
             <% end %>
           </div>
         </div>
