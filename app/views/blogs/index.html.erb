@@ -2,7 +2,8 @@
 <div class="site-content_wrap container article-list-page">
   <main id="main" class="site-main" role="main">
     <div class="row">
-      <div class="col-md-10 col-md-push-2">
+      <%= render 'left_sidebar' %>
+      <div class="col-sm-10">
         <% unless @blogs.present? %>
           <span>Bài viết đang được cập nhật.</span>
         <% end %>
@@ -41,7 +42,6 @@
           <% end %>
         </div>
       </div>
-        <%= render 'left_sidebar' %>
     </div>
     <nav class="woocommerce-pagination">
       <%= paginate @blogs %>

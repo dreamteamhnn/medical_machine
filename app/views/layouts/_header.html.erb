@@ -1,85 +1,84 @@
-<header id="masthead" class="site-header default" role="banner">
-  <!-- Mobile panel -->
-  <div class="mobile-panel">
-    <button class="menu-toggle mobile-toggle" aria-controls="main-menu" aria-expanded="false">
-    <span class="menu-toggle-box">
-    <span class="menu-toggle-inner"></span>
-    </span>
-    </button>
-    <div class="mobile-panel__right">
-      <div class="header-search">
-        <span class="search-form__toggle"></span>
-
-        <!-- Search form -->
-        <%= form_tag (controller_name != "medias" ? products_path : medias_path), method: "get", class: "search-form woocommerce-product-search" do %>
-          <div class="search-form__input-wrap">
-            <label class="screen-reader-text" for="woocommerce-product-search-field">Search for:</label>
-            <i class="linearicon linearicon-magnifier"></i>
-            <%= search_field_tag :query, params[:query],
-              id: "woocommerce-product-search-field",
-              class: "search-form__field", placeholder: "Tìm kiếm sản phẩm, Tài liệu…",
-              title: "Search for:" %>
-          </div>
-          <%= hidden_field_tag :post_type, "product" unless controller_name == "medias" %>
-          <%= hidden_field_tag :media_type, params[:media_type] if controller_name == "medias" %>
-          <%= hidden_field_tag :field_id, params[:field_id] if controller_name == "medias" %>
-          <button type="submit" class="search-form__submit btn-secondary">Tìm kiếm</button>
-        <% end %>
-        <span class="search-form__close"></span>
+<!-- <div id="top-bar" class="full">
+  <div class="container">
+    <div class="col-7">
+      <div class="row left-top-bar">
+        <div class="hotline-top">
+          <span>Hỗ trợ khách hàng:</span>
+          <a href="tel:0933 473 268" title="">
+            <i class="fa fa-phone"></i> 0933 473 268
+          </a> | <a href="mailto:sales@e-techmart.com" title="">
+            <i class="fa fa-envelope-o"></i> sales@e-techmart.com</a>
+        </div>
       </div>
+    </div>
 
+    <div class="col-5">
+      <div class="row menu-top">
+        <ul id="menu-menu-top" class="menu">
+          <li id="menu-item-1360" class="menu-item menu-item-type-taxonomy menu-item-object-new_category menu-item-1360">
+            <a href="https://e-techmart.com/danh-muc-tin-tuc/dich-vu-sua-chua">Dịch Vụ Bảo Dưỡng Sửa Chữa Thiết Bị</a>
+          </li>
+          <li id="menu-item-1361" class="menu-item menu-item-type-taxonomy menu-item-object-new_category menu-item-1361">
+            <a href="https://e-techmart.com/danh-muc-tin-tuc/tin-cong-nghe">Tin Tức</a>
+          </li>
+          <li id="menu-item-159" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-159">
+            <a href="https://e-techmart.com/lien-he">Liên Hệ</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
-  <!-- End Mobile panel -->
+</div>
+ -->
+<nav class="navbar navbar-default navbar-white" role="navigation">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to root_path, class: "site-logo__link", rel: "home" do %>
+        <%= image_tag @company.logo, size: '184x45', title: @company.logo_title, alt: @company.logo_alt, class: "site-link__img" if @company.logo %>
+      <% end %>
+    </div>
 
-  <!-- Header content -->
-  <div class="header-container">
-    <div class="header-container_wrap container">
-      <div class="header-container__flex">
-        <div class="site-branding">
-          <div class="site-logo">
-            <%= link_to root_path, class: "site-logo__link", rel: "home" do %>
-              <%= image_tag @company.logo, size: '184x45', title: @company.logo_title, alt: @company.logo_alt, class: "site-link__img" if @company.logo %>
-            <% end %>
-          </div>
-        </div>
-
-        <!-- Search form -->
-        <div class="header-search">
-         <%= form_tag (controller_name != "medias" ? products_path : medias_path), method: "get", class: "search-form woocommerce-product-search" do %>
-            <div class="search-form__input-wrap">
-              <label class="screen-reader-text" for="woocommerce-product-search-field">Search for:</label>
-              <i class="linearicon linearicon-magnifier"></i>
-              <%= search_field_tag :query, params[:query],
-                id: "woocommerce-product-search-field",
-                class: "search-form__field", placeholder: "Tìm kiếm sản phẩm, Tài liệu…",
-                title: "Search for:" %>
-            </div>
-            <button type="submit" class="search-form__submit btn-secondary">Tìm kiếm</button>
-            <%= hidden_field_tag :post_type, "product" unless controller_name == "medias" %>
-            <%= hidden_field_tag :media_type, params[:media_type] if controller_name == "medias" %>
-            <%= hidden_field_tag :field_id, params[:field_id] if controller_name == "medias" %>
-          <% end %>
-        </div>
-        <!-- End Search form -->
-
-        <div class="site-branding">
-          <div class="site-logo">
-            <div class="contact-block__item contact-block__item--icon">
-              <i class="fa fa-phone-square fa-lg"></i>
-              <div class="contact-block__value-wrap">
-                <!-- <span class="contact-block__label telephone-header">Hotline - <%= Company.first.contact_name %></span> -->
-                <span class="contact-block__label telephone-header"><%= Company.first.phone %></span>
-              </div>
-            </div>
+    <!-- Phone Number -->
+    <div class="navbar-right site-branding">
+      <div class="site-logo">
+        <div class="contact-block__item contact-block__item--icon">
+          <i class="fa fa-phone-square fa-lg"></i>
+          <div class="contact-block__value-wrap">
+            <!-- <span class="contact-block__label telephone-header">Hotline - <%= Company.first.contact_name %></span> -->
+            <span class="contact-block__label telephone-header"><%= Company.first.phone %></span>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Menu -->
-    <%= render "layouts/top_menu" %>
-    <!-- End Menu -->
+    <!-- Search form -->
+    <!-- <div class="collapse navbar-collapse navbar-ex1-collapse"> -->
+    <div class="search-box">
+      <!-- Search form -->
+      <%= form_tag (controller_name != "medias" ? products_path : medias_path), method: "get", class: "search-form-custom woocommerce-product-search" do %>
+        <div class="search-form__input-wrap">
+          <label class="screen-reader-text" for="woocommerce-product-search-field">Search for:</label>
 
+          <%= search_field_tag :query, params[:query],
+            id: "woocommerce-product-search-field",
+            class: "search-form__field", placeholder: "Tìm kiếm sản phẩm, Tài liệu…",
+            title: "Search for:" %>
+        </div>
+        <%= hidden_field_tag :post_type, "product" unless controller_name == "medias" %>
+        <%= hidden_field_tag :media_type, params[:media_type] if controller_name == "medias" %>
+        <%= hidden_field_tag :field_id, params[:field_id] if controller_name == "medias" %>
+        <button type="submit" class="button-search">
+          <i class="linearicon linearicon-magnifier"></i>
+        </button>
+      <% end %>
+
+    </div><!-- /.navbar-collapse -->
   </div>
-</header>
+</nav>

@@ -1,27 +1,51 @@
-<div class="container">
-  <ul class="nav nav-tabs mema-tabs home-nav block-tab" role="tablist">
-    <% block.each_with_index do |category, index| %>
-      <li role="presentation" class="<%= 'active' if index == 0 %>">
-        <%= link_to category[:title], "#home-#{category[:id]}", "data-toggle": "tab" %>
-      </li>
-    <% end %>
-  </ul>
-  <div class="clearfix"></div>
-
-  <div class="tab-content">
-    <% block.each_with_index do |category_block, index| %>
-      <div role="tabpanel" class=" tab-pane <%= 'active' if index == 0 %>"
-        id="home-<%= category_block[:id] %>">
-        <div class="tm-wc-ajax-products-wrapper">
-          <div class="products row product-row-block">
-            <% category_block[:products].each do |product|%>
-              <%= render "product_field", product: product%>
-            <% end %>
-          </div>
-        </div>
+<div class="typical-products container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="brand-title">
+        <ul>
+          <li class="typical-product-brand list-product-category">Mục sản phẩm 1</li>
+          <li class="typical-product-brand list-product-category">Mục sản phẩm 2</li>
+          <li class="typical-product-brand list-product-category">Mục sản phẩm 3</li>
+        </ul>
       </div>
-    <% end %>
+    </div>
+    <div class="col-sm-3">
+      <%= render "product_field", product: @home_blocks.second.first[:products].first %>
+    </div>
+    <div class="col-sm-3">
+      <%= render "product_field", product: @home_blocks.second.first[:products].first %>
+    </div>
+    <div class="col-sm-3">
+      <%= render "product_field", product: @home_blocks.second.first[:products].first %>
+    </div>
+    <div class="col-sm-3">
+      <%= render "product_field", product: @home_blocks.second.first[:products].first %>
+    </div>
   </div>
 </div>
 
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<div class="typical-products container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="brand-title">
+        <ul>
+          <li class="typical-product-brand list-product-category">Mục sản phẩm 4</li>
+          <li class="typical-product-brand list-product-category">Mục sản phẩm 5</li>
+          <li class="typical-product-brand list-product-category">Mục sản phẩm 6</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <%= render "product_field", product: @home_blocks.second.first[:products].first %>
+    </div>
+    <div class="col-sm-3">
+      <%= render "product_field", product: @home_blocks.second.first[:products].first %>
+    </div>
+    <div class="col-sm-3">
+      <%= render "product_field", product: @home_blocks.second.first[:products].first %>
+    </div>
+    <div class="col-sm-3">
+      <%= render "product_field", product: @home_blocks.second.first[:products].first %>
+    </div>
+  </div>
+</div>
