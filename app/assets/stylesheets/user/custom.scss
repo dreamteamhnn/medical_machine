@@ -694,7 +694,7 @@ body {
     font-family: 'Hind Siliguri', sans-serif;
     letter-spacing: 0em;
     text-align: left;
-    color: #999999
+    color: #4f4d53;
 }
 
 h1,
@@ -870,13 +870,6 @@ a:hover {
 
 .invert .text-accent-3 {
     color: #fa3a3a
-}
-
-@media (min-width: 1200px) {
-    .site .container,
-    .blog-default.position-fullwidth.single-post .post img:not(.swiper-image) {
-        max-width: 1920px
-    }
 }
 
 .single-team-wrap {
