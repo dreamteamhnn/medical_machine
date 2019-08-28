@@ -7,7 +7,7 @@ end
 gem "rails", "~> 5.1.4"
 
 # Database
-gem "mysql2", ">= 0.3.18", "< 0.5"
+gem "mysql2", ">= 0.4.10", "< 0.5"
 
 # Common
 gem "sprockets-rails"
