@@ -11,9 +11,11 @@
     <div id="swiper-carousel-59e9bc5f03f8c" class="tm-willard-carousel swiper-container swiper-container-horizontal" style="cursor: -webkit-grab;">
       <div class="swiper-wrapper" id="gallery_01">
         <% @product.product_images.each do |image| %>
-          <a href="" data-image="<%= image.url %>" data-zoom-image="<%= image.url %>" class="thumb-image-product">
-            <%= image_tag image.url, size: "10", title: image.title, alt: image.alt %>
-          </a>
+          <% if image.url.present? %>
+            <a href="" data-image="<%= image.url %>" data-zoom-image="<%= image.url %>" class="thumb-image-product">
+              <%= image_tag image.url, size: "10", title: image.title, alt: image.alt %>
+            </a>
+          <% end %>
         <% end %>
       </div>
 
