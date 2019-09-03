@@ -187,8 +187,8 @@ end
 
 puts "Create 10 news articles"
 15.times do |i|
-  Blog.create! title: Faker::Lorem.sentence,
-    content: Faker::Lorem.paragraph, is_important: [true, false].sample,
+  Blog.create! title: Faker::Lorem.sentence, template_id: (5 - rand(4)),
+    content: Faker::Lorem.paragraph(30, true), is_important: [true, false].sample,
     relation_blog_id_1: rand(20) + 1, relation_blog_id_2: rand(20) + 1
 end
 puts "Create articles OK"
@@ -228,8 +228,8 @@ Company.create! about: Faker::Lorem.paragraph, name: Faker::Lorem.sentence,
   phone: "0987.657.234", work_time:"7AM-9PM", email:"vattuthinghiem@gmail.com",
   facebook: "http://facebook.com", instagram:"http://instagram.com",
   contact_info:"Nguyen Thanh Tu", hn_address:"Nhà N02F, KĐT Mễ Trì Thượng, Phường Mễ Trì, Quận Nam Từ Liêm - Hà Nội",
-  sg_address:"Nhà N02F, KĐT Mễ Trì Thượng, Phường Mễ Trì, Quận Nam Từ Liêm - Hà Nội",
-  website:"http://thiendiahoi.com", contact_name: "Nguyen Xuan Tu"
+  website:"http://thiendiahoi.com", contact_name: "Nguyen Xuan Tu", sg_address: "Chung cư Phú Mỹ Hưng, Q.7, TP Hồ Chí Minh"
+
 puts "Create Company information OK"
 
 10.times do |i|
