@@ -1,12 +1,46 @@
 <div class="navbar-menu">
   <div class="container">
-      <div class="navbar-menu-list">
-        <div class="nav-menu-button">
+      <div class="navbar-menu-list clearfix">
+        <div class="nav-menu-button nav-left">
           <i class="fa fa-bars icon-home-nav"></i>
           <span class="jet-dropbar__button-text">Danh mục</span>
         </div>
         <div class="list-categories">
           <%= render "categories" %>
+        </div>
+        <div class="nav-right">
+          <div class="top-nav-horizontal">
+            <ul class="list-nav-horizontal">
+              <li id="menu-item-230" class="nav-horizontal-item">
+                <%= link_to "Tài liệu", friendly_document_path %>
+              </li>
+
+              <li id="menu-item-231" class="nav-horizontal-item">
+                <%= link_to "Video", friendly_video_path %>
+              </li>
+
+              <li id="menu-item-232" class="nav-horizontal-item">
+                <%= link_to "Liên hệ", friendly_contact_path %>
+              </li>
+
+              <li id="menu-item-233" class="nav-horizontal-item">
+                <%= link_to "Tin tức", blog_list_path() %>
+              </li>
+            </ul>
+          </div>
+          <div class="brand-button">
+            <span class="brand-button-title">
+              <i class="fa fa-bookmark-o"></i>
+              Thương hiệu
+            </span>
+            <ul class="list_brands">
+              <% @brand_logos.each do |brand| %>
+                <li class="brand-name-item">
+                  <%= link_to brand.name, product_brand_path(brand), class: "brand-name" %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
         </div>
       </div>
   </div>

@@ -7,7 +7,7 @@ end
 gem "rails", "~> 5.1.4"
 
 # Database
-gem "mysql2", ">= 0.4.10", "< 0.5"
+gem "mysql2", ">= 0.4.18", "< 0.6"
 
 # Common
 gem "sprockets-rails"
@@ -52,7 +52,7 @@ gem "dotenv-rails"
 gem "cocoon"
 
 # Ckeditor: format article content with html form
-gem "ckeditor"
+gem 'ckeditor', '4.2.2'
 
 # Rails server
 gem "unicorn", "~> 4.8.3"

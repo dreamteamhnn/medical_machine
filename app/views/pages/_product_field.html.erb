@@ -14,10 +14,9 @@
         </div>
       </a>
     </div>
-    <br />
     <div class="block_product_content">
-      <h3>
-        <%= link_to strip_tags(product.name), friendly_product_path(product), class: "woocommerce-LoopProduct-link", maxlength: 44, title: strip_tags(product.name) %>
+      <h3 class="block-product-title">
+        <%= link_to strip_tags(product.name), friendly_product_path(product), class: "woocommerce-LoopProduct-link product_type_variable", maxlength: 15, title: strip_tags(product.name) %>
       </h3>
       <span class="price">
         <span class="woocs_price_code" data-product-id="215">
@@ -26,7 +25,7 @@
               <span class="woocommerce-Price-currencySymbol">VNĐ</span>
             </span>
           <% else %>
-            <span class="woocommerce-Price-amount amount">Liên hệ</span>
+            <span class="woocommerce-Price-amount amount"><%= link_to 'Yêu cầu báo giá', friendly_product_path(product), class: "woocs_price_code", maxlength: 44, title: strip_tags(product.name) %></span>
           <% end %>
         </span>
       </span>

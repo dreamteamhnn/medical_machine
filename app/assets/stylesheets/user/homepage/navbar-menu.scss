@@ -12,7 +12,6 @@
     padding: 8px 0 8px 20px;
     line-height: 1;
     cursor: pointer;
-    width: 250px;
     background-color: #ffd71a;
     font-weight: bold;
 
@@ -26,6 +25,104 @@
 
     i.icon-home-nav {
       margin-right: 10px;
+    }
+  }
+
+  .nav-left {
+    width: 250px;
+    float: left;
+  }
+
+  .nav-right {
+    width: calc(100% - 250px);
+    float: left;
+    position: relative;
+
+    .top-nav-horizontal {
+      width: calc(100% - 165px);
+      float: left;
+      height: 33px;
+      text-align: center;
+
+      .list-nav-horizontal {
+        height: 33px;
+        display: inline-table;
+      }
+
+      .nav-horizontal-item {
+        float: left;
+        display: inline;
+        padding: 2px 30px;
+        font-weight: bold;
+
+        a {
+          color: #333;
+        }
+
+        a:hover {
+          color: red;
+          text-decoration: none;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .nav-horizontal-item {
+          padding: 2px 10px;
+        }
+      }
+    }
+
+    .brand-button {
+      width: 165px;
+      float: right;
+      height: 33px;
+      line-height: 33px;
+      padding: 0 15px;
+      text-transform: uppercase;
+      display: inline-block;
+      background-color: red;
+      color: #FFF;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #FFF;
+        color: red;
+
+        .list_brands {
+          display: block;
+        }
+      }
+    }
+
+    .list_brands {
+      background-color: #FFFFFF;
+      display: none;
+      position: absolute;
+      top: 33px;
+      right: 0;
+      width: calc(100% - 2px);
+      z-index: 9999;
+      padding-bottom: 15px;
+      -webkit-box-shadow: 0 3px 8px rgba(3,3,3,0.26);
+      -ms-box-shadow: 0 3px 8px rgba(3,3,3,0.26);
+      box-shadow: 0 3px 8px rgba(3,3,3,0.26);
+      max-height: 376px;
+      overflow-y: auto;
+    }
+
+    .brand-name-item {
+      float: left;
+      width: 25%;
+      padding: 0 15px;
+
+      .brand-name {
+        color: #333;
+
+        &:hover {
+          color: #ff6600;
+          text-decoration: none;
+        }
+      }
     }
   }
 
@@ -88,7 +185,7 @@
       border-bottom: 1px solid #dfdfdf;
       border-left: 1px solid #dfdfdf;
       padding: 9px 15px 9px 20px;
-      color: #9e9ea0;
+      color: #333;
       z-index: 999;
 
       &:hover {
@@ -114,7 +211,7 @@
 
   .sub-menu-category {
     display: none;
-    height: 282px;
+    height: 376px;
     background-color: #FFF;
     position: absolute;
     left: 100%;
@@ -125,6 +222,7 @@
     -ms-box-shadow: 0 3px 8px rgba(3,3,3,0.26);
     box-shadow: 0 3px 8px rgba(3,3,3,0.26);
     padding: 9px 0 9px 20px;
+    overflow-y: auto;
 
     .sub-menu-item {
       margin: 0;

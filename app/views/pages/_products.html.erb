@@ -1,51 +1,29 @@
-<div class="typical-products container">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="brand-title">
-        <ul>
-          <li class="typical-product-brand list-product-category">Mục sản phẩm 1</li>
-          <li class="typical-product-brand list-product-category">Mục sản phẩm 2</li>
-          <li class="typical-product-brand list-product-category">Mục sản phẩm 3</li>
-        </ul>
+<% @home_blocks.each do |block| %>
+  <div class="typical-products container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="brand-title title-custom">
+          <ul class="nav nav-tabs nav-tabs-custom">
+            <% block.each_with_index do |category, index| %>
+              <li class="typical-product-brand list-product-category <%= 'active' if index == 0 %>">
+                <a data-toggle="tab" href="#menu<%= category[:id] %>"><%= category[:title] %></a>
+              </li>
+            <% end %>
+          </ul>
+        </div>
       </div>
-    </div>
-    <div class="col-sm-3">
-      <%= render "product_field", product: @home_blocks.second.first[:products].first %>
-    </div>
-    <div class="col-sm-3">
-      <%= render "product_field", product: @home_blocks.second.first[:products].first %>
-    </div>
-    <div class="col-sm-3">
-      <%= render "product_field", product: @home_blocks.second.first[:products].first %>
-    </div>
-    <div class="col-sm-3">
-      <%= render "product_field", product: @home_blocks.second.first[:products].first %>
-    </div>
-  </div>
-</div>
 
-<div class="typical-products container">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="brand-title">
-        <ul>
-          <li class="typical-product-brand list-product-category">Mục sản phẩm 4</li>
-          <li class="typical-product-brand list-product-category">Mục sản phẩm 5</li>
-          <li class="typical-product-brand list-product-category">Mục sản phẩm 6</li>
-        </ul>
+      <div class="tab-content">
+        <% block.each_with_index do |category, index| %>
+          <div id="menu<%= category[:id] %>" class="tab-pane fade in <%= 'active' if index == 0 %>">
+            <% category[:products].each do |product| %>
+              <div class="col-sm-3">
+                <%= render "product_field", product: product %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
-    <div class="col-sm-3">
-      <%= render "product_field", product: @home_blocks.second.first[:products].first %>
-    </div>
-    <div class="col-sm-3">
-      <%= render "product_field", product: @home_blocks.second.first[:products].first %>
-    </div>
-    <div class="col-sm-3">
-      <%= render "product_field", product: @home_blocks.second.first[:products].first %>
-    </div>
-    <div class="col-sm-3">
-      <%= render "product_field", product: @home_blocks.second.first[:products].first %>
-    </div>
   </div>
-</div>
+<% end %>

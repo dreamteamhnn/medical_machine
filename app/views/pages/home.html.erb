@@ -11,33 +11,25 @@
       <div class="container">
         <div class="banner">
           <div class="row">
-            <div class="col-md-9 col-sm-12">
+            <div class="col-sm-12">
               <div id="banner-images" class="carousel slide banner-images-class" data-ride="carousel">
                 <ol class="carousel-indicators">
                   <li data-target="#banner-images" data-slide-to="0" class="active"></li>
                   <li data-target="#banner-images" data-slide-to="1" class=""></li>
                   <li data-target="#banner-images" data-slide-to="2" class=""></li>
+                  <% @sliders.each_with_index do |slider, index| %>
+                    <li data-target="#banner-images" data-slide-to="0" class="<%= 'active' if index == 0 %>"></li>
+                  <% end %>
                 </ol>
                 <div class="carousel-inner">
-                  <div class="item active item-1">
-                  </div>
-                  <div class="item item-2">
-                  </div>
-                  <div class="item item-3">
-                  </div>
+                  <% @sliders.each_with_index do |slider, index| %>
+                    <div class="item <%= 'active' if index == 0 %> item-1">
+                      <%= link_to "#{image_tag slider.url, style: 'height:100%;width:auto;', title: slider.title, alt: slider.alt}".html_safe, products_path() %>
+                    </div>
+                  <% end %>
                 </div>
                 <a class="left carousel-control" href="#banner-images" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
                 <a class="right carousel-control" href="#banner-images" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-              </div>
-            </div>
-            <div class="col-md-3 col-config-sm-hidden">
-              <div class="row">
-                <div class="col-md-12 padding-left-0 margin-bottom-8">
-                  <%= image_tag "215_137.jpg", class: "img-responsive" %>
-                </div>
-                <div class="col-md-12 padding-left-0">
-                  <%= image_tag "215_137.jpg", class: "img-responsive" %>
-                </div>
               </div>
             </div>
           </div>
@@ -58,10 +50,10 @@
       <footer class="entry-footer">
       </footer>
       <!-- .entry-footer -->
+      <%= render "brand_slider" %>
+      <%= render "subcribe" %>
     </article>
     <!-- #post-## -->
+
   </main>
 </div>
-
-<%= render "brand_slider" %>
-<%= render "subcribe" %>
