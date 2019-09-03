@@ -6,7 +6,8 @@
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
   <%= display_meta_tags site: 'stechsaigon.com' %>
   <%= render 'layouts/google_analytic' if Rails.env.production? %>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag "application", media: "all",
+      "data-turbolinks-track": "reload" %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbEWIklaDSw8BsgQhkabXXYnM3DcKFNyQ&callback">
@@ -21,7 +22,7 @@
   <div id="page" class="site">
     <a class="skip-link screen-reader-text" href="https://ld-wp.template-help.com/woocommerce_58679/#content">Skip to content</a>
     <%= render "layouts/header" %>
-    <div id="content" class="site-content container">
+    <div id="content" class="site-content">
       <%= yield %>
     </div>
     <%= render "layouts/footer" %>

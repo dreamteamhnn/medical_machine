@@ -1,6 +1,6 @@
-<div class="post-215 type-product status-publish has-post-thumbnail hentry product_shipping_class-class-3 has-thumb col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 col-xxl-3 product">
+<div class="post-215 type-product status-publish has-post-thumbnail hentry product_shipping_class-class-3 has-thumb product">
   <div class="block_product_inner">
-    <div class="block_product_thumbnail">
+    <div class="block_product_thumbnail clearfix">
       <a href="">
         <div class="tm-thumbs-wrap effect-fade">
           <div class="tm-thumbs-wrap__inner product-image-box">
@@ -15,8 +15,8 @@
       </a>
     </div>
     <div class="block_product_content">
-      <h3>
-        <%= link_to strip_tags(product.name), friendly_product_path(product), class: "woocommerce-LoopProduct-link", maxlength: 44, title: strip_tags(product.name) %>
+      <h3 class="block-product-title">
+        <%= link_to strip_tags(product.name), friendly_product_path(product), class: "woocommerce-LoopProduct-link product_type_variable", maxlength: 15, title: strip_tags(product.name) %>
       </h3>
       <span class="price">
         <span class="woocs_price_code" data-product-id="215">
@@ -25,7 +25,7 @@
               <span class="woocommerce-Price-currencySymbol">VNĐ</span>
             </span>
           <% else %>
-            <span class="woocommerce-Price-amount amount">Liên hệ</span>
+            <span class="woocommerce-Price-amount amount"><%= link_to 'Yêu cầu báo giá', friendly_product_path(product), class: "woocs_price_code", maxlength: 44, title: strip_tags(product.name) %></span>
           <% end %>
         </span>
       </span>

@@ -1,27 +1,29 @@
-<div class="container">
-  <ul class="nav nav-tabs mema-tabs home-nav block-tab" role="tablist">
-    <% block.each_with_index do |category, index| %>
-      <li role="presentation" class="<%= 'active' if index == 0 %>">
-        <%= link_to category[:title], "#home-#{category[:id]}", "data-toggle": "tab" %>
-      </li>
-    <% end %>
-  </ul>
-  <div class="clearfix"></div>
-
-  <div class="tab-content">
-    <% block.each_with_index do |category_block, index| %>
-      <div role="tabpanel" class=" tab-pane <%= 'active' if index == 0 %>"
-        id="home-<%= category_block[:id] %>">
-        <div class="tm-wc-ajax-products-wrapper">
-          <div class="products row product-row-block">
-            <% category_block[:products].each do |product|%>
-              <%= render "product_field", product: product%>
+<% @home_blocks.each do |block| %>
+  <div class="typical-products container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="brand-title title-custom">
+          <ul class="nav nav-tabs nav-tabs-custom">
+            <% block.each_with_index do |category, index| %>
+              <li class="typical-product-brand list-product-category <%= 'active' if index == 0 %>">
+                <a data-toggle="tab" href="#menu<%= category[:id] %>"><%= category[:title] %></a>
+              </li>
             <% end %>
-          </div>
+          </ul>
         </div>
       </div>
-    <% end %>
-  </div>
-</div>
 
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+      <div class="tab-content">
+        <% block.each_with_index do |category, index| %>
+          <div id="menu<%= category[:id] %>" class="tab-pane fade in <%= 'active' if index == 0 %>">
+            <% category[:products].each do |product| %>
+              <div class="col-sm-3">
+                <%= render "product_field", product: product %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>

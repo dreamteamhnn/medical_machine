@@ -9,7 +9,7 @@ blog_category:
 limit:
   catalog: 2
   brand_logo: 12
-  blog_home_page: 4
+  blog_home_page: 8
   product_field: 10
   product_block: 4
   related_products: 8
@@ -26,7 +26,7 @@ limit:
     a_to_z: 3.0
     brand: 4.0
   label_block: 10
-  category_home_block: 8
+  category_home_block: 4
   home_block_element: 2
   home_block_category: 5
 format:
@@ -47,3 +47,4 @@ show_limit:
   show_20: 20
   show_30: 30
   show_50: 50
+list_categories: 8
