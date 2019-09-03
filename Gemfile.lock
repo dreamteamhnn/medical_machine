@@ -1,10 +1,10 @@
 GIT
   remote: git://github.com/stympy/faker.git
-  revision: 9365f60abdcdfa4b8990ff14b6c4518c2610e68b
+  revision: 4247080eb5ea1856a12860eedb08cf36ef8e2219
   branch: master
   specs:
     faker (2.2.1)
-      i18n (>= 0.8)
+      i18n (~> 1.6.0)
 
 GIT
   remote: https://github.com/randym/axlsx.git
@@ -405,4 +405,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   2.0.2
+   1.17.1
