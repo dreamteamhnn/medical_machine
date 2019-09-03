@@ -229,6 +229,7 @@ Company.create! about: Faker::Lorem.paragraph, name: Faker::Lorem.sentence,
   facebook: "http://facebook.com", instagram:"http://instagram.com",
   contact_info:"Nguyen Thanh Tu", hn_address:"Nhà N02F, KĐT Mễ Trì Thượng, Phường Mễ Trì, Quận Nam Từ Liêm - Hà Nội",
   website:"http://thiendiahoi.com", contact_name: "Nguyen Xuan Tu", sg_address: "Chung cư Phú Mỹ Hưng, Q.7, TP Hồ Chí Minh"
+
 puts "Create Company information OK"
 
 10.times do |i|

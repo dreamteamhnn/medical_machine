@@ -3,7 +3,8 @@
   <div id="product-order-placeholder"></div>
   <div id="order-result-placeholder"></div>
   <div class="row">
-    <div id="primary" class="col-xs-12 col-lg-10 col-lg-push-2">
+    <%= render "left_menu" %>
+    <div id="primary" class="col-sm-10">
       <main id="main" class="site-main" role="main">
         <div id="woo-primary" class="content-area willard">
           <div id="woo-main" class="site-main" role="main">
@@ -12,14 +13,14 @@
                 <div class="row single_product_wrapper">
 
                   <!-- image -->
-                  <div class="col-xl-5 col-md-12 col-sm-12 col-xs-12">
+                  <div class="col-sm-5">
                     <div class="single-image-container">
                       <%= render "image_detail" %>
                     </div>
                   </div>
 
                   <!-- detail -->
-                  <div class="col-xl-7 col-md-12 col-sm-12 col-xs-12">
+                  <div class="col-sm-7">
                     <div class="summary entry-summary">
                       <span class="posted_in">
                         <% @product.categories.each do |category| %>
@@ -95,7 +96,6 @@
       <!-- #main -->
     </div>
     <!-- #primary -->
-    <%= render "left_menu" %>
   </div>
   <!-- .row -->
 </div>

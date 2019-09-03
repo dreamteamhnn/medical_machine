@@ -32,3 +32,20 @@
 .product-row-block {
     margin-bottom: 15px;
 }
+
+.contact-information-widget__inner .contact-information__item--icon {
+    text-transform: none !important;
+}
+
+.block-product-title {
+    text-transform: none !important;
+    overflow: hidden;
+    width:200px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.brand-button-title {
+    font-size: 15px !important;
+}

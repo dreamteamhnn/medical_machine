@@ -1,19 +1,21 @@
-<div id="category-home" class="tm_pb_icon_box_module__wrapper  tm_pb_icon_box_module_0 tm_pb_bg_layout_light">
-  <div class="row tm_pb_icon_box_module__boxes">
-    <% @top_categories.each do |category| %>
-      <div class="tm_pb_column col-xl-2 col-lg-4 col-md-6 col-sm-12">
-        <div class="tm_pb_icon_box_module__item__wrapper">
-          <%= link_to product_category_path(category), class: "tm_pb_icon_box_module__item  tm_pb_icon_box_module__item_0 tm-thumbs-wrap effect-fade",
-            title: category.name do %>
-            <span class="tm-pb-icon tm-waypoint tm_pb_animation_off tm_pb_icon_align_center category-block">
-              <%= image_tag category.feature_image, size: 80, class: "category-img" %>
-              <%= image_tag category.feature_image_2, size: 80, class: "category-img" %>
-            </span>
-            <span class="tm_pb_icon_box_module__item__title category-span"><%= category.name %></span>
-            <span class="tm_pb_icon_box_module__item__description"></span>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
-  </div>
+<div class="list-categories-content">
+  <% array_icon = ["fa fa-flask", "fa fa-balance-scale", "fa fa-medkit",
+                   "fa fa-industry", "fa fa-wrench", "fa fa-exchange ",
+                   "fa fa-cogs", "fa fa-sliders"] %>
+  <% @top_categories.limit(Settings.list_categories).each_with_index do |category, i| %>
+    <div class="category-box-item">
+      <%= link_to product_category_path(category), class: "category-item", title: category.name do %>
+        <i class="<%= array_icon[i] %> custom-icon"></i>
+        <span class="category-item-name"><%= category.name %></span>
+      <% end %>
+      <ul class="sub-menu-category">
+        <% category.childrens.order(:category_order).each do |second| %>
+          <li class="sub-menu-item">
+            <%= link_to second.name, product_category_path(second),
+              title: second.name -%>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 </div>
