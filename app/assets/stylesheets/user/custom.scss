@@ -6761,7 +6761,7 @@ body.wcvendors.wcvendors_vendor .entry-content > h2:nth-child(2):before {
     }
     li.active {
       a {
-      	background: #ffd71a;
+      	background: #d6d6d6;
       }
     }
   }
@@ -7154,6 +7154,7 @@ body.wcvendors.wcvendors_vendor .entry-content > h2:nth-child(2):before {
   width:100%;
   overflow:hidden;
   visibility:hidden;
+  margin-bottom: 20px;
 
   .jssorl-009-spin img {
     animation-name: jssorl-009-spin;
@@ -7358,3 +7359,16 @@ body.wcvendors.wcvendors_vendor .entry-content > h2:nth-child(2):before {
 .product-related-custom-height {
   height: 0px !important;
 }
+
+footer {
+  .widget {
+    text-transform: none !important;
+  }
+
+  .list-item {
+    p {
+      margin: 5px 0 !important;
+    }
+  }
+}
+

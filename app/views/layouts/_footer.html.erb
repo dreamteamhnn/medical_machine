@@ -25,7 +25,9 @@
           <ul class="contact-information-widget__inner">
             <li class="contact-information__item contact-information__item--icon">
               <span class="icon linearicon linearicon-telephone"></span>
-              <%= @company.phone %> - <%= @company.contact_info %>
+              <div class="list-item">
+                <p class="clearfix"><%= @company.contact_info %>: <%= @company.phone %></p>
+              </div>
             </li>
             <li class="contact-information__item contact-information__item--icon">
               <span class="icon linearicon linearicon-clock3"></span>
@@ -37,11 +39,14 @@
             </li>
             <li class="contact-information__item contact-information__item--icon">
               <span class="icon linearicon linearicon-home4"></span>
-              <%= "Địa chỉ Hà Nội: #{@company.hn_address}" %>
-            </li>
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-home4"></span>
-              <%= "Địa chỉ Sài Gòn: #{@company.sg_address}" %>
+              <div class="list-item">
+                <p class="clearfix">
+                  Tại Hà Nội: <%= @company.hn_address %>
+                </p>
+                <p class="clearfix">
+                  Tại Sài Gòn: <%= @company.sg_address %>
+                </p>
+              </div>
             </li>
           </ul>
         </aside>

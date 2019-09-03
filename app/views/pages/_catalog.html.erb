@@ -1,15 +1,3 @@
-<aside id="__tm_banners_grid_widget-16" class="widget woocommerce __tm_banners_grid_widget">
-  <div class="row">
-    <% @catalogs.each do |catalog| %>
-      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-        <div class="tm_banners_grid_widget_banner tm_banners_grid_widget_banner_height_1">
-          <%= link_to "#{image_tag catalog.url, title: catalog.title, alt: catalog.alt}".html_safe, catalog.link, class: "tm_banners_grid_widget_banner_link"%>
-        </div>
-      </div>
-    <% end %>
-  </div>
-</aside>
-
 <div class="row" id="support-block">
   <div class="row-fluid col-lg-12">
     <div class="span4 chinhsach">
@@ -36,6 +24,6 @@
         <p>Phân phối và bảo hành sản phẩm chính hãng</p>
       </div>
     </div>
-    
+
   </div>
 </div>
