@@ -44,8 +44,14 @@
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+    height: 60px;
 }
 
 .brand-button-title {
     font-size: 15px !important;
+}
+
+.blog-product-title {
+    text-transform: none !important;
+    height: 55px !important;
 }
