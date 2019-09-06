@@ -9,7 +9,7 @@ blog_category:
 limit:
   catalog: 2
   brand_logo: 12
-  blog_home_page: 8
+  blog_home_page: 4
   product_field: 10
   product_block: 4
   related_products: 8

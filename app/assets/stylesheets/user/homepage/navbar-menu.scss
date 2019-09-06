@@ -42,7 +42,8 @@
       width: calc(100% - 165px);
       float: left;
       height: 33px;
-      text-align: center;
+      text-align: left;
+      background-color: #ffd71a;
 
       .list-nav-horizontal {
         height: 33px;
@@ -52,7 +53,8 @@
       .nav-horizontal-item {
         float: left;
         display: inline;
-        padding: 2px 30px;
+        padding: 2px 60px;
+        padding-left: 0px;
         font-weight: bold;
 
         a {

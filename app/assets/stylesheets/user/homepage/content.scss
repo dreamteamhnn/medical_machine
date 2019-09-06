@@ -46,7 +46,6 @@
       text-align: center;
       line-height: 1 !important;
       margin: 0 !important;
-      padding-top: 5px;
     }
 
     a {
@@ -310,7 +309,7 @@
     border-bottom: 0;
 
     a {
-      color: #555 !important;
+      color: #555;
     }
 
     a:hover {
@@ -331,5 +330,15 @@
 
   .woocommerce-LoopProduct-link {
     text-transform: inherit !important;
+  }
+}
+
+.nav-tabs-custom {
+  .active {
+    a {
+      background-color: transparent !important;
+      border: none !important;
+      color: red !important;
+    }
   }
 }
