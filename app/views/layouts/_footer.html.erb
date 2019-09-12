@@ -112,12 +112,7 @@
           <h5 class="widget-title">Liên hệ mua hàng</h5>
           <ul class="contact-information-widget__inner">
             <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-clock3"></span>
-              Hỗ trợ tư vấn - 24/7
-            </li>
-
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-phone"></span>
+              <span class="icon linearicon linearicon-telephone"></span>
               <div class="list-item">
                 <p class="clearfix"><%= @company.contact_info %>: <a class="privacy_link" href=""><%= @company.phone %></a></p>
               </div>
@@ -125,7 +120,7 @@
             
             <li class="contact-information__item contact-information__item--icon">
               <span class="icon linearicon linearicon-envelope-open"></span>
-              <%= @company.email %>
+              <a href="mailto:laihuutoan@gmail.com"><%= @company.email %></a>
             </li>
             <li class="contact-information__item contact-information__item--icon">
               <span class="icon linearicon linearicon-home4"></span>
@@ -138,64 +133,50 @@
             <li class="contact-information__item contact-information__item--icon">
               <div class="list-item">
                 <p class="clearfix">
-                  Có hàng trưng bày và dùng thử. Vui lòng liên hệ trước <a class="privacy_link" href=""><%= @company.phone %></a> để đặt lịch xem hàng.
+                  Có hàng trưng bày và dùng thử. Vui lòng liên hệ trước <a class="privacy_link" href=""><%= @company.order_phone || @company.phone %></a> để đặt lịch xem hàng.
                 </p>
               </div>
             </li>
 
             <hr class="footer-custom-hr">
-            
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-map-marker"></span>
-              <div class="list-item">
-                <p class="clearfix">
-                  Tại Hà Nội:
-                </p>
-              </div>
-            </li>
 
             <li class="contact-information__item contact-information__item--icon">
               <span class="icon linearicon linearicon-home4"></span>
               <div class="list-item">
                 <p class="clearfix">
-                  <%= @company.hn_address %>
+                  Tại Hà Nội: <%= @company.hn_address %>
                 </p>
               </div>
             </li>
 
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-telephone"></span>
-              <div class="list-item">
-                <p class="clearfix"><a class="privacy_link" href=""><%= @company.phone %></a></p>
-              </div>
-            </li>
+            <% if @company.hn_phone.present? %>
+              <li class="contact-information__item contact-information__item--icon">
+                <span class="icon linearicon linearicon-telephone2"></span>
+                <div class="list-item">
+                  <p class="clearfix"><a class="privacy_link" href=""><%= @company.hn_phone %></a></p>
+                </div>
+              </li>
+            <% end %>
 
             <hr class="footer-custom-hr">
 
             <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-map-marker"></span>
-              <div class="list-item">
-                <p class="clearfix">
-                  Tại TP HCM:
-                </p>
-              </div>
-            </li>
-
-            <li class="contact-information__item contact-information__item--icon">
               <span class="icon linearicon linearicon-home4"></span>
               <div class="list-item">
                 <p class="clearfix">
-                  <%= @company.sg_address %>
+                  Tại TP HCM: <%= @company.sg_address %>
                 </p>
               </div>
             </li>
 
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-telephone"></span>
-              <div class="list-item">
-                <p class="clearfix"><a class="privacy_link" href=""><%= @company.phone %></a></p>
-              </div>
-            </li>
+            <% if @company.sg_phone.present? %>
+              <li class="contact-information__item contact-information__item--icon">
+                <span class="icon linearicon linearicon-telephone2"></span>
+                <div class="list-item">
+                  <p class="clearfix"><a class="privacy_link" href=""><%= @company.sg_phone %></a></p>
+                </div>
+              </li>
+            <% end %>
           </ul>
         </aside>
 

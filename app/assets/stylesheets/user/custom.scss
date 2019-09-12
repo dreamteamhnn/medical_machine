@@ -7057,7 +7057,7 @@ body.wcvendors.wcvendors_vendor .entry-content > h2:nth-child(2):before {
   margin: 0 10px !important;
   margin-bottom: 10px;
   .brand-logo {
-    width: 150px !important;
+    width: 200px !important;
     position: relative !important;
   }
   .brand-logo-border {
@@ -7166,8 +7166,8 @@ body.wcvendors.wcvendors_vendor .entry-content > h2:nth-child(2):before {
     position: absolute;
     top: 0px;
     left: 0px;
-    width: 100%;
-    height:100%;
+    width: 150%;
+    height:150%;
     text-align: center;
     background-color: rgba(0,0,0,0.7);
   }
@@ -7187,7 +7187,7 @@ body.wcvendors.wcvendors_vendor .entry-content > h2:nth-child(2):before {
     top: 0px;
     left: 0px;
     width: 100%;
-    height: 75px;
+    height: 90px;
     overflow: hidden;
   }
 }
@@ -7383,4 +7383,8 @@ footer {
 
 .footer-custom-hr {
     margin: 1em 0;
+}
+
+.woocommerce-LoopProduct-link {
+    max-height: 55px !important;    
 }
