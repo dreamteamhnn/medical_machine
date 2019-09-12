@@ -11,6 +11,9 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @top_categories = Category.top_categories
+    @brand_logos = Brand.where("image IS NOT NULL AND home_order IS NOT NULL")
+                        .order(:home_order)
     set_meta_tags @product
   end
 

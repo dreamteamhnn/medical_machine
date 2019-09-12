@@ -7,7 +7,7 @@ class PagesController < ApplicationController
     @product_labels = Label.all.order(:block_order)
       .includes(products: [:product_images, :categories]).limit Settings.limit.label_block
     @brand_logos = Brand.where("image IS NOT NULL AND home_order IS NOT NULL")
-      .order(:home_order)
+                        .order(:home_order)
     get_home_category
     @company = Company.first
     set_meta_tags meta_tags_hash

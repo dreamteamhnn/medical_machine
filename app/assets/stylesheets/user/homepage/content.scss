@@ -49,8 +49,13 @@
     }
 
     a {
-      line-height: 1 !important;
+      line-height: 1.7 !important;
       height: auto !important;
+      .woocommerce-LoopProduct-link {
+        line-height: 1.7 !important;
+        height: auto !important;
+        max-height: auto !important;
+      }
     }
 
     a:hover {
