@@ -1,10 +1,9 @@
-<%= render "layouts/breadcrumbs" %>
-<div class="site-content_wrap container">
   <div id="product-order-placeholder"></div>
   <div id="order-result-placeholder"></div>
-  <div class="row">
+  <%= render "pages/list_categories", menu_detail: true %>
+  <div class="container product-detail-box">
     <%= render "left_menu" %>
-    <div id="primary" class="col-sm-10">
+    <div id="primary" class="product-detail">
       <main id="main" class="site-main" role="main">
         <div id="woo-primary" class="content-area willard">
           <div id="woo-main" class="site-main" role="main">
@@ -95,7 +94,6 @@
       </main>
       <!-- #main -->
     </div>
-    <!-- #primary -->
   </div>
+    <!-- #primary -->
   <!-- .row -->
-</div>

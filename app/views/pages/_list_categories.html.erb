@@ -5,8 +5,9 @@
           <i class="fa fa-bars icon-home-nav"></i>
           <span class="jet-dropbar__button-text">Danh mục</span>
         </div>
-        <div class="list-categories">
-          <%= render "categories" %>
+        <% list_category_detail = menu_detail ? "custom-list-categories" : nil %>
+        <div class="list-categories <%= list_category_detail %>">
+          <%= render "pages/categories" %>
         </div>
         <div class="nav-right">
           <div class="top-nav-horizontal">

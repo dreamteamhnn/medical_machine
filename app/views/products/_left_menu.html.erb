@@ -1,49 +1,33 @@
-<div id="sidebar" class="col-sm-2 sidebar widget-area sidebar category-product" role="complementary">
-  <aside id="tm_willard_products-4" class="widget woocommerce tm_willard_widget_products">
-    <h2 class="widget-title title-font-em">Danh mục</h2>
-    <aside class="aside-1">
-      <div class="aside-panel aside-categories">
-        <div class="as-panel-body">
-          <div class="uk-accordion" data-uk-accordion="">
-            <div id='cssmenu'>
-              <ul>
-                <% @categories.each do |category| %>
-                  <% unless category.second.present? %>
-                    <li class='active'>
-                      <%= link_to category.first.name, product_category_path(category.first), title: "#{category.first.name}" %>
-                    </li>
-                  <% else %>
-                    <li class='has-sub'>
-                      <%= link_to category.first.name, "#", title: "#{category.first.name}" %>
+<div id="sidebar" class="left-menu" role="complementary">
+  <div class="category-box">
+    <% @categories.each do |category| %>
+      <% unless category.second.present? %>
+        <h2 class="title-category-detail">
+          <%= link_to category.first.name, product_category_path(category.first), title: "#{category.first.name}" %>
+        </h2>
+      <% else %>
+        <h2 class="title-category-detail">
+          <%= link_to category.first.name, "#", title: "#{category.first.name}" %>
+        </h2>
+        <ul class="sub-category">
+          <% category.second.each_with_index do |sub_category, j| %>
+            <li class="sub-category-item">
+              <%= link_to product_category_path(sub_category.first), title: "#{sub_category.first.name}" do %>
+                <i class="fa fa-caret-right"></i>
+                <%= sub_category.first.name %>
+              <% end %>
 
-                      <ul>
-                        <% category.second.each_with_index do |sub_category, j| %>
-                          <li>
-                            <%= link_to sub_category.first.name, product_category_path(sub_category.first), title: "#{sub_category.first.name}" %>
-                          </li>
-                        <% end %>
-                      </ul>
-                    </li>
-                  <% end %>
+              <ul class="sub-category-level-2">
+                <% 15.times do %>
+                  <li class="sub-category-level-2-item">
+                    <%= link_to "sub-category level 2 mẫu ", "#" -%>
+                  </li>
                 <% end %>
               </ul>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </aside>
-    <% if @brands %>
-      <aside id="tag_cloud-5" class="widget widget_tag_cloud">
-        <h5 class="widget-title">Hãng</h5>
-        <div class="tagcloud">
-          <% @brands.each do |brand| %>
-            <%= link_to brand.name, product_brand_path(brand, category_id: params[:category_id]),
-              class: "tag-link-99 tag-link-position-1 #{'tag-active' if brand.id == params[:brand_id].to_i}"%>
+            </li>
           <% end %>
-        </div>
-      </aside>
+        </ul>
+      <% end %>
     <% end %>
-    <%= render "left_new_product"%>
-  </aside>
+  </div>
 </div>
