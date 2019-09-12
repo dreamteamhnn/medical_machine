@@ -45,6 +45,10 @@
               <%= f.text_area :hn_address, class: "form-control" %>
             </div>
             <div class="form-group">
+              <strong>Số điện thoại Hà Nội</strong> </br>
+              <%= f.text_field :hn_phone, class: "form-control" %>
+            </div>
+            <div class="form-group">
               <div class="col-xs-6">
                 <strong>Vĩ độ (Latitude)</strong></br>
                 <%= f.number_field :hn_map_lat, class: "form-control", step: :any %>
@@ -60,6 +64,10 @@
               <%= f.text_area :sg_address, class: "form-control" %>
             </div>
             <div class="form-group">
+              <strong>Số điện thoại Sài Gòn</strong> </br>
+              <%= f.text_field :sg_phone, class: "form-control" %>
+            </div>
+            <div class="form-group">
               <div class="col-xs-6">
                 <strong>Vĩ độ (Latitude)</strong></br>
                 <%= f.number_field :sg_map_lat, class: "form-control", step: :any %>
@@ -71,12 +79,16 @@
               </br>
             </div><br> 
             <div class="form-group">
-              <strong>Số điện thoại</strong> </br>
+              <strong>Người đại diện</strong> </br>
+              <%= f.text_field :contact_info, class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <strong>Số điện thoại người đại diện</strong> </br>
               <%= f.text_field :phone, class: "form-control" %>
             </div>
             <div class="form-group">
-              <strong>Người đại diện</strong> </br>
-              <%= f.text_field :contact_info, class: "form-control" %>
+              <strong>Số điện thoại đặt lịch xem hàng</strong> </br>
+              <%= f.text_field :order_phone, class: "form-control" %>
             </div>
             <div class="form-group">
               <strong>Tên người liên hệ</strong> </br>
