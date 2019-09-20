@@ -87,3 +87,13 @@
   font-weight: bold;
   margin-bottom: 0;
 }
+
+@media (max-width: 576px) {
+  .left-menu {
+    display: none;
+  }
+
+  .product-detail {
+    width: 100% !important;
+  }
+}

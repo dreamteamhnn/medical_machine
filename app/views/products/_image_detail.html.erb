@@ -2,7 +2,7 @@
   <% if @product.product_images.present? %>
     <div class="easyzoom is-ready easyzoom--overlay easyzoom--with-thumbnails">
       <a href="" class="woocommerce-main-image">
-        <%= image_tag @product.product_images.first.url, size: '400', title: @product.product_images.first.title, alt: @product.product_images.first.alt, 'data-zoom-image': @product.product_images.first.url, id: 'zoom' %>
+        <%= image_tag @product.product_images.first.url, title: @product.product_images.first.title, alt: @product.product_images.first.alt, 'data-zoom-image': @product.product_images.first.url, id: 'zoom', class: "product-detail-images" %>
       </a>
     </div>
   <% end %>
