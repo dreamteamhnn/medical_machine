@@ -21,55 +21,68 @@
                   <!-- detail -->
                   <div class="col-sm-7">
                     <div class="summary entry-summary">
-                      <span class="posted_in">
-                        <% @product.categories.each do |category| %>
-                          <%= link_to "#{category.name} ", product_category_path(category), rel: "tag" %>
-                        <% end %>
-                      </span>
-
-                      <h1 class="product_title entry-title">
-                        <%= @product.name.html_safe %>
-                      </h1>
-
-                      <div class="product_meta">
-                        <span class="sku_wrapper">Tình trạng: <span class="product-status" itemprop="sku">Còn hàng</span></span>
-                        <span class="sku_wrapper">Mã sản phẩm: <span class="sku" itemprop="sku"><%= @product.model %></span></span>
-                      </div>
-
-                      <p class="price">
-                        <span class="woocs_price_code" data-product-id="215">
-                          <% if @product.discount_price_currency.present? %>
-                            <del>
-                              <span class="woocommerce-Price-amount amount"><%= @product.price_currency %>
-                                <span class="woocommerce-Price-currencySymbol">VNĐ</span>
-                              </span>
-                            </del>
-                            <ins>
-                              <span class="woocommerce-Price-amount amount"><%= @product.discount_price_currency %>
-                                <span class="woocommerce-Price-currencySymbol">VNĐ</span>
-                              </span>
-                            </ins>
-                          <% elsif @product.price_currency.present? %>
-                            <span class="woocommerce-Price-amount amount"><%= @product.price_currency %>
-                              <span class="woocommerce-Price-currencySymbol">VNĐ</span>
-                            </span>
+                      <div class="product-info-content">
+                        <span class="posted_in">
+                          <% @product.categories.each do |category| %>
+                            <%= link_to "#{category.name} ", product_category_path(category), rel: "tag" %>
                           <% end %>
                         </span>
-                      </p>
 
-                      <div class="message">
-                          <p>Để nhận được giá tốt nhất Quý khách vui lòng
-                            <strong>"LIÊN HỆ"</strong> với số điện thoại phía trên hoặc click vào
-                            <strong>"MUA"</strong> phía dưới.
+                        <h1 class="product_title entry-title product-h1-custom">
+                          <%= @product.name.html_safe %>
+                        </h1>
+
+                        <p class="price">
+                          <span class="woocs_price_code span-left" data-product-id="215">
+                            <% if @product.discount_price_currency.present? %>
+                              <del>
+                                <span class="woocommerce-Price-amount amount span-left"><%= @product.price_currency %>
+                                  <span class="woocommerce-Price-currencySymbol">VNĐ</span>
+                                </span>
+                              </del>
+                              <ins>
+                                <span class="woocommerce-Price-amount amount span-left red"><%= @product.discount_price_currency %>
+                                  <span class="woocommerce-Price-currencySymbol">VNĐ</span>
+                                </span>
+                              </ins>
+                            <% elsif @product.price_currency.present? %>
+                              <span class="woocommerce-Price-amount amount span-left red"><%= @product.price_currency %>
+                                <span class="woocommerce-Price-currencySymbol">VNĐ</span>
+                              </span>
+                            <% end %>
+                          </span>
+                        </p>
+
+                        <div class="woocommerce-product-details__short-description">
+                          <p class="black">
+                            <b>Mã sản phẩm: </b><%= @product.model %>
                           </p>
-                      </div>
+                        </div>
 
-                      <div class="woocommerce-product-details__short-description">
-                        <p>Hãng sản xuất: <%= @product&.brand&.name %></p>
-                      </div>
+                        <div class="woocommerce-product-details__short-description">
+                          <p class="black">
+                            <b>Hãng sản xuất: </b><%= @product&.brand&.name %>
+                          </p>
+                        </div>
 
-                      <div class="woocommerce-product-details__short-description">
-                        <p><%= @product.short_description&.html_safe %></p>
+                        <div class="woocommerce-product-details__short-description">
+                          <p class="black">
+                            <b>Xuất xứ: </b><%= @product&.location %>
+                          </p>
+                        </div>
+
+                        <div class="woocommerce-product-details__short-description">
+                          <p class="black">
+                            <b>Tình trạng hàng hóa: </b>Còn hàng
+                          </p>
+                        </div>
+
+                        <div class="woocommerce-product-details__short-description
+                          short-description">
+                          <p class="black short-description-detail">
+                            <%= @product.short_description&.html_safe %>
+                          </p>
+                        </div>
                       </div>
 
                       <form class="cart" method="post" enctype="multipart/form-data" data-product_id="215" data-product_variations="[hash_array]" current-image="">

@@ -1,0 +1,20 @@
+<div data-sidebar="shop-sidebar">
+  <aside id="tm_willard_products-4" class="widget woocommerce tm_willard_widget_products">
+    <h2 class="widget-title title-font-em">Bài viết mới</h2>
+    <ul class="product_list_widget">
+      <% @new_blogs.each do |blog| %>
+        <li>
+          <%= link_to blog_detail_path(blog), title: strip_tags(blog.title) do %>
+            <%= image_tag blog.blog_images.first.url, size: '210', title: blog.blog_images.first.title, alt: blog.blog_images.first.alt if blog.blog_images.first.url%>
+          <% end %>
+          <div class="product-widget-categories">
+            <%= link_to "#{blog.content} ", blog_detail_path(blog) %>
+          </div>
+          <span class="product-title">
+            <%= link_to strip_tags(blog.title), blog_detail_path(blog), title: strip_tags(blog.title), class: "blog-title-custom" %>
+          </span>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+</div>

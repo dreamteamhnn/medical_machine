@@ -56,6 +56,7 @@ class ProductsController < ApplicationController
     load_breadcrum
     load_products_block
     load_brand_exist
+    load_new_blogs
   end
 
   def load_products_block
@@ -270,8 +271,12 @@ class ProductsController < ApplicationController
 
   def get_new_product
     label_id = Label.where(short_title: "hot").first.id
-    @new_products = Product.where(label_id: label_id)
-      .limit(Settings.limit.new_products)
+    @new_products = Product.where(label_id: label_id).shuffle[0..4]
+      .take(Settings.limit.new_products)
+  end
+
+  def load_new_blogs
+    @new_blogs = Blog.all.take(Settings.limit.new_blogs)
   end
 
   def order_params

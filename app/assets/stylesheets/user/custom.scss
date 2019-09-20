@@ -7386,5 +7386,37 @@ footer {
 }
 
 .woocommerce-LoopProduct-link {
-    max-height: 55px !important;    
+    max-height: 55px !important;
+}
+
+.product-detail {
+    .product-h1-custom {
+        margin: 0 !important;
+    }
+
+    .span-left {
+        text-align: left !important;
+    }
+
+    .red {
+        color: red;
+    }
+
+    .black {
+        color: black;
+    }
+
+    .woocommerce-product-details__short-description {
+        padding-top: 0 !important;
+    }
+
+    .price {
+        margin-bottom: 0 !important;
+    }
+
+    .short-description {
+        margin-top: 10px;
+        border: 2px solid #ffd71a;
+        border-radius: 10px;
+    }
 }
