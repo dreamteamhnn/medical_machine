@@ -78,10 +78,8 @@
                         </div>
 
                         <div class="woocommerce-product-details__short-description
-                          short-description">
-                          <p class="black short-description-detail">
-                            <%= @product.short_description&.html_safe %>
-                          </p>
+                          short-description-detail" title="<%= @product.short_description&.html_safe %>">
+                          <%= @product.short_description&.html_safe %>
                         </div>
                       </div>
 
