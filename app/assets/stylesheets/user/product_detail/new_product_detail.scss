@@ -12,10 +12,19 @@
   overflow: hidden;
   position: relative;
   line-height: 2em;
-  max-height: 4em;
+  max-height: 8em;
   text-align: justify;
   margin-right: 0em;
   padding-right: 1.5em;
+  padding-left: 2px;
+  margin-top: 0;
+  border: 2px solid #ffd71a;
+  border-radius: 10px;
+  font-size: 13px;
+
+  p {
+    margin-bottom: 0 !important;
+  }
 
   &:before {
     content: '. . .';
