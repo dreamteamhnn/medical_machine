@@ -22,7 +22,7 @@
                   <div class="col-sm-7">
                     <div class="summary entry-summary">
                       <div class="product-info-content">
-                        <span class="posted_in">
+                        <span class="posted_in posted_in_custom">
                           <% @product.categories.each do |category| %>
                             <%= link_to "#{category.name} ", product_category_path(category), rel: "tag" %>
                           <% end %>
@@ -54,25 +54,25 @@
                         </p>
 
                         <div class="woocommerce-product-details__short-description">
-                          <p class="black">
+                          <p class="black size-14">
                             <b>Mã sản phẩm: </b><%= @product.model %>
                           </p>
                         </div>
 
                         <div class="woocommerce-product-details__short-description">
-                          <p class="black">
+                          <p class="black size-14">
                             <b>Hãng sản xuất: </b><%= @product&.brand&.name %>
                           </p>
                         </div>
 
                         <div class="woocommerce-product-details__short-description">
-                          <p class="black">
+                          <p class="black size-14">
                             <b>Xuất xứ: </b><%= @product&.location %>
                           </p>
                         </div>
 
                         <div class="woocommerce-product-details__short-description">
-                          <p class="black">
+                          <p class="black size-14">
                             <b>Tình trạng hàng hóa: </b>Còn hàng
                           </p>
                         </div>
@@ -86,7 +86,7 @@
                       <form class="cart" method="post" enctype="multipart/form-data" data-product_id="215" data-product_variations="[hash_array]" current-image="">
                         <div class="custom-cart-button">
                           <div class="">
-                            <%= link_to "MUA", order_product_path(@product), remote: true, rel: "nofollow",
+                            <%= link_to "ĐẶT HÀNG", order_product_path(@product), remote: true, rel: "nofollow",
                               "data-product-id": @product.id, class: "single_add_to_cart_button button alt custom-button" %>
                           </div>
                         </div>
