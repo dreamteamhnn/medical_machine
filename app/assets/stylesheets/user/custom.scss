@@ -7391,7 +7391,9 @@ footer {
 
 .product-detail {
     .product-h1-custom {
-        margin: 0 !important;
+        margin: 8px 0 0 0 !important;
+        font-size: 24px !important;
+        text-transform: inherit !important;
     }
 
     .span-left {
