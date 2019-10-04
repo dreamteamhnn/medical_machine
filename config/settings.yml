@@ -48,3 +48,4 @@ show_limit:
   show_30: 30
   show_50: 50
 list_categories: 8
+default_image: "https://res.cloudinary.com/tuan-anh-uet-vnu/image/asset/v1547366119/user8-53980210f1499309f1169161d38fe78e.png" 

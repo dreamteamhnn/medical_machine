@@ -21,7 +21,7 @@
   <div class="form-group form-group-part col-xs-12">
     <div class="col-xs-3 parameter-form">
       <strong>Định dạng thông số</strong> </br>
-      <%= f.select :is_parameter_table, [['Dạng text', false], ['Dạng bảng', true]], {}, { class: "form-control"} %>
+      <%= f.select :is_parameter_table, [['Dạng text', false], ['Dạng bảng', true]], {}, { class: "form-control", style:"display: block !important;"} %>
     </div>
     <div class="col-xs-2">
       <strong>Thông số</strong> </br>
@@ -56,7 +56,7 @@
 <div class="row show-grid">
   <div class="form-group form-group-part col-xs-12">
     <strong>Mô tả</strong> </br>
-    <%= f.cktext_area :description, class: "form-control", rows: 5 %>
+    <%= f.cktext_area :description, class: "ckarea-blog-content" %>
   </div>
 </div>
 
