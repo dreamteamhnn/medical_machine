@@ -17,4 +17,5 @@
 //= require jquery_ujs
 //= require cocoon
 //= require ckeditor/init
+//= require cloudinary
 //= require_tree .

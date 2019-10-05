@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190912144918) do
+ActiveRecord::Schema.define(version: 20191005184817) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
     t.string "email", default: "", null: false
@@ -181,6 +181,12 @@ ActiveRecord::Schema.define(version: 20190912144918) do
     t.index ["slug"], name: "index_fields_on_slug", unique: true
   end
 
+  create_table "folders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "friendly_id_slugs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
     t.string "slug", null: false
     t.integer "sluggable_id", null: false
@@ -191,6 +197,19 @@ ActiveRecord::Schema.define(version: 20190912144918) do
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+  end
+
+  create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
+    t.string "image_url"
+    t.integer "imageable_id"
+    t.string "imageable_type"
+    t.integer "folder_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+    t.string "desc"
+    t.string "caption"
+    t.string "alt"
   end
 
   create_table "labels", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
@@ -274,6 +293,17 @@ ActiveRecord::Schema.define(version: 20190912144918) do
     t.text "parameter"
     t.boolean "is_parameter_table"
     t.string "slug"
+    t.string "img_1"
+    t.string "img_2"
+    t.string "img_1_title"
+    t.string "img_1_desc"
+    t.string "img_1_caption"
+    t.string "img_1_alt"
+    t.string "img_2_title"
+    t.string "img_2_desc"
+    t.string "img_2_caption"
+    t.string "img_2_alt"
+    t.integer "no_order"
     t.index ["brand_id"], name: "index_products_on_brand_id"
     t.index ["label_id"], name: "index_products_on_label_id"
     t.index ["slug"], name: "index_products_on_slug", unique: true

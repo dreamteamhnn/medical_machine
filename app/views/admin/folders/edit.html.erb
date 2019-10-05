@@ -1,0 +1,121 @@
+<%= cloudinary_js_config %>
+<div id="page-wrapper">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Quản lý ảnh</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-2">
+        <ul class="list-group list-group-folder">
+            <% @folders.each_with_index do |folder, index| %>
+                <li  class="list-group-item btn btn-default btn-name btn-sm <%= 'active' if (folder.id == @folder.id) %>" id="folder-<%= folder.id %>">
+                    <%= folder.name %>
+                </li>
+            <% end %>
+        </ul>
+        <button type="button" class="btn btn-success" id="folder-new">New folder</button>
+        <% if @folder %>
+            <button type="button" class="btn btn-danger" id="folder-delete" name="folder-<%= @folder.id %>">Delete</button>
+        <% end %>
+    </div>
+    <div class="col-xs-10">
+        <% if @folder %>
+            <%= form_for([:admin, @folder]) do |f| %>
+                <div class="create-div">
+                    <input type="text" id="folder-name" placeholder="Input folder name" name="folder-<%= @folder.id %>" value="<%= @folder.name %>"></input>
+                    <button class="btn btn-success" data-title="Tạo mới" data-toggle="modal" data-target="#create" >
+                        <%= f.fields_for :images_attributes do |image_f| %>
+                            <%= image_f.hidden_field :image_url_cache %>
+                            <%= image_f.file_field :image_url, multiple: true, accept: 'image/png,image/gif,image/jpeg', name: "images[image_url][]", class: "input-file previewIMG" %>
+                            <%= image_f.hidden_field :imageable_id, value: @folder.id.to_s %>
+                            <%= image_f.hidden_field :imageable_type, value: "image" %>
+                        <% end %>
+                    </button>
+                </div>
+                <div>
+                    <ul class="ace-thumbnails clearfix">
+                        <% @folder.images.pluck(:id).each do |id| %>
+                            <%= hidden_field_tag "current_image_ids[]", id %>
+                        <% end %>
+                        <% @folder.images.each_with_index do |image, index| %>
+                            <li id="preview-img-<%= image.id %>">
+                                <a href="" data-rel="colorbox" class="cboxElement">
+                                    <%= image_tag image.image_url.url, style: 'height:150px;width:150px;', class: "image_cm preview-img" %>
+                                </a>
+
+                                <div class="tools tools-top">
+                                    <a data-title="Sửa thông tin image" data-toggle="modal" data-target="#update-image-<%= image.id %>">
+                                        <i class="ace-icon fa fa-pencil"></i>
+                                    </a>
+
+                                    <a onclick="deleteFolderImage(<%= image.id.to_s %>);">
+                                        <i class="ace-icon fa fa-times red"></i>
+                                    </a>
+                                </div>
+                            </li>
+                            <div class="modal fade" id="update-image-<%= image.id %>" tabindex="-1" role="dialog" aria-labelledby="create" aria-hidden="true">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <a href="#" class="close" data-dismiss="modal" aria-label="close">&times;</a>
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                    <h4 class="modal-title custom_align" id="Heading">Sửa thông tin image</h4>
+                                  </div>
+                                  <div class="modal-body">
+                                    <div class="form-group form-group-sub-part col-xs-12" style="margin-top: 15px;text-align: center;">
+                                      <%= image_tag image.image_url.url, style: 'height:250px;width:auto;', class: "image_cm preview-img" %>
+                                    </div>
+                                    <strong>Tiêu đề</strong> </br>
+                                    <%= text_field_tag 'title', image.title, style:"width: 100%;", id:"update-title-#{image.id}" %>
+
+                                    <strong>Mô tả ngắn</strong> </br>
+                                      <%= text_field_tag 'desc', image.desc, style:"width: 100%;", id:"update-desc-#{image.id}" %>
+                                    
+                                    <strong>Caption</strong> </br>
+                                      <%= text_field_tag 'caption', image.caption, style:"width: 100%;", id:"update-caption-#{image.id}" %>
+                                    
+                                    <strong>Alt</strong> </br>
+                                      <%= text_field_tag 'alt', image.alt, style:"width: 100%;", id:"update-alt-#{image.id}" %>
+                                  </div>
+                                  <div class="modal-footer ">
+                                    <button type="button" class="btn btn-default btn-lg" data-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-success btn-lg" data-dismiss="modal" onclick="updateImage(<%= image.id.to_s %>)">Sửa</button>
+                                  </div>
+                                </div>
+                                <!-- /.modal-content -->
+                              </div>
+                              <!-- /.modal-dialog -->
+                            </div>
+                        <% end %>
+                    </ul>
+                </div>
+                <div class="row gallery-bottom">
+                    <div class="col-sm-6">
+                        <ul class="pagination">
+                            <li>
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">«</span>
+                                </a>
+                            </li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li>
+                                <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">»</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="actions">
+                  <%= f.submit %>
+                </div>
+            <% end %>
+        <% end %>
+    </div>
+  </div>
+</div>

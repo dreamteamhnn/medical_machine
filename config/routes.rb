@@ -35,6 +35,7 @@ Rails.application.routes.draw do
     root "home#show"
     resources :home, only: [:show]
     resources :fields
+    resources :folders
     resources :brands
     resource :company, only: [:show, :update, :edit]
     resources :sliders

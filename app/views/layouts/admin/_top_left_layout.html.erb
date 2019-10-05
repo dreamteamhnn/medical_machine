@@ -152,6 +152,12 @@
             Câu hỏi của khách hàng
           <% end %>
         </li>
+        <li>
+          <%= link_to edit_admin_folder_path(Folder.first || 0) do %>
+            <i class="fa fa-picture-o fa-fw"></i>
+            Quản lý ảnh
+          <% end %>
+        </li>
       </ul>
     </div>
     <!-- /.sidebar-collapse -->

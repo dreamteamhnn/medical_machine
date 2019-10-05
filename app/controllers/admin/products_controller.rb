@@ -87,8 +87,8 @@ class Admin::ProductsController < Admin::BaseController
 
   def product_params
     params[:product][:name] = strip_tags(params[:product][:name]).strip
-    params[:product][:short_description] = strip_tags(params[:product][:short_description]).strip
-    params[:product][:description] = strip_tags(params[:product][:description]).strip
+    # params[:product][:short_description] = strip_tags(params[:product][:short_description]).strip
+    # params[:product][:description] = strip_tags(params[:product][:description]).strip
     params[:product][:parameter] = strip_tags(params[:product][:parameter]).strip
     params.require(:product).permit(Product::PRODUCT_ATTRIBUTES,
       product_images_attributes: Product::PRODUCT_IMAGE_ATTRIBUTES,

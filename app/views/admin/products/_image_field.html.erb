@@ -9,7 +9,7 @@
         <label for="upload-product-image-<%= ff.options[:child_index] + 1 %>" class="btn btn-success">Chọn ảnh <%= ff.options[:child_index] + 1 %></label>
         <%= ff.file_field :url, id: "upload-product-image-#{ff.options[:child_index] + 1}", class: "hidden" %>
         <% if ff.object.url.present? %>
-          <%= image_tag ff.object.url, class: "hidden", id: "product-image#{ff.options[:child_index] + 1}" %>
+          <%= image_tag ff.object.url.url, class: "hidden", id: "product-image#{ff.options[:child_index] + 1}" %>
         <% end %>
       </div>
 
