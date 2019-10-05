@@ -1,0 +1,18 @@
+development:
+  cloud_name: stechsaigon
+  api_key: '463716434178938'
+  api_secret: Z27uPdd94egRV5yhybu_90Y9TuM
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: stechsaigon
+  api_key: '463716434178938'
+  api_secret: Z27uPdd94egRV5yhybu_90Y9TuM
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: stechsaigon
+  api_key: '463716434178938'
+  api_secret: Z27uPdd94egRV5yhybu_90Y9TuM
+  enhance_image_tag: true
+  static_file_support: false

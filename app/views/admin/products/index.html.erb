@@ -84,7 +84,7 @@
                   <input type="checkbox" value="<%= product.id %>" class="product-cb-id">
                 </td>
                 <td>
-                  <%= image_tag(product.product_images.first.try(:url), size: 75) if product.product_images.first.try(:url) %>
+                  <%= image_tag(product.product_images.first.try(:url).try(:url), size: "75") if product.product_images.first.try(:url) %>
                 </td>
                 <td>
                   <textarea id="p-name-<%= product.id %>" onchange='changePName("<%= product.id %>")'><%= product.try(:name).html_safe %>

@@ -200,7 +200,7 @@
         <div class="site-info-logo_copyright">
           <div class="footer-logo">
             <%= link_to root_path, class: "site-logo__link", rel: "home" do %>
-              <%= image_tag @company.logo, size: '184x45', title: @company.logo_title, alt: @company.logo_alt, class: "site-link__img" if @company.logo %>
+              <%= image_tag @company.logo.url, size: '184x45', title: @company.logo_title, alt: @company.logo_alt, class: "site-link__img" if @company.logo %>
             <% end %>
           </div>
           <div class="footer-copyright">Copyright © 2016 STECH INTERNATIONAL ., LTD <a class="privacy_link" href="">Privacy Policy</a></div>

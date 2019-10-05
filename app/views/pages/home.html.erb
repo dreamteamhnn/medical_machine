@@ -24,7 +24,7 @@
                 <div class="carousel-inner">
                   <% @sliders.each_with_index do |slider, index| %>
                     <div class="item <%= 'active' if index == 0 %> item-1">
-                      <%= link_to "#{image_tag slider.url, style: 'height:100%;width:auto;', title: slider.title, alt: slider.alt}".html_safe, products_path() %>
+                      <%= link_to "#{image_tag slider.url.url, style: 'height:100%;width:auto;', title: slider.title, alt: slider.alt}".html_safe, products_path() %>
                     </div>
                   <% end %>
                 </div>
