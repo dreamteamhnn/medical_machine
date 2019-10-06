@@ -8,12 +8,16 @@ class ProductsController < ApplicationController
   ORDER_ATTRS = %i(username phone email received_address pay_address)
 
   def index
+    @top_categories = Category.top_categories
+    @brand_logos = Brand.where("image IS NOT NULL AND home_order IS NOT NULL")
+                        .order(:home_order)
   end
 
   def show
     @top_categories = Category.top_categories
     @brand_logos = Brand.where("image IS NOT NULL AND home_order IS NOT NULL")
                         .order(:home_order)
+    @blogs = Blog.new_articles_for_home
     set_meta_tags @product
   end
 
@@ -109,10 +113,12 @@ class ProductsController < ApplicationController
   end
 
   def load_left_menu_by_category
-    @category = Category.find_by id: params[:category_id]
-    if product = Product.find_by_slug(params[:id])
-      @category = product&.categories&.first
-    end
+    @category = if params[:category_id]
+                  Category.find_by(slug: params[:category_id])
+                elsif params[:id]
+                  product = Product.find_by(slug: params[:id])
+                  product&.categories&.first
+                end
     return load_left_menu_data unless @category
     if @category.level == Settings.category.middle_level
       @category_lv_1 = @category&.parents&.first
@@ -172,8 +178,8 @@ class ProductsController < ApplicationController
     if category = @product.categories.first
       @related_products = Product.where(id: category.products.pluck(:id).uniq)
         .limit Settings.limit.related_products
-      @related_products_1 = @related_products[0..3] if @related_products[0..3]
-      @related_products_2 = @related_products[4..7] if @related_products[4..7]
+      @related_products_1 = @related_products[0..2] if @related_products[0..3]
+      @related_products_2 = @related_products[3..5] if @related_products[4..7]
     end
   end
 

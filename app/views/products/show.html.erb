@@ -3,101 +3,145 @@
   <%= render "pages/list_categories", menu_detail: true %>
   <div class="container product-detail-box">
     <%= render "left_menu" %>
-    <div id="primary" class="product-detail">
+    <div id="primary" class="box-content product-detail">
+      <%= render "layouts/breadcrumbs" %>
       <main id="main" class="site-main" role="main">
         <div id="woo-primary" class="content-area willard">
           <div id="woo-main" class="site-main" role="main">
             <div id="product-215" class="post-215 product type-product status-publish has-post-thumbnail hentry product_shipping_class-class-2 has-thumb swiper-slide">
               <%= form_for @product, url: products_path do |f|%>
-                <div class="row single_product_wrapper">
+                <div class="single_product_wrapper">
+                  <div class="row">
 
-                  <!-- image -->
-                  <div class="col-sm-5">
-                    <div class="single-image-container">
-                      <%= render "image_detail" %>
-                    </div>
-                  </div>
-
-                  <!-- detail -->
-                  <div class="col-sm-7">
-                    <div class="summary entry-summary">
-                      <div class="product-info-content">
-                        <span class="posted_in posted_in_custom">
-                          <% @product.categories.each do |category| %>
-                            <%= link_to "#{category.name} ", product_category_path(category), rel: "tag" %>
-                          <% end %>
-                        </span>
-
-                        <h1 class="product_title entry-title product-h1-custom">
-                          <%= @product.name.html_safe %>
-                        </h1>
-
-                        <p class="price">
-                          <span class="woocs_price_code span-left" data-product-id="215">
-                            <% if @product.discount_price_currency.present? %>
-                              <del>
-                                <span class="woocommerce-Price-amount amount span-left"><%= @product.price_currency %>
-                                  <span class="woocommerce-Price-currencySymbol">VNĐ</span>
-                                </span>
-                              </del>
-                              <ins>
-                                <span class="woocommerce-Price-amount amount span-left red"><%= @product.discount_price_currency %>
-                                  <span class="woocommerce-Price-currencySymbol">VNĐ</span>
-                                </span>
-                              </ins>
-                            <% elsif @product.price_currency.present? %>
-                              <span class="woocommerce-Price-amount amount span-left red"><%= @product.price_currency %>
-                                <span class="woocommerce-Price-currencySymbol">VNĐ</span>
-                              </span>
-                            <% end %>
-                          </span>
-                        </p>
-
-                        <div class="woocommerce-product-details__short-description">
-                          <p class="black size-14">
-                            <b>Mã sản phẩm: </b><%= @product.model %>
-                          </p>
-                        </div>
-
-                        <div class="woocommerce-product-details__short-description">
-                          <p class="black size-14">
-                            <b>Hãng sản xuất: </b><%= @product&.brand&.name %>
-                          </p>
-                        </div>
-
-                        <div class="woocommerce-product-details__short-description">
-                          <p class="black size-14">
-                            <b>Xuất xứ: </b><%= @product&.location %>
-                          </p>
-                        </div>
-
-                        <div class="woocommerce-product-details__short-description">
-                          <p class="black size-14">
-                            <b>Tình trạng hàng hóa: </b>Còn hàng
-                          </p>
-                        </div>
-
-                        <div class="woocommerce-product-details__short-description
-                          short-description-detail" title="<%= @product.short_description&.html_safe %>">
-                          <%= @product.short_description&.html_safe %>
-                        </div>
+                    <!-- image -->
+                    <div class="col-sm-5">
+                      <div class="single-image-container">
+                        <%= render "image_detail" %>
                       </div>
+                    </div>
 
-                      <form class="cart" method="post" enctype="multipart/form-data" data-product_id="215" data-product_variations="[hash_array]" current-image="">
-                        <div class="custom-cart-button">
-                          <div class="">
-                            <%= link_to "ĐẶT HÀNG", order_product_path(@product), remote: true, rel: "nofollow",
-                              "data-product-id": @product.id, class: "single_add_to_cart_button button alt custom-button" %>
+                    <!-- detail -->
+                    <div class="col-sm-7">
+                      <div class="summary entry-summary">
+                        <div class="product-info-content">
+                          <h1 class="product_title entry-title product-h1-custom">
+                            <%= @product.name.html_safe %>
+                          </h1>
+
+                          <p class="price">
+                            <span class="woocs_price_code span-left" data-product-id="215">
+                              <% if @product.discount_price_currency.present? %>
+                                <del>
+                                  <span class="woocommerce-Price-amount amount span-left"><%= @product.price_currency %>
+                                    <span class="woocommerce-Price-currencySymbol">VNĐ</span>
+                                  </span>
+                                </del>
+                                <ins>
+                                  <span class="woocommerce-Price-amount amount span-left red"><%= @product.discount_price_currency %>
+                                    <span class="woocommerce-Price-currencySymbol">VNĐ</span>
+                                  </span>
+                                </ins>
+                              <% elsif @product.price_currency.present? %>
+                                <span class="woocommerce-Price-amount amount span-left red"><%= @product.price_currency %>
+                                  <span class="woocommerce-Price-currencySymbol">VNĐ</span>
+                                </span>
+                              <% end %>
+                            </span>
+                          </p>
+
+                          <div class="woocommerce-product-details__short-description">
+                            <p class="black size-14">
+                              <b>Mã sản phẩm: </b><%= @product.model %>
+                            </p>
+                          </div>
+
+                          <div class="woocommerce-product-details__short-description">
+                            <p class="black size-14">
+                              <b>Hãng sản xuất: </b><%= @product&.brand&.name %>
+                            </p>
+                          </div>
+
+                          <div class="woocommerce-product-details__short-description">
+                            <p class="black size-14">
+                              <b>Xuất xứ: </b><%= @product&.location %>
+                            </p>
+                          </div>
+
+                          <div class="woocommerce-product-details__short-description">
+                            <p class="black size-14">
+                              <b>Tình trạng hàng hóa: </b>Còn hàng
+                            </p>
+                          </div>
+
+                          <div class="woocommerce-product-details__short-description
+                            short-description-detail" title="<%= @product.short_description&.html_safe %>">
+                            <%= @product.short_description&.html_safe %>
                           </div>
                         </div>
-                      </form>
+
+                        <form class="cart" method="post" enctype="multipart/form-data" data-product_id="215" data-product_variations="[hash_array]" current-image="">
+                          <div class="custom-cart-button">
+                            <%= link_to "ĐẶT HÀNG", order_product_path(@product), remote: true, rel: "nofollow",
+                              "data-product-id": @product.id, class: "single_add_to_cart_button button alt custom-button" %>
+
+                            <div class="social-network">
+                              <a href="#">
+                                <img src="https://phepthuat.com/images/icons/social/facebook.svg"
+                                  alt="Facebook" width="35" height="35" />
+                              </a>
+                              <a href="#">
+                                <img src="https://phepthuat.com/images/icons/social/linkedin.svg"
+                                  alt="linkedin" width="35" height="35" />
+                              </a>
+                              <a href="#">
+                                <img src="https://phepthuat.com/images/icons/social/twitter.svg"
+                                  alt="twitter" width="35" height="35" />
+                              </a>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                      <!-- .summary -->
                     </div>
-                    <!-- .summary -->
                   </div>
+
                 </div>
                 <%= render "description" %>
-                <%= render "related_products_sidebar" %>
               <% end %>
+              <%= render "related_products_sidebar" %>
+              <div class="home-blog-part">
+                <div class="row">
+                  <div class="col-xs-12">
+                    <div class="typical-products-title brand-title">
+                      <p class="typical-product-brand">Tin tức</p>
+                    </div>
+                  </div>
+                  <div class="tm-posts_listing">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <% @blogs.each do |blog| %>
+                          <div class="col-sm-3">
+                            <div class="thumbnail">
+                              <div class="blog-image">
+                                <%= link_to blog_detail_path(blog) do %>
+                                  <%= image_tag blog.feature_image_thumb_url, alt: blog.feature_image_alt, title: blog.feature_image_title %>
+                                <% end %>
+                              </div>
+                              <div class="caption">
+                                <h3 class="blog-product-title"><%= link_to blog.title, blog_detail_path(blog), class: "truncate-multiple" %></h3>
+                                <div class="tm-posts_item_meta entry-meta pull-right">
+                                  <a class="text-right text-sm"><small>Ngày đăng: <%= blog.created_at.strftime(Settings.format.created_at) %></small></a>
+                                </div>
+                                <div class="clearfix"></div>
+                              </div>
+                            </div>
+                          </div>
+                        <% end %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <!-- #product-215 -->
           </div>

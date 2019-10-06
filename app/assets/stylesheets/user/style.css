@@ -9262,12 +9262,7 @@ h6 a {
 }
 
 .breadcrumbs {
-    width: 100vw;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
-    position: relative;
+    width: calc(100% + 15px);
     padding: 0 15px
 }
 
