@@ -12,14 +12,14 @@
     padding: 8px 0 8px 20px;
     line-height: 1;
     cursor: pointer;
-    background-color: #ffd71a;
+    background-color: #ffb91a;
     font-weight: bold;
 
     &:hover {
-      color: red !important;
+      color: #000 !important;
 
       i {
-        color: red !important;
+        color: #000 !important;
       }
     }
 
@@ -48,6 +48,7 @@
       .list-nav-horizontal {
         height: 33px;
         display: inline-table;
+        padding-left: 20px;
       }
 
       .nav-horizontal-item {
@@ -62,7 +63,7 @@
         }
 
         a:hover {
-          color: red;
+          color: #ff6600;
           text-decoration: none;
         }
       }
@@ -80,15 +81,14 @@
       height: 33px;
       line-height: 33px;
       padding: 0 15px;
-      text-transform: uppercase;
       display: inline-block;
-      background-color: red;
-      color: #FFF;
+      background-color: #ffb91a;
       cursor: pointer;
+      font-weight: bold;
 
       &:hover {
         background-color: #FFF;
-        color: red;
+        color: #ff6600;
 
         .list_brands {
           display: block;

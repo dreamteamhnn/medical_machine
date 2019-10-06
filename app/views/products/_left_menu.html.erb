@@ -7,7 +7,7 @@
         </h2>
       <% else %>
         <h2 class="title-category-detail">
-          <%= link_to category.first.name, "#", title: "#{category.first.name}" %>
+          <%= link_to category.first.name, product_category_path(category.first), title: "#{category.first.name}" %>
         </h2>
         <ul class="sub-category">
           <% category.second.each_with_index do |sub_category, j| %>

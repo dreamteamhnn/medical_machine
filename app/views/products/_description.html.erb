@@ -15,11 +15,11 @@
   </ul>
 
   <div class="tab-content">
-    <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--description panel entry-content wc-tab tab-pane active" id="tab-description" role="tabpanel" aria-labelledby="tab-title-description">
+    <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--description panel entry-content wc-tab tab-pane active custom-white-space" id="tab-description" role="tabpanel" aria-labelledby="tab-title-description">
       <p><%= @product.description&.html_safe %></p>
     </div>
 
-    <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--additional_information panel entry-content wc-tab tab-pane" id="tab-parameter" role="tabpanel" aria-labelledby="tab-title-parameter">
+    <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--additional_information panel entry-content wc-tab tab-pane custom-white-space" id="tab-parameter" role="tabpanel" aria-labelledby="tab-title-parameter">
       <% if @product.is_parameter_table %>
         <table class="shop_attributes">
           <tbody>
@@ -38,7 +38,7 @@
       <% end %>
     </div>
 
-    <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--description panel entry-content wc-tab tab-pane" id="tab-document" role="tabpanel" aria-labelledby="tab-title-document">
+    <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--description panel entry-content wc-tab tab-pane custom-white-space" id="tab-document" role="tabpanel" aria-labelledby="tab-title-document">
       <div id="media-table">
         <table class="table table-bordered">
           <tbody>
@@ -68,7 +68,7 @@
       </div>
     </div>
 
-    <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--description panel entry-content wc-tab tab-pane" id="tab-video" role="tabpanel" aria-labelledby="tab-title-video">
+    <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--description panel entry-content wc-tab tab-pane custom-white-space" id="tab-video" role="tabpanel" aria-labelledby="tab-title-video">
       <div class="media-table">
         <table class="table table-bordered">
           <tbody>
