@@ -4,13 +4,13 @@
 	    <h1 class="page-header">Danh mục trên trang chủ</h1>
 	  </div>
 	</div>
-	<div class="row" id="home-category">
+	<div class="row table-responsive" id="home-category">
 		<table class="table borderless">
 		    <tbody>
 		      <tr>
-		        <td class="col-lg-4">Home top</td>
+		        <td>Home top</td>
 		        <td>
-		        	<select id="home-top-select" class="selectpicker col-md-12" multiple title="Chọn danh mục" data-live-search="true" data-max-options="<%= Settings.limit.home_block_category %>">
+		        	<select id="home-top-select" class="selectpicker" multiple title="Chọn danh mục" data-live-search="true" data-max-options="<%= Settings.limit.home_block_category %>">
 		        		<% @all_categories.each do |group| %>
 		        			<optgroup label="<%= group.second.first.name %>">
 		        				<% group.first.each do |item| %>
@@ -22,9 +22,9 @@
 		        </td>
 		      </tr>
 		      <tr>
-		        <td class="col-lg-4">Home bottom</td>
+		        <td>Home bottom</td>
 		        <td>
-		        	<select id="home-bottom-select" class="selectpicker col-md-12" multiple title="Chọn danh mục" data-live-search="true" data-max-options="<%= Settings.limit.home_block_category %>">
+		        	<select id="home-bottom-select" class="selectpicker" multiple title="Chọn danh mục" data-live-search="true" data-max-options="<%= Settings.limit.home_block_category %>">
 		        		<% @all_categories.each do |group| %>
 		        			<optgroup label="<%= group.second.first.name %>">
 		        				<% group.first.each do |item| %>

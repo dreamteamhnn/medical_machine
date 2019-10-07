@@ -40,11 +40,10 @@
 .block-product-title {
     text-transform: none !important;
     overflow: hidden;
-    width:200px;
+    width: 100%;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
-    height: 75px;
 }
 
 .brand-button-title {

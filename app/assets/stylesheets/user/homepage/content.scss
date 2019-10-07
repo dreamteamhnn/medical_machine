@@ -43,7 +43,6 @@
   .block_product_content {
     h3 {
       font-size: 17px !important;
-      text-align: left;
       line-height: 1 !important;
       margin: 0 !important;
     }
@@ -343,7 +342,18 @@
     a {
       background-color: transparent !important;
       border: none !important;
-      color: red !important;
+      color: #ff6600 !important;
     }
   }
+}
+
+.certificate-title {
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  width: calc(100% - 30px);
+  text-align: center;
+  font-weight: bold;
+  line-height: 80px;
 }
