@@ -19,7 +19,7 @@
               <strong>Logo</strong> </br>
               <div class="preview-company-image-div">
                 <% if @company.logo %>
-                  <%= image_tag @company.logo, height: 100, class: "preview-company-image" %>
+                  <%= image_tag @company.logo.url, height: 100, class: "preview-company-image" %>
                 <% else %>
                   <img src="/preview_no_image.jpg" height="100" class="preview-company-image">
                 <% end %>
@@ -37,7 +37,7 @@
               <strong>Watermark</strong> </br>
               <div class="preview-company-watermark-image-div">
                 <% if @company.watermark %>
-                  <%= image_tag @company.watermark, height: 60, class: "preview-company-watermark-image" %>
+                  <%= image_tag @company.watermark.url, height: 60, class: "preview-company-watermark-image" %>
                 <% else %>
                   <img src="/preview_no_image.jpg" height="60" class="preview-company-watermark-image">
                 <% end %>

@@ -16,7 +16,7 @@
               <strong>Logo</strong> </br>
               <div class="preview-company-image-div">
                 <% if @company.logo %>
-                  <%= image_tag @company.logo, height: 100, class: "preview-company-image" %>
+                  <%= image_tag @company.logo.url, height: 100, class: "preview-company-image" %>
                 <% else %>
                   <img src="/preview_no_image.jpg" height="100" class="preview-company-image">
                 <% end %>
