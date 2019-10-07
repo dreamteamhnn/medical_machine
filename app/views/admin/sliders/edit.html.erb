@@ -16,7 +16,7 @@
               <strong>Ảnh</strong> </br>
               <div class="preview-slider-image-div">
                 <% if %>
-                  <%= image_tag @slider.url, height: 100, class: "preview-slider-image" %>
+                  <%= image_tag @slider.url.url, height: 100, class: "preview-slider-image" %>
                 <% else %>
                   <img src="/preview_no_image.jpg" height="150" class="preview-slider-image">
                 <% end %>

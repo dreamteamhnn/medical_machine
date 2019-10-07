@@ -44,7 +44,7 @@
                   <input type="checkbox" value="<%= brand.id %>" class="brand-cb-delete-id">
                 </td>
                 <td data-toggle="modal" data-id="<%= brand.id %>" data-name="<%= brand.name %>" id="update-logo" data-target="#update-logo-brand">
-                  <%= image_tag brand.image, height: 30, class: "logo-brand#{brand.id}"  %>
+                  <%= image_tag brand.image.url, height: 30, class: "logo-brand#{brand.id}"  %>
                 </td>
                 <td class="td-brand-name">
                   <p class="p-brand-name" id="p-brand-name<%= brand.id %>"><%= brand.name %></p>
