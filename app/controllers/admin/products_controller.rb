@@ -10,8 +10,6 @@ class Admin::ProductsController < Admin::BaseController
   def new
     @product = Product.new
     @product.product_categories.build
-    @product.product_images.build
-    @product.product_images.build
   end
 
   def create
@@ -34,10 +32,6 @@ class Admin::ProductsController < Admin::BaseController
     @field_attrs = field_params
     @video_attrs = media_params
     @document_attrs = media_params
-    unless @product.product_images.present?
-      @product.product_images.build
-      @product.product_images.build
-    end
   end
 
   def update
@@ -91,7 +85,6 @@ class Admin::ProductsController < Admin::BaseController
     # params[:product][:description] = strip_tags(params[:product][:description]).strip
     params[:product][:parameter] = strip_tags(params[:product][:parameter]).strip
     params.require(:product).permit(Product::PRODUCT_ATTRIBUTES,
-      product_images_attributes: Product::PRODUCT_IMAGE_ATTRIBUTES,
       product_categories_attributes: Product::PRODUCT_CATEGORY_ATTRIBUTES,
       product_fields_attributes: Product::PRODUCT_FIELD_ATTRIBUTES,
       product_media_relations_attributes: Product::PRODUCT_MEDIA_ATTRIBUTES)

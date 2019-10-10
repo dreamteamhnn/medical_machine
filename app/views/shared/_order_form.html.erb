@@ -10,9 +10,8 @@
           <div class="product-info">
             <h3><%= product.name.html_safe %></h3>
             <div class="product-images">
-              <% product.product_images.each do |img| %>
-                <%= image_tag img.url.product_thumb.url, size: 150 %>
-              <% end %>
+              <%= image_tag product.img_1, size: 150 %>
+              <%= image_tag product.img_2, size: 150 %>
             </div>
             <h4>GIÁ: <%= @product.showed_price %></h4>
           </div>

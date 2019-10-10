@@ -263,20 +263,20 @@ catalog_imgs = Dir.glob "public/catalog/*"
 end
 puts "catalog images OK"
 
-puts "create images for products"
-p_imgs = Dir.glob "public/product/*"
-Product.all.each_with_index do |b, i|
-  2.times do |j|
-    new_img = b.product_images.build title: Faker::Lorem.sentence, url: Faker::Lorem.sentence,
-      desc: Faker::Lorem.paragraph, caption: Faker::Lorem.sentence,
-      alt: Faker::Lorem.sentence
-    File.open(p_imgs[j]) do |f|
-      new_img.url = f
-    end
-    new_img.save!
-  end
-end
-puts "product images OK"
+# puts "create images for products"
+# p_imgs = Dir.glob "public/product/*"
+# Product.all.each_with_index do |b, i|
+#   2.times do |j|
+#     new_img = b.product_images.build title: Faker::Lorem.sentence, url: Faker::Lorem.sentence,
+#       desc: Faker::Lorem.paragraph, caption: Faker::Lorem.sentence,
+#       alt: Faker::Lorem.sentence
+#     File.open(p_imgs[j]) do |f|
+#       new_img.url = f
+#     end
+#     new_img.save!
+#   end
+# end
+# puts "product images OK"
 
 puts "create product_categories"
 Category.where(level: Settings.category.lowest_level).each do |category|

@@ -11,19 +11,19 @@ module ProductDecorator
     title = simple_text(name, Settings.seo.max_length.title)
     description = simple_text(short_description, Settings.seo.max_length.description)
     url = Rails.application.routes.url_helpers.friendly_product_url(self, host: Settings.current_host)
-    image = product_images.first.url_url(:product_thumb)
+    # image = product_images.first.url_url(:product_thumb) //toanlh
     {
       title: title,
       description: description,
       keywords: categories.pluck(:name).push(I18n.t('site_name')),
-      image_src: image,
+      image_src: img_1,
       index: true,
       og: {
         title: title,
         type: "article",
         description: description,
         url: url,
-        image: image,
+        image: img_1,
         site_name: I18n.t('site_name')
       },
       twitter: {
@@ -32,7 +32,7 @@ module ProductDecorator
         title: title,
         description: description,
         creator: "@author_handle",
-        image: image
+        image: img_1
       }
     }
   end
