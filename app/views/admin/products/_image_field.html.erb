@@ -1,34 +1,64 @@
+<%= render "image_modal"%>
 <div class="row show-grid show-grid-image">
-  <%= f.fields_for(:product_images) do |ff| %>
-    <div class="form-group form-group-part col-xs-6">
-      <div class="block-image">
-        <strong>Ảnh <%= ff.options[:child_index] + 1 %></strong> </br>
-        <div class="preview-product-image-div">
-          <img src="/preview_no_image.jpg" height="150" class="preview-product-image-<%= ff.options[:child_index] + 1 %>">
-        </div>
-        <label for="upload-product-image-<%= ff.options[:child_index] + 1 %>" class="btn btn-success">Chọn ảnh <%= ff.options[:child_index] + 1 %></label>
-        <%= ff.file_field :url, id: "upload-product-image-#{ff.options[:child_index] + 1}", class: "hidden" %>
-        <% if ff.object.url.present? %>
-          <%= image_tag ff.object.url.url, class: "hidden", id: "product-image#{ff.options[:child_index] + 1}" %>
-        <% end %>
+  <div class="form-group form-group-part col-xs-6">
+    <div class="block-image">
+      <strong>Ảnh 1</strong> </br>
+      <div class="preview-product-image-div">
+        <img src="/preview_no_image.jpg" height="150" class="preview-product-image-1">
       </div>
-
-      <div class="form-group form-group-sub-part col-xs-12">
-        <strong>Tiêu đề ảnh <%= ff.options[:child_index] + 1 %></strong> </br>
-        <%= ff.text_field :title, class: "form-control" %>
-      </div>
-      <div class="form-group form-group-sub-part col-xs-12">
-        <strong>Mô tả ảnh <%= ff.options[:child_index] + 1 %></strong> </br>
-        <%= ff.text_field :desc, class: "form-control" %>
-      </div>
-      <div class="form-group form-group-sub-part col-xs-12">
-        <strong>Caption ảnh <%= ff.options[:child_index] + 1 %></strong> </br>
-        <%= ff.text_field :caption, class: "form-control" %>
-      </div>
-      <div class="form-group form-group-sub-part col-xs-12">
-        <strong>Alt ảnh <%= ff.options[:child_index] + 1 %></strong> </br>
-        <%= ff.text_field :alt, class: "form-control" %>
-      </div>
+      <%= f.text_field :img_1, id: "upload-product-image-1", class: "hidden" %>
+      <%= link_to "Chọn ảnh 1", "#product-image", id:"product-image", name:"upload-product-image-1", :class => "btn btn-success", "data-toggle" => "modal" %>
+      <% if f.object.img_1.present? %>
+        <%= image_tag f.object.img_1, class: "hidden", id: "product-image1" %>
+      <% end %>
     </div>
-  <% end %>
+
+    <div class="form-group form-group-sub-part col-xs-12">
+      <strong>Tiêu đề ảnh 1</strong> </br>
+      <%= f.text_field :img_1_title, class: "form-control" %>
+    </div>
+    <div class="form-group form-group-sub-part col-xs-12">
+      <strong>Mô tả ảnh 1</strong> </br>
+      <%= f.text_field :img_1_desc, class: "form-control" %>
+    </div>
+    <div class="form-group form-group-sub-part col-xs-12">
+      <strong>Caption ảnh 1</strong> </br>
+      <%= f.text_field :img_1_caption, class: "form-control" %>
+    </div>
+    <div class="form-group form-group-sub-part col-xs-12">
+      <strong>Alt ảnh 1</strong> </br>
+      <%= f.text_field :img_1_alt, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group form-group-part col-xs-6">
+    <div class="block-image">
+      <strong>Ảnh 2</strong> </br>
+      <div class="preview-product-image-div">
+        <img src="/preview_no_image.jpg" height="150" class="preview-product-image-2">
+      </div>
+      <%= f.text_field :img_2, id: "upload-product-image-2", class: "hidden" %>
+      <%= link_to "Chọn ảnh 2", "#product-image", id:"product-image", name:"upload-product-image-2", :class => "btn btn-success", "data-toggle" => "modal" %>
+      <% if f.object.img_2.present? %>
+        <%= image_tag f.object.img_2, class: "hidden", id: "product-image2" %>
+      <% end %>
+    </div>
+
+    <div class="form-group form-group-sub-part col-xs-12">
+      <strong>Tiêu đề ảnh 2</strong> </br>
+      <%= f.text_field :img_2_title, class: "form-control" %>
+    </div>
+    <div class="form-group form-group-sub-part col-xs-12">
+      <strong>Mô tả ảnh 2</strong> </br>
+      <%= f.text_field :img_2_desc, class: "form-control" %>
+    </div>
+    <div class="form-group form-group-sub-part col-xs-12">
+      <strong>Caption ảnh 2</strong> </br>
+      <%= f.text_field :img_2_caption, class: "form-control" %>
+    </div>
+    <div class="form-group form-group-sub-part col-xs-12">
+      <strong>Alt ảnh 2</strong> </br>
+      <%= f.text_field :img_2_alt, class: "form-control" %>
+    </div>
+  </div>
 </div>

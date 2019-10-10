@@ -1,8 +1,8 @@
 <div class="images">
-  <% if @product.product_images.present? %>
+  <% if @product.img_1.present? %>
     <div class="easyzoom is-ready easyzoom--overlay easyzoom--with-thumbnails">
       <a href="" class="woocommerce-main-image">
-        <%= image_tag @product.product_images.first.url.url, title: @product.product_images.first.title, alt: @product.product_images.first.alt, 'data-zoom-image': @product.product_images.first.url, id: 'zoom', class: "product-detail-images" %>
+        <%= image_tag @product.img_1, title: @product.img_1_title, alt: @product.img_1_alt, 'data-zoom-image': @product.img_1, id: 'zoom', class: "product-detail-images" %>
       </a>
     </div>
   <% end %>
@@ -10,12 +10,15 @@
   <div class="swiper-carousel-container">
     <div id="swiper-carousel-59e9bc5f03f8c" class="tm-willard-carousel swiper-container swiper-container-horizontal" style="cursor: -webkit-grab;">
       <div class="swiper-wrapper" id="gallery_01">
-        <% @product.product_images.each do |image| %>
-          <% if image.url.present? %>
-            <a href="" data-image="<%= image.url %>" data-zoom-image="<%= image.url %>" class="thumb-image-product">
-              <%= image_tag image.url.url, size: "10", title: image.title, alt: image.alt %>
-            </a>
-          <% end %>
+        <% if @product.img_1.present? %>
+          <a href="" data-image="<%= @product.img_1 %>" data-zoom-image="<%= @product.img_1 %>" class="thumb-image-product">
+            <%= image_tag @product.img_1, size: "10", title: @product.img_1_title, alt: @product.img_1_alt %>
+          </a>
+        <% end %>
+        <% if @product.img_2.present? %>
+          <a href="" data-image="<%= @product.img_2 %>" data-zoom-image="<%= @product.img_2 %>" class="thumb-image-product">
+            <%= image_tag @product.img_2, size: "10", title: @product.img_2_title, alt: @product.img_2_alt %>
+          </a>
         <% end %>
       </div>
 

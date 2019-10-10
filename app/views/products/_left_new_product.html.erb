@@ -5,7 +5,7 @@
       <% @new_products.each do |product| %>
         <li>
           <%= link_to friendly_product_path(product), title: strip_tags(product.name) do %>
-            <%= image_tag product.product_images.first.url, size: '210', title: product.product_images.first.title, alt: product.product_images.first.alt if product.product_images.first.url%>
+            <%= image_tag product.img_1, size: '210', title: product.img_1_title, alt: product.img_1_alt if product.img_1%>
           <% end %>
           <!-- <div class="product-widget-categories">
             <a href="" rel="tag">Cutters</a>,

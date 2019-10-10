@@ -3,11 +3,25 @@ $(document).ready(function () {
 
     // $("#folder_images_attributes_image_url").
     $(".image_cm .preview-img")[0];
+    var currentImageId = "";
 });
 
 $(document).on("click",".list-group-folder li",function(e) {
     e.preventDefault()
     window.location.href = "/admin/folders/" + $(this).attr("id").split('-')[1] + "/edit";
+});
+
+$(document).on("click",".list-group-folder-product li",function(e) {
+    e.preventDefault()
+    $(".list-group-folder-product li").removeClass("active");
+    $(".default-hidden-list").removeClass("active-list");
+    $(this).addClass("active")
+    $("#" + $(this).attr("id") + "-list").addClass("active-list");
+});
+
+$(document).on("click","#product-image",function(e) {
+    e.preventDefault()
+    currentImageId = $(this).attr("name");
 });
 
 $(document).on("click","#folder-new",function(e) {
@@ -24,6 +38,12 @@ $(document).on("change","#folder-name",function(e) {
     e.preventDefault()
     updateFolder($(this).attr("name").split('-')[1], $(this)[0].value);
 });
+
+var chooseImage = function(url) {
+    $("#" + currentImageId).val(url);
+    $(".preview-product-image-" + currentImageId.split("-")[3]).attr("src", url);
+    $('#product-image').modal('hide');
+}
 
 var deleteFolderImage = function(id) {
     $('input[value="'+ id +'"]').remove();

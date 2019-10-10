@@ -1,0 +1,57 @@
+<% @folders = Folder.all %>
+<% @folder = Folder.first %>
+<div class="modal fade" id="product-image" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <a href="#" class="close" id="auto-comfirm-image-product" data-dismiss="modal" aria-label="close">&times;</a>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        <h4 class="modal-title custom_align" id="Heading">Chọn ảnh</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row show-grid category-block">
+          <div id="">
+            <div class="row">
+              <div class="col-xs-2">
+                  <ul class="list-group list-group-folder-product">
+                      <% @folders.each_with_index do |folder, index| %>
+                          <li  class="list-group-item btn btn-default btn-name btn-sm <%= 'active' if (folder.id == @folder.id) %>" id="folder-<%= folder.id %>">
+                              <%= folder.name %>
+                          </li>
+                      <% end %>
+                  </ul>
+              </div>
+              <div class="col-xs-10">
+                <% @folders.each_with_index do |folder, index| %>
+                  <div class="default-hidden-list <%= 'active-list' if (folder.id == @folder.id) %>" id="folder-<%= folder.id %>-list">
+                      <ul class="ace-thumbnails clearfix">
+                          <% folder.images.pluck(:id).each do |id| %>
+                              <%= hidden_field_tag "current_image_ids[]", id %>
+                          <% end %>
+                          <% folder.images.each_with_index do |image, index| %>
+                              <li id="preview-img-<%= image.id %>">
+                                  <a href="" data-rel="colorbox" class="cboxElement">
+                                      <%= image_tag image.image_url.url, style: 'height:150px;width:150px;', class: "image_cm preview-img" %>
+                                  </a>
+
+                                  <div class="tools tools-top">
+                                      <a onclick="chooseImage('<%= image.image_url.url %>');">
+                                          <i class="ace-icon fa fa-crosshairs red"></i>
+                                      </a>
+                                  </div>
+                              </li>
+                          <% end %>
+                      </ul>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer ">
+        <button type="button" class="btn btn-success" id="confirm-category-image" data-size="<%= @g_categories.count %>" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
