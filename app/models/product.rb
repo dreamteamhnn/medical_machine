@@ -28,7 +28,9 @@ class Product < ApplicationRecord
     }
   end
 
-  PRODUCT_ATTRIBUTES = %i(name model price discount_price description short_description parameter brand_id is_parameter_table)
+  PRODUCT_ATTRIBUTES = %i(name model price discount_price description short_description 
+                          parameter brand_id is_parameter_table img_1 img_2 img_1_title img_1_desc img_1_caption img_1_alt
+                          img_2_title img_2_desc img_2_caption img_2_alt no_order)
 
   PRODUCT_IMAGE_ATTRIBUTES = [:id, :title, :url, :desc, :caption, :alt, :_destroy]
   PRODUCT_CATEGORY_ATTRIBUTES = [:id, :category_id, :home_order, :list_order, :_destroy]
@@ -43,8 +45,8 @@ class Product < ApplicationRecord
 
   belongs_to :brand, optional: true
 
-  has_many :product_images, dependent: :destroy
-  accepts_nested_attributes_for :product_images
+  # has_many :product_images, dependent: :destroy
+  # accepts_nested_attributes_for :product_images
 
   has_many :product_categories, dependent: :destroy
   has_many :categories, through: :product_categories

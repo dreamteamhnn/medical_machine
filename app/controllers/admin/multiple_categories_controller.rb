@@ -33,10 +33,10 @@ class Admin::MultipleCategoriesController < Admin::BaseController
 
 	def products_by_category
 		selected_products = Category.find_by(id: params[:category_id]).try(&:products).uniq.sort.map do |product|
-			['', product.id.to_s, img(product.product_images.first.url.url), product.name, product.model]
+			['', product.id.to_s, img(product.img_1), product.name, product.model]
 		end
 		unselected_products = Product.joins(:product_categories).where.not("product_categories.category_id = ?",  params[:category_id]).uniq.sort.map do |product|
-			['', product.id.to_s, img(product.product_images.first.url.url), product.name, product.model]
+			['', product.id.to_s, img(product.img_1), product.name, product.model]
 		end
 		render json: {selected: selected_products, unselected: unselected_products}
 	end
