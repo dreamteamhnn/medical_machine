@@ -31,9 +31,9 @@ class Admin::FoldersController < Admin::BaseController
     respond_to do |format|
       if @folder.save
         format.html { redirect_to edit_admin_folder_path(@folder), notice: 'Folder was successfully created.' }
-        format.json { render :show, status: :created, location: @folder }
+        format.json { render :edit, status: :created, location: @folder }
       else
-        format.html { render :new }
+        format.html { render :edit }
         format.json { render json: @folder.errors, status: :unprocessable_entity }
       end
     end
@@ -49,7 +49,7 @@ class Admin::FoldersController < Admin::BaseController
           @image = @folder.images.create!(image_url: a, folder_id: @folder.id)
         end if params[:images].present?
         format.html { redirect_to edit_admin_folder_path(@folder), notice: 'Folder was successfully updated.' }
-        format.json { render :show, status: :ok, location: @folders }
+        format.json { render :edit, status: :ok, location: @folders }
       else
         format.html { render :edit }
         format.json { render json: @folder.errors, status: :unprocessable_entity }

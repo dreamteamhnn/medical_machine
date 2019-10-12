@@ -66,13 +66,13 @@
           <thead>
             <tr>
               <th></th>
+              <th>Thứ tự</th>
               <th>Ảnh</th>
               <th>Tên</th>
               <th>Mã sản phẩm</th>
               <th>Giá</th>
               <th>Mô tả ngắn</th>
               <th>Hãng</th>
-              <th>Lĩnh vực</th>
               <th class="center"></th>
             </tr>
           </thead>
@@ -81,6 +81,9 @@
               <tr class="odd gradeX" id="product<%= product.id %>">
                 <td class="product-cb">
                   <input type="checkbox" value="<%= product.id %>" class="product-cb-id">
+                </td>
+                <td>
+                  <p><input type="text" id="p-order-<%= product.id %>" value="<%= product.try(:no_order) %>" onchange='changePOrder("<%= product.id %>")'></p>
                 </td>
                 <td>
                   <%= image_tag(product.img_1, size: "75") if product.img_1 %>
@@ -100,10 +103,7 @@
                   </textarea>
                 </td>
                 <td>
-                  <p><%= product.try(:brand).try(:name) %></p>
-                </td>
-                <td>
-                  <p><%= product.try(:field_name) %></p>
+                  <p><%= product.try(:brand).try(:name) %> - <%= product.try(:brand).try(:location) %></p>
                 </td>
                 <td class="center">
                   <button class="btn btn-success" style="width: 100px; margin-bottom: 5px;" onclick='quickSave("<%= product.id %>")'>Sửa nhanh</button>

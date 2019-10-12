@@ -53,7 +53,7 @@ $(document).on('turbolinks:load', function(){
     $("#product-parameter-table").append(row);
   });
 
-  $("#product-parameter-table").on('click','.delete-param-product',function(){
+  $(document).on('click','.delete-param-product',function(){
     $(this).parent().parent()[0].remove();
   });
 
@@ -109,6 +109,15 @@ $(document).on('turbolinks:load', function(){
         var oTable = $("#product-parameter-table")[0];
         for (var kv in paramArr) {
           var id = parseInt(kv) + 1;
+          if (oTable.rows.item(id) == null) {
+            var rowHtml = "<tr>"+
+                            "<td><input type='text class='form-control'/></td>"+
+                            "<td><input type='text' class='form-control'/></td>"+
+                            "<td><button type='button' class='btn btn-danger delete-param-product'>Xóa</button></td>"+
+                          "</tr>"
+            $("#product-parameter-table").find('tbody').append(rowHtml);
+          }
+
           var oCells = oTable.rows.item(id).cells;
           oCells.item(0).children[0].value = paramArr[kv][0];
           oCells.item(1).children[0].value = paramArr[kv][1];
@@ -376,6 +385,16 @@ var changePName = function(id) {
     obj["name"] = updatedValue;
   } else {
     productQuickSave.push({id: id, name: updatedValue})
+  }
+}
+
+var changePOrder = function(id) {
+  var obj = productQuickSave.find(function(name){return name.id === id});
+  var updatedValue = $("#p-order-" + id).val();
+  if (!_.isUndefined(obj)) {
+    obj["order"] = updatedValue;
+  } else {
+    productQuickSave.push({id: id, order: updatedValue})
   }
 }
 

@@ -62,6 +62,7 @@ class Admin::ProductsController < Admin::BaseController
       data = JSON.parse(params[:data])
       product.name = data["name"] if data["name"].present?
       product.model = data["model"] if data["model"].present?
+      product.no_order = data["order"] if data["order"].present?
       product.price = data["price"].try(&:to_i) if data["price"].present?
       product.short_description = data["short_description"] if data["short_description"].present?
       product.save
@@ -83,6 +84,18 @@ class Admin::ProductsController < Admin::BaseController
     params[:product][:name] = strip_tags(params[:product][:name]).strip
     # params[:product][:short_description] = strip_tags(params[:product][:short_description]).strip
     # params[:product][:description] = strip_tags(params[:product][:description]).strip
+    if @product
+      params[:product][:img_1_title] = "anh-#{@product.slug}" unless params[:product][:img_1_title].present?
+      params[:product][:img_1_desc] = "anh-#{@product.slug}" unless params[:product][:img_1_desc].present?
+      params[:product][:img_1_caption] = "#{@product.slug}-co-san-tai-stechsaigon" unless params[:product][:img_1_caption].present?
+      params[:product][:img_1_alt] = "#{@product.slug}-co-san-tai-stechsaigon" unless params[:product][:img_1_alt].present?
+
+      params[:product][:img_2_title] = "anh-#{@product.slug}" unless params[:product][:img_2_title].present?
+      params[:product][:img_2_desc] = "anh-#{@product.slug}" unless params[:product][:img_2_desc].present?
+      params[:product][:img_2_caption] = "#{@product.slug}-co-san-tai-stechsaigon" unless params[:product][:img_2_caption].present?
+      params[:product][:img_2_alt] = "#{@product.slug}-co-san-tai-stechsaigon" unless params[:product][:img_2_alt].present?
+    end
+
     params[:product][:parameter] = strip_tags(params[:product][:parameter]).strip
     params.require(:product).permit(Product::PRODUCT_ATTRIBUTES,
       product_categories_attributes: Product::PRODUCT_CATEGORY_ATTRIBUTES,
