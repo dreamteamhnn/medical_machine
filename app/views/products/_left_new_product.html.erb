@@ -14,7 +14,7 @@
           </div> -->
           <div class="product-widget-categories">
             <% product.categories.each do |category| %>
-              <%= link_to "#{category.name} ", product_category_path(category), rel: "tag" %>
+              <%= link_to "#{category.name} ", product_categories_path(category), rel: "tag" %>
             <% end %>
           </div>
           <span class="product-title">

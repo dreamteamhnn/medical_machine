@@ -58,3 +58,13 @@
 .list-inline {
     margin-left: 0px;
 }
+
+.margin-custom {
+    margin-left: 251px;
+}
+
+@media screen and (max-width: 767px) {
+  .margin-custom {
+    margin-left: 0 !important;
+  }
+}

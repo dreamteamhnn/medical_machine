@@ -4,14 +4,14 @@
                    "fa fa-cogs", "fa fa-sliders"] %>
   <% @top_categories.limit(Settings.list_categories).each_with_index do |category, i| %>
     <div class="category-box-item">
-      <%= link_to product_category_path(category), class: "category-item", title: category.name do %>
+      <%= link_to product_categories_path(category), class: "category-item", title: category.name do %>
         <i class="<%= array_icon[i] %> custom-icon"></i>
         <span class="category-item-name"><%= category.name %></span>
       <% end %>
       <ul class="sub-menu-category">
         <% category.childrens.order(:category_order).each do |second| %>
           <li class="sub-menu-item">
-            <%= link_to second.name, product_category_path(second),
+            <%= link_to second.name, category_products_path(second),
               title: second.name -%>
           </li>
         <% end %>

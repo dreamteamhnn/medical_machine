@@ -1,7 +1,7 @@
 <article id="post-73" class="posts-list__item card post-73 post type-post status-publish format-standard has-post-thumbnail hentry category-accessories category-diy-home category-tips tag-drill tag-hammer tag-hand-tools tag-power-tools has-thumb">
   <figure class="post-thumbnail">
     <span class="post-cats">
-      <%= link_to block[:name], product_category_path(block[:id]) %>
+      <%= link_to block[:name], category_products_path(block[:id]) %>
     </span>
   </figure>
   <div class="products row">
@@ -10,7 +10,7 @@
     <% end %>
   </div>
   <div class="block-footer">
-    <%= link_to product_category_path(block[:id]), class: 'btn btn-secondary' do %>
+    <%= link_to category_products_path(block[:id]), class: 'btn btn-secondary' do %>
       <span class="link__text">Xem thêm</span>
     <% end %>
   </div>

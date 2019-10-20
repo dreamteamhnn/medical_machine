@@ -7,7 +7,7 @@
         <img src="/preview_no_image.jpg" height="150" class="preview-product-image-1">
       </div>
       <%= f.text_field :img_1, id: "upload-product-image-1", class: "hidden" %>
-      <%= link_to "Chọn ảnh 1", "#product-image", id:"product-image", name:"upload-product-image-1", :class => "btn btn-success", "data-toggle" => "modal" %>
+      <%= link_to "Chọn ảnh 1", "#product-image", name:"upload-product-image-1", :class => "btn btn-success product-image-load", "data-toggle" => "modal" %>
       <% if f.object.img_1.present? %>
         <%= image_tag f.object.img_1, class: "hidden", id: "product-image1" %>
       <% end %>
@@ -38,7 +38,7 @@
         <img src="/preview_no_image.jpg" height="150" class="preview-product-image-2">
       </div>
       <%= f.text_field :img_2, id: "upload-product-image-2", class: "hidden" %>
-      <%= link_to "Chọn ảnh 2", "#product-image", id:"product-image", name:"upload-product-image-2", :class => "btn btn-success", "data-toggle" => "modal" %>
+      <%= link_to "Chọn ảnh 2", "#product-image", name:"upload-product-image-2", :class => "btn btn-success product-image-load", "data-toggle" => "modal" %>
       <% if f.object.img_2.present? %>
         <%= image_tag f.object.img_2, class: "hidden", id: "product-image2" %>
       <% end %>

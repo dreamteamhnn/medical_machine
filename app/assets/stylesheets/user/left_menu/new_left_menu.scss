@@ -135,3 +135,13 @@
     }
   }
 }
+
+.title-category-detail {
+  a:hover {
+    color: #ffffff !important;
+  }
+}
+
+.media-custom::after {
+  display: none !important;
+}

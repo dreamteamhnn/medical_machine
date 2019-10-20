@@ -2,6 +2,8 @@ class Category < ApplicationRecord
   include CategoryDecorator
   include FriendlyidConfiguration
 
+  mount_uploader :img, NewImageUploader
+
   has_many :product_categories, dependent: :destroy
   has_many :products, :through => :product_categories
 
@@ -23,7 +25,7 @@ class Category < ApplicationRecord
   before_validation :set_slug
 
   CATEGORY_ATTRS = [:name, :description, :category_order, :home_block_id,
-    :home_order_id, :slug]
+    :home_order_id, :slug, :img]
 
   scope :top_categories,-> do
     where("level = ?", Settings.category.highest_level).order "category_order"

@@ -1,13 +1,15 @@
-<%= render "layouts/breadcrumbs" %>
+<%= render "pages/list_categories", menu_detail: false %>
 <div class="site-content_wrap container">
-  <div class="row">
-    <div id="primary" class="col-xs-12">
-      <main id="main" class="site-main" role="main">
+  <div id="product-order-placeholder"></div>
+  <div id="order-result-placeholder"></div>
+  <div id="primary" class="box-content col-md-12 box-content-contact">
+    <%= render "layouts/breadcrumbs" %>
+    <main id="main" class="site-main contact-custom" role="main">
         <div id="woo-primary" class="content-area willard">
           <div id="woo-main" class="site-main" role="main">
             <div id="media-table">
-              <div class="row" style="margin-top: 50px;">
-                <div class="col-md-4 col-md-offset-5" style="margin-top: 50px;">
+              <div class="row">
+                <div class="col-xs-12" style="margin-top: 20px;">
                   <h1>LIÊN HỆ</h1>
                   <h2 style="color: blue; font-size: 150%">
                     STECH INTERNATIONAL ., LTD<br>
@@ -76,6 +78,8 @@
           </div>
         </div>
       </main>
-    </div>
+    <!-- #main -->
   </div>
+    <!-- #primary -->
+  <!-- .row -->
 </div>

@@ -1,66 +1,69 @@
-<div id="sidebar" class="col-sm-2 sidebar widget-area sidebar categories-blog" role="complementary">
-  <aside id="categories-5" class="widget widget_categories">
-    <h5 class="widget-title">Danh mục</h5>
-    <ul>
-      <% @blog_categories.each do |category| %>
-        <li class="cat-item <%= 'current-cat' if category.id == params[:blog_category_id].to_i %>">
-          <%= link_to category.name, blog_list_category_path(category) %>
-        </li>
-      <% end %>
-    </ul>
-  </aside>
-  <aside id="archives-4" class="widget widget_archive">
-    <h5 class="widget-title">Tháng</h5>
-    <label class="screen-reader-text" for="archives-dropdown-4">Archives</label>
-    <select id="archives-dropdown-4">
-      <option value="<%= blog_list_path() %>">Chọn tháng</option>
-      <% @times.each do |time| %>
-        <option value="<%= blog_list_path(time: time[:value]) %>" <%= 'selected' if params[:time] == time[:value] %>><%= time[:title] %></option>
-      <% end %>
-    </select>
-  </aside>
+<div class="navbar-menu">
+  <div class="container">
+    <div class="navbar-menu-list clearfix blogs-left-sidebar">
+      <div class="nav-menu-button nav-left">
+        <i class="fa fa-bars icon-home-nav"></i>
+        <span class="jet-dropbar__button-text">
+          <%= link_to "Danh mục tài liệu", blog_list_path, class: "blog-list-link" %>
+        </span>
+      </div>
+      <div class="list-categories">
+        <div class="list-categories-content">
+          <% @blog_categories.each do |category| %>
+            <div class="category-box-item <%= 'current-cat' if category.slug == params[:blog_category_id] %>">
+              <%= link_to category.name, blog_list_category_path(category), class: "category-item media-custom", title: category.name %>
+            </div>
+          <% end %>
+        </div>
+        <aside id="archives-4" class="widget widget_archive">
+          <h5 class="widget-title">Tháng</h5>
+          <label class="screen-reader-text" for="archives-dropdown-4">Archives</label>
+          <select id="archives-dropdown-4">
+            <option value="<%= blog_list_path() %>">Chọn tháng</option>
+            <% @times.each do |time| %>
+              <option value="<%= blog_list_path(time: time[:value]) %>" <%= 'selected' if params[:time] == time[:value] %>><%= time[:title] %></option>
+            <% end %>
+          </select>
+        </aside>
+      </div>
+      <div class="nav-right">
+        <div class="top-nav-horizontal">
+          <ul class="list-nav-horizontal">
+            <li id="menu-item-228" class="nav-horizontal-item">
+              <%= link_to "Trang chủ", root_url %>
+            </li>
 
-  <!-- <aside id="tag_cloud-5" class="widget widget_tag_cloud">
-    <h5 class="widget-title">Tags</h5>
-    <div class="tagcloud">
-      <%# @tags.each do |tag| %>
-        <%#= link_to tag.name, blog_list_path(tag_id: tag.id), class: "tag-link-99 tag-link-position-1 #{'tag-active' if tag.id == params[:tag_id].to_i}"%>
-      <%# end %>
-    </div>
-  </aside> -->
+            <li id="menu-item-230" class="nav-horizontal-item">
+              <%= link_to "Tài liệu", friendly_document_path %>
+            </li>
 
-  <!-- aside id="calendar-4" class="widget widget_calendar">
-    <div id="calendar_wrap" class="calendar_wrap">
-      <%#= month_calendar do |date| %>
-        <%#= date.day %>
-      <%# end %>
-    </div>
-  </aside> -->
+            <li id="menu-item-231" class="nav-horizontal-item">
+              <%= link_to "Video", friendly_video_path %>
+            </li>
 
-  <!-- <aside id="tm_willard_widget_subscribe_follow-1" class="widget widget-subscribe">
-    <div class="subscribe-follow__wrap">
-      <div class="follow-block">
-        <div class="follow-block-content">
-          <h5 class="widget-title">Đăng ký nhận tin</h5>
+            <li id="menu-item-232" class="nav-horizontal-item">
+              <%= link_to "Liên hệ", friendly_contact_path %>
+            </li>
+
+            <li id="menu-item-233" class="nav-horizontal-item">
+              <%= link_to "Tin tức", blog_list_path() %>
+            </li>
+          </ul>
+        </div>
+        <div class="brand-button">
+          <span class="brand-button-title">
+            <i class="fa fa-bookmark-o"></i>
+            Thương hiệu
+          </span>
+          <ul class="list_brands">
+            <% @brand_logos.each do |brand| %>
+              <li class="brand-name-item">
+                <%= link_to brand.name, product_brand_path(brand), class: "brand-name" %>
+              </li>
+            <% end %>
+          </ul>
         </div>
       </div>
-      <div class="subscribe-block">
-        <div class="subscribe-block__message">Mời nhập e-mail!</div>
-        <%= form_for(@subcriber, html: {class: "subscribe-block__form"}) do |f| %>
-          <input type="hidden" name="nonce" value="e7bf373fbc">
-          <div class="subscribe-block__input-group">
-            <div class="subscribe-block__input-wrap">
-              <i class="linearicon linearicon-envelope-open"></i>
-              <%= f.text_field :email, class: "subscribe-block__input", placeholder: "Email của bạn", type: "email" %>
-            </div>
-            <%= f.submit "Đăng ký", class: "subscribe-block__submit btn btn-primary" %>
-          </div>
-          <div class="subscribe-block__messages">
-            <div class="subscribe-block__success hidden">You successfully subscribed</div>
-            <div class="subscribe-block__error hidden"></div>
-          </div>
-        <% end %>
-      </div>
     </div>
-  </aside> -->
+  </div>
 </div>
