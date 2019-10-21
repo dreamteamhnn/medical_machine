@@ -4,6 +4,9 @@ class ContactsController < ApplicationController
   def index
     @contact = Subcriber.new
     @company = Company.first
+    @top_categories = Category.top_categories
+    @brand_logos = Brand.where("image IS NOT NULL AND home_order IS NOT NULL")
+                        .order(:home_order)
     set_meta_tags @company
   end
 

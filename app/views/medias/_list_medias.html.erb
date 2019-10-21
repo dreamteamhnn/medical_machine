@@ -3,11 +3,10 @@
       <div class="navbar-menu-list clearfix">
         <div class="nav-menu-button nav-left">
           <i class="fa fa-bars icon-home-nav"></i>
-          <span class="jet-dropbar__button-text">Danh mục sản phẩm</span>
+          <span class="jet-dropbar__button-text">Danh mục tài liệu</span>
         </div>
-        <% list_category_detail = menu_detail ? "custom-list-categories" : nil %>
-        <div class="list-categories <%= list_category_detail %>">
-          <%= render "pages/categories" %>
+        <div class="list-categories">
+          <%= render "medias" %>
         </div>
         <div class="nav-right">
           <div class="top-nav-horizontal">

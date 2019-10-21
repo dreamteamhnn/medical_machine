@@ -61,6 +61,14 @@
           <%= form_for([:admin, @category], html: {multipart: true}) do |f| %>
             <div class="modal-body">
                 <div class="form-group">
+                  <strong>Ảnh</strong> </br>
+                  <div class="preview-category-image-div">
+                    <img src="/preview_no_image.jpg" height="150" class="preview-category-image">
+                  </div>
+                  <label for="upload-category-image" class="btn btn-success">Chọn ảnh</label>
+                  <%= f.file_field :img, id: "upload-category-image", class: "hidden" %>
+                </div>
+                <div class="form-group">
                   <%= f.text_field :name, class: "form-control category-name-create", placeholder: "Tên danh mục", required: true%>
                 </div>
                 <div class="form-group">
@@ -96,6 +104,14 @@
         </div>
         <form>
           <div class="modal-body">
+            <div class="form-group">
+              <strong>Ảnh</strong> <br>
+              <div class="preview-category-image-update-div">
+                <img src="/preview_no_image.jpg" height="150" class="preview-category-image-update">
+              </div>
+              <label for="update-category-image" class="btn btn-success">Chọn ảnh</label>
+              <input id="update-category-image" class="hidden category-img-update" type="file" name="category[img]">
+            </div>
             <div class="form-group">
               <strong>Tên danh mục</strong></br>
               <input class="form-control category-name-update" type="text" placeholder="Tên danh mục" required>

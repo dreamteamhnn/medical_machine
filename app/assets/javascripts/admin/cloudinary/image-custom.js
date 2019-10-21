@@ -3,8 +3,8 @@ $(document).ready(function () {
 
     // $("#folder_images_attributes_image_url").
     $(".image_cm .preview-img")[0];
-    var currentImageId = "";
 });
+var currentImageId = "";
 
 $(document).on("click",".list-group-folder li",function(e) {
     e.preventDefault()
@@ -19,7 +19,7 @@ $(document).on("click",".list-group-folder-product li",function(e) {
     $("#" + $(this).attr("id") + "-list").addClass("active-list");
 });
 
-$(document).on("click","#product-image",function(e) {
+$(document).on("click",".product-image-load",function(e) {
     e.preventDefault()
     currentImageId = $(this).attr("name");
 });
@@ -104,3 +104,4 @@ var deleteFolder = function(id) {
     }
     return false;
 }
+

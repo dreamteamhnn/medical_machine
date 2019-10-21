@@ -12,7 +12,8 @@ Rails.application.routes.draw do
     end
   end
 
-  get '/loai-san-pham/:category_id' => 'products#index', as: :product_category
+  get '/loai-san-pham/:category_id' => 'categories#index', as: :product_categories
+  get '/danh-sach-san-pham/:category_id' => 'products#index', as: :category_products
   get '/linh-vuc/:field_id' => 'products#index', as: :product_field
   get '/hang-san-xuat/:brand_id' => 'products#index', as: :product_brand
   get '/tat-ca-san-pham' => 'products#index', as: :all_products
@@ -40,8 +41,8 @@ Rails.application.routes.draw do
     resource :company, only: [:show, :update, :edit]
     resources :sliders
     resources :catalogs
-    resources :products
     resources :categories
+    resources :products
     resources :multiple_categories
     resources :home_categories, only: [:update, :edit]
     put "/product_quick_save/:product_id" => "products#quick_save", as: :product_quick_save

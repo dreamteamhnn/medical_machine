@@ -3,7 +3,11 @@ class BlogsController < ApplicationController
   before_action :load_blogs, only: :index
   before_action :load_left_menu, only: [:show, :index]
 
-  def index;end
+  def index
+    @top_categories = Category.top_categories
+    @brand_logos = Brand.where("image IS NOT NULL AND home_order IS NOT NULL")
+                        .order(:home_order)
+  end
 
   def show
     set_meta_tags @blog

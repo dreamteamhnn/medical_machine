@@ -1,0 +1,22 @@
+.blogs-page {
+  .current-cat {
+    .category-item  {
+      background: #ff6600 !important;
+      color: #fff !important;
+    }
+  }
+
+  .blog-list-link {
+    color: #4f4d53;
+  }
+
+  .nav-menu-button:hover {
+    .blog-list-link {
+      color: #000;
+    }
+  }
+
+  .blogs-custom {
+    width: calc(100% + 30px);
+  }
+}
