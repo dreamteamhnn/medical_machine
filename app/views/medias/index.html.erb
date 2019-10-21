@@ -1,21 +1,23 @@
-<%= render "layouts/breadcrumbs" %>
+<%= render "list_medias", menu_detail: false %>
 <div class="site-content_wrap container">
-  <div class="row">
-    <%= render "left_navigator" %>
-    <div id="primary" class="col-sm-10">
-      <main id="main" class="site-main" role="main">
-        <div id="woo-primary" class="content-area willard">
-          <div id="woo-main" class="site-main" role="main">
-            <div id="media-table">
-              <% if params[:media_type] == "0" %>
-                <%= render partial: "doccument", object: @medias %>
-              <% else %>
-                <%= render partial: "video", object: @medias %>
-              <% end %>
-            </div>
+  <div id="product-order-placeholder"></div>
+  <div id="order-result-placeholder"></div>
+  <div id="primary" class="box-content col-md-12">
+    <main id="main" class="site-main box-content-custom margin-custom" role="main">
+      <div id="woo-primary" class="content-area willard">
+        <div id="woo-main" class="site-main" role="main">
+          <div id="media-table">
+            <% if params[:media_type] == "0" %>
+              <%= render partial: "doccument", object: @medias %>
+            <% else %>
+              <%= render partial: "video", object: @medias %>
+            <% end %>
           </div>
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
+    <!-- #main -->
   </div>
+    <!-- #primary -->
+  <!-- .row -->
 </div>

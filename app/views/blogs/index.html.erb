@@ -1,50 +1,59 @@
-<%= render "layouts/breadcrumbs" %>
-<div class="site-content_wrap container article-list-page">
-  <main id="main" class="site-main" role="main">
-    <div class="row">
-      <%= render 'left_sidebar' %>
-      <div class="col-sm-10">
-        <% unless @blogs.present? %>
-          <span>Bài viết đang được cập nhật.</span>
-        <% end %>
-        <h5 class="tm-posts_title">
-          Tin Tức
-        </h5>
-        <div class="row">
-          <% @blogs.each do |blog| %>
-            <div class="col-sm-6 col-md-4">
-              <div class="thumbnail">
-                <div class="blog-image">
-                  <%= link_to blog_detail_path(blog) do %>
-                    <% if blog.feature_image %>
-                      <%= image_tag blog.feature_image_thumb_url, alt: blog.feature_image_alt, title: blog.feature_image_title %>
-                    <% else %>
-                      <%= image_tag "/preview_no_image.jpg" %>
-                    <% end %>
-                  <% end %>
-                </div>
-                <div class="caption">
-                  <h3><%= link_to blog.title, blog_detail_path(blog) %></h3>
-                  <div class="tm-posts_item_meta entry-meta">
-                    <a class="text-right text-sm"><small>Ngày đăng: <%= blog.created_at.strftime(Settings.format.created_at) %></small></a>
-                  </div>
-                  <% if blog.content %>
-                    <div class="short-desc"><%= truncate(strip_tags(blog.content), length: 150, separator: ' ', escape: false) {link_to 'Xem thêm'.html_safe, blog_detail_path(blog)} %>
-                    </div>
-                  <% end %>
-                  <% blog.blog_categories.limit(3).uniq.each do |category| %>
-                    <%= content_tag :span, category.name, class: "label label-#{cycle('success', 'info', 'warning', name: 'colors')}" %>
-                  <% end %>
-                  <% reset_cycle('colors') %>
-                </div>
-              </div>
-            </div>
+<div class="blogs-page">
+  <%= render "left_sidebar", menu_detail: false %>
+  <div class="site-content_wrap container">
+    <div id="product-order-placeholder"></div>
+    <div id="order-result-placeholder"></div>
+    <div id="primary" class="box-content col-md-12 margin-custom">
+      <%= render "layouts/breadcrumbs" %>
+      <main id="main" class="site-main blogs-custom" role="main">
+        <div class="row box-content-custom">
+          <% unless @blogs.present? %>
+            <span>Bài viết đang được cập nhật.</span>
           <% end %>
+          <div class="col-xs-12">
+            <h5 class="tm-posts_title">
+              Tin Tức
+            </h5>
+            <div class="row">
+              <% @blogs.each do |blog| %>
+                <div class="col-sm-6 col-md-4">
+                  <div class="thumbnail">
+                    <div class="blog-image">
+                      <%= link_to blog_detail_path(blog) do %>
+                        <% if blog.feature_image %>
+                          <%= image_tag blog.feature_image_thumb_url, alt: blog.feature_image_alt, title: blog.feature_image_title %>
+                        <% else %>
+                          <%= image_tag "/preview_no_image.jpg" %>
+                        <% end %>
+                      <% end %>
+                    </div>
+                    <div class="caption">
+                      <h3><%= link_to blog.title, blog_detail_path(blog) %></h3>
+                      <div class="tm-posts_item_meta entry-meta">
+                        <a class="text-right text-sm"><small>Ngày đăng: <%= blog.created_at.strftime(Settings.format.created_at) %></small></a>
+                      </div>
+                      <% if blog.content %>
+                        <div class="short-desc"><%= truncate(strip_tags(blog.content), length: 150, separator: ' ', escape: false) {link_to 'Xem thêm'.html_safe, blog_detail_path(blog)} %>
+                        </div>
+                      <% end %>
+                      <% blog.blog_categories.limit(3).uniq.each do |category| %>
+                        <%= content_tag :span, category.name, class: "label label-#{cycle('success', 'info', 'warning', name: 'colors')}" %>
+                      <% end %>
+                      <% reset_cycle('colors') %>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
         </div>
-      </div>
+        <nav class="woocommerce-pagination">
+          <%= paginate @blogs %>
+        </nav>
+      </main>
+      <!-- #main -->
     </div>
-    <nav class="woocommerce-pagination">
-      <%= paginate @blogs %>
-    </nav>
-  </main>
+      <!-- #primary -->
+    <!-- .row -->
+  </div>
 </div>

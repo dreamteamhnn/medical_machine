@@ -5,10 +5,10 @@
   <%= render "left_menu"%>
   <div id="primary" class="box-content">
     <%= render "layouts/breadcrumbs" %>
-    <main id="main" class="site-main" role="main">
+    <main id="main" class="site-main box-content-custom" role="main">
       <div id="woo-primary" class="content-area willard">
         <div id="woo-main" class="site-main" role="main">
-          <h1 class="page-title"><%= @title %></h1>
+          <h1 class="page-title page-title-custom"><%= @title %></h1>
           <% if brand = Brand.find_by(id: params[:brand_id]) %>
             <h2>Hãng: <%= brand.name %></h2>
           <% end %>
@@ -20,14 +20,16 @@
               <%= render "sort_form"%>
             <% end %>
 
-            <div class="products row <%= 'product-row-block' if @childs.present? %>">
+            <div class="row <%= 'product-row-block' if @childs.present? %>">
               <% if @childs.present? %>
                 <% @childs.each do |child| %>
                   <%= render "product_block", block: child%>
                 <% end %>
               <% else %>
                 <% @products_from_menu.each do |product| %>
-                  <%= render "product_field", product: product %>
+                  <div class="col-sm-4 typical-products">
+                    <%= render "pages/product_field", product: product %>
+                  </div>
                 <% end %>
               <% end %>
             </div>

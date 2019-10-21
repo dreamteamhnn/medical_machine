@@ -15,7 +15,7 @@ module CategoryDecorator
   def to_meta_tags
     title = name.truncate(Settings.seo.max_length.title, omission: "", separator: " ")
     description = description ? simple_text(description, Settings.seo.max_length.description) : "Danh sách sản phẩm của danh mục #{name} - #{I18n.t('site_name')}"
-    url = Rails.application.routes.url_helpers.product_category_url(self, host: Settings.current_host)
+    url = Rails.application.routes.url_helpers.product_categories_url(self, host: Settings.current_host)
     {
       title: title,
       description: description,

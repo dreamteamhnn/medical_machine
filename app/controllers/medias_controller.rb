@@ -37,6 +37,9 @@ class MediasController < ApplicationController
       @medias.where("media_type = ?", params[:media_type])
         .page(params[:page]).per(per_page_medias)
     end
+    @top_categories = Category.top_categories
+    @brand_logos = Brand.where("image IS NOT NULL AND home_order IS NOT NULL")
+                        .order(:home_order)
     set_meta_tags_with_condition
   end
 

@@ -1,12 +1,12 @@
-<div class="post-215 type-product status-publish has-post-thumbnail hentry product_shipping_class-class-2 has-thumb col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-3 col-xxl-3 product">
+<div class="post-215 type-product status-publish has-post-thumbnail hentry product_shipping_class-class-2 has-thumb col-xs-12 col-sm-3 col-md-3 col-lg-3 product">
   <div class="block_product_inner">
     <div class="block_product_thumbnail">
       <a href="">
         <div class="tm-thumbs-wrap effect-fade">
           <div class="tm-thumbs-wrap__inner">
             <%= link_to friendly_product_path(product), title: strip_tags(product.name) do %>
-              <%= image_tag product.img_1, size: '340', title: product.img_1_title, alt: product.img_alt_1 if product.img_1%>
-              <%= image_tag product.img_2, size: '340', title: product.img_2_title, alt: product.img_alt_2 if product.img_2%>
+              <%= image_tag product.img_1, size: '340', title: product.img_1_title, alt: product.img_1_alt if product.img_1%>
+              <%= image_tag product.img_2, size: '340', title: product.img_2_title, alt: product.img_2_alt if product.img_2%>
             <% end %>
           </div>
         </div>

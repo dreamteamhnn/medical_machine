@@ -1,0 +1,18 @@
+.box-content-contact {
+  margin-left: 251px;
+  font-size: 16px;
+
+  h1 {
+    font-size: 20px !important;
+  }
+
+  h2 {
+    font-size: 18px !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .box-content-contact {
+    margin-left: 0 !important;
+  }
+}

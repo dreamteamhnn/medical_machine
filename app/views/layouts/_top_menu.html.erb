@@ -35,7 +35,7 @@
                             <ul class="tm-mega-menu-sub sub-menu level-1 effect-slide-top simple-sub">
                               <% categories[i].each do |category| %>
                                 <li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat tm-mega-menu-sub-item item-nested-sub item-nested-sub-2 sub-column-item">
-                                  <%= link_to category.name, product_category_path(category), class: "product-item" %>
+                                  <%= link_to category.name, product_categories_path(category), class: "product-item" %>
                                 </li>
                               <% end %>
                             </ul>
