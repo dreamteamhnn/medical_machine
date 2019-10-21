@@ -20,3 +20,6 @@
 //= require ckeditor/config
 //= require cloudinary
 //= require_tree .
+
+CKEDITOR.config.customConfig = '/assets/ckeditor/config.js';
+// alert( CKEDITOR.basePath );

@@ -18,5 +18,3 @@
 //= require jquery
 //= require ckeditor/init
 //= require_tree ./user/
-
-CKEDITOR.config.customConfig = '/assets/ckeditor/config.js';
