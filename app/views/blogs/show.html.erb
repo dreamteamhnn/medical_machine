@@ -1,9 +1,9 @@
 <%= render "layouts/breadcrumbs" %>
+<%= render "left_sidebar", menu_detail: false %>
 <div class="site-content_wrap container">
-  <div class="row">
-    <%= render "left_sidebar"%>
-    <div id="primary" class="col-sm-10">
-      <main id="main" class="site-main" role="main">
+  <div id="primary" class="box-content col-md-12 margin-custom">
+    <main id="main" class="site-main blogs-custom" role="main">
+      <div class="box-content-custom">
         <article id="post-73" class="post-73 post type-post status-publish format-standard has-post-thumbnail hentry category-accessories category-diy-home category-tips tag-drill tag-hammer tag-hand-tools tag-power-tools has-thumb">
           <header class="entry-header">
             <span class="post-cats">
@@ -21,7 +21,7 @@
           </header>
 
           <figure class="post-thumbnail">
-            <%= image_tag @blog.blog_images.first.url, alt: @blog.blog_images.first.alt, title: @blog.blog_images.first.title, class: "post-thumbnail__img wp-post-image" if @blog.blog_images.first %>
+            <%= image_tag @blog.blog_images.first.url.url, alt: @blog.blog_images.first.alt, title: @blog.blog_images.first.title, class: "post-thumbnail__img wp-post-image" if @blog.blog_images.first %>
           </figure>
           <!-- .post-thumbnail -->
           <div class="entry-content">
@@ -35,7 +35,7 @@
             <% if @blog_relate_1 %>
               <article class="inner-article hzol-clear story">
                 <figure class="cover image-cover">
-                  <%= link_to "#{image_tag(@blog_relate_1.blog_images.first.url, width: '145')}".html_safe, blog_detail_path(@blog_relate_1) if @blog_relate_1.blog_images.any? %>
+                  <%= link_to "#{image_tag(@blog_relate_1.blog_images.first.url.url, width: '145')}".html_safe, blog_detail_path(@blog_relate_1) if @blog_relate_1.blog_images.any? %>
                 </figure>
                 <header>
                   <h2 class="title">
@@ -56,7 +56,7 @@
             <% if @blog_relate_2 %>
               <article class="inner-article hzol-clear story">
                 <figure class="cover image-cover">
-                  <%= link_to "#{image_tag(@blog_relate_2.blog_images.first.url, width: '145')}".html_safe, blog_detail_path(@blog_relate_2) if @blog_relate_2.blog_images.any? %>
+                  <%= link_to "#{image_tag(@blog_relate_2.blog_images.first.url.url, width: '145')}".html_safe, blog_detail_path(@blog_relate_2) if @blog_relate_2.blog_images.any? %>
                 </figure>
                 <header>
                   <h2 class="title">
@@ -98,8 +98,8 @@
             <% end %>
           </div>
         </nav>
-      </main>
-      <!-- #main -->
-    </div>
+      </div>
+    </main>
+    <!-- #main -->
   </div>
 </div>

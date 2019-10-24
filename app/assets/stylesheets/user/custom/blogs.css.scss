@@ -20,3 +20,48 @@
     width: calc(100% + 30px);
   }
 }
+
+.home-blog-part {
+  .thumbnail {
+    height: 300px;
+  }
+}
+
+.blog-title {
+  font-size: 14px;
+}
+
+.click-video {
+  cursor: pointer;
+}
+
+.iframe-video-image {
+  position: relative;
+
+  .disable-iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+  }
+}
+
+.modal-video {
+  z-index: 999999 !important;
+
+  .modal-custom {
+    width: 50%;
+    height: auto;
+  }
+}
+
+.modal-video-content {
+  height: 60vh;
+  margin-top: 10vh;
+
+  .modal-body {
+    height: calc(100% - 50px);
+  }
+}
