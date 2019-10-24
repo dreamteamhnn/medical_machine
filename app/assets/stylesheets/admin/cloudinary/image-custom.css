@@ -208,7 +208,7 @@ body{margin-top:20px;}
     }
 }
 
-.active {
+.custom-folder .active {
     background: #f00;
 }
 
