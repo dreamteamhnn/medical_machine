@@ -13,7 +13,8 @@ limit:
   product_field: 10
   product_block: 4
   related_products: 8
-  new_products: 3
+  new_products: 5
+  new_blogs: 3
   paginate:
     products: 16
     blogs: 6

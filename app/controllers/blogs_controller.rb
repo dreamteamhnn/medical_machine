@@ -11,6 +11,9 @@ class BlogsController < ApplicationController
 
   def show
     set_meta_tags @blog
+    @top_categories = Category.top_categories
+    @brand_logos = Brand.where("image IS NOT NULL AND home_order IS NOT NULL")
+                        .order(:home_order)
   end
 
   private
@@ -28,7 +31,7 @@ class BlogsController < ApplicationController
       set_meta_tags meta_tags_hash
     end
     @blogs = @blogs.distinct.take_ordered_list.page(params[:page]).per(Settings.limit.paginate.blogs)
-    @breads = [{title: "Tin Tức", link: ""}]
+    @breads = [{title: "Tin công nghệ", link: ""}]
   end
 
   def load_left_menu
@@ -56,13 +59,13 @@ class BlogsController < ApplicationController
   end
 
   def meta_tags_hash
-    simple_title = 'Tin tức'
+    simple_title = 'Tin công nghệ'
     description = simple_title
     url = request.url
     {
       title: simple_title,
       description: description,
-      keywords: ['Tin tức', t("site_name")],
+      keywords: ['Tin công nghệ', t("site_name")],
       index: true,
       og: {
         title: simple_title,

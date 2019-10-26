@@ -1,9 +1,17 @@
+<%
+  media_name = if params[:media_type] == "0"
+                 "tài liệu"
+               else
+                 "video"
+               end
+%>
+
 <div class="navbar-menu">
   <div class="container">
       <div class="navbar-menu-list clearfix">
         <div class="nav-menu-button nav-left">
           <i class="fa fa-bars icon-home-nav"></i>
-          <span class="jet-dropbar__button-text">Danh mục tài liệu</span>
+          <span class="jet-dropbar__button-text">Danh mục <%= media_name %></span>
         </div>
         <div class="list-categories">
           <%= render "medias" %>
@@ -28,7 +36,7 @@
               </li>
 
               <li id="menu-item-233" class="nav-horizontal-item">
-                <%= link_to "Tin tức", blog_list_path() %>
+                <%= link_to "Tin công nghệ", blog_list_path() %>
               </li>
             </ul>
           </div>

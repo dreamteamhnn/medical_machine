@@ -9,7 +9,7 @@ module BlogCategoryDecorator
     {
       title: simple_title,
       description: description,
-      keywords: ['Tin tức', simple_title],
+      keywords: ['Tin công nghệ', simple_title],
       index: true,
       og: {
         title: simple_title,
