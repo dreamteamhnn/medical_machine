@@ -95,4 +95,14 @@ $(document).on('turbolinks:load', function(){
         e.preventDefault();
     }
   });
+
+  // Show modal video
+  $(".iframe-video-image").on("click", function() {
+    var id = $(this).data("video");
+    $("#modal-video-" + id).modal("show");
+  })
+
+  $(".modal").on('hide.bs.modal', function () {
+    $(this).find(".iframe-modal").attr('src', $(this).find(".iframe-modal").attr('src'));
+  });
 });

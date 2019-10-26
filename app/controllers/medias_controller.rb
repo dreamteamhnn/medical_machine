@@ -47,6 +47,9 @@ class MediasController < ApplicationController
     @video = Medium.find_by(id: params["id"])
     @medias = Medium.where(media_type: 1)
     @videos_related = @medias.where(field_id: @video.field_id)
+    @top_categories = Category.top_categories
+    @brand_logos = Brand.where("image IS NOT NULL AND home_order IS NOT NULL")
+                        .order(:home_order)
   end
 
   private

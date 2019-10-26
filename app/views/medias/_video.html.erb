@@ -3,12 +3,31 @@
     <% @medias.each_slice(3).to_a.each do |block| %>
       <tr>
         <% block.each do |video| %>
-          <td class="click-video video-td-product video-td-product-<%= video.id %>">
-            <iframe width="374" height="284" src="<%= video.video_url %>" frameborder="0" allowfullscreen></iframe>
-            <div class="content-video">
+          <td class="video-td-product video-td-product-<%= video.id %>">
+            <a class="iframe-video-image btn-primary btn btn-lg btn-primary clearfix" data-toggle="modal" data-video="<%= video.id %>">
+              <iframe width="560" height="315"
+                src="<%= video.video_url %>" frameborder="0" allowfullscreen></iframe>
+              <div class="disable-iframe"></div>
+            </a>
+            <div class="click-video content-video">
               <strong><%= video.title %></strong><br/>
               <%= video.description %><br/>
               <p>Ngày tạo : <%= video.created_at.strftime("%m/%d/%Y") %></p>
+            </div>
+
+            <!-- Modal HTML -->
+            <div id="modal-video-<%= video.id %>" class="modal modal-video fade">
+              <div class="modal-dialog modal-custom">
+                <div class="modal-content modal-video-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  </div>
+                  <div class="modal-body">
+                    <iframe id="video-<%= video.id %>" class="iframe-modal" width="100%" height="100%"
+                      src="<%= video.video_url %>" frameborder="0" allowfullscreen></iframe>
+                  </div>
+                </div>
+              </div>
             </div>
           </td>
         <% end %>
