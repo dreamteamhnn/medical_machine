@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191015135435) do
+ActiveRecord::Schema.define(version: 20191028165945) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
     t.string "email", default: "", null: false
@@ -255,7 +255,6 @@ ActiveRecord::Schema.define(version: 20191015135435) do
   end
 
   create_table "product_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
-    t.bigint "product_id"
     t.string "title"
     t.string "url"
     t.text "desc"
@@ -263,7 +262,6 @@ ActiveRecord::Schema.define(version: 20191015135435) do
     t.string "alt"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_product_images_on_product_id"
   end
 
   create_table "product_media_relations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
@@ -357,7 +355,6 @@ ActiveRecord::Schema.define(version: 20191015135435) do
   add_foreign_key "product_categories", "products"
   add_foreign_key "product_fields", "fields"
   add_foreign_key "product_fields", "products"
-  add_foreign_key "product_images", "products"
   add_foreign_key "product_media_relations", "media"
   add_foreign_key "product_media_relations", "products"
   add_foreign_key "products", "brands", on_delete: :cascade
