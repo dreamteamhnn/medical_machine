@@ -46,6 +46,7 @@ Rails.application.routes.draw do
     resources :multiple_categories
     resources :home_categories, only: [:update, :edit]
     put "/product_quick_save/:product_id" => "products#quick_save", as: :product_quick_save
+    delete "/products/destroy_multiple" => "products#destroy_multiple"
     get "/products_by_category/:category_id" => "multiple_categories#products_by_category", as: :products_by_category
     resources :imports
     resources :tags

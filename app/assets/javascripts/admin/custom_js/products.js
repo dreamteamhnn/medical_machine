@@ -1,3 +1,4 @@
+var selectedProductIds = [];
 $(document).on('turbolinks:load', function(){
   
   $("#show-limit").on("change", function(){
@@ -40,9 +41,9 @@ $(document).on('turbolinks:load', function(){
 
   onpageLoadImage();
 
-  $('#dataTables-product').DataTable({
-    responsive: true
-  });
+  // $('#product-table').DataTable({
+  //   responsive: true
+  // });
 
   $("#add-param-product").click(function(){
     var row = '<tr>' +
@@ -149,6 +150,10 @@ $(document).on('turbolinks:load', function(){
     var index = $(this).data("id");
     removeFieldsFor(index);
   });
+
+  $("#product-check-all").click(function(){
+    debugger;
+  })
 
   var categoryNames = [];
   function addFieldsFor() {
@@ -261,9 +266,8 @@ $(document).on('turbolinks:load', function(){
     showSelectedField();
   });
 
-  var selectedProductIds = [];
-
-  $('#dataTables-product').on('click', '.product-cb-id', function () {
+  $('#product-table').on('click', '.product-cb-id', function () {
+    debugger;
     var index = selectedProductIds.indexOf(this.value);
     if (index != -1) {
       selectedProductIds.splice(index, 1);
@@ -274,7 +278,7 @@ $(document).on('turbolinks:load', function(){
 
   var deleteProductIds = [];
 
-  $('#dataTables-product').on('click', '.product-cb-delete-id', function () {
+  $('#product-table').on('click', '.product-cb-delete-id', function () {
     var index = deleteProductIds.indexOf(this.value);
     if (index != -1) {
       deleteProductIds.splice(index, 1);

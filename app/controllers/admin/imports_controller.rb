@@ -27,7 +27,11 @@ class Admin::ImportsController < Admin::BaseController
     elsif params[:delete_product_ids]
       ids = params[:delete_product_ids].split(",")
       @products = Product.where(id: ids)
-      @products.destroy_all if @products
+      if @products
+        @products.each do |p|
+          p.destroy
+        end
+      end
       redirect_to admin_products_path()
     elsif params[:delete_brand_ids]
       ids = params[:delete_brand_ids].split(",")
