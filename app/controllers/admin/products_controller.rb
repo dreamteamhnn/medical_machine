@@ -12,6 +12,10 @@ class Admin::ProductsController < Admin::BaseController
     @product.product_categories.build
   end
 
+  def destroy_multiple
+    binding.pry
+  end
+
   def create
     @product = Product.new(product_params)
     if @product.save

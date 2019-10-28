@@ -65,8 +65,11 @@
         <table class="table table-striped table-bordered table-hover"  >
           <thead>
             <tr>
-              <th></th>
-              <th>Thứ tự</th>
+              <th class="product-cb">
+                <input id="product-check-all" type="checkbox" value="all">
+              </th>
+              <th>TT</th>
+              <th>Sắp xếp</th>
               <th>Ảnh</th>
               <th>Tên</th>
               <th>Mã sản phẩm</th>
@@ -76,6 +79,7 @@
               <th class="center"></th>
             </tr>
           </thead>
+          <% page = params[:page] || 1 %>
           <tbody>
             <% @products.each_with_index do |product, index| %>
               <tr class="odd gradeX" id="product<%= product.id %>">
@@ -83,7 +87,10 @@
                   <input type="checkbox" value="<%= product.id %>" class="product-cb-id">
                 </td>
                 <td>
-                  <p><input type="text" id="p-order-<%= product.id %>" value="<%= product.try(:no_order) %>" onchange='changePOrder("<%= product.id %>")'></p>
+                  <%= (page.to_i - 1)*(params[:limit].to_i) + index + 1 %>
+                </td>
+                <td>
+                  <p><input style="width: 50px !important" type="text" id="p-order-<%= product.id %>" value="<%= product.try(:no_order) %>" onchange='changePOrder("<%= product.id %>")'></p>
                 </td>
                 <td>
                   <%= image_tag(product.img_1, size: "75") if product.img_1 %>
@@ -99,7 +106,7 @@
                   <p><input type="text" id="p-price-<%= product.id %>" style="width: 75px;" value="<%= product.try(:price_currency) %>" onchange='changePPrice("<%= product.id %>")'></p>
                 </td>
                 <td>
-                  <textarea id="p-short-description-<%= product.id %>" onchange='changePShortDesc("<%= product.id %>")'><%= product.try(:short_description).try(:html_safe) %>
+                  <textarea style="width: 300px; height: 110px;"> id="p-short-description-<%= product.id %>" onchange='changePShortDesc("<%= product.id %>")'><%= product.try(:short_description).try(:html_safe) %>
                   </textarea>
                 </td>
                 <td>
