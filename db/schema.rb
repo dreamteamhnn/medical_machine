@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191028165945) do
+ActiveRecord::Schema.define(version: 20191030133146) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
     t.string "email", default: "", null: false
@@ -303,6 +303,7 @@ ActiveRecord::Schema.define(version: 20191028165945) do
     t.string "img_2_caption"
     t.string "img_2_alt"
     t.integer "no_order"
+    t.string "meta_title"
     t.index ["brand_id"], name: "index_products_on_brand_id"
     t.index ["label_id"], name: "index_products_on_label_id"
     t.index ["slug"], name: "index_products_on_slug", unique: true
