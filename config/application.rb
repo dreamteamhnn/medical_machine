@@ -35,6 +35,7 @@ module MedicalMachine
     config.action_controller.include_all_helpers = false
 
     config.autoload_paths << Rails.root.join('lib/')
+    config.autoload_paths += %W(#{config.root}/app/models/ckeditor #{config.root}/config/routes)
     require 'monkey_patch/string'
   end
 end

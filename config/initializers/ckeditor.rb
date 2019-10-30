@@ -5,6 +5,7 @@ Ckeditor.setup do |config|
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
   require 'ckeditor/orm/active_record'
+  config.cdn_url = "//cdn.ckeditor.com/4.5.9/standard/ckeditor.js"
 
   # Allowed image file types for upload.
   # Set to nil or [] (empty array) for all file types
@@ -43,8 +44,8 @@ Ckeditor.setup do |config|
 
   # To reduce the asset precompilation time, you can limit plugins and/or languages to those you need:
   # By default: nil (no limit)
-  config.assets_languages = ['en']
-  config.assets_plugins = ['image', 'smiley']
+  # config.assets_languages = ['en']
+  # config.assets_plugins = ['image', 'smiley']
 
   # CKEditor CDN
   # More info here http://cdn.ckeditor.com/
@@ -54,5 +55,5 @@ Ckeditor.setup do |config|
   # JS config url
   # Used when CKEditor CDN enabled
   # By default: "ckeditor/config.js"
-  config.js_config_url = 'ckeditor/config.js'
+  # config.js_config_url = 'ckeditor/config.js'
 end
