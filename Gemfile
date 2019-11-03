@@ -53,7 +53,7 @@ gem "dotenv-rails"
 gem "cocoon"
 
 # Ckeditor: format article content with html form
-gem 'ckeditor', git: "https://github.com/galetahub/ckeditor.git"
+gem 'ckeditor', '4.2.2'
 
 # Rails server
 gem "unicorn", "~> 4.8.3"
