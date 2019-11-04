@@ -42,7 +42,7 @@ class Category < ApplicationRecord
     if c = childrens
       list_categories << c.pluck(:id)
     end
-    Product.by_categories(list_categories.flatten).order(:home_order)
+    Product.by_categories(list_categories.flatten).order('RAND()')
       .limit(Settings.limit.category_home_block)
   end
 

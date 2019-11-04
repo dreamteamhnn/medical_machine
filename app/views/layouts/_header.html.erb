@@ -63,7 +63,7 @@
     <!-- <div class="collapse navbar-collapse navbar-ex1-collapse"> -->
     <div class="search-box">
       <!-- Search form -->
-      <%= form_tag (controller_name != "medias" ? products_path : medias_path), method: "get", class: "search-form-custom woocommerce-product-search" do %>
+      <%= form_tag (controller_name != "medias" ? all_products_path : friendly_document_path), method: "get", class: "search-form-custom woocommerce-product-search" do %>
         <div class="search-form__input-wrap">
           <label class="screen-reader-text" for="woocommerce-product-search-field">Search for:</label>
 

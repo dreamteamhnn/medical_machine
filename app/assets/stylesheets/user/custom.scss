@@ -73,6 +73,7 @@ img.emoji {
     // overflow: hidden !important;
     // -ms-text-overflow: ellipsis !important;
     // text-overflow: ellipsis !important;
+    background-color: #ffd71a !important;
 }
 
 .cherry-popup-734 .cherry-popup-container {
@@ -801,7 +802,7 @@ h4 a:hover,
 h5 a:hover,
 h6 a:hover,
 .not-found:not(.no-results) .page-title {
-    color: #ff6600
+    color: #000
 }
 
 a:hover {
@@ -3860,15 +3861,19 @@ a[data-popup="magnificPopup"]:before,
 
 .btn,
 .btn-primary,
-.btn-secondary,
+.invert .btn-primary,
+.invert .btn-secondary,
+.btn-secondary {
+    color: #000
+}
+
+
 .btn:hover,
 .btn-primary:hover,
 .btn-secondary:hover,
-.invert .btn-primary,
-.invert .btn-secondary,
 .invert .btn-primary:hover,
 .invert .btn-secondary:hover {
-    color: #ffffff
+    color: #fff
 }
 
 .btn,
@@ -6892,7 +6897,7 @@ body.wcvendors.wcvendors_vendor .entry-content > h2:nth-child(2):before {
         color: #999999;
     }
     a:hover {
-        color: #ff6600;
+        color: #ffd71a;
     }
 }
 
