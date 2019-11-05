@@ -1,5 +1,7 @@
 <div class="related products">
-  <h5>Sản phẩm liên quan</h5>
+  <div class="typical-products-title brand-title">
+    <p class="typical-product-brand">Sản phẩm liên quan</p>
+  </div>
   <div class="swiper-carousel-container">
     <div id="swiper-carousel-59e9bc5f37e5e" class="tm-willard-carousel swiper-container swiper-container-horizontal" style="cursor: -webkit-grab;">
       <div class="row">
@@ -16,7 +18,10 @@
       </div>
       </div>
     </div>
-    <div id="swiper-carousel-59e9bc5f37e5e-next" class="swiper-button-next button-next swiper-button-disabled" style="display: block;"></div>
-    <div id="swiper-carousel-59e9bc5f37e5e-prev" class="swiper-button-prev button-prev swiper-button-disabled" style="display: block;"></div>
+    <div class="col-xs-12 text-center">
+      <%= link_to category_products_path(@product.categories.first), class: "btn btn-primary" do %>
+        Xem thêm
+      <% end %>
+    </div>
   </div>
 </div>

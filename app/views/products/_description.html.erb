@@ -70,24 +70,18 @@
 
     <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--description panel entry-content wc-tab tab-pane custom-white-space" id="tab-video" role="tabpanel" aria-labelledby="tab-title-video">
       <div class="media-table">
-        <table class="table table-bordered">
-          <tbody>
             <% @videos.each_slice(3).to_a.each do |block| %>
-              <tr>
                 <% block.each do |video| %>
-                  <td class="video-td-product">
+                  <div class="col-md-6 col-xs-12">
                     <iframe width="374" height="284" src="<%= video.video_url %>" frameborder="0" allowfullscreen></iframe>
                     <div class="content-video">
                       <strong><%= truncate(video.title.html_safe, length:45) %></strong><br/>
                       <%= truncate(video.description.html_safe, length:45) %><br/>
                       <p>Ngày tạo : <%= video.created_at.strftime("%m/%d/%Y") %></p>
                     </div>
-                  </td>
+                  </div>
                 <% end %>
-              </tr>
             <% end %>
-          </tbody>
-        </table>
       </div>
     </div>
   </div>

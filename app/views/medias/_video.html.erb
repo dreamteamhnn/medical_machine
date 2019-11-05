@@ -4,9 +4,8 @@
       <tr>
         <% block.each do |video| %>
           <td class="video-td-product video-td-product-<%= video.id %>">
-            <a class="iframe-video-image btn-primary btn btn-lg btn-primary clearfix" data-toggle="modal" data-video="<%= video.id %>">
-              <iframe width="560" height="315"
-                src="<%= video.video_url %>" frameborder="0" allowfullscreen></iframe>
+            <a class="iframe-video-image clearfix" data-toggle="modal" data-video="<%= video.id %>">
+              <iframe src="<%= video.video_url %>" frameborder="0" allowfullscreen></iframe>
               <div class="disable-iframe"></div>
             </a>
             <div class="click-video content-video">

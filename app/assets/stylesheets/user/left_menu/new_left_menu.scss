@@ -18,8 +18,8 @@
     border-radius: 5px;
 
     &:hover {
-      background-color: #ff6600;
-      color: #fff;
+      background-color: #ffd71a;
+      color: #000;
       text-decoration: none;
     }
   }
@@ -61,7 +61,7 @@
 
       a:hover {
         text-decoration: none;
-        color: #ff6600;
+        color: #ffd71a;
       }
     }
   }
@@ -92,8 +92,8 @@
   width: 100%;
   display: block;
   text-transform: uppercase;
-  background-color: #ff6600;
-  color: white;
+  background-color: #ffd71a;
+  color: #000;
   font-size: 14px;
   text-align: center;
   line-height: 38px;
@@ -138,7 +138,7 @@
 
 .title-category-detail {
   a:hover {
-    color: #ffffff !important;
+    color: #000 !important;
   }
 }
 

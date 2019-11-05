@@ -136,9 +136,9 @@ class ProductsController < ApplicationController
       category = Category.friendly.find params[:category_id]
       @breads = [{title: category.name, link: ""}]
       if parent = category.parents.first
-        @breads << {title: parent.name, link: products_path(category_id: parent.id)}
+        @breads << {title: parent.name, link: category_products_path(category_id: parent.slug)}
         if grand_parent = parent.parents.first
-          @breads << {title: grand_parent.name, link: products_path(category_id: grand_parent.id)}
+          @breads << {title: grand_parent.name, link: category_products_path(category_id: grand_parent.slug)}
         end
       end
       @breads << {title: "Tất cả sản phẩm", link: all_products_path}
@@ -146,11 +146,11 @@ class ProductsController < ApplicationController
     elsif params[:id]
       @breads = [{title: strip_tags(@product.name), link: ""}]
       if category = @product.categories.first
-        @breads << {title: category.name, link: products_path(category_id: category.id)}
+        @breads << {title: category.name, link: category_products_path(category_id: category.slug)}
         if parent = category.parents.first
-          @breads << {title: parent.name, link: products_path(category_id: parent.id)}
+          @breads << {title: parent.name, link: category_products_path(category_id: parent.slug)}
           if grand_parent = parent.parents.first
-            @breads << {title: grand_parent.name, link: products_path(category_id: grand_parent.id)}
+            @breads << {title: grand_parent.name, link: category_products_path(category_id: grand_parent.slug)}
           end
         end
       end
@@ -176,7 +176,7 @@ class ProductsController < ApplicationController
     @related_products_1 = []
     @related_products_2 = []
     if category = @product.categories.first
-      @related_products = Product.where(id: category.products.pluck(:id).uniq)
+      @related_products = Product.where(id: category.products.pluck(:id).uniq).order("RAND()")
         .limit Settings.limit.related_products
       @related_products_1 = @related_products[0..2] if @related_products[0..3]
       @related_products_2 = @related_products[3..5] if @related_products[4..7]
