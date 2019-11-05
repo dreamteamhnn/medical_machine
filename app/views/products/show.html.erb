@@ -86,16 +86,16 @@
 
                             <div class="social-network">
                               <a href="#">
-                                <img src="https://phepthuat.com/images/icons/social/facebook.svg"
-                                  alt="Facebook" width="35" height="35" />
+                                <%= image_tag "facebook.svg", alt: "Facebook", width: "35", height: "35" %>
                               </a>
                               <a href="#">
-                                <img src="https://phepthuat.com/images/icons/social/linkedin.svg"
-                                  alt="linkedin" width="35" height="35" />
+                                <%= image_tag "linkedin.svg", alt: "linkedin", width: "35", height: "35" %>
                               </a>
                               <a href="#">
-                                <img src="https://phepthuat.com/images/icons/social/twitter.svg"
-                                  alt="twitter" width="35" height="35" />
+                                <%= image_tag "twitter.svg", alt: "twitter", width: "35", height: "35" %>
+                              </a>
+                              <a href="#">
+                                <%= image_tag "printerest.png", alt: "printerest", width: "35", height: "35" %>
                               </a>
                             </div>
                           </div>
@@ -137,6 +137,11 @@
                             </div>
                           </div>
                         <% end %>
+                        <div class="col-xs-12 text-center">
+                          <%= link_to blog_list_path, class: "btn btn-primary" do %>
+                            Xem thêm
+                          <% end %>
+                        </div>
                       </div>
                     </div>
                   </div>
