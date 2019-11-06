@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191030133146) do
+ActiveRecord::Schema.define(version: 20191106161942) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
     t.string "email", default: "", null: false
@@ -159,6 +159,13 @@ ActiveRecord::Schema.define(version: 20191030133146) do
     t.string "hn_phone"
   end
 
+  create_table "custom_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
+    t.string "name"
+    t.string "custom_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "customer_orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
     t.bigint "product_id"
     t.string "customer_name"
@@ -231,6 +238,8 @@ ActiveRecord::Schema.define(version: 20191030133146) do
     t.datetime "updated_at", null: false
     t.integer "product_id"
     t.string "video_url"
+    t.integer "custom_category_id"
+    t.index ["custom_category_id"], name: "index_custom_category_id"
   end
 
   create_table "product_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
