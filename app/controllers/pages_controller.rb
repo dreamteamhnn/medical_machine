@@ -11,6 +11,7 @@ class PagesController < ApplicationController
     get_home_category
     @company = Company.first
     set_meta_tags meta_tags_hash
+    @feedbacks = Feedback.all
   end
 
   def get_home_category

@@ -1,0 +1,27 @@
+<div id="page-wrapper">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Tạo mới Phản hồi</h1>
+    </div>
+  </div>
+  <div class="row" id="feedback-new">
+    <div class="col-lg-12">
+      <div class="panel-body">
+        <div class="form-company">
+          <div class="form-group">
+            <%= render "shared/flash" %>
+          </div>
+          <%= form_for [:admin, @feedback] do |f| %>
+            <%= render "detail_field", f: f %>
+
+            <div class="row show-grid">
+              <div class="form-group btn-align-center">
+                <%= f.submit "Tạo", class: "btn btn-primary" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -39,6 +39,7 @@ Rails.application.routes.draw do
     resources :custom_categories
     resources :folders
     resources :brands
+    resources :feedbacks
     resource :company, only: [:show, :update, :edit]
     resources :sliders
     resources :catalogs

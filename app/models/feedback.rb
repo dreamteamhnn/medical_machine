@@ -1,7 +1,5 @@
 class Feedback < ApplicationRecord
-  mount_uploader :image, ImageUploader
+  mount_uploader :avatar, ImageUploader
 
-  BRAND_ATTRIBUTES = %i(name location description image home_order)
-
-  validates :location, presence: true
+  FEEDBACK_ATTRIBUTES = %i(name company position avatar content)
 end

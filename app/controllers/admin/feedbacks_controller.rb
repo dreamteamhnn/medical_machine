@@ -1,20 +1,20 @@
 class Admin::FeedbacksController < Admin::BaseController
 
-  before_action :feedback, only: [:edit, :update, :destroy]
+  before_action :load_feedback, only: [:edit, :update, :destroy]
 
   def index
-    @feedbacks = CustomCategory.all.page(params[:page]).per(params[:per_page])
+    @feedbacks = Feedback.all.page(params[:page]).per(params[:per_page])
   end
 
   def new
-      @feedback = CustomCategory.new
+      @feedback = Feedback.new
   end
 
   def create
-    @feedback = CustomCategory.new(feedback_params)
+    @feedback = Feedback.new(feedback_params)
     if @feedback.save
         flash[:success] = "Tạo mới danh mục #{@feedback.name} thành công!"
-        redirect_to admin_feebacks_path
+        redirect_to admin_feedbacks_url
       else
         flash[:danger] = @feedback.errors.full_messages
         render :new
@@ -39,16 +39,16 @@ class Admin::FeedbacksController < Admin::BaseController
     else
       flash[:danger] = "Lỗi! Xóa danh mục không thành công."
     end
-    redirect_to admin_feebacks_path()
+    redirect_to admin_feedbacks_path()
   end
 
   private
 
   def load_feedback
-    @feedback = CustomCategory.find(params[:id]) if params[:id].present?
+    @feedback = Feedback.find(params[:id]) if params[:id].present?
   end
 
   def feedback_params
-    params.require(:feedback).permit(CustomCategory::CUSTOM_CATEGORY_ATTRIBUTES)
+    params.require(:feedback).permit(Feedback::FEEDBACK_ATTRIBUTES)
   end
 end

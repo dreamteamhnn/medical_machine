@@ -8,63 +8,30 @@
     <div class="col-sm-12">
       <div id="carousel-id" class="carousel slide customer-message" data-ride="carousel">
         <div class="carousel-inner">
-          <div class="item active">
-            <p class="customer-content">
-              Nhanh, chắc chắn! Cho tới lúc này chúng tôi đã mua hàng nhiều nơi nhưng StechSaiGon là nơi tôi cảm thấy an tâm nhất.
-              Chúng tôi mong muốn về sau sẽ tiếp tục hợp tác với các bạn.
-            </p>
-            <div class="customer-info">
-              <div class="customer-data w-75">
-                <img style="border-radius: 50%; object-fit: cover; border: 2px solid #fff" src="https://relipasoft.com/vi/wp-content/uploads/sites/4/2018/07/alexander-60x60.png" alt="Customer 1">
-                <p class="customer-data detail">
-                  <span class="customer-data-name">Alexander G.Smith</span>
-                  <br />
-                  <span class="customer-data-company">CTO/CIO ARRIBA Co.,Ltd</span>
-                </p>
-              </div>
-              <div class="quote-icon w-25">
-                <img src="https://relipasoft.com/vi/wp-content/plugins/relipa_composer/assets/images/quote-icon.png" alt="quote icon" class="d-none d-md-block">
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <p class="customer-content">
-              Nhanh, chắc chắn! Cho tới lúc này chúng tôi đã mua hàng nhiều nơi nhưng StechSaiGon là nơi tôi cảm thấy an tâm nhất.
-              Chúng tôi mong muốn về sau sẽ tiếp tục hợp tác với các bạn.
-            </p>
-            <div class="customer-info">
-              <div class="customer-data w-75">
-                <img style="border-radius: 50%; object-fit: cover; border: 2px solid #fff" src="https://relipasoft.com/vi/wp-content/uploads/sites/4/2018/07/alexander-60x60.png" alt="Customer 1">
-                <p class="customer-data detail">
-                  <span class="customer-data-name">Alexander G.Smith</span>
-                  <br />
-                  <span class="customer-data-company">CTO/CIO ARRIBA Co.,Ltd</span>
-                </p>
-              </div>
-              <div class="quote-icon w-25">
-                <img src="https://relipasoft.com/vi/wp-content/plugins/relipa_composer/assets/images/quote-icon.png" alt="quote icon" class="d-none d-md-block">
+          <% @feedbacks.each_with_index do |feedback, index| %>
+            <div class="item <%= 'active' if index == 0 %>">
+              <p class="customer-content">
+                <%= feedback.content %>
+              </p>
+              <div class="customer-info">
+                <div class="customer-data w-75">
+                  <% if feedback.avatar %>
+                    <%= image_tag feedback.avatar.url, class: "d-none d-md-block", style: "border-radius: 50%; object-fit: cover; border: 2px solid #fff; height: 60px; width: 60px;" %>
+                  <% else %>
+                    <img style="border-radius: 50%; object-fit: cover; border: 2px solid #fff; height: 60px; width: 60px;" src="https://relipasoft.com/vi/wp-content/uploads/sites/4/2018/07/alexander-60x60.png" alt="Customer 1">
+                  <% end %>
+                  <p class="customer-data detail">
+                    <span class="customer-data-name"><%= feedback.name %></span>
+                    <br />
+                    <span class="customer-data-company"><%= feedback.position %></span>
+                  </p>
+                </div>
+                <div class="quote-icon w-25">
+                  <img src="https://relipasoft.com/vi/wp-content/plugins/relipa_composer/assets/images/quote-icon.png" alt="quote icon" class="d-none d-md-block">
+                </div>
               </div>
             </div>
-          </div>
-          <div class="item">
-            <p class="customer-content">
-              Nhanh, chắc chắn! Cho tới lúc này chúng tôi đã mua hàng nhiều nơi nhưng StechSaiGon là nơi tôi cảm thấy an tâm nhất.
-              Chúng tôi mong muốn về sau sẽ tiếp tục hợp tác với các bạn.
-            </p>
-            <div class="customer-info">
-              <div class="customer-data w-75">
-                <img style="border-radius: 50%; object-fit: cover; border: 2px solid #fff" src="https://relipasoft.com/vi/wp-content/uploads/sites/4/2018/07/alexander-60x60.png" alt="Customer 1">
-                <p class="customer-data detail">
-                  <span class="customer-data-name">Alexander G.Smith</span>
-                  <br />
-                  <span class="customer-data-company">CTO/CIO ARRIBA Co.,Ltd</span>
-                </p>
-              </div>
-              <div class="quote-icon w-25">
-                <img src="https://relipasoft.com/vi/wp-content/plugins/relipa_composer/assets/images/quote-icon.png" alt="quote icon" class="d-none d-md-block">
-              </div>
-            </div>
-          </div>
+          <% end %>
         </div>
         <a class="left carousel-control" href="#carousel-id" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
         <a class="right carousel-control" href="#carousel-id" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>

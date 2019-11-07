@@ -15,7 +15,7 @@
             <div class="form-group">
               <strong>Ảnh</strong> </br>
               <div class="preview-catalog-image-div">
-                <% if %>
+                <% if @catalog.try(&:url) %>
                   <%= image_tag @catalog.url.url, height: 100, class: "preview-catalog-image" %>
                 <% else %>
                   <img src="/preview_no_image.jpg" height="150" class="preview-catalog-image">
