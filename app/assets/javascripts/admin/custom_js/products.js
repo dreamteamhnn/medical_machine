@@ -152,7 +152,7 @@ $(document).on('turbolinks:load', function(){
   });
 
   $("#product-check-all").click(function(){
-    debugger;
+    $(".product-cb-id").prop('checked', this.checked);
   })
 
   var categoryNames = [];
@@ -267,7 +267,6 @@ $(document).on('turbolinks:load', function(){
   });
 
   $('#product-table').on('click', '.product-cb-id', function () {
-    debugger;
     var index = selectedProductIds.indexOf(this.value);
     if (index != -1) {
       selectedProductIds.splice(index, 1);
@@ -296,7 +295,12 @@ $(document).on('turbolinks:load', function(){
   $("#button-delete-products").click(function() {
     var url = removeParam("ids", this.href);
     var p = url.substr(url.length - 1) == "?" ? "" : "?";
-    this.href = url + p + "delete_product_ids=" + selectedProductIds.join(",");
+
+    var searchIDs = $(".product-cb input:checkbox:checked").map(function(){
+      return $(this).val();
+    }).get();
+
+    this.href = url + p + "delete_product_ids=" + searchIDs.join(",");
   })
 
   //video
