@@ -56,5 +56,11 @@ class Admin::CategoriesController < Admin::BaseController
   def load_categories
     @categories = Category.where(level: Settings.category.highest_level)
       .order(:category_order)
+    if @categories.count == 6
+      Category.create(name: "Category 7", level: 1, category_order: 7)
+      Category.create(name: "Category 8", level: 1, category_order: 8)
+      @categories = Category.where(level: Settings.category.highest_level)
+        .order(:category_order)
+    end
   end
 end
