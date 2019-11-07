@@ -55,4 +55,8 @@ $(document).on('turbolinks:load', function(){
     var selectedBlogCount = $('.will-delete-blog-cb:checked').length;
     return selectedBlogCount > 0;
   }
+
+  $(document).on("click", "#blog-check-all", function() {
+    $(".will-delete-blog-cb").prop('checked', this.checked);
+  });
 });
