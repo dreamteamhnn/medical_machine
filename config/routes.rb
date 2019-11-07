@@ -25,9 +25,9 @@ Rails.application.routes.draw do
   get '/loai-tin-tuc/:blog_category_id' => 'blogs#index', as: :blog_list_category
   resources :medias, only: [:show, :index]
   get '/tai-lieu' => 'medias#index', as: :friendly_document
-  get '/tai-lieu/:field_id' => 'medias#index', as: :friendly_field_document
+  get '/tai-lieu/:custom_category_id' => 'medias#index', as: :friendly_custom_category_document
   get '/video' => 'medias#index', as: :friendly_video
-  get '/video/:field_id' => 'medias#index', as: :friendly_field_video
+  get '/video/:custom_category_id' => 'medias#index', as: :friendly_custom_category_video
 
   resources :contacts, only: [:index, :create]
   get '/lien-he' => 'contacts#index', as: :friendly_contact
@@ -36,8 +36,10 @@ Rails.application.routes.draw do
     root "home#show"
     resources :home, only: [:show]
     resources :fields
+    resources :custom_categories
     resources :folders
     resources :brands
+    resources :feedbacks
     resource :company, only: [:show, :update, :edit]
     resources :sliders
     resources :catalogs

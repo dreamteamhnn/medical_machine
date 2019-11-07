@@ -29,9 +29,9 @@ class MediasController < ApplicationController
       Medium.all
     end
 
-    @medias = if params[:field_id].present?
-      @field = Field.friendly.find(params[:field_id])
-      @medias.where("media_type = ? AND field_id = ?", params[:media_type], @field.id)
+    @medias = if params[:custom_category_id].present?
+      @field = Field.friendly.find(params[:custom_category_id])
+      @medias.where("media_type = ? AND custom_category_id = ?", params[:media_type], @field.id)
         .page(params[:page]).per(per_page_medias)
     else
       @medias.where("media_type = ?", params[:media_type])
@@ -46,7 +46,7 @@ class MediasController < ApplicationController
   def show
     @video = Medium.find_by(id: params["id"])
     @medias = Medium.where(media_type: 1)
-    @videos_related = @medias.where(field_id: @video.field_id)
+    @videos_related = @medias.where(custom_category_id: @video.custom_category_id)
     @top_categories = Category.top_categories
     @brand_logos = Brand.where("image IS NOT NULL AND home_order IS NOT NULL")
                         .order(:home_order)
@@ -70,7 +70,7 @@ class MediasController < ApplicationController
             must: [
               {
                 bool: {
-                  should: [{match: {title: q}}, {match: {description: q}}, {match: {field: q}}]
+                  should: [{match: {title: q}}, {match: {description: q}}, {match: {custom_category: q}}]
                 }
               },
               {match: {media_type: params[:media_type].to_i}}]}}}
@@ -79,7 +79,7 @@ class MediasController < ApplicationController
 
   def set_meta_tags_with_condition
     return set_meta_tags(noindex: true, follow: true) if params[:query].present?
-    if params[:field_id].present?
+    if params[:custom_category_id].present?
       meta_tags_hash = default_meta_tags
       media_type_name = default_meta_tags[:title]
       meta_tags_hash[:title] = "#{media_type_name} lĩnh vực #{@field.name}"

@@ -1,33 +1,33 @@
 class Medium < ApplicationRecord
   mount_uploader :url, MediaUploader
 
-  MEDIA_ATTRIBUTE = [:title, :description, :field_id, :url, :video_url, :media_type]
+  MEDIA_ATTRIBUTE = [:title, :description, :custom_category_id, :url, :video_url, :media_type]
 
-  belongs_to :field
+  belongs_to :custom_category
 
   validates :title, presence: true
   validates :description, presence: true
   validates :media_type, presence: true
-  validates :field_id, presence: true
+  validates :custom_category_id, presence: true
 
   searchkick mappings: {
     medium: {
       properties: {
         title: {type: "text", analyzer: "default", boost: 2},
         description: {type: "text", analyzer: "default"},
-        field: {type: "text", analyzer: "default"},
+        custom_category: {type: "text", analyzer: "default"},
         media_type: {type: "integer"}
       }
     }
   }
 
-  scope :search_import,->{includes([:field])}
+  scope :search_import,->{includes([:custom_category])}
 
   def search_data
     {
       title: title,
       description: description,
-      field: field.name,
+      custom_category: custom_category.name,
       media_type: media_type
     }
   end

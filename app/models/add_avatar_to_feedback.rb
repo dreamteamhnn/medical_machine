@@ -1,0 +1,2 @@
+class AddAvatarToFeedback < ApplicationRecord
+end

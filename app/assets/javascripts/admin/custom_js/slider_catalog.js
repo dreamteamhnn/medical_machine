@@ -31,6 +31,24 @@ $(document).on('turbolinks:load', function(){
     }
   });
 
+  $("#upload-feedback-image").change(function() {
+    var input = this;
+    var url = $(this).val();
+    var ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
+    if (input.files && input.files[0] && (ext == "png" || ext == "jpeg" || ext == "jpg"))
+     {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+           $('#feedback-new .preview-feedback-image').attr('src', e.target.result);
+        }
+       reader.readAsDataURL(input.files[0]);
+    }
+    else
+    {
+      $('#feedback-new .preview-feedback-image').attr('src', '/preview_no_image.jpg');
+    }
+  });
+
   $(".button-delete-catalog").click(function() {
     var catalogId = $(this)[0].id.replace("delete-catalog", "");
     $("#delete-catalog .delete-catalog-id").val(catalogId);
