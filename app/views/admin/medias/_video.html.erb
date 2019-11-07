@@ -11,10 +11,10 @@
         <button class="btn btn-success" data-title="Tạo mới" data-toggle="modal" data-target="#create-video" >
           Tạo mới
         </button>
-        <%= link_to "Xoá nhiều", admin_medias_path(), class: "btn btn-danger", type: "button", id: "button-delete-mediums" %>
+        <%= link_to "Xoá nhiều", admin_medias_path(media_type: params[:media_type]), class: "btn btn-danger", type: "button", id: "button-delete-videos" %>
       </div>
       <br>
-      <div style="width: 30%">Lọc theo lĩnh vực:
+      <div style="width: 30%">Lọc theo Danh mục:
         <%= form_tag({}, {:method => :get}) do %>
           <%= select_tag "filter_video_field", options_for_select(CustomCategory.all.map{|field| [field.name, field.id]}, selected: params[:filter_video_field]),
             include_blank: "--Chọn một lĩnh vực--", :onchange => "this.form.submit();", class: "form-control" %>
@@ -42,7 +42,7 @@
         <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-video">
           <thead>
             <tr>
-              <th class="media-cb">
+              <th class="media-cb-all">
                 <input id="video-check-all" type="checkbox" value="all">
               </th>
               <th>Id</th>

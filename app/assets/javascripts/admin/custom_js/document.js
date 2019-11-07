@@ -17,12 +17,22 @@ $(document).on('turbolinks:load', function(){
     }
   });
 
-  $("#button-delete-mediums").click(function() {
-  	event.preventDefault();
+  $(document).on("click", "#button-delete-documents, #button-delete-videos", function(){
+
+    var type = "&media_type=";
+    if ($(this)[0].id == "button-delete-videos") {
+      type += "1";
+    } else {
+      type += "0";
+    }
+
+    var url = location.origin + "/" + location.pathname;
+    var p = url.substr(url.length - 1) == "?" ? "" : "?";
   	
-    var searchIDs = $(".media-cb-id input:checkbox:checked").map(function(){
+    var searchIDs = $(".media-cb input:checkbox:checked").map(function(){
       return $(this).val();
     }).get();
-    this.href = url + p + "delete_custom_category_ids=" + searchIDs.join(",");
+
+    this.href = url + p + "delete_custom_category_ids=" + searchIDs.join(",") + type;
   });
 });
