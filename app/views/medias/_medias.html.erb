@@ -1,10 +1,10 @@
 <div class="list-categories-content">
-  <% Field.all.each do |field| %>
+  <% CustomCategory.all.each do |custom_category| %>
     <div class="category-box-item">
       <% if params[:media_type] == "0" %>
-        <%= link_to field.name, friendly_field_document_path(field), class: "category-item media-custom", title: field.name %>
+        <%= link_to custom_category.name, friendly_custom_category_document_path(custom_category), class: "category-item media-custom", title: custom_category.name %>
       <% else %>
-        <%= link_to field.name, friendly_field_video_path(field), class: "category-item media-custom", title: field.name %>
+        <%= link_to custom_category.name, friendly_custom_category_video_path(custom_category), class: "category-item media-custom", title: custom_category.name %>
       <% end %>
     </div>
   <% end %>

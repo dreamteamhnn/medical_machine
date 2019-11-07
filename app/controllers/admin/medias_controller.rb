@@ -3,10 +3,15 @@ class Admin::MediasController < Admin::BaseController
   before_action :load_doc, only: [:edit, :update]
 
   def index
+    if params[:delete_custom_category_ids]
+      multiple_destroy
+    end
+
     filter_media_param = params[:filter_video_field] || params[:filter_doc_field]
     if filter_media_param.present?
-      @medias = Medium.where("media_type = ? AND field_id = ?", params[:media_type], filter_media_param)
+      @medias = Medium.where("media_type = ? AND custom_category_id = ?", params[:media_type], filter_media_param)
     else
+      params[:media_type] = params[:media_type] || "0"
       @medias = Medium.where("media_type = ?", params[:media_type])
     end
     @video = Medium.new(media_type: "1")
@@ -41,10 +46,10 @@ class Admin::MediasController < Admin::BaseController
   end
 
   def update
-    if params[:title] || params[:video_url] || params[:description] || params[:field_id]
+    if params[:title] || params[:video_url] || params[:description] || params[:custom_category_id]
       @video = Medium.find_by id: params[:id]
       if @video
-        if @video.update_attributes(title: params[:title], field_id: params[:field_id],
+        if @video.update_attributes(title: params[:title], custom_category_id: params[:custom_category_id],
           video_url: params[:video_url], description: params[:description])
           render json: {
             status: "update-success",
@@ -95,5 +100,13 @@ class Admin::MediasController < Admin::BaseController
 
   def media_params
     params.require(:medium).permit Medium::MEDIA_ATTRIBUTE
+  end
+
+  def multiple_destroy
+    if Medium.where(id: params[:delete_custom_category_ids].split(",")).destroy_all
+      flash[:success] = "Xoá thành công!"
+    else
+      flash[:danger] =  "Lỗi! Xóa không thành công."
+    end
   end
 end

@@ -1,0 +1,36 @@
+<div class="form-group">
+  <strong>Avatar</strong> </br>
+  <div class="preview-feedback-image-div">
+    <% if @feedback.avatar %>
+      <%= image_tag @feedback.avatar.url, height: 100, class: "preview-feedback-image" %>
+    <% else %>
+      <img src="/preview_no_image.jpg" height="150" class="preview-feedback-image">
+    <% end %>
+  </div>
+  <label for="upload-feedback-image" class="btn btn-success">Chọn ảnh</label>
+  <%= f.file_field :avatar, id: "upload-feedback-image", class: "hidden" %>
+</div>
+<div class="row show-grid">
+  <div class="form-group form-group-part col-xs-12">
+    <strong>Tên</strong> </br>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+</div>
+<div class="row show-grid">
+  <div class="form-group form-group-part col-xs-12">
+    <strong>Công ty</strong> </br>
+    <%= f.text_area :company, class: "form-control" %>
+  </div>
+</div>
+<div class="row show-grid">
+  <div class="form-group form-group-part col-xs-12">
+    <strong>Vị trí</strong> </br>
+    <%= f.text_field :position, class: "form-control" %>
+  </div>
+</div>
+<div class="row show-grid">
+  <div class="form-group form-group-part col-xs-12">
+    <strong>Phản hồi</strong> </br>
+    <%= f.text_area :content, class: "form-control" %>
+  </div>
+</div>

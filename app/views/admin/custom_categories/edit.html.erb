@@ -1,0 +1,27 @@
+<div id="page-wrapper">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Sửa danh mục</h1>
+    </div>
+  </div>
+  <div class="row" id="custom_category-new">
+    <div class="col-lg-12">
+      <div class="panel-body">
+        <div class="form-company">
+          <div class="form-group">
+            <%= render "shared/flash" %>
+          </div>
+          <%= form_for([:admin, @custom_category], html: {multipart: true}) do |f| %>
+            <%= render "detail_field", f: f %>
+
+            <div class="row show-grid">
+              <div class="form-group btn-align-center">
+                <%= f.submit "Cập nhật", class: "btn btn-primary" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
