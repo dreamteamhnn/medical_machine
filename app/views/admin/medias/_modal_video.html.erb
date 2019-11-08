@@ -18,7 +18,7 @@
             <%= f.text_field :url, class: "form-control video-link-create", placeholder: "Youtube Link", required: true %>
           </div>
           <div class="form-group">
-            <%= f.select :custom_category_id, options_for_select(CustomCategory.all.map{|field| [field.name, field.id]}), {},
+            <%= f.select :custom_category_id, options_for_select(CustomCategory.where(custom_type: "0").map{|field| [field.name, field.id]}), {},
               {class: "video-field-create form-control"} %>
           </div>
           <%= f.hidden_field :media_type, value: "1" %>
