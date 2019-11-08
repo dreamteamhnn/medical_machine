@@ -8,6 +8,7 @@ $(document).on('turbolinks:load', function(){
 
   $(".btn-update-category").click(function() {
     var img = $(this)[0].getAttribute("data-img");
+    debugger;
     var id = $(this)[0].getAttribute("data-id");
     var name = $(this)[0].getAttribute("data-name");
     var des = $(this)[0].getAttribute("data-des");

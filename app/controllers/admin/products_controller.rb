@@ -5,6 +5,10 @@ class Admin::ProductsController < Admin::BaseController
   before_action :load_product, only: [:new, :create, :edit, :update, :destroy]
 
   def index
+    respond_to do |format|
+       format.js
+       format.html
+    end
   end
 
   def new
