@@ -16,7 +16,7 @@
       <br>
       <div style="width: 30%">Lọc theo Danh mục:
         <%= form_tag({}, {:method => :get}) do %>
-          <%= select_tag "filter_video_field", options_for_select(CustomCategory.all.map{|field| [field.name, field.id]}, selected: params[:filter_video_field]),
+          <%= select_tag "filter_video_field", options_for_select(CustomCategory.where(custom_type: "0").map{|field| [field.name, field.id]}, selected: params[:filter_video_field]),
             include_blank: "--Chọn một lĩnh vực--", :onchange => "this.form.submit();", class: "form-control" %>
           <input type="hidden" name="media_type" value="1">
         <% end %>
@@ -74,7 +74,7 @@
                   <input type='text' id="video-link<%= video.id %>" class="form-control video-link hidden" value='<%= video.video_url %>'/>
                 </td>
                 <td class="td-video-field">
-                  <%= select_tag "video-field#{video.id}", options_for_select(CustomCategory.all.map{|field| [field.name, field.id]}, selected: video.field_id),
+                  <%= select_tag "video-field#{video.id}", options_for_select(CustomCategory.where(custom_type: "0").map{|field| [field.name, field.id]}, selected: video.field_id),
                     {class: "video-field-create form-control"} %>
                 </td>
                 <td class="center">
