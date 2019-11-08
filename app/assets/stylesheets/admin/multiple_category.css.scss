@@ -37,7 +37,7 @@
 }
 
 #table1 td p, #table1 td, #table2 td, #table2 td p {
-  width: 100px;
+  max-width: 125px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

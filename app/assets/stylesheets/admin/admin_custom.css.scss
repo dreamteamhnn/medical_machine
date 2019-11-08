@@ -407,7 +407,7 @@
   .dropbtn {
     background-color: #4CAF50;
     color: white;
-    padding: 16px;
+    padding: 8px;
     font-size: 16px;
     border: none;
     cursor: pointer;
@@ -455,4 +455,8 @@
   .dropdown a:hover {background-color: #ddd;}
 
   .show {display: block;}
+}
+
+#gc_id, #pc_id, #c_id {
+  display: block !important
 }

@@ -40,6 +40,12 @@ class NewImageUploader < CarrierWave::Uploader::Base
     process resize_to_fit: [210, 210]
   end
 
+  process :assign_tags
+
+  def assign_tags      
+    @public_id = @original_filename.split(".").first
+  end
+
   def extension_whitelist
     %w(jpg jpeg png)
   end
