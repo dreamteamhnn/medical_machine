@@ -14,7 +14,7 @@
       <br>
       <div style="width: 30%">Lọc theo Danh mục:
         <%= form_tag({}, {:method => :get}) do %>
-          <%= select_tag "filter_doc_field", options_for_select(CustomCategory.all.map{|field| [field.name, field.id]}, selected: params[:filter_doc_field]),
+          <%= select_tag "filter_doc_field", options_for_select(CustomCategory.where(custom_type: "1").map{|field| [field.name, field.id]}, selected: params[:filter_doc_field]),
             include_blank: "--Chọn một Danh mục--", :onchange => "this.form.submit();", class: "form-control", style: "display: block !important" %>
           <input type="hidden" name="media_type" value="0">
         <% end %>
