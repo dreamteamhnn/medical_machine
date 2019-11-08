@@ -11,11 +11,11 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require turbolinks
 //= require lodash
 //= require jquery
 //= require jquery_ujs
 //= require cocoon
 //= require ckeditor/init
+//= require turbolinks
 //= require cloudinary
 //= require_tree .
