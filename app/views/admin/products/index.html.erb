@@ -14,19 +14,19 @@
       </div>
       <%= render "shared/flash" %>
       <div class="category-group">
-        <%= form_tag({}, {:method => :get, class: "form-tag-group"}) do %>
+        <%= form_tag(admin_products_path, {:method => :get, class: "form-tag-group"}) do %>
           <div class="col-xs-6 col-md-3">
             <strong>Cấp 1</strong>
             <%= select_tag :gc_id, options_for_select(@g_categories.map{|c| [c.name, c.id] },
               selected: params[:gc_id]), include_blank: "Tất cả danh mục",
-              :onchange => "this.form.submit();", class: "form-control" %>
+              onchange: "this.form.submit();", class: "form-control" %>
           </div>
           <% if params[:gc_id].present? && @p_categories.present? %>
             <div class="col-xs-6 col-md-3">
               <strong>Cấp 2</strong>
               <%= select_tag :pc_id, options_for_select(@p_categories.map{|c| [c.name, c.id] },
                 selected: params[:pc_id]), include_blank: "Tất cả danh mục",
-                :onchange => "this.form.submit();", class: "form-control" %>
+                onchange: "this.form.submit();", class: "form-control" %>
             </div>
           <% end %>
           <% if params[:pc_id].present? && @categories.present? %>
@@ -34,7 +34,7 @@
               <strong>Cấp 3</strong>
               <%= select_tag :c_id, options_for_select(@categories.map{|c| [c.name, c.id] },
                 selected: params[:c_id]), include_blank: "Tất cả danh mục",
-                :onchange => "this.form.submit();", class: "form-control" %>
+                onchange: "this.form.submit();", class: "form-control" %>
             </div>
           <% end %>
         <% end %>
@@ -106,7 +106,7 @@
                   <p><input type="text" id="p-price-<%= product.id %>" style="width: 75px;" value="<%= product.try(:price_currency) %>" onchange='changePPrice("<%= product.id %>")'></p>
                 </td>
                 <td>
-                  <textarea style="width: 300px; height: 110px;"> id="p-short-description-<%= product.id %>" onchange='changePShortDesc("<%= product.id %>")'><%= product.try(:short_description).try(:html_safe) %>
+                  <textarea style="width: 300px; height: 110px;" id="p-short-description-<%= product.id %>" onchange='changePShortDesc("<%= product.id %>")'><%= product.try(:short_description).try(:html_safe) %>
                   </textarea>
                 </td>
                 <td>

@@ -2,7 +2,7 @@ class Category < ApplicationRecord
   include CategoryDecorator
   include FriendlyidConfiguration
 
-  mount_uploader :img, NewImageUploader
+  mount_uploader :img, ImageUploader
 
   has_many :product_categories, dependent: :destroy
   has_many :products, :through => :product_categories
