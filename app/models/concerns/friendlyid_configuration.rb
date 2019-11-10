@@ -8,7 +8,7 @@ concern :FriendlyidConfiguration do
     friendly_id :beauty_slug, use: :slugged
 
     before_save do
-      if name_changed?
+      if name_changed? || static_url_changed?
         self.slug = beauty_slug
       end
     end
@@ -22,7 +22,11 @@ concern :FriendlyidConfiguration do
   private
 
   def beauty_slug
-    [name.convert_vietnamese_to_unicode, id]
-      .compact.join "-#{self.class.name.downcase.slice(0)}"
+    if static_url.present?
+      static_url
+    else
+      [name.convert_vietnamese_to_unicode, id]
+        .compact.join "-#{self.class.name.downcase.slice(0)}"
+    end
   end
 end

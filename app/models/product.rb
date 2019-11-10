@@ -28,7 +28,7 @@ class Product < ApplicationRecord
     }
   end
 
-  PRODUCT_ATTRIBUTES = %i(name meta_title model price discount_price description short_description 
+  PRODUCT_ATTRIBUTES = %i(name static_url meta_title model price discount_price description short_description 
                           parameter brand_id is_parameter_table img_1 img_2 img_1_title img_1_desc img_1_caption img_1_alt
                           img_2_title img_2_desc img_2_caption img_2_alt no_order)
 
