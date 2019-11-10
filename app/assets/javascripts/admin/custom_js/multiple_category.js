@@ -27,23 +27,13 @@ var handleClickSelected = function(id) {
     $('input:hidden[name=selectedIds]').val(selectedIds);
 }
 
-var tab1_To_tab2 = function () {
-    var url = $("#multiple-category-select").val();
-    var id = null;
-    if (url != null) {
-        id = url[0].split("=")[1];
-    }
+var tab1_To_tab2 = function (id) {
     $('input[name="category_id"]').val(id);
     $('input[name="commit"]').val('left-to-right');
     $("#multiple-submit").click();
 }
 
-var tab2_To_tab1 = function () {
-    var url = $("#multiple-category-select").val();
-    var id = null;
-    if (url != null) {
-        id = url[0].split("=")[1];
-    }
+var tab2_To_tab1 = function (id) {
     $('input[name="category_id"]').val(id);
     $('input[name="commit"]').val('right-to-left');
     $("#multiple-submit").click();
