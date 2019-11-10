@@ -93,15 +93,15 @@ class Admin::ProductsController < Admin::BaseController
     # params[:product][:short_description] = strip_tags(params[:product][:short_description]).strip
     # params[:product][:description] = strip_tags(params[:product][:description]).strip
     if @product
-      params[:product][:img_1_title] = "anh-#{@product.slug}" unless params[:product][:img_1_title].present?
-      params[:product][:img_1_desc] = "anh-#{@product.slug}" unless params[:product][:img_1_desc].present?
-      params[:product][:img_1_caption] = "#{@product.slug}-co-san-tai-stechsaigon" unless params[:product][:img_1_caption].present?
-      params[:product][:img_1_alt] = "#{@product.slug}-co-san-tai-stechsaigon" unless params[:product][:img_1_alt].present?
+      params[:product][:img_1_title] = "#{@product.slug.strip}-anh-1" unless params[:product][:img_1_title].present?
+      params[:product][:img_1_desc] = "#{@product.name.strip} - Ảnh 1" unless params[:product][:img_1_desc].present?
+      params[:product][:img_1_caption] = "#{@product.name.strip} sản phẩm có sẵn tại Stech Sài Gòn" unless params[:product][:img_1_caption].present?
+      params[:product][:img_1_alt] = "Hình ảnh #{@product.name.strip} sản phẩm có sẵn tại Stech Sài Gòn" unless params[:product][:img_1_alt].present?
 
-      params[:product][:img_2_title] = "anh-#{@product.slug}" unless params[:product][:img_2_title].present?
-      params[:product][:img_2_desc] = "anh-#{@product.slug}" unless params[:product][:img_2_desc].present?
-      params[:product][:img_2_caption] = "#{@product.slug}-co-san-tai-stechsaigon" unless params[:product][:img_2_caption].present?
-      params[:product][:img_2_alt] = "#{@product.slug}-co-san-tai-stechsaigon" unless params[:product][:img_2_alt].present?
+      params[:product][:img_2_title] = "#{@product.slug.strip}-anh-2" unless params[:product][:img_2_title].present?
+      params[:product][:img_2_desc] = "#{@product.name.strip} - Ảnh 2" unless params[:product][:img_2_desc].present?
+      params[:product][:img_2_caption] = "Hình ảnh thực tế #{@product.name.strip} tại Stech Sài Gòn" unless params[:product][:img_2_caption].present?
+      params[:product][:img_2_alt] = "Hình ảnh #{@product.name.strip} cung cấp bởi Stech Sài Gòn. Sản phẩm có sẵn tại Hà Nội và Hồ Chí Minh" unless params[:product][:img_2_alt].present?
     end
 
     params[:product][:parameter] = strip_tags(params[:product][:parameter]).strip

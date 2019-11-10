@@ -14,16 +14,17 @@
 			    	<a href="<%= edit_admin_multiple_category_path(category_id: category.id) %>"><%= category.name %></a>
 			    <% end %>
 			  </div>
+			  <% params[:category_id] = (params[:category_id].present? && params[:category_id] == "0") ? nil : params[:category_id] %>
 			  <span><%= Category.find(params[:category_id] || params[:id]).name %></span>
 			</div>
 		</div>
 	</div>
 	<div class="row col-md-12 move-group-button">
 		<div class="col-md-6 button-left">
-			<button id="chevron-left" onclick="tab2_To_tab1();" class="chevron-button"><i class="fa fa-chevron-left"></i></button>
+			<button id="chevron-left" onclick="tab2_To_tab1(<%= params[:category_id] %>);" class="chevron-button"><i class="fa fa-chevron-left"></i></button>
 		</div>
 		<div class="col-md-6">
-			<button id="chevron-right" onclick="tab1_To_tab2();" class="chevron-button"><i class="fa fa-chevron-right"></i></button>
+			<button id="chevron-right" onclick="tab1_To_tab2(<%= params[:category_id] %>);" class="chevron-button"><i class="fa fa-chevron-right"></i></button>
 		</div>
 	</div>
 	<div class="row col-md-12">
