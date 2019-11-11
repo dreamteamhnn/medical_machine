@@ -38,7 +38,9 @@
 					    <th>Image</th>
 					    <th>Name</th>
 					    <th>Model</th>
-					    <th></th>
+					    <th class="multiple-category-cb">
+						  <input id="multiple-category-check-all" type="checkbox" value="all">
+						</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -55,7 +57,9 @@
 						    <td style="width: 40px !important; text-align: center;"><img src="<%= product.img_1 %>" style='height:40px; width:40px'></td>
 						    <td title="<%= product.name.html_safe %>"><p><%= product.name.html_safe %></p></td>
 						    <td><p><%= product.model %></p></td>
-						    <td><input type="checkbox" onclick='handleClickSelected("<%= product.id %>");' name="check-tab1"></td>
+						    <td class="multiple-category-cb-1">
+						      <input type="checkbox" value="<%= product.id %>" onclick='handleClickSelected("<%= product.id %>");' name="check-tab1" class="multiple-category-cb-id">
+						    </td>
 						</tr>
 					<% end %>
 				</tbody>
@@ -71,7 +75,9 @@
 					    <th>Image</th>
 					    <th>Name</th>
 					    <th>Model</th>
-					    <th></th>
+				        <th class="multiple-category-cb">
+				    	  <input id="multiple-category-check-all-2" type="checkbox" value="all">
+				    	</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -85,7 +91,9 @@
 						    <td style="width: 40px !important; text-align: center;"><img src="<%= product.img_1 %>" style='height:40px; width:40px'></td>
 						    <td title="<%= product.name %>"><p><%= product.name.html_safe %></p></td>
 						    <td><p><%= product.model %></p></td>
-						    <td><input type="checkbox" onclick='handleClickUnselected("<%= product.id %>");' name="check-tab2"></td>
+						    <td class="multiple-category-cb-2">
+						    	<input type="checkbox" value="<%= product.id %>" onclick='handleClickUnselected("<%= product.id %>");' name="check-tab2" class="multiple-category-cb-id-2">
+						    </td>
 						</tr>
 					<% end %>
 				</tbody>
