@@ -308,12 +308,15 @@ $(document).on('turbolinks:load', function(){
   function addVideoFieldsFor() {
     videoNames = [];
     var checkboxs = document.getElementsByName("product-video");
+    var parentDiv = $("#video-fields-for")[0];
+    parentDiv.innerHTML = "";
+    
     for (var i = 0, length = checkboxs.length; i < length; i++) {
       if (checkboxs[i].checked) {
         var name = checkboxs[i].labels[0].title;
         var id = checkboxs[i].value;
         videoNames.push(name);
-        var parentDiv = $("#video-fields-for")[0];
+        
         if (!document.getElementById('product_product_media_relations_attributes_'+i+'_medium_id')) {
           parentDiv.innerHTML += fieldForVideo(i, id);
         }

@@ -22,6 +22,7 @@ class Admin::MediasController < Admin::BaseController
   end
 
   def create
+    binding.pry
     if params[:medium][:media_type] == "0"
       @doc = Medium.new(media_params)
       if @doc.save

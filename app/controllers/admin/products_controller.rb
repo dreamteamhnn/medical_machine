@@ -103,6 +103,10 @@ class Admin::ProductsController < Admin::BaseController
       params[:product][:img_2_caption] = "Hình ảnh thực tế #{@product.name.strip} tại Stech Sài Gòn" unless params[:product][:img_2_caption].present?
       params[:product][:img_2_alt] = "Hình ảnh #{@product.name.strip} cung cấp bởi Stech Sài Gòn. Sản phẩm có sẵn tại Hà Nội và Hồ Chí Minh" unless params[:product][:img_2_alt].present?
     end
+    binding.pry
+
+    # ProductMediaRelation.where(params[:product][:product_media_relations_attributes].select {|k,v| v[:id].present? && v[:medium_id].nil?}.values.map {|v| v[:id]}).destroy_all
+    # params[:product][:product_media_relations_attributes].reject! {|k,v| v[:id].present? && v[:medium_id].nil? }
 
     params[:product][:parameter] = strip_tags(params[:product][:parameter]).strip
     params.require(:product).permit(Product::PRODUCT_ATTRIBUTES,
