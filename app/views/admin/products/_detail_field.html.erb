@@ -17,44 +17,52 @@
   </div>
 </div>
 <div class="row show-grid">
-  <div class="form-group form-group-part col-xs-6">
-    <div class="col-xs-6 price-form">
+  <div class="form-group form-group-part col-xs-12">
+    <div class="col-xs-4 price-form" style="padding-right: 30px;">
       <strong>Giá (.000 VNĐ)</strong> </br>
       <%= f.number_field :price, class: "form-control" %>
     </div>
-    <div class="col-xs-6 price-form">
+
+    <div class="col-xs-4 price-form" style="padding-right: 30px;">
       <strong>Giá sale (.000 VNĐ)</strong> </br>
       <%= f.number_field :discount_price, class: "form-control" %>
+    </div>
+
+    <div class="col-xs-4 price-form" style="padding-right: 30px;">
+      <strong>Mã sản phẩm</strong> </br>
+      <%= f.text_field :model, class: "form-control" %>
     </div>
   </div>
 </div>
 
-<div class="row show-grid">
+<div class="row show-grid" style="padding: 10px;border: lightgray solid 1px;">
   <div class="form-group form-group-part col-xs-12">
+    <div class="col-xs-2">
+      <%= link_to "Nhập thông số", "#product-parameter", id:"product-parameter-id", :class => "btn btn-success", "data-toggle" => "modal" %>
+    </div>
+
     <div class="col-xs-3 parameter-form">
-      <strong>Định dạng thông số</strong> </br>
       <%= f.select :is_parameter_table, [['Dạng text', false], ['Dạng bảng', true]], {}, { class: "form-control", style:"display: block !important;"} %>
     </div>
-    <div class="col-xs-2">
-      <strong>Thông số</strong> </br>
-      <%= link_to "Nhập", "#product-parameter", id:"product-parameter-id", :class => "btn btn-success", "data-toggle" => "modal" %>
-    </div>
+    
     <div class="col-xs-5">
       <p class="product-parameter-span multi-line"></p>
     </div>
   </div>
 </div>
 
-<div class="row show-grid">
-  <div class="form-group form-group-part col-xs-6">
-    <div class="col-xs-6 price-form">
-      <strong>Mã sản phẩm</strong> </br>
-      <%= f.text_field :model, class: "form-control" %>
-    </div>
-    <div class="col-xs-6 price-form">
-      <strong>Hãng</strong> </br>
-      <%= f.collection_select(:brand_id, Brand.all, :id, :name, {include_blank: 'Chọn hãng'}, {class: 'form-control'}) %>
-    </div>
+<div class="row show-grid" style="padding: 10px;border: lightgray solid 1px;">
+  <p class="btn btn-info">Chọn hãng</p>
+  <input type="text" placeholder="Search.." id="myInputBrand" onkeyup="brandFilterFunction()">
+  <hr>
+  <div id="myDropdownBrand" class="form-group form-group-part">
+    <%= f.collection_check_boxes :brand_id, Brand.all, :id, :name do |cb| %>
+      <div class="checkbox col-xs-3" style="margin-top: 0">
+        <label>
+          <%= cb.check_box %><%= cb.text %>
+        </label>
+      </div>
+    <% end %>
   </div>
 </div>
 

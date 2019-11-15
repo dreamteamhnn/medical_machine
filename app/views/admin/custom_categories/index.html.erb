@@ -36,7 +36,7 @@
 		              <%= custom_category.try(:name).html_safe %>
 		            </td>
 		            <td>
-		              <%= custom_category.try(:type).try(:html_safe) %>
+		              <%= custom_category.try(:custom_type) == "0" ? "Video" : (custom_category.try(:custom_type) == "1" ? "Tài liệu" : "Chưa chọn danh mục") %>
 		            </td>
 		            <td class="center">
 		              <%= link_to "Sửa", edit_admin_custom_category_path(custom_category), class: "btn btn-primary", style:"width: 100px; margin-bottom: 5px;" %>

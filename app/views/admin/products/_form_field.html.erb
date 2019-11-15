@@ -1,0 +1,73 @@
+<div id="page-wrapper">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header"><%= title %></h1>
+    </div>
+  </div>
+  <div class="row" id="product-new">
+    <div class="col-lg-12">
+      <div class="panel-body">
+        <div class="form-company">
+          <div class="form-group">
+            <%= render "shared/flash" %>
+          </div>
+          <%= form_for([:admin, @product], html: {multipart: true}) do |f| %>
+            <%= render "image_field", f: f %>
+            <%= render "detail_field", f: f %>
+
+            <div class="row show-grid" style="padding: 10px;border: lightgray solid 1px;">
+              <p class="btn btn-info">Chọn danh mục</p>
+              <input type="text" placeholder="Search.." id="myInputCategory" onkeyup="categoryFilterFunction()">
+              <hr>
+              <div id="myDropdownCategory" class="form-group form-group-part">
+                <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb| %>
+                  <div class="checkbox col-xs-3" style="margin-top: 0">
+                    <label>
+                      <%= cb.check_box %><%= cb.text %>
+                    </label>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+
+            <div class="row show-grid" style="padding: 10px;border: lightgray solid 1px;">
+              <p class="btn btn-info">Chọn lĩnh vực</p>
+              <input type="text" placeholder="Search.." id="myInputField" onkeyup="fieldFilterFunction()">
+              <hr>
+              <div id="myDropdownField" class="form-group form-group-part">
+                <%= f.collection_check_boxes :field_ids, Field.all, :id, :name do |cb| %>
+                  <div class="checkbox col-xs-3">
+                    <label>
+                      <%= cb.check_box %><%= cb.text %>
+                    </label>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+
+            <div class="row show-grid" style="padding: 10px;border: lightgray solid 1px;">
+              <p class="btn btn-info">Chọn video/tài liệu</p>
+              <input type="text" placeholder="Search.." id="myInputMedia" onkeyup="mediaFilterFunction()">
+              <hr>
+              <div id="myDropdownMedia" class="form-group form-group-part" >
+                <%= f.collection_check_boxes :medium_ids, Medium.all, :id, :title do |cb| %>
+                  <div class="checkbox col-xs-3">
+                    <label>
+                      <%= cb.check_box %><%= cb.text %>
+                    </label>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+
+            <div class="row show-grid">
+              <div class="form-group btn-align-center">
+                <%= f.submit button, class: "btn btn-primary" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
