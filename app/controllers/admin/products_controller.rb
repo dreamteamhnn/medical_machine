@@ -23,6 +23,7 @@ class Admin::ProductsController < Admin::BaseController
   def create
     @product = Product.new(product_params)
     if @product.save
+      update_other_relations
       flash[:success] = "Tạo mới sản phẩm #{strip_tags(@product.name)} thành công!"
       redirect_to admin_products_path
     else
@@ -44,6 +45,7 @@ class Admin::ProductsController < Admin::BaseController
 
   def update
     if @product.update_attributes(product_params)
+      update_other_relations
       flash[:success] = "Sửa sản phẩm [#{strip_tags(@product.name)}] thành công!"
     else
       @category_attrs = category_params
@@ -88,10 +90,22 @@ class Admin::ProductsController < Admin::BaseController
 
   private
 
+  def update_other_relations
+    @product.product_media_relations.destroy_all
+    @product.product_media_relations.create(params[:product][:medium_ids].map { |id| {medium_id: id} })
+
+    @product.product_fields.destroy_all
+    @product.product_fields.create(params[:product][:field_ids].map { |id| {field_id: id} })
+
+    @product.product_categories.destroy_all
+    @product.product_categories.create(params[:product][:category_ids].map { |id| {category_id: id} })
+  end
+
   def product_params
     params[:product][:name] = strip_tags(params[:product][:name]).strip
-    # params[:product][:short_description] = strip_tags(params[:product][:short_description]).strip
-    # params[:product][:description] = strip_tags(params[:product][:description]).strip
+    params[:product][:parameter] = strip_tags(params[:product][:parameter]).strip
+    params[:product][:brand_id] = params[:product][:brand_id].try(&:second) || @product.brand_id
+
     if @product
       params[:product][:img_1_title] = "#{@product.slug.strip}-anh-1" unless params[:product][:img_1_title].present?
       params[:product][:img_1_desc] = "#{@product.name.strip} - Ảnh 1" unless params[:product][:img_1_desc].present?
@@ -103,12 +117,7 @@ class Admin::ProductsController < Admin::BaseController
       params[:product][:img_2_caption] = "Hình ảnh thực tế #{@product.name.strip} tại Stech Sài Gòn" unless params[:product][:img_2_caption].present?
       params[:product][:img_2_alt] = "Hình ảnh #{@product.name.strip} cung cấp bởi Stech Sài Gòn. Sản phẩm có sẵn tại Hà Nội và Hồ Chí Minh" unless params[:product][:img_2_alt].present?
     end
-    binding.pry
 
-    # ProductMediaRelation.where(params[:product][:product_media_relations_attributes].select {|k,v| v[:id].present? && v[:medium_id].nil?}.values.map {|v| v[:id]}).destroy_all
-    # params[:product][:product_media_relations_attributes].reject! {|k,v| v[:id].present? && v[:medium_id].nil? }
-
-    params[:product][:parameter] = strip_tags(params[:product][:parameter]).strip
     params.require(:product).permit(Product::PRODUCT_ATTRIBUTES,
       product_categories_attributes: Product::PRODUCT_CATEGORY_ATTRIBUTES,
       product_fields_attributes: Product::PRODUCT_FIELD_ATTRIBUTES,

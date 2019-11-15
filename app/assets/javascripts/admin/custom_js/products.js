@@ -339,7 +339,7 @@ $(document).on('turbolinks:load', function(){
       'id="product_product_media_relations_attributes_'+index+'_medium_id" value="'+id+'">';
   };
 
-  addVideoFieldsFor();
+  // addVideoFieldsFor();
 
   $("#confirm-video-product").click(function(){
     addVideoFieldsFor();
@@ -476,3 +476,87 @@ function removeParam(key, sourceURL) {
   }
   return rtn;
 }
+
+function categoryFilterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInputCategory");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdownCategory");
+  a = div.getElementsByClassName("checkbox");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+
+function fieldFilterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInputField");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdownField");
+  a = div.getElementsByClassName("checkbox");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+
+function mediaFilterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInputMedia");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdownMedia");
+  a = div.getElementsByClassName("checkbox");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+
+function brandFilterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInputBrand");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdownBrand");
+  a = div.getElementsByClassName("checkbox");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+
+$(document).on('turbolinks:load', function(){
+
+  $(document).on('click','#myDropdownBrand .checkbox input',function(){
+    if(this.checked) {
+      $("#myDropdownBrand .checkbox input").prop('checked', false);
+      $(this).prop('checked', true);
+    } else {
+      var allSelectedIds = $("#myDropdownBrand .checkbox input:checkbox:checked").map(function(){
+        return $(this).val();
+      }).get();
+
+      if (allSelectedIds.length == 0) {
+        $(this).prop('checked', true);
+      }
+    }
+  });
+});
+
+
