@@ -106,7 +106,7 @@ class Product < ApplicationRecord
   def param_table
     return parameter unless is_parameter_table
     table = []
-    parameter.split(",").each do |p|
+    parameter.split(";").each do |p|
       table << {title: p.split(":")[0], value: p.split(":")[1]}
     end
     table
