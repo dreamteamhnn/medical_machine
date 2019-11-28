@@ -50,7 +50,7 @@ class Admin::CategoriesController < Admin::BaseController
   end
 
   def load_category
-    @category = Category.find_by(id: params[:id]) || Category.new
+    @category = Category.friendly.find_by(id: params[:id]) || Category.friendly.find_by(slug: params[:id]) || Category.new
   end
 
   def load_categories

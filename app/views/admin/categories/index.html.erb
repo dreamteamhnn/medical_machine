@@ -102,35 +102,35 @@
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
           <h4 class="modal-title custom_align" id="Heading">Sửa danh mục <strong class="category-title-update"></strong></h4>
         </div>
-        <form>
+        <%= form_for([:admin, Category.first], html: {multipart: true}) do |f| %>
           <div class="modal-body">
             <div class="form-group">
               <strong>Ảnh</strong> <br>
               <div class="preview-category-image-update-div">
-                <img src="/preview_no_image.jpg" height="150" class="preview-category-image-update">
+                <img src="/preview_no_image.jpg" height="150" class="preview-category-image">
               </div>
               <label for="update-category-image" class="btn btn-success">Chọn ảnh</label>
               <input id="update-category-image" class="hidden category-img-update" type="file" name="category[img]">
             </div>
             <div class="form-group">
               <strong>Tên danh mục</strong></br>
-              <input class="form-control category-name-update" type="text" placeholder="Tên danh mục" required>
+              <input class="form-control category-name-update" name="category[name]" type="text" placeholder="Tên danh mục" required>
             </div>
             <div class="form-group">
               <strong>Mô tả</strong></br>
-              <%= cktext_area nil, nil, ckeditor: {toolbar: 'mini'}, class: "form-control category-des-update", id: "category-des-update" %>
+              <%= cktext_area nil, nil, ckeditor: {toolbar: 'mini'}, class: "form-control category-des-update", id: "category-des-update", name:"category[description]" %>
             </div>
             <div class="form-group category-order-update-div">
               <strong>Thứ tự hiển thị</strong></br>
-              <input class="form-control category-order-update" type="number" placeholder="Thứ tự hiển thị" required>
+              <input class="form-control category-order-update" name="category[category_order]" type="number" placeholder="Thứ tự hiển thị" required>
             </div>
             <div class="form-group category-block-update-div">
               <strong>Hiển thị trên trang chủ (1: trên hoặc 2: dưới)</strong></br>
-              <input class="form-control category-block-update" type="number" placeholder="Hiển thị trên trang chủ">
+              <input class="form-control category-block-update" name="category[home_block_id]" type="number" placeholder="Hiển thị trên trang chủ">
             </div>
             <div class="form-group category-order-block-update-div">
               <strong>Thứ tự hiển thị trên trang chủ</strong></br>
-              <input class="form-control category-order-block-update" type="number" placeholder="Thứ tự hiển thị trên trang chủ">
+              <input class="form-control category-order-block-update" name="category[home_order_id]" type="number" placeholder="Thứ tự hiển thị trên trang chủ">
             </div>
             <%= hidden_field(:category, :id) %>
           </div>
@@ -138,7 +138,7 @@
             <button type="button" class="btn btn-default btn-lg" data-dismiss="modal">Bỏ qua</button>
             <button type="submit" class="btn btn-success btn-lg" data-dismiss="modal" id="button-update-category-confirm">Sửa</button>
           </div>
-        </form>
+        <% end %>
       </div>
     </div>
   </div>
