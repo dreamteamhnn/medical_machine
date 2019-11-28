@@ -31,7 +31,6 @@ class Admin::SlidersController < Admin::BaseController
       flash[:danger] = @slider.errors.full_messages
       render :new
     end
-
   end
 
   def destroy

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191110150104) do
+ActiveRecord::Schema.define(version: 20191128030326) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
     t.string "email", default: "", null: false
@@ -327,6 +327,20 @@ ActiveRecord::Schema.define(version: 20191110150104) do
     t.index ["brand_id"], name: "index_products_on_brand_id"
     t.index ["label_id"], name: "index_products_on_label_id"
     t.index ["slug"], name: "index_products_on_slug", unique: true
+  end
+
+  create_table "projects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
+    t.string "title"
+    t.text "content"
+    t.integer "order"
+    t.string "slug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "img"
+    t.string "img_title"
+    t.string "img_alt"
+    t.string "img_desc"
+    t.string "img_caption"
   end
 
   create_table "slider_catalogs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
