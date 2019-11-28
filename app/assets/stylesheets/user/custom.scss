@@ -7427,3 +7427,7 @@ footer {
         border-radius: 10px;
     }
 }
+
+h1, h2, .post-navigation .nav-previous > a, .post-navigation .nav-next > a {
+    text-transform: inherit !important;
+}

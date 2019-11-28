@@ -1,7 +1,7 @@
 <div class="col-md-2"></div>
 <div class="category-div col-md-8">
   <div class="highest-category-block">
-    <a class="btn btn-primary btn-sm btn-update-category" title="Sửa" data-id="<%= category.id %>" data-name="<%= category.name %>" data-des="<%= category.description %>" data-img="<%= category.img %>"
+    <a class="btn btn-primary btn-sm btn-update-category" title="Sửa" data-id="<%= category.id %>" data-name="<%= category.name %>" data-slug="<%= category.slug %>" data-des="<%= category.description %>" data-img="<%= category.img %>" data-img-url="<%= category.img.url %>"
       data-category-order="<%= category.category_order %>" data-home-block-id="<%= category.home_block_id%>"
       data-home-order-id="<%= category.home_order_id %>"
       data-highest="<%= category.level == 1 %>" data-toggle="modal" data-target="#update-category">
@@ -15,7 +15,7 @@
       <a class="btn btn-default btn-name btn-sm" data-toggle="collapse" href="#category<%= second.id %>" aria-expanded="false" aria-controls="category<%= second.id %>" <%= 'disabled' unless second.childrens.size > 0%> title="<%= second.name %>"><span class="category-name category-name<%= second.id %>"><%= second.name %></span></a>
       <a class="btn btn-success btn-add-category-sm btn-sm" title="Thêm danh mục" data-toggle="modal" data-target="#create-category"
         data-name="<%= second.name %>" data-id="<%= second.id %>"><span class="fa fa-plus"></span></a>
-      <a class="btn btn-primary btn-sm btn-update-category" title="Sửa" data-id="<%= second.id %>" data-name="<%= second.name %>" data-des="<%= second.description %>" data-img="<%= category.img %>"
+      <a class="btn btn-primary btn-sm btn-update-category" title="Sửa" data-id="<%= second.id %>" data-name="<%= second.name %>" data-slug="<%= second.slug %>" data-des="<%= second.description %>" data-img="<%= second.img %>" data-img-url="<%= second.img&.url %>"
         data-category-order="<%= second.category_order %>" data-home-block-id="<%= second.home_block_id%>"
         data-home-order-id="<%= second.home_order_id %>" data-toggle="modal" data-target="#update-category">
         <span class="fa fa-edit" data-id="<%= second.id %>"></span>

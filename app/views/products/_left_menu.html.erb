@@ -11,19 +11,21 @@
       </h2>
       <ul class="sub-category">
         <% category.second.each_with_index do |sub_category, j| %>
-          <li class="sub-category-item">
+          <li class="sub-category-item" style="position: relative !important;">
             <%= link_to category_products_path(sub_category.first), title: "#{sub_category.first.name}" do %>
               <i class="fa fa-caret-right"></i>
               <%= sub_category.first.name %>
             <% end %>
 
-            <ul class="sub-category-level-2">
-              <% 15.times do %>
-                <li class="sub-category-level-2-item">
-                  <%= link_to "sub-category level 2 mẫu ", "#" -%>
-                </li>
-              <% end %>
-            </ul>
+            <% if sub_category.first.childrens.present? %>
+              <ul class="sub-category-level-2">
+                <% sub_category.first.childrens.each do |child| %>
+                  <li class="sub-category-level-2-item">
+                    <%= link_to child.name, category_products_path(child), title: "#{child.name}" %>
+                  </li>
+                <% end %>
+              </ul>
+            <% end %>
           </li>
         <% end %>
       </ul>

@@ -11,7 +11,7 @@
                 <%= link_to category.name, blog_list_path(blog_category_id: category.id) %>
               <% end %>
             </span>
-            <h2 class="entry-title"><%= @blog.title %></h2>
+            <h1 class="product_title entry-title product-h1-custom"><%= @blog.title %></h1>
             <div class="entry-meta">
               <span class="post__date">
                 <a href="" class="post__date-link">
@@ -23,51 +23,11 @@
           <figure class="post-thumbnail">
             <%= image_tag @blog.blog_images.first.url.url, alt: @blog.blog_images.first.alt, title: @blog.blog_images.first.title, class: "post-thumbnail__img wp-post-image" if @blog.blog_images.first %>
           </figure>
-          <!-- .post-thumbnail -->
+
           <div class="entry-content">
-            <h3><%= @blog.title %></h3>
-            <p>
-              <%= @blog.content.html_safe %>
-            </p>
-            <%= content_tag :p if @blog.blog_images.second do %>
-              <%= image_tag @blog.blog_images.second.url, alt: @blog.feature_image_alt, title: @blog.feature_image_title, class: "post-thumbnail__img" %>
-            <% end %>
-            <% if @blog_relate_1 %>
-              <article class="inner-article hzol-clear story">
-                <figure class="cover image-cover">
-                  <%= link_to "#{image_tag(@blog_relate_1.blog_images.first.url.url, width: '145')}".html_safe, blog_detail_path(@blog_relate_1) if @blog_relate_1.blog_images.any? %>
-                </figure>
-                <header>
-                  <h2 class="title">
-                    <%= link_to @blog_relate_1.title, blog_detail_path(@blog_relate_1) %>
-                  </h2>
-                  <div class="summary">
-                    <%= @blog_relate_1.content[0..99].html_safe %>
-                  </div>
-                </header>
-              </article>
-            <% end %>
-            <p>
-              <% if @blog.blog_images.third %>
-                <%= image_tag @blog.blog_images.third.try(:url), alt: @blog.feature_image_alt,
-                  title: @blog.feature_image_title, class: "post-thumbnail__img" %>
-              <% end %>
-            </p>
-            <% if @blog_relate_2 %>
-              <article class="inner-article hzol-clear story">
-                <figure class="cover image-cover">
-                  <%= link_to "#{image_tag(@blog_relate_2.blog_images.first.url.url, width: '145')}".html_safe, blog_detail_path(@blog_relate_2) if @blog_relate_2.blog_images.any? %>
-                </figure>
-                <header>
-                  <h2 class="title">
-                    <%= link_to @blog_relate_2.title, blog_detail_path(@blog_relate_2) %>
-                  </h2>
-                  <div class="summary">
-                    <%= @blog_relate_2.content[0..99].html_safe %>
-                  </div>
-                </header>
-              </article>
-            <% end %>
+            <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--description panel entry-content wc-tab tab-pane active custom-white-space">
+              <p><%= @blog.content&.html_safe %></p>
+            </div>
           </div>
           <!-- .entry-content -->
           <footer class="entry-footer">
@@ -86,14 +46,14 @@
         <nav class="navigation post-navigation" role="navigation">
           <h2 class="screen-reader-text">Post navigation</h2>
           <div class="nav-links">
-            <% if @prev.present? %>
+            <% if @blog_relate_1.present? %>
               <div class="nav-previous">
-                <%= link_to @prev.title, blog_detail_path(@prev) %>
+                <%= link_to @blog_relate_1.title, blog_detail_path(@blog_relate_1) %>
               </div>
             <% end %>
-            <% if @next.present? %>
+            <% if @blog_relate_2.present? %>
               <div class="nav-next">
-                <%= link_to @next.title, blog_detail_path(@next) %>
+                <%= link_to @blog_relate_2.title, blog_detail_path(@blog_relate_2) %>
               </div>
             <% end %>
           </div>
