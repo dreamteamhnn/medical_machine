@@ -12,11 +12,12 @@ class PagesController < ApplicationController
     @company = Company.first
     set_meta_tags meta_tags_hash
     @feedbacks = Feedback.all
-    projects = Project.all.order(:order).limit(5)
+    projects = Project.all.order(order: :desc).limit(5)
     if projects.present?
       @first_project = projects.first
       @other_projects = projects.where.not(id: @first_project.id)
     end
+    @certificates = Certificate.all.order(order: :desc).in_groups_of(3)
   end
 
   def get_home_category

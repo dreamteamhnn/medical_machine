@@ -37,6 +37,7 @@ Rails.application.routes.draw do
     resources :home, only: [:show]
     resources :fields
     resources :projects
+    resources :certificates
     resources :custom_categories
     resources :folders
     resources :brands

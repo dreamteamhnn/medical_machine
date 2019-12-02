@@ -1,0 +1,42 @@
+<div class="row" id="certificate-new">
+  <div class="col-lg-12">
+    <div class="panel-body">
+      <div class="form-company">
+        <div class="form-group">
+          <%= render "shared/flash" %>
+        </div>
+        <%= form_for([:admin, @certificate]) do |f| %>
+          <div class="row show-grid" style="padding: 10px;border: lightgray solid 1px;">
+            <div class="form-group col-md-8 col-offset-3">
+              <strong>Ảnh</strong> </br>
+              <div class="preview-certificate-image-div">
+                <% if @certificate.img %>
+                  <%= image_tag @certificate.img.url, height: 100, class: "preview-certificate-image" %>
+                <% else %>
+                  <img src="/preview_no_image.jpg" height="150" class="preview-certificate-image">
+                <% end %>
+              </div>
+              <label for="upload-certificate-image" class="btn btn-success" style="margin-top: 10px">Chọn ảnh (595x842)</label>
+              <%= f.file_field :img, id: "upload-certificate-image", class: "hidden" %>
+            </div>
+          </div>
+
+          <div class="row show-grid" style="padding: 10px;border: lightgray solid 1px;">
+            <div class="form-group col-md-8">
+              <strong>Tiêu đề (Tối đa 255 ký tự)</strong> </br>
+              <%= f.text_field :title, class: "form-control" %>
+            </div>
+            <div class="form-group col-md-4">
+              <strong>Thứ tự</strong> </br>
+              <%= f.number_field :order, class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="form-group btn-align-center">
+            <%= f.submit title, class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

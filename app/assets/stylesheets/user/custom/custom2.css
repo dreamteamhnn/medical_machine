@@ -68,3 +68,40 @@
     margin-left: 0 !important;
   }
 }
+
+/*Contact style*/
+.contact-line {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: auto;
+    height: 1px;
+    background-color: #333;
+    width: 35px;
+}
+
+.contact-title {
+    text-transform: uppercase;
+    font-size: 30px;
+    line-height: 40px;
+}
+
+.contact-sub-heading {
+    font-size: 15px;
+    font-weight: 400;
+    margin: 0;
+    line-height: 30px;
+    color: #999;
+}
+
+.contact-border-top {
+    border-top: 1px solid #eee;
+}
+
+.contact-heading__primary {
+    text-transform: none;
+    font-size: 15px !important;
+    line-height: 25px;
+    font-weight: 700;
+    margin: 0;
+}

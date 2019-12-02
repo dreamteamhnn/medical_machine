@@ -8,46 +8,20 @@
     <div class="col-sm-12">
       <div id="certificate" class="carousel slide certificate-class" data-ride="carousel">
         <div class="carousel-inner">
-          <div class="item active">
-            <div class="col-xs-4">
-              <%= image_tag "595_842.jpg", class: "img-responsive width-100-percent" %>
-              <div class="certificate-title">
-                <p>Title certificate</p>
-              </div>
+          <% @certificates.each_with_index do |group, idx| %>
+            <div class="item <%= 'active' if idx == 0 %>">
+              <% group.each do |cert| %>
+                <% if cert.present? %>
+                  <div class="col-xs-4">
+                    <%= image_tag cert&.img&.url, class: "img-responsive width-100-percent" %>
+                    <div class="certificate-title">
+                      <p><%= cert&.title %></p>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
             </div>
-            <div class="col-xs-4">
-              <%= image_tag "595_842.jpg", class: "img-responsive width-100-percent" %>
-              <div class="certificate-title">
-                <p>Title certificate</p>
-              </div>
-            </div>
-            <div class="col-xs-4">
-              <%= image_tag "595_842.jpg", class: "img-responsive width-100-percent" %>
-              <div class="certificate-title">
-                <p>Title certificate</p>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="col-xs-4">
-              <%= image_tag "595_842.jpg", class: "img-responsive width-100-percent" %>
-              <div class="certificate-title">
-                <p>Title certificate</p>
-              </div>
-            </div>
-            <div class="col-xs-4">
-              <%= image_tag "595_842.jpg", class: "img-responsive width-100-percent" %>
-              <div class="certificate-title">
-                <p>Title certificate</p>
-              </div>
-            </div>
-            <div class="col-xs-4">
-              <%= image_tag "595_842.jpg", class: "img-responsive width-100-percent" %>
-              <div class="certificate-title">
-                <p>Title certificate</p>
-              </div>
-            </div>
-          </div>
+          <% end %>
         </div>
         <a class="left carousel-control" href="#certificate" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
         <a class="right carousel-control" href="#certificate" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
