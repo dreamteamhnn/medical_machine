@@ -8,7 +8,7 @@
           <div id="woo-main" class="site-main" role="main">
             <div id="media-table">
               <div class="row">
-                <div class="col-xs-12" style="padding-top: 50px;">
+                <div class="col-xs-12">
                   <h3 class="contact-title">
                     <%= @company.name %>
                   </h3>
@@ -143,6 +143,44 @@
                     </div>
 
                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2075.897630917652!2d106.70190050289487!3d10.828679771053443!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528c4eaaf21bd%3A0x4c09b4b7864a7d3d!2zU3RlY2ggU8OgaSBHw7JuIC0gQ04gbWnhu4FuIE5hbSBDw7RuZyB0eSBW4bqtdCB0xrAga2hvYSBo4buNYyBRdeG7kWMgdOG6vw!5e0!3m2!1svi!2s!4v1559890348624!5m2!1svi!2s" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                  </div>
+
+                  <div class="col-md-12" style="padding-right: 0; padding-left: 0">
+                    <div class="contact-border-top">
+                      <h1 style="text-align: center; margin-top: 50px;">LIÊN HỆ VỚI STECH SÀI GÒN</h1>
+                      <p class="contact-sub-heading" style="text-align: center">
+                        Nếu Quý khách có bất cứ thắc mắc hoặc nhu cầu cần hỗ trợ.</br>
+                        Hãy để lại lời nhắn cho Stech Sài Gòn, chúng tôi sẽ liên hệ lại ngay với Quý khách!
+                      </p>
+                      <%= form_for @contact, url: contacts_path, html: {class: "width-100"} do |f| %>
+                        <div class="row">
+                          <div class="col-md-6 margin-20">
+                            <%= f.text_field :full_name, class: "width-100", placeholder: "Tên" %>
+                          </div>
+                          <div class="col-md-6 margin-20">
+                            <%= f.text_field :phone, class: "width-100", placeholder: "Điện thoại" %>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6 margin-20">
+                            <%= f.text_field :title, class: "width-100", placeholder: "Tiêu đề" %>
+                          </div>
+                          <div class="col-md-6 margin-20">
+                            <%= f.text_field :email, class: "width-100", placeholder: "Email" %>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-12 margin-20">
+                            <%= f.text_area :content, class: "width-100 text-area-contact", placeholder: "Nội dung" %><br />
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-12" style="text-align: center;">
+                            <%= f.submit "GỬI", class: "submit-contact btn btn-primary margin-left-75", style:"margin-left: 0 !important;" %>
+                          </div>
+                        </div>
+                      <% end %>
+                    </div>
                   </div>
                 </div>
               </div>
