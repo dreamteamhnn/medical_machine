@@ -86,6 +86,10 @@
     line-height: 40px;
 }
 
+.contact-title:before {
+    display: none !important;
+}
+
 .contact-sub-heading {
     font-size: 15px;
     font-weight: 400;
