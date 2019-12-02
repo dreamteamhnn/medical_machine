@@ -18,11 +18,12 @@
   }
 
   .sub-category-title {
+    line-height: 1.5em;
+    height: 3em;
     font-weight: bold;
     width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
   }
 
   .readmore {

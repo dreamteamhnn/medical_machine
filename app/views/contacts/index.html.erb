@@ -1,7 +1,6 @@
 <%= render "pages/list_categories", menu_detail: false %>
+
 <div class="site-content_wrap container">
-  <div id="product-order-placeholder"></div>
-  <div id="order-result-placeholder"></div>
   <div id="primary" class="box-content col-md-12 box-content-contact">
     <%= render "layouts/breadcrumbs" %>
     <main id="main" class="site-main contact-custom" role="main">
@@ -9,77 +8,147 @@
           <div id="woo-main" class="site-main" role="main">
             <div id="media-table">
               <div class="row">
-                <div class="col-xs-12" style="margin-top: 20px;">
-                  <h1>LIÊN HỆ</h1>
-                  <h2 style="color: blue; font-size: 150%">
-                    STECH INTERNATIONAL ., LTD<br>
-                  </h2>
-                  <h3>
-                    Điện thoại: <%= @company.phone %> - Hotline: 096.840.6636 Mr.Tú<br>
+                <div class="col-xs-12" style="padding-top: 50px;">
+                  <h3 class="contact-title">
+                    <%= @company.name %>
                   </h3>
-                  <h3 class="text-align-none">
-                    EMAIL: <%= @company.email %><br>
-                  </h3>
-                  <h3 class="text-align-none">
-                    WEBSITE: <%= @company.website %><br>
-                  </h3>
-                  <h2 style="color: red;">Rất vui lòng được phục vụ quý khách !!!</h2>
+                  <p class="contact-sub-heading" style=""><%= @company.about&.html_safe %></p>
+                  <span class="contact-line"></span>
+
+                  <div class="col-md-12" style="padding-right: 0; padding-left: 0">
+                    <div class="contact-border-top">
+                      <div class="col-md-6" style="margin: 15px 0;">
+                        <div class="boxes-icon" style="width: 30px; position: absolute;">
+                          <span class="inner-icon">
+                            <span class="icon"><i class="fa fa-phone" style="color:#ffb606; font-size:24px; line-height:24px; vertical-align: middle;"></i>
+                            </span>
+                          </span>
+                        </div>
+                        <div class="content-inner" style="width: calc( 100% - 30px - 15px); margin-left: 30px;">
+                          <div class="sc-heading article_heading">
+                            <h2 class="contact-heading__primary" style="font-size: 16px !important">Điện thoại</h2>
+                          </div>
+                          <div class="desc-icon-box">
+                            <div class="desc-content"><%= @company.sg_phone %></div>
+                          </div>
+                        </div>
+                      </div>
+                        
+                      <div class="col-md-6" style="margin: 15px 0;">
+                        <div class="boxes-icon" style="width: 30px; position: absolute;">
+                          <span class="inner-icon">
+                            <span class="icon"><i class="fa fa-headphones" style="color:#ffb606; font-size:24px; line-height:24px; vertical-align: middle;"></i>
+                            </span>
+                          </span>
+                        </div>
+                        <div class="content-inner" style="width: calc( 100% - 30px - 15px); margin-left: 30px;">
+                          <div class="sc-heading article_heading">
+                            <h2 class="contact-heading__primary" style="font-size: 16px !important">Hỗ trợ Trực tuyến (24/7) (<%= @company.contact_info %>):</h2>
+                          </div>
+                          <div class="desc-icon-box">
+                            <div class="desc-content"><%= @company.phone %></div>
+                            <div class="desc-content"><%= @company.order_phone %></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-12" style="padding-right: 0; padding-left: 0">
+                    <div class="contact-border-top">
+                      <div class="col-md-6" style="margin: 15px 0;">
+                        <div class="boxes-icon" style="width: 30px; position: absolute;">
+                          <span class="inner-icon">
+                            <span class="icon"><i class="fa fa-envelope" style="color:#ffb606; font-size:24px; line-height:24px; vertical-align: middle;"></i>
+                            </span>
+                          </span>
+                        </div>
+                        <div class="content-inner" style="width: calc( 100% - 30px - 15px); margin-left: 30px;">
+                          <div class="sc-heading article_heading">
+                            <h2 class="contact-heading__primary" style="font-size: 16px !important">Email</h2>
+                          </div>
+                          <div class="desc-icon-box">
+                            <div class="desc-content"><%= @company.email %></div>
+                          </div>
+                        </div>
+                      </div>
+                        
+                      <div class="col-md-6" style="margin: 15px 0;">
+                        <div class="boxes-icon" style="width: 30px; position: absolute;">
+                          <span class="inner-icon">
+                            <span class="icon"><i class="fa fa-globe" style="color:#ffb606; font-size:24px; line-height:24px; vertical-align: middle;"></i>
+                            </span>
+                          </span>
+                        </div>
+                        <div class="content-inner" style="width: calc( 100% - 30px - 15px); margin-left: 30px;">
+                          <div class="sc-heading article_heading">
+                            <h2 class="contact-heading__primary" style="font-size: 16px !important">Website</h2>
+                          </div>
+                          <div class="desc-icon-box">
+                            <div class="desc-content"><%= @company.website %></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-12" style="padding-right: 0; padding-left: 0">
+                    <div class="contact-border-top">
+                      <div style="margin: 15px 0; text-align: center;">
+                        <h2 class="contact-heading__primary" style="font-size: 16px !important">Hệ thống Cửa hàng - Chi nhánh trên toàn quốc</h2>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- fa fa-map-marker -->
+
+                  <div class="col-md-12">
+                    <div style="margin: 15px 0;">
+                      <div class="boxes-icon" style="width: 30px; position: absolute;">
+                        <span class="inner-icon">
+                          <span class="icon"><i class="fa fa-map-marker" style="color:#ffb606; font-size:24px; line-height:24px; vertical-align: middle;"></i>
+                          </span>
+                        </span>
+                      </div>
+                      <div class="content-inner" style="width: calc( 100% - 30px - 15px); margin-left: 30px;">
+                        <div class="sc-heading article_heading">
+                          <h2 class="contact-heading__primary" style="font-size: 16px !important">Tại Hà Nội</h2>
+                        </div>
+                        <div class="desc-icon-box">
+                          <div class="desc-content"><%= @company.hn_address %></div>
+                          <div class="desc-content">Điện thoại: <%= @company.hn_phone %></div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.6915496438987!2d105.77569831493226!3d21.004997986011176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313453524dc911a7%3A0xf4266d4f7d434c5e!2zVGhp4bq_dCBi4buLIHRow60gbmdoaeG7h20gU3RlY2g!5e0!3m2!1sen!2s!4v1559890490197!5m2!1sen!2s" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                  </div>
+
+                  <div class="col-md-12">
+                    <div style="margin: 15px 0;">
+                      <div class="boxes-icon" style="width: 30px; position: absolute;">
+                        <span class="inner-icon">
+                          <span class="icon"><i class="fa fa-map-marker" style="color:#ffb606; font-size:24px; line-height:24px; vertical-align: middle;"></i>
+                          </span>
+                        </span>
+                      </div>
+                      <div class="content-inner" style="width: calc( 100% - 30px - 15px); margin-left: 30px;">
+                        <div class="sc-heading article_heading">
+                          <h2 class="contact-heading__primary" style="font-size: 16px !important">Tại TP Hồ Chí Minh</h2>
+                        </div>
+                        <div class="desc-icon-box">
+                          <div class="desc-content"><%= @company.sg_address %></div>
+                          <div class="desc-content">Điện thoại: <%= @company.sg_phone %></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2075.897630917652!2d106.70190050289487!3d10.828679771053443!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528c4eaaf21bd%3A0x4c09b4b7864a7d3d!2zU3RlY2ggU8OgaSBHw7JuIC0gQ04gbWnhu4FuIE5hbSBDw7RuZyB0eSBW4bqtdCB0xrAga2hvYSBo4buNYyBRdeG7kWMgdOG6vw!5e0!3m2!1svi!2s!4v1559890348624!5m2!1svi!2s" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                  </div>
                 </div>
               </div>
-
-              <div class="row" style="margin-top: 50px;">
-                <div class="col-md-5 col-md-offset-1" style="margin-top: 50px;">
-                  <h3>
-                    Văn phòng: <%= @company.sg_address %><br>
-                  </h3>
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2075.897630917652!2d106.70190050289487!3d10.828679771053443!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528c4eaaf21bd%3A0x4c09b4b7864a7d3d!2zU3RlY2ggU8OgaSBHw7JuIC0gQ04gbWnhu4FuIE5hbSBDw7RuZyB0eSBW4bqtdCB0xrAga2hvYSBo4buNYyBRdeG7kWMgdOG6vw!5e0!3m2!1svi!2s!4v1559890348624!5m2!1svi!2s" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-                </div>
-
-                <div class="col-md-5 col-md-offset-1" style="margin-top: 50px;">
-                  <h3>
-                    Văn phòng: <%= @company.hn_address %><br>
-                  </h3>
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.6915496438987!2d105.77569831493226!3d21.004997986011176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313453524dc911a7%3A0xf4266d4f7d434c5e!2zVGhp4bq_dCBi4buLIHRow60gbmdoaeG7h20gU3RlY2g!5e0!3m2!1sen!2s!4v1559890490197!5m2!1sen!2s" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-                </div>
-              </div>
-
-              <h1 style="text-align: center; margin-top: 50px;">GỬI LIÊN HỆ</h1>
-              <h2 style="text-align: center;">Nếu bạn có bất cứ thắc mắc hay câu hỏi gì? Hãy liên hệ với Chúng tôi ngay</h2>
-              <%= form_for @contact, url: contacts_path, html: {class: "width-100"} do |f| %>
-                <div class="row">
-                  <div class="col-md-5 col-md-offset-1 margin-40">
-                    Họ tên của bạn: <br><br>
-                    <%= f.text_field :full_name, class: "width-100" %><br />
-                  </div>
-                  <div class="col-md-5 margin-40">
-                    Tiêu đề liên hệ:<br><br>
-                     <%= f.text_field :title, class: "width-100" %><br />
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-5 col-md-offset-1 margin-40">
-                    Điện thoại của bạn:<br><br>
-                     <%= f.text_field :phone, class: "width-100" %><br /><br /><br />
-                    Email của bạn:<br><br>
-                    <%= f.text_field :email, class: "width-100" %><br />
-                  </div>
-                  <div class="col-md-5 margin-40">
-                    Nội dung liên hệ:<br><br>
-                     <%= f.text_area :content, class: "width-100 text-area-contact" %><br />
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-offset-5">
-                    <%= f.submit "GỬI LIÊN HỆ", class: "submit-contact btn btn-primary margin-left-75" %>
-                  </div>
-                </div>
-              <% end %>
             </div>
           </div>
         </div>
-      </main>
-    <!-- #main -->
+    </main>
   </div>
-    <!-- #primary -->
-  <!-- .row -->
 </div>

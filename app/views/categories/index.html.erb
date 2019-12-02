@@ -15,16 +15,16 @@
                   <li class="col-md-3 col-xs-6 text-center">
                     <div class="td-sub-category">
                       <%= link_to category_products_path(sub_category.first), title: "#{sub_category.first.name}" do %>
-                        <% img_url = sub_category.first.img.blank? ? "/preview_no_image.jpg" : sub_category.first.img %>
+                        <% img_url = sub_category.first.img.blank? ? "/preview_no_image.jpg" : sub_category.first.img.url %>
                         <%= image_tag img_url, class: "img-responsive img-sub-category" %>
                         <p class="sub-category-title">
                           <%= sub_category.first.name %>
                         </p>
-                        <div class="text-center">
+                        <!-- <div class="text-center">
                           <div class="readmore">
                             Xem sản phẩm →
                           </div>
-                        </div>
+                        </div> -->
                       <% end %>
                     </div>
                   </li>
