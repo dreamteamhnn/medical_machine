@@ -22,7 +22,7 @@ class ContactsController < ApplicationController
 
   private
   def load_breadcrumb
-    @breads = [{title: "Chỉ đường", link: ""}]
+    @breads = [{title: "Liên hệ", link: ""}]
   end
 
   def contact_params
