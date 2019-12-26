@@ -22,14 +22,15 @@ class ProductsController < ApplicationController
   end
 
   def order
-    @product = Product.friendly.find params[:id]
+    @product = Product.friendly.find(params[:id]) if params[:id].present?
+    @product = Product.find_by(slug: params[:id]) unless @product.present?
     respond_to do |format|
       format.js{render layout: false}
     end
   end
 
   def send_order
-    @product = Product.friendly.find params[:id]
+    @product = Product.friendly.find(params[:id]) if params[:id].present?
     @order = @product.customer_orders.build order_params
     @data_valid = @order.valid?
     @error_messages = @order.errors.messages.values.flatten unless @data_valid
@@ -169,7 +170,8 @@ class ProductsController < ApplicationController
   end
 
   def load_data_show
-    @product = Product.friendly.find params[:id]
+    @product = Product.friendly.find(params[:id]) if params[:id].present?
+    @product = Product.find_by(slug: params[:id]) unless @product.present?
     @documents = @product.mediums.where(media_type: 0)
     @videos = @product.mediums.where(media_type: 1)
     @related_products = []
