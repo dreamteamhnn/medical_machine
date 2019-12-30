@@ -1,28 +1,14 @@
 #product-order-modal {
-  .modal-title {
-    h4 {
-      font-size: 20px;
-      text-transform: initial;
-    }
-  }
   .product-info {
-    h3 {
-      font-size: 20px;
-      text-transform: initial;
-      padding-top: 10px !important;
-    }
     h4 {
-      font-size: 14px;
       margin-top: 10px;
-      text-transform: initial;
     }
   }
   .user-info {
     h4 {
-      margin-top: 10px;
-      font-size: 14px;
+      margin-top: 20px;
+      font-size: 13px;
       color: red;
-      text-transform: initial;
     }
   }
 }

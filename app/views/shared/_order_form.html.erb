@@ -10,8 +10,8 @@
           <div class="product-info">
             <h3><%= product.name.html_safe %></h3>
             <div class="product-images">
-              <%= image_tag product.img_1, width: 150 %>
-              <%= image_tag product.img_2, width: 150 %>
+              <%= image_tag product.img_1, size: 150 %>
+              <%= image_tag product.img_2, size: 150 %>
             </div>
             <h4>GIÁ: <%= @product.showed_price %></h4>
           </div>
@@ -19,35 +19,35 @@
           <div class="user-info">
             <h4>* VUI LÒNG ĐIỀN ĐẦY ĐỦ THÔNG TIN BÊN DƯỚI<h4>
             <div class="form-group row">
-              <label for="username" class="col-sm-3 control-label">Họ và tên (*)</label>
+              <label for="username" class="col-sm-3 control-label">HỌ VÀ TÊN (*)</label>
               <div class="col-sm-8">
                 <%= text_field_tag :username, nil, class: "form-control", id: "username" %>
               </div>
             </div>
 
             <div class="form-group row">
-              <label for="user-phone" class="col-sm-3 control-label">Số điện thoại (*)</label>
+              <label for="user-phone" class="col-sm-3 control-label">SỐ ĐIỆN THOẠI  (*)</label>
               <div class="col-sm-8">
                 <%= number_field_tag :phone, nil, class: "form-control", id: "user-phone" %>
               </div>
             </div>
 
             <div class="form-group row">
-              <label for="user-email" class="col-sm-3 control-label">Địa chỉ email (*)</label>
+              <label for="user-email" class="col-sm-3 control-label">ĐỊA CHỈ EMAIL  (*)</label>
               <div class="col-sm-8">
                 <%= email_field_tag :email, nil, class: "form-control", id: "user-email" %>
               </div>
             </div>
 
             <div class="form-group row">
-              <label for="received-address" class="col-sm-3 control-label">Địa chỉ giao hàng (*)</label>
+              <label for="received-address" class="col-sm-3 control-label">ĐỊA CHỈ GIAO HÀNG (*)</label>
               <div class="col-sm-8">
                 <%= text_field_tag :received_address, nil, class: "form-control", id: "received-address" %>
               </div>
             </div>
 
             <div class="form-group row">
-              <label for="pay-address" class="col-sm-3 control-label">Địa chỉ thanh toán (*)</label>
+              <label for="pay-address" class="col-sm-3 control-label">ĐỊA CHỈ THANH TOÁN (*)</label>
               <div class="col-sm-8">
                 <%= text_field_tag :pay_address, nil, class: "form-control", id: "pay-address" %>
               </div>
@@ -55,7 +55,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">HỦY</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">HỦY</button>
           <%= button_tag "GỬI ĐƠN HÀNG", type: "submit", class: "btn btn-primary" %>
         </div>
       <% end %>
