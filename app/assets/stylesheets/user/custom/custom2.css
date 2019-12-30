@@ -52,8 +52,7 @@
 
 .blog-product-title {
     text-transform: none !important;
-    height: 70px;
-    font-size: 16px;
+    height: 70px !important;
 }
 
 .list-inline {
