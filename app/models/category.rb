@@ -22,7 +22,9 @@ class Category < ApplicationRecord
   has_many :childrens,
     through: :children_relations,
     class_name: Category.name
+
   before_validation :set_slug
+
   validates :img, presence: true
 
   CATEGORY_ATTRS = [:name, :description, :category_order, :home_block_id,
