@@ -17,6 +17,7 @@ class Admin::ProductsController < Admin::BaseController
   end
 
   def destroy_multiple
+    binding.pry
   end
 
   def create
