@@ -29,3 +29,140 @@
     }
   }
 }
+
+.blog-most-popular {
+  height: 400px !important;
+
+  .blog-product-special {
+    height: auto !important;
+  }
+
+  .blog-content {
+    height: 175px;
+    padding: 15px 0 10px 0;
+
+    .blog-content-preview {
+      font-size: 14px;
+    }
+  }
+}
+
+.blog-product-custom {
+  height: auto !important;
+
+  .blog-product-title {
+    height: auto !important;
+  }
+
+  .blog-image-custom {
+    height: 80px;
+  }
+
+  .caption {
+    padding: 1px !important;
+  }
+}
+
+.blog-brand {
+  .blog-product-special {
+    height: auto !important;
+  }
+
+  .blog-content {
+    padding: 15px 0 10px 0;
+
+    .blog-content-preview {
+      font-size: 14px;
+    }
+  }
+}
+
+.brand-logo-box {
+  .certificate-class {
+    margin-top: 5px;
+    padding: 15px 0;
+
+    .carousel-inner {
+      width: 100% !important;
+      margin: 0 auto;
+      color: #fff;
+    }
+  }
+}
+
+.blogs-page {
+  .blog-content {
+    padding: 0 10px 0 2px !important;
+    margin-bottom: 20px;
+  }
+
+  .custom-entry-meta {
+    margin-top: -20px !important;
+    padding: 0 !important;
+  }
+
+  .custom-carousel.left {
+    position: absolute;
+    top: calc(50% - 25px);
+    height: 50px;
+    left: 0;
+    width: 50px;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .custom-carousel.right {
+    position: absolute;
+    top: calc(50% - 25px);
+    height: 50px;
+    right: 0;
+    width: 50px;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .carousel-control .glyphicon-chevron-left {
+    margin-left: -15px !important;
+    margin-top: -17px !important;
+  }
+
+  .carousel-control .glyphicon-chevron-right {
+    margin-right: -15px !important;
+    margin-top: -17px !important;
+  }
+}
+
+.experience-chosen {
+  .blog-content {
+    overflow: hidden;
+    position: relative;
+    line-height: 20px;
+    max-height: 80px;
+    text-align: inherit;
+    margin-right: 0;
+    margin-bottom: 20px;
+
+    &:before {
+      content: '...';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      width: 1.5em;
+      height: 1.5em;
+      margin-top: 0.2em;
+      background: white;
+    }
+  }
+}
