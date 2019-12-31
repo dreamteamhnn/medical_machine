@@ -8,7 +8,7 @@
       </div>
       <div class="col-sm-6 the-most-product">
         <div class="project-image-1">
-          <%= link_to "#" do %>
+          <%= link_to @first_project.link do %>
             <%= image_tag @first_project.img.url, class: "img-responsive width-100-percent" %>
             <p class="project-title"><%= @first_project.title %></p>
           <% end %>
@@ -19,7 +19,7 @@
           <% @other_projects.each_with_index do |project, idx| %>
             <div class="col-sm-6 #{'config-padding-30-0' if idx%2 == 0}">
               <div class="project-image-2">
-                <%= link_to "#" do %>
+                <%= link_to project.link do %>
                   <%= image_tag project.img.url, class: "img-responsive width-100-percent" %>
                   <p class="project-title"><%= project.title %></p>
                 <% end %>

@@ -6,11 +6,12 @@ class Project < ApplicationRecord
 
   friendly_id :beauty_slug, use: :slugged
 
-  PROJECT_ATTRIBUTES = [:title, :content, :order, :img, :img_title, :img_alt, :img_desc, :img_caption]
+  PROJECT_ATTRIBUTES = [:title, :content, :order, :link, :img, :img_title, :img_alt, :img_desc, :img_caption]
 
   validates :title, presence: true
   validates :content, presence: true
   validates :img, presence: true
+  validates :link, presence: true
 
   private
 
