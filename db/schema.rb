@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191202041408) do
+ActiveRecord::Schema.define(version: 20191231134805) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
     t.string "email", default: "", null: false
@@ -349,6 +349,7 @@ ActiveRecord::Schema.define(version: 20191202041408) do
     t.string "img_alt"
     t.string "img_desc"
     t.string "img_caption"
+    t.string "link"
   end
 
   create_table "slider_catalogs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|

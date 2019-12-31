@@ -54,6 +54,13 @@
             </div>
           </div>
 
+          <div class="row show-grid" style="padding: 10px;border: lightgray solid 1px;">
+            <div class="form-group col-md-12">
+              <strong>Link bài viết</strong> </br>
+              <%= f.text_field :link, class: "form-control" %>
+            </div>
+          </div>
+
           <div class="form-group">
             <strong>Nội dung</strong> </br>
             <%= f.cktext_area :content, ckeditor: {toolbar: 'mini'}, class: "form-control" %>
