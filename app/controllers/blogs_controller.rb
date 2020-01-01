@@ -35,7 +35,7 @@ class BlogsController < ApplicationController
   end
 
   def load_left_menu
-    @blog_categories = BlogCategory.all
+    @blog_categories = BlogCategory.all.order(:order)
     @tags = Tag.all
     @times = Blog.all.map {|blog| blog.time_param}.uniq
   end
