@@ -130,3 +130,13 @@
 .custom-video-desc, .custom-video-date {
     font-size: 14px !important;
 }
+
+.media-doc-mm:hover {
+    color: #ffd71a !important;
+}
+
+.list_brands {
+    font-weight: normal !important;
+    z-index: 100000 !important;
+    max-height: 530px !important;
+}

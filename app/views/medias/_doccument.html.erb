@@ -4,18 +4,27 @@
       <tr class="media-tr-mm">
         <% block.each do |doc| %>
           <td>
-            <strong class="media-title-mm"><%= doc.title %></strong><br/>
-            <span class="media-content-mm"><%= doc.description %></span><br/>
-            <a class="media-doc-mm" href="<%= doc.url %>">
-              <% if doc.document_type == "pdf" %>
-                <%= image_tag "/small-pdf.png", title: "pdf" %>
-              <% elsif doc.document_type == "doc" || doc.document_type == "ocx" %>
-                <%= image_tag "/small-word.png", title: "doc" %>
-              <% elsif doc.document_type == "xls" || doc.document_type == "lsx" %>
-                <%= image_tag "/small-excell.png", title: "excel" %>
-              <% end %>
-              <%= doc.title %>
-            </a><br/>
+            <div class="custom-video-title" title="<%= doc.title %>">
+              <strong class="media-title-mm"><%= doc.title %></strong>
+            </div>
+            
+            <div class="custom-video-desc" title="<%= doc.description %>">
+              <span class="media-content-mm"><%= doc.description %></span>
+            </div>
+            
+            <div class="custom-video-date">
+              <a class="media-doc-mm" href="<%= doc.url %>">
+                <% if doc.document_type == "pdf" %>
+                  <%= image_tag "/small-pdf.png", title: "pdf" %>
+                <% elsif doc.document_type == "doc" || doc.document_type == "ocx" %>
+                  <%= image_tag "/small-word.png", title: "doc" %>
+                <% elsif doc.document_type == "xls" || doc.document_type == "lsx" %>
+                  <%= image_tag "/small-excell.png", title: "excel" %>
+                <% end %>
+                Chi tiết
+              </a>
+            </div>
+            <div class="contact-border-top"></div>
             <!-- <p class="media-date-mm">Ngày tạo : <%=doc.created_at %></p> -->
           </td>
         <% end %>
