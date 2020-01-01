@@ -61,9 +61,7 @@ class Admin::MediasController < Admin::BaseController
           render json: {status: "update-fail"}
         end
       end
-    end
-
-    if @doc.update_attributes(media_params)
+    elsif @doc.update_attributes(media_params)
       flash[:success] = "Chỉnh sửa thàng công"
       redirect_to admin_medias_path(media_type: "0")
     end

@@ -8,10 +8,18 @@
               <iframe src="<%= video.video_url %>" frameborder="0" allowfullscreen></iframe>
               <div class="disable-iframe"></div>
             </a>
-            <div class="click-video content-video">
-              <strong><%= video.title %></strong><br/>
-              <%= video.description %><br/>
-              <p>Ngày tạo : <%= video.created_at.strftime("%m/%d/%Y") %></p>
+            <div>
+              <div class="custom-video-title">
+                <strong><%= video.title %></strong><br/>
+              </div>
+
+              <div class="custom-video-desc">
+                <%= video.description %><br/>
+              </div>
+              
+              <div class="custom-video-date">
+                <p>Ngày đăng : <%= video.created_at.strftime("%m/%d/%Y") %></p>
+              </div>
             </div>
 
             <!-- Modal HTML -->
@@ -28,8 +36,10 @@
                 </div>
               </div>
             </div>
+            <div class="contact-border-top" style="margin-top: 10px"></div>
           </td>
         <% end %>
+
       </tr>
     <% end %>
   </tbody>
