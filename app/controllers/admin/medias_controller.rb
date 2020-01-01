@@ -46,11 +46,11 @@ class Admin::MediasController < Admin::BaseController
   end
 
   def update
-    if params[:title] || params[:video_url] || params[:description] || params[:custom_category_id]
+    if params[:title] || params[:video_url] || params[:description] || params[:custom_category_id] || params[:order]
       @video = Medium.find_by id: params[:id]
       if @video
         if @video.update_attributes(title: params[:title], custom_category_id: params[:custom_category_id],
-          video_url: params[:video_url], description: params[:description])
+          video_url: params[:video_url], description: params[:description], order: params[:order]&.to_i)
           render json: {
             status: "update-success",
             title: @video.title,

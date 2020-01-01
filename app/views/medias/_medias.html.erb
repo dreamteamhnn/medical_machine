@@ -1,6 +1,6 @@
 <div class="list-categories-content">
 	<% if params[:media_type] == "0" %>
-		<% CustomCategory.where(custom_type: "1").each do |custom_category| %>
+		<% CustomCategory.where(custom_type: "1").order(:order).each do |custom_category| %>
 			<div class="category-box-item">
 			    <%= link_to custom_category.name, friendly_custom_category_document_path(custom_category), class: "category-item media-custom", title: custom_category.name %>
 			</div>
@@ -8,7 +8,7 @@
 	<% end %>
 
 	<% if params[:media_type] == "1" %>
-	  <% CustomCategory.where(custom_type: "0").each do |custom_category| %>
+	  <% CustomCategory.where(custom_type: "0").order(:order).each do |custom_category| %>
 	    <div class="category-box-item">
 	        <%= link_to custom_category.name, friendly_custom_category_video_path(custom_category), class: "category-item media-custom", title: custom_category.name %>
 	    </div>

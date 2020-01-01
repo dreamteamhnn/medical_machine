@@ -16,11 +16,14 @@
           <%= f.text_area :description, class: "form-control doc-des-create", rows: "4", placeholder: "Mô tả", required: true %>
         </div>
         <div class="form-group">
+          <%= f.number_field :order, class: "form-control", placeholder: "Sắp xếp" %>
+        </div>
+        <div class="form-group">
           <%= f.select :custom_category_id, options_for_select(CustomCategory.where(custom_type: "1").map{|field| [field.name, field.id]}, selected: f.object.custom_category.try(&:id)), {},
             {class: "doc-field-create form-control"} %>
         </div>
         <div class="form-group">
-          <%= f.file_field :url, class: "doc-link-create", placeholder: "Youtube Link", required: true, onchange: "validateFiles(this);",
+          <%= f.file_field :url, class: "doc-link-create", placeholder: "Youtube Link", onchange: "validateFiles(this);",
             data: {max_file_size: 5.megabytes} %>
         </div>
         <%= f.hidden_field :media_type, value: "0" %>

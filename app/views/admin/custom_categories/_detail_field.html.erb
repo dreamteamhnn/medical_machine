@@ -5,8 +5,12 @@
   </div>
 </div>
 <div class="row show-grid">
-  <div class="form-group form-group-part col-xs-12">
+  <div class="form-group form-group-part col-xs-6">
     <strong>Type</strong> </br>
     <%= f.text_field :custom_type, class: "form-control" %>
+  </div>
+  <div class="form-group form-group-part col-xs-6">
+    <strong>Sắp xếp</strong> </br>
+    <%= f.number_field :order, class: "form-control" %>
   </div>
 </div>

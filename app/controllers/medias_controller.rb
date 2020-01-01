@@ -31,10 +31,10 @@ class MediasController < ApplicationController
 
     @medias = if params[:custom_category_id].present?
       @field = Field.friendly.find(params[:custom_category_id])
-      @medias.where("media_type = ? AND custom_category_id = ?", params[:media_type], @field.id)
+      @medias.where("media_type = ? AND custom_category_id = ?", params[:media_type], @field.id).order(:order)
         .page(params[:page]).per(per_page_medias)
     else
-      @medias.where("media_type = ?", params[:media_type])
+      @medias.where("media_type = ?", params[:media_type]).order(:order)
         .page(params[:page]).per(per_page_medias)
     end
     @top_categories = Category.top_categories
