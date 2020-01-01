@@ -48,10 +48,10 @@ class Admin::BlogCategoriesController < Admin::BaseController
   private
 
   def load_category
-    @category = BlogCategory.find params[:id]
+    @category = BlogCategory.friendly.find params[:id]
   end
 
   def blog_category_params
-    params.require(:blog_category).permit(:name)
+    params.require(:blog_category).permit(:name, :order)
   end
 end

@@ -18,19 +18,24 @@
 </div>
 <div class="row show-grid">
   <div class="form-group form-group-part col-xs-12">
-    <div class="col-xs-4 price-form" style="padding-right: 30px;">
+    <div class="col-xs-3 price-form" style="padding-right: 30px;">
       <strong>Giá (.000 VNĐ)</strong> </br>
       <%= f.number_field :price, class: "form-control" %>
     </div>
 
-    <div class="col-xs-4 price-form" style="padding-right: 30px;">
+    <div class="col-xs-3 price-form" style="padding-right: 30px;">
       <strong>Giá sale (.000 VNĐ)</strong> </br>
       <%= f.number_field :discount_price, class: "form-control" %>
     </div>
 
-    <div class="col-xs-4 price-form" style="padding-right: 30px;">
+    <div class="col-xs-3 price-form" style="padding-right: 30px;">
       <strong>Mã sản phẩm</strong> </br>
       <%= f.text_field :model, class: "form-control" %>
+    </div>
+
+    <div class="col-xs-3 price-form" style="padding-right: 30px;">
+      <strong>Xuất xứ</strong> </br>
+      <%= f.text_field :origin, class: "form-control" %>
     </div>
   </div>
 </div>

@@ -47,8 +47,8 @@
             </span>
             <ul class="list_brands">
               <% @brand_logos.each do |brand| %>
-                <li class="brand-name-item">
-                  <%= link_to brand.name, product_brand_path(brand), class: "brand-name" %>
+                <li class="brand-name-item" title="<%= brand.name %> - <%= brand.location %>">
+                  <%= link_to "#{brand.name} - #{brand.location}", product_brand_path(brand), class: "brand-name" %>
                 </li>
               <% end %>
             </ul>

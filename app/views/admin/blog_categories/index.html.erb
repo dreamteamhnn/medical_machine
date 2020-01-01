@@ -23,6 +23,10 @@
                 Số bài viết <span class="badge"><%= category.blog_num %></span>
               </button>
 
+              <button class="btn btn-primary" type="button">
+                TT <span class="badge"><%= category.c_order %></span>
+              </button>
+
               <%= link_to "Sửa", edit_admin_blog_category_path(category.c_id), remote: true, class: "btn btn-info" %>
               <button class="btn btn-danger blog-cate-delete-btn" data-title="Xóa" data-blog-cate-id="<%= category.c_id %>">
                 Xóa
