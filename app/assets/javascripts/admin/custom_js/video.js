@@ -14,7 +14,7 @@ $(document).on('turbolinks:load', function(){
         title: videoName,
         description: videoDes,
         video_url: videoUrl,
-        field_id: videoField
+        custom_category_id: videoField
       },
       type: "PATCH",
       url: "medias/" + videoId
@@ -26,6 +26,7 @@ $(document).on('turbolinks:load', function(){
         $("#p-video-name"+videoId).removeClass("hidden");
         $("#p-video-des"+videoId).removeClass("hidden");
         $("#p-video-link"+videoId).removeClass("hidden");
+        $("#video-field"+videoId).removeClass("hidden");
 
         $("#p-video-name"+videoId)[0].innerHTML = response.title;
         $("#p-video-des"+videoId)[0].innerHTML = response.description;

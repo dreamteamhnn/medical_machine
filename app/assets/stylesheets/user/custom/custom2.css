@@ -109,3 +109,24 @@
     font-weight: 700;
     margin: 0;
 }
+
+.custom-video-title, .custom-video-desc {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical !important;
+}
+
+.custom-video-title {
+    height: 46px !important;
+    -webkit-line-clamp: 2 !important;
+}
+
+.custom-video-desc {
+    height: 60px !important;
+    -webkit-line-clamp: 3 !important;
+}
+
+.custom-video-desc, .custom-video-date {
+    font-size: 14px !important;
+}
