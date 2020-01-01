@@ -50,6 +50,7 @@
               <th>Mô tả</th>
               <th>Link Youtube</th>
               <th>Danh mục</th>
+              <th>Sắp xếp</th>
               <th class="center"></th>
               <th class="center"></th>
             </tr>
@@ -76,6 +77,9 @@
                 <td class="td-video-field">
                   <%= select_tag "video-field#{video.id}", options_for_select(CustomCategory.where(custom_type: "0").map{|field| [field.name, field.id]}, selected: video.field_id),
                     {class: "video-field-create form-control"} %>
+                </td>
+                <td>
+                  <%= number_field_tag "video-order#{video.id}", video.try(:order) %>
                 </td>
                 <td class="center">
                   <button type="button" name="update-video<%= video.id %>" class="btn btn-primary confirm-video-save">Lưu</button>

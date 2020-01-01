@@ -1,7 +1,7 @@
 class Medium < ApplicationRecord
   mount_uploader :url, MediaUploader
 
-  MEDIA_ATTRIBUTE = [:title, :description, :custom_category_id, :url, :video_url, :media_type]
+  MEDIA_ATTRIBUTE = [:title, :description, :custom_category_id, :order, :url, :video_url, :media_type]
 
   belongs_to :custom_category
   has_many :product_media_relations, dependent: :destroy

@@ -22,6 +22,7 @@
 		          <th>TT</th>
 		          <th>Tên</th>
 		          <th>Type</th>
+		          <th>Sắp xếp</th>
 		          <th class="center"></th>
 		        </tr>
 		      </thead>
@@ -37,6 +38,9 @@
 		            </td>
 		            <td>
 		              <%= custom_category.try(:custom_type) == "0" ? "Video" : (custom_category.try(:custom_type) == "1" ? "Tài liệu" : "Chưa chọn danh mục") %>
+		            </td>
+		            <td>
+		            	<%= custom_category.try(:order) %>
 		            </td>
 		            <td class="center">
 		              <%= link_to "Sửa", edit_admin_custom_category_path(custom_category), class: "btn btn-primary", style:"width: 100px; margin-bottom: 5px;" %>

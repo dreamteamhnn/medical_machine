@@ -36,6 +36,7 @@
               <th>Title</th>
               <th>Mô tả</th>
               <th>Danh mục</th>
+              <th>Sắp xếp</th>
               <th class="center"></th>
               <th class="center"></th>
             </tr>
@@ -63,6 +64,9 @@
                 <td><%= doc.description %></td>
                 <td>
                   <%= doc.custom_category.try(&:name) %>
+                </td>
+                <td>
+                  <%= doc.try(:order) %>
                 </td>
                 <td class="center">
                   <%= link_to "Chỉnh sửa", edit_admin_media_path(doc, media_type: "0"), class: "btn btn-primary"%>

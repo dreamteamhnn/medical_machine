@@ -5,6 +5,7 @@ $(document).on('turbolinks:load', function(){
     var videoDes = $("#video-des"+videoId).val();
     var videoUrl = $("#video-link"+videoId).val();
     var videoField = $("#video-field"+videoId).val();
+    var videoOrder = $("#video-order"+videoId).val();
 
     $("#video-name"+videoId).addClass("hidden");
     $("#video-des"+videoId).addClass("hidden");
@@ -14,7 +15,8 @@ $(document).on('turbolinks:load', function(){
         title: videoName,
         description: videoDes,
         video_url: videoUrl,
-        custom_category_id: videoField
+        custom_category_id: videoField,
+        order: videoOrder
       },
       type: "PATCH",
       url: "medias/" + videoId
