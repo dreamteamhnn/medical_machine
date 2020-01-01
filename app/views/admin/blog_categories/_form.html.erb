@@ -12,6 +12,11 @@
           <strong>Tên danh mục</strong> </br>
           <%= f.text_field :name, class: "form-control" %>
         </div>
+
+        <div class="form-group">
+          <strong>Thứ tự</strong> </br>
+          <%= f.number_field :order, class: "form-control" %>
+        </div>
       </div>
       <div class="modal-footer ">
         <%= f.submit "#{action_name == 'new' ? 'Tạo' : 'Sửa'}", class: "btn btn-success" %>

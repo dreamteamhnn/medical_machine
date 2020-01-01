@@ -19,7 +19,7 @@ class BlogCategory < ApplicationRecord
   class << self
     def category_list_with_blog_count
       query = %{
-        select c.id as c_id, c.name as c_name, count(r.id) as blog_num
+        select c.id as c_id, c.name as c_name, c.order as c_order, count(r.id) as blog_num
         from blog_categories c
         left join blog_category_relations r
           on c.id = r.blog_category_id
