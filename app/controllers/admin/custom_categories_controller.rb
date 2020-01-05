@@ -45,7 +45,7 @@ class Admin::CustomCategoriesController < Admin::BaseController
 	private
 
 	def load_custom_category
-		@custom_category = CustomCategory.find(params[:id]) if params[:id].present?
+		@custom_category = CustomCategory.friendly.find(params[:id]) if params[:id].present?
 	end
 
 	def custom_category_params

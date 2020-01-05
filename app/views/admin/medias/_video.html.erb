@@ -63,12 +63,12 @@
                 </td>
                 <td><%= video.id %></td>
                 <td class="td-video-name">
-                  <p class="p-video-name" id="p-video-name<%= video.id %>"><%= video.title %></p>
-                  <input type='text' id="video-name<%= video.id %>" class="form-control video-name hidden" value='<%= video.title %>'/>
+                  <p class="p-video-name" style="width: 300px;" id="p-video-name<%= video.id %>"><%= video.title %></p>
+                  <input type='text' style="width: 300px;" id="video-name<%= video.id %>" class="form-control video-name hidden" value='<%= video.title %>'/>
                 </td>
                 <td class="td-video-des">
-                  <p class="p-video-des" id="p-video-des<%= video.id %>"><%= video.description %></p>
-                  <textarea rows="2" id="video-des<%= video.id %>" class="form-control video-des hidden"><%= video.description %></textarea>
+                  <p class="p-video-des" style="width: 300px;" id="p-video-des<%= video.id %>"><%= video.description %></p>
+                  <textarea rows="2" style="width: 300px;" id="video-des<%= video.id %>" class="form-control video-des hidden"><%= video.description %></textarea>
                 </td>
                 <td class="td-video-link">
                   <p class="p-video-link" id="p-video-link<%= video.id %>"><%= video.video_url %></p>
