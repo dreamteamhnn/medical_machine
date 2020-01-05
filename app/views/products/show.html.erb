@@ -21,7 +21,7 @@
                     </div>
 
                     <!-- detail -->
-                    <div class="col-sm-7">
+                    <div class="col-sm-7" style="padding-right: 0 !important; padding-left: 0 !important">
                       <div class="summary entry-summary">
                         <div class="product-info-content">
                           <h1 class="product_title entry-title product-h1-custom">
@@ -74,8 +74,14 @@
                           </div>
 
                           <div class="woocommerce-product-details__short-description
-                            short-description-detail" title="<%= @product.short_description&.html_safe %>">
+                            short-description-detail size-14" title="<%= @product.short_description&.html_safe %>">
                             <%= @product.short_description&.html_safe %>
+                          </div>
+
+                          <div class="woocommerce-product-details__short-description">
+                            <p class="change-price">
+                              (* Giá trên có thể thay đổi theo thời điểm - Xin liên hệ trực tiếp để có giá tốt nhất)
+                            </p>
                           </div>
                         </div>
 
