@@ -45,6 +45,6 @@
   </tbody>
 </table>
 <div class="paginate-medias">
-  <%= paginate @medias %>
+  <%= paginate @medias, params: request.query_parameters.merge(custom_category_id: @custom_category.slug) %>
   <%= page_entries_info @medias, entry_name: "video" %>
 </div>

@@ -9,9 +9,9 @@ class MediasController < ApplicationController
     end
 
     if params[:media_type] == "0"
-      per_page_medias = Settings.limit.paginate.documents
+      per_page_medias = 2
     else
-      per_page_medias = Settings.limit.paginate.videos
+      per_page_medias = 2
     end
 
 
@@ -30,7 +30,7 @@ class MediasController < ApplicationController
     end
 
     @medias = if params[:custom_category_id].present?
-      @field = Field.friendly.find(params[:custom_category_id])
+      @field = CustomCategory.friendly.find(params[:custom_category_id])
       @medias.where("media_type = ? AND custom_category_id = ?", params[:media_type], @field.id).order(:order)
         .page(params[:page]).per(per_page_medias)
     else
@@ -83,7 +83,7 @@ class MediasController < ApplicationController
       meta_tags_hash = default_meta_tags
       media_type_name = default_meta_tags[:title]
       meta_tags_hash[:title] = "#{media_type_name} lĩnh vực #{@field.name}"
-      meta_tags_hash[:description] = @field.description ? @field.simple_text(@field.description, Settings.seo.max_length.description) : "#{meta_tags_hash[:title]} - #{I18n.t('site_name')}"
+      # meta_tags_hash[:description] = @field.description ? @field.simple_text(@field.description, Settings.seo.max_length.description) : "#{meta_tags_hash[:title]} - #{I18n.t('site_name')}"
       meta_tags_hash[:keywords] = [media_type_name, @field.name, I18n.t('site_name')]
       meta_tags_hash[:twitter][:title] = meta_tags_hash[:og][:title] = meta_tags_hash[:title]
       meta_tags_hash[:twitter][:description] = meta_tags_hash[:og][:description] = meta_tags_hash[:description]
