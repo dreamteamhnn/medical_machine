@@ -9,7 +9,7 @@
     </div>
     <%= f.file_field :url, class: "upload-blog-img hide" %>
     <button class="btn btn-success choose-img" type="button">Chọn ảnh</button>
-    <strong>Chọn là ảnh đại diện</strong> <%= f.check_box :is_feature %>
+    <strong>Chọn là ảnh đại diện</strong> <%= f.check_box :is_feature, {checked: true} %>
   </div>
   <div>
     <%= link_to_remove_association "Xóa ảnh", f %>
