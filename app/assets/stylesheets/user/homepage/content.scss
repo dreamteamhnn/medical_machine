@@ -354,6 +354,19 @@
   bottom: 0;
   width: calc(100% - 30px);
   text-align: center;
-  font-weight: bold;
-  line-height: 80px;
+/*  font-weight: bold;
+  line-height: 80px;*/
+  cursor: pointer;
+}
+
+h1, h2, h3, h4, h5 {
+  letter-spacing: normal !important;
+}
+
+.short-description-detail:after {
+  background: transparent !important;
+}
+
+.image-link, .image-link:hover {
+  color: white;
 }

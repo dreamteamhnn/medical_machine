@@ -12,6 +12,11 @@
     <li class="description_tab" id="tab-title-video" role="tab" aria-controls="tab-video">
       <a href="#tab-video" aria-controls="home" role="tab" data-toggle="tab">Video</a>
     </li>
+    <% if @product.contact.present? %>
+      <li class="description_tab" id="tab-title-contact" role="tab" aria-controls="tab-contact">
+        <a href="#tab-contact" aria-controls="home" role="tab" data-toggle="tab">Liên hệ</a>
+      </li>
+    <% end %>
   </ul>
 
   <div class="tab-content">
@@ -84,5 +89,11 @@
             <% end %>
       </div>
     </div>
+
+    <% if @product.contact.present? %>
+      <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--contact panel entry-content wc-tab tab-pane active custom-white-space" id="tab-contact" role="tabpanel" aria-labelledby="tab-title-contact">
+        <p><%= @product.contact&.html_safe %></p>
+      </div>
+    <% end %>
   </div>
 </div>

@@ -3,6 +3,11 @@
     <strong>Tên sản phẩm</strong> </br>
     <%= f.cktext_area :name, class: "form-control" %>
   </div>
+
+  <div class="form-group form-group-part col-xs-12">
+    <strong>Liên hệ</strong> </br>
+    <%= f.cktext_area :contact, class: "form-control" %>
+  </div>
 </div>
 <div class="row show-grid">
   <div class="form-group form-group-part col-xs-12">
@@ -94,7 +99,7 @@
         <h4 class="modal-title custom_align" id="Heading">Thông số sản phẩm</h4>
       </div>
       <div class="modal-body">
-        <%= f.text_area :parameter, class: "form-control hidden", placeholder: "Nhập thông số" %>
+        <%= f.text_area :parameter, class: "form-control hidden", placeholder: "Nhập thông số", style: "height: 500px" %>
         <div id="product-parameter-table-div">
           <table class="table table-bordered" id="product-parameter-table">
             <thead>

@@ -16,15 +16,16 @@ a:hover {
   overflow: hidden;
   position: relative;
   line-height: 2em;
-  max-height: 10em;
+  max-height: 11.5em;
   text-align: justify;
   margin-right: 0em;
   padding-right: 1.5em;
   padding-left: 2px;
   margin-top: 0;
-  border: 2px solid #ffd71a;
-  border-radius: 10px;
-  font-size: 16px;
+/*  border: 2px solid #ffd71a;
+  border-radius: 10px;*/
+  background-color: #e6e6e6;
+  font-size: 14px;
   margin-top: 20px;
 
   p {
@@ -34,7 +35,7 @@ a:hover {
   &:before {
     content: '. . .';
     position: absolute;
-    right: 0;
+    right: 5px;
     bottom: 0;
   }
 
@@ -50,11 +51,22 @@ a:hover {
 }
 
 .product-info-content {
-  height: 326px;
+  height: 372px;
+}
+
+.change-price {
+  color: red; /*#d3382e;*/
+  font-size: 12px;
+  line-height: 1.4;
+  font-style: italic;
+}
+
+.video-des-create {
+  height: 425px !important;
 }
 
 .custom-cart-button {
-  padding-top: 35px !important;
+  /*padding-top: 35px !important;*/
   text-align: left !important;
 }
 

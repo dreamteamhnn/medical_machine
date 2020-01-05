@@ -7,7 +7,7 @@ module BlogDecorator
   end
 
   BlogImage::SELECTED_ATTRS.push(:thumb_url).each do |attr|
-    define_method("feature_image_#{attr}"){feature_image[attr]}
+    define_method("feature_image_#{attr}"){feature_image.present? ? feature_image[attr] : ''}
   end
 
   def to_meta_tags
