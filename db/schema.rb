@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200101180137) do
+ActiveRecord::Schema.define(version: 20200104103346) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
     t.string "email", default: "", null: false
@@ -174,6 +174,7 @@ ActiveRecord::Schema.define(version: 20200101180137) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "order"
+    t.string "slug"
   end
 
   create_table "customer_orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
@@ -260,6 +261,7 @@ ActiveRecord::Schema.define(version: 20200101180137) do
     t.string "video_url"
     t.integer "custom_category_id"
     t.integer "order"
+    t.string "slug"
     t.index ["custom_category_id"], name: "index_custom_category_id"
   end
 
@@ -336,6 +338,7 @@ ActiveRecord::Schema.define(version: 20200101180137) do
     t.string "meta_title"
     t.string "static_url"
     t.string "origin"
+    t.text "contact"
     t.index ["brand_id"], name: "index_products_on_brand_id"
     t.index ["label_id"], name: "index_products_on_label_id"
     t.index ["slug"], name: "index_products_on_slug", unique: true

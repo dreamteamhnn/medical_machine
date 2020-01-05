@@ -14,8 +14,8 @@
                 <% if cert.present? %>
                   <div class="col-xs-4">
                     <%= image_tag cert&.img&.url, class: "img-responsive width-100-percent" %>
-                    <div class="certificate-title">
-                      <p><%= cert&.title %></p>
+                    <div class="certificate-title iframe-video-image" data-video="<%= cert.id %>">
+                      <p class="image-link"><%= cert&.title %></p>
                     </div>
                   </div>
                 <% end %>
@@ -28,4 +28,26 @@
       </div>
     </div>
   </div>
+
+  <% @certificates.each_with_index do |group, idx| %>
+    <div class="item <%= 'active' if idx == 0 %>">
+      <% group.each do |cert| %>
+        <% if cert.present? %>
+          <!-- Modal HTML -->
+          <div id="modal-video-<%= cert.id %>" class="modal modal-video fade">
+            <div class="modal-dialog modal-custom">
+              <div class="modal-content modal-video-content" style="height: 80%; margin-top: 0px;">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                  <%= image_tag cert&.img&.url, class: "img-responsive height-100-percent" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
 </div>

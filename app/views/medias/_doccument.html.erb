@@ -13,7 +13,7 @@
             </div>
             
             <div class="custom-video-date">
-              <a class="media-doc-mm" href="<%= doc.url %>">
+              <a class="media-doc-mm" href="<%= doc.url %>" target="_blank">
                 <% if doc.document_type == "pdf" %>
                   <%= image_tag "/small-pdf.png", title: "pdf" %>
                 <% elsif doc.document_type == "doc" || doc.document_type == "ocx" %>
