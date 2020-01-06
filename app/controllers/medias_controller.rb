@@ -9,9 +9,9 @@ class MediasController < ApplicationController
     end
 
     if params[:media_type] == "0"
-      per_page_medias = 2
+      per_page_medias = Settings.limit.paginate.documents
     else
-      per_page_medias = 2
+      per_page_medias = Settings.limit.paginate.videos
     end
 
 
