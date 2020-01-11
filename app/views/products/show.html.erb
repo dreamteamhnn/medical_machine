@@ -37,14 +37,19 @@
                                   </span>
                                 </del>
                                 <ins>
-                                  <span class="woocommerce-Price-amount amount span-left red"><%= @product.discount_price_currency %>
+                                  <span class="woocommerce-Price-amount amount span-left red custom-price"><%= @product.discount_price_currency %>
                                     <span class="woocommerce-Price-currencySymbol">VNĐ</span>
                                   </span>
                                 </ins>
                               <% elsif @product.price_currency.present? %>
-                                <span class="woocommerce-Price-amount amount span-left red"><%= @product.price_currency %>
+                                <span class="woocommerce-Price-amount amount span-left red custom-price"><%= @product.price_currency %>
                                   <span class="woocommerce-Price-currencySymbol">VNĐ</span>
                                 </span>
+                              <% else %>
+                                <%= link_to "Yêu cầu báo giá", order_product_path(@product),
+                                  remote: true, rel: "nofollow",
+                                  "data-product-id": @product.id,
+                                  class: "custom-add-to-cart-button" %>
                               <% end %>
                             </span>
                           </p>
