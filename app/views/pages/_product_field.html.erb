@@ -3,7 +3,7 @@
     <div class="block_product_inner">
       <div class="block_product_thumbnail clearfix">
         <div class="tm-thumbs-wrap <%= (product.img_1.present? && product.img_2.present?) ? 'effect-fade' : '' %>">
-          <div class="tm-thumbs-wrap__inner product-image-box">
+          <div class="tm-thumbs-wrap__inner product-image-box text-center">
             <%= image_tag product.img_1, size: "340x500", title: product.img_1_title, alt: product.img_1_alt if product.img_1.present? %>
             <%= image_tag product.img_2, size: "340x500", title: product.img_2_title, alt: product.img_2_alt if product.img_2.present? %>
           </div>

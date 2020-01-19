@@ -1,0 +1,16 @@
+<% @home_blocks.each do |block| %>
+  <div class="typical-products-mobile container">
+    <div class="col-xs-12">
+      <div class="typical-products-title brand-title">
+        <p class="typical-product-brand"><%= block.first[:title] %></p>
+      </div>
+    </div>
+    <div class="tm-posts_listing">
+      <% block.first[:products].each do |product| %>
+        <div class="col-xs-12">
+          <%= render "product_field", product: product %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
