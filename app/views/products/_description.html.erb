@@ -97,3 +97,119 @@
     <% end %>
   </div>
 </div>
+
+<div class="mobile-product-description">
+  <div class="home-blog-part">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="typical-products-title brand-title">
+          <p class="typical-product-brand">Mô tả</p>
+        </div>
+      </div>
+
+      <div class="tm-posts_listing">
+        <div class="col-xs-12">
+          <p><%= @product.description&.html_safe %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="home-blog-part">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="typical-products-title brand-title">
+          <p class="typical-product-brand">Thông số</p>
+        </div>
+      </div>
+
+      <div class="tm-posts_listing">
+        <div class="col-xs-12">
+          <% if @product.is_parameter_table %>
+            <table class="shop_attributes">
+              <tbody>
+                <% @product.param_table.each do |param| %>
+                  <tr>
+                    <th class="tab-parameter-th"><%= param[:title] %></th>
+                    <td>
+                      <p class="p-parameter"><%= param[:value] %></p>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          <% else %>
+            <p><%= @product.parameter %></p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="home-blog-part">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="typical-products-title brand-title">
+          <p class="typical-product-brand">Tài liệu</p>
+        </div>
+      </div>
+
+      <div class="tm-posts_listing">
+        <div id="media-table" class="col-xs-12">
+          <table class="table table-bordered">
+            <tbody>
+              <% @documents.each_slice(3).to_a.each do |block| %>
+                <tr>
+                  <% block.each do |doc| %>
+                    <td>
+                      <strong><%= truncate(doc.title.html_safe, length:45) %></strong><br/>
+                      <%= truncate(doc.description.html_safe, length:45) %><br/>
+                      <a href="<%= doc.url %>">
+                        <% if doc.url.to_s.split(//).last(3).join("") == "pdf" %>
+                          <%= image_tag "/small-pdf.png", title: "pdf" %>
+                        <% elsif doc.url.to_s.split(//).last(3).join("") == "doc" || doc.url.to_s.split(//).last(3).join("") == "ocx" %>
+                          <%= image_tag "/small-word.png", title: "doc" %>
+                        <% elsif doc.url.to_s.split(//).last(3).join("") == "xls" || doc.url.to_s.split(//).last(3).join("") == "lsx" %>
+                          <%= image_tag "/small-excell.png", title: "excel" %>
+                        <% end %>
+                        <%= truncate(doc.title.html_safe, length:45) %>
+                      </a><br/>
+                      <p>Ngày tạo : <%= doc.created_at.strftime("%m/%d/%Y") %></p>
+                    </td>
+                  <% end %>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="home-blog-part">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="typical-products-title brand-title">
+          <p class="typical-product-brand">Video</p>
+        </div>
+      </div>
+
+      <div class="tm-posts_listing">
+        <div class="media-table col-xs-12">
+          <% @videos.each_slice(3).to_a.each do |block| %>
+              <% block.each do |video| %>
+                <div class="col-md-6 col-xs-12">
+                  <iframe width="374" height="284" src="<%= video.video_url %>" frameborder="0" allowfullscreen></iframe>
+                  <div class="content-video">
+                    <strong><%= truncate(video.title.html_safe, length:45) %></strong><br/>
+                    <%= truncate(video.description.html_safe, length:45) %><br/>
+                    <p>Ngày tạo : <%= video.created_at.strftime("%m/%d/%Y") %></p>
+                  </div>
+                </div>
+              <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
