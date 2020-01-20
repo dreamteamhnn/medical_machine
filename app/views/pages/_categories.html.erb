@@ -19,3 +19,25 @@
     </div>
   <% end %>
 </div>
+<div class="list-categories-content-mobile hidden">
+  <div class="category-box-item text-right close-list-categories-mobile">x</div>
+  <% array_icon = ["fa fa-flask", "fa fa-balance-scale", "fa fa-medkit",
+                   "fa fa-industry", "fa fa-wrench", "fa fa-exchange ",
+                   "fa fa-cogs", "fa fa-sliders"] %>
+  <% @top_categories.limit(Settings.list_categories).each_with_index do |category, i| %>
+    <div class="category-box-item">
+      <%= link_to product_categories_path(category), class: "category-item", title: category.name do %>
+        <i class="<%= array_icon[i] %> custom-icon"></i>
+        <span class="category-item-name"><%= category.name %></span>
+      <% end %>
+      <ul class="sub-menu-category">
+        <% category.childrens.order(:category_order).each do |second| %>
+          <li class="sub-menu-item">
+            <%= link_to second.name, category_products_path(second),
+              title: second.name -%>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+</div>

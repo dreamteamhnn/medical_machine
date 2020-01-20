@@ -20,7 +20,7 @@
               <%= render "sort_form"%>
             <% end %>
 
-            <div class="row <%= 'product-row-block' if @childs.present? %>">
+            <div class="row <%= 'product-row-block' if @childs.present? %> width-100">
               <% if @childs.present? %>
                 <% @childs.each do |child| %>
                   <%= render "product_block", block: child%>

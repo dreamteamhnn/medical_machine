@@ -59,6 +59,31 @@
       </div>
     </div>
 
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-ex1-collapse responsive-hidden">
+      <ul class="nav navbar-nav">
+        <li id="menu-item-228" class="nav-horizontal-item">
+          <%= link_to "Trang chủ", root_url %>
+        </li>
+
+        <li id="menu-item-230" class="nav-horizontal-item">
+          <%= link_to "Tài liệu", friendly_document_path %>
+        </li>
+
+        <li id="menu-item-231" class="nav-horizontal-item">
+          <%= link_to "Video", friendly_video_path %>
+        </li>
+
+        <li id="menu-item-232" class="nav-horizontal-item">
+          <%= link_to "Liên hệ", friendly_contact_path %>
+        </li>
+
+        <li id="menu-item-233" class="nav-horizontal-item">
+          <%= link_to "Tin công nghệ", blog_list_path() %>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+
     <!-- Search form -->
     <!-- <div class="collapse navbar-collapse navbar-ex1-collapse"> -->
     <div class="search-box">
