@@ -15,6 +15,14 @@
             </div>
           <% end %>
         </div>
+        <div class="list-categories-content-mobile hidden">
+          <div class="category-box-item text-right close-list-categories-mobile">x</div>
+          <% @blog_categories.each do |category| %>
+            <div class="category-box-item <%= 'current-cat' if category.slug == params[:blog_category_id] %>">
+              <%= link_to category.name, blog_list_category_path(category), class: "category-item media-custom", title: category.name %>
+            </div>
+          <% end %>
+        </div>
         <aside id="archives-4" class="widget widget_archive">
           <h5 class="widget-title">Tháng</h5>
           <label class="screen-reader-text" for="archives-dropdown-4">Archives</label>

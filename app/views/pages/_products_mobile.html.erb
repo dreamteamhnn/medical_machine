@@ -1,16 +1,20 @@
 <% @home_blocks.each do |block| %>
-  <div class="typical-products-mobile container">
-    <div class="col-xs-12">
-      <div class="typical-products-title brand-title">
-        <p class="typical-product-brand"><%= block.first[:title] %></p>
+  <% block.each_with_index do |category, index| %>
+    <div class="typical-products-mobile container">
+      <div class="col-xs-12">
+        <div class="typical-products-title brand-title">
+        <p class="typical-product-brand"><%= category[:title] %></p>
+        </div>
+      </div>
+      <div class="tm-posts_listing">
+        <div id="menu<%= category[:id] %>" class="tab-pane fade in <%= 'active' if index == 0 %>">
+          <% category[:products][0..1].each do |product| %>
+            <div class="col-xs-6 col-sm-3">
+              <%= render "product_field", product: product %>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
-    <div class="tm-posts_listing">
-      <% block.first[:products].each do |product| %>
-        <div class="col-xs-12">
-          <%= render "product_field", product: product %>
-        </div>
-      <% end %>
-    </div>
-  </div>
+  <% end %>
 <% end %>
