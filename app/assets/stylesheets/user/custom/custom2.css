@@ -20,7 +20,7 @@
 }
 
 .home, #tm_willard_products-4, .woocommerce-LoopProduct-link, .product_title, h1, h2, h3, h4, h5, div, aside, ul, li, a, button, span:not(.fa, .icon, .glyphicon) {
-	font-family: sans-serif !important;
+	font-family: 'Arial', sans-serif !important;
 }
 
 .add_to_cart_button-left-menu {
@@ -35,6 +35,11 @@
 
 .contact-information-widget__inner .contact-information__item--icon {
     text-transform: none !important;
+    line-height: 10px !important;
+}
+
+.contact-information-widget__inner .contact-information__item--icon .long-info {
+    line-height: 20px !important;
 }
 
 .block-product-title {
@@ -140,4 +145,8 @@
     font-weight: normal !important;
     z-index: 100000 !important;
     max-height: 530px !important;
+}
+
+.custom-tab-bold .description_tab a {
+    font-weight: bold !important;
 }

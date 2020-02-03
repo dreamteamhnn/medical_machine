@@ -10,6 +10,7 @@ limit:
   catalog: 2
   brand_logo: 12
   blog_home_page: 4
+  blog_related: 3
   product_field: 10
   product_block: 4
   related_products: 8
@@ -17,7 +18,7 @@ limit:
   new_blogs: 3
   paginate:
     products: 16
-    blogs: 6
+    blogs: 20
     documents: 12
     videos: 12
     admin_blog: 10

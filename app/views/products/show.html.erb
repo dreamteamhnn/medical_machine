@@ -78,15 +78,15 @@
                             </p>
                           </div>
 
-                          <div class="woocommerce-product-details__short-description
-                            short-description-detail size-14" title="<%= @product.short_description&.html_safe %>">
-                            <%= @product.short_description&.html_safe %>
-                          </div>
-
                           <div class="woocommerce-product-details__short-description">
                             <p class="change-price">
                               (* Giá trên có thể thay đổi theo thời điểm - Xin liên hệ trực tiếp để có giá tốt nhất)
                             </p>
+                          </div>
+
+                          <div class="woocommerce-product-details__short-description
+                            short-description-detail size-14">
+                            <%= @product.short_description&.html_safe %>
                           </div>
                         </div>
 
@@ -124,14 +124,16 @@
                 <div class="row">
                   <div class="col-xs-12">
                     <div class="typical-products-title brand-title">
-                      <p class="typical-product-brand">Tin công nghệ</p>
+                      <%= link_to blog_list_path, class: "typical-product-brand" do %>
+                        Tin công nghệ
+                      <% end %>
                     </div>
                   </div>
                   <div class="tm-posts_listing">
                     <div class="row">
                       <div class="col-xs-12">
                         <% @blogs.each do |blog| %>
-                          <div class="col-sm-3">
+                          <div class="col-sm-4">
                             <div class="thumbnail">
                               <div class="blog-image">
                                 <%= link_to blog_detail_path(blog) do %>
@@ -149,7 +151,7 @@
                           </div>
                         <% end %>
                         <div class="col-xs-12 text-center">
-                          <%= link_to blog_list_path, class: "btn btn-primary" do %>
+                          <%= link_to blog_list_path, class: "btn btn-primary view-more-custom-btn" do %>
                             Xem thêm
                           <% end %>
                         </div>

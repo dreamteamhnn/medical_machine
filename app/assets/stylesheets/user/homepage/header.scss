@@ -7,7 +7,7 @@
 
   .search-form-custom {
     position: relative;
-    width: calc(100% - 415px);
+    width: calc(100% - 635px);
     display: block;
     float: left;
 
@@ -76,4 +76,45 @@
       display: none !important;
     }
   }
+}
+
+.align-items-center {
+  -ms-flex-align: center !important;
+  align-items: center !important;
+}
+
+.contact_info_new li i {
+  position: absolute;
+  top: 3px;
+  left: 0px;
+  width: 35px;
+  height: auto;
+  padding-right: 10px;
+  border-right: 1px solid #eee;
+  vertical-align: middle;
+  font-size: 40px !important;
+  color: #ffb606;
+}
+
+.contact_info_new li img.phone-img {
+  content: url(/assets/medical.jpeg);
+}
+
+.contact_info_new li span {
+  display: block;
+
+}
+
+.contact_info_new .firstspan {
+  margin-bottom: 10px;
+}
+
+.contact_info_new li {
+  display: inline-block;
+  position: relative;
+  padding-left: 55px;
+  color: #000;
+  font-size: 16px;
+  text-align: left;
+  margin-left: 20px;
 }

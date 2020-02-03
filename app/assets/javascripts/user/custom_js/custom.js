@@ -105,4 +105,9 @@ $(document).on('turbolinks:load', function(){
   $(".modal").on('hide.bs.modal', function () {
     $(this).find(".iframe-modal").attr('src', $(this).find(".iframe-modal").attr('src'));
   });
+
+  $(".certificate-img").on("click", function() {
+    var id = $(this).data("cert");
+    $("#modal-video-" + id).modal("show");
+  })
 });
