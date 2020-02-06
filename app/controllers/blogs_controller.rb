@@ -29,11 +29,20 @@ class BlogsController < ApplicationController
       @blogs = Blog.by_time(params[:time].split("_").map(&:to_i))
     else
       @blogs = Blog.where(is_important: true).order(order: :desc).limit(4)
-      @typical_blogs = Blog.by_category(BlogCategory.friendly.find('hang-san-xuat-uy-tin')).where.not(id: @blogs.map(&:id)).order("RAND()").limit(8)
-      @smart_blogs = Blog.by_category(BlogCategory.friendly.find('kinh-nghiem-lua-chon-san-pham')).where.not(id: @blogs.map(&:id) + @typical_blogs.map(&:id)).order("RAND()").limit(8)
-      @tech_blogs = Blog.by_category(BlogCategory.friendly.find('tin-tuc-khoa-hoc-cong-nghe'))
-                        .where.not(id: @blogs.map(&:id) + @typical_blogs.map(&:id) + @smart_blogs.map(&:id)).order("RAND()").limit(4)
-      @sale_blogs = Blog.where.not(id: @blogs.map(&:id) + @typical_blogs.map(&:id) + @smart_blogs.map(&:id) + @tech_blogs.map(&:id)).order("RAND()").limit(8)
+      @typical_blogs = Blog.by_category(BlogCategory.friendly.find('hang-san-xuat-uy-tin')).where.not(id: @blogs&.map(&:id)).order("RAND()").limit(8)
+      
+      smart_except = []
+      smart_except += @blogs&.map(&:id) if @blogs&.map(&:id).present?
+      smart_except += @typical_blogs&.map(&:id) if @typical_blogs&.map(&:id).present?
+      @smart_blogs = Blog.by_category(BlogCategory.friendly.find('kinh-nghiem-lua-chon-san-pham')).where.not(id: smart_except).order("RAND()").limit(8)
+      
+      tech_except = smart_except
+      tech_except += @smart_blogs&.map(&:id) if @smart_blogs&.map(&:id).present?
+      @tech_blogs = Blog.by_category(BlogCategory.friendly.find('tin-tuc-khoa-hoc-cong-nghe')).where.not(id: tech_except).order("RAND()").limit(4)
+
+      sale_except = tech_except
+      sale_except += @tech_blogs&.map(&:id) if @tech_blogs&.map(&:id).present?
+      @sale_blogs = Blog.where.not(id: sale_except).order("RAND()").limit(8)
       set_meta_tags meta_tags_hash
     end
     # @blogs = @blogs.distinct.take_ordered_list.page(params[:page]).per(Settings.limit.paginate.blogs)
