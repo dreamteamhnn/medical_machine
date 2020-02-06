@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
     @top_categories = Category.top_categories
     @brand_logos = Brand.where("image IS NOT NULL AND home_order IS NOT NULL")
                         .order(:home_order)
-    @blogs = Blog.new_articles_for_home
+    @blogs = Blog.new_articles_for_related
     set_meta_tags @product
   end
 
