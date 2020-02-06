@@ -48,14 +48,28 @@
     <!-- Phone Number -->
     <div class="navbar-right site-branding">
       <div class="site-logo">
-        <div class="contact-block__item contact-block__item--icon">
+        <div class="row align-items-center">
+          <div class="col-md-12 text-md-right">
+            <ul class="contact_info_new">
+              <li>
+                <i class="fa fa-mobile"></i>
+                <span class="firstspan">Hỗ trợ 24/7</span>
+                <span class="litecolor"><%= Company.first.phone %></span> </li>
+              <li>
+                <i class="fa fa-map-marker"></i>
+                <span class="firstspan">Mail</span>
+                <span class="litecolor"><%= Company.first.email %></span> </li>
+            </ul>
+          </div>
+        </div>
+        <!-- <div class="contact-block__item contact-block__item--icon">
           <i class="fa fa-phone-square fa-lg"></i>
           <div class="contact-block__value-wrap">
             <span class="contact-title">Hỗ trợ 24/7</span>
             <br />
             <span class="contact-block__label telephone-header"><%= Company.first.phone %></span>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
 

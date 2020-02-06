@@ -29,6 +29,12 @@ class Blog < ApplicationRecord
       .includes :blog_images
   end
 
+  scope :new_articles_for_related, -> do
+    where(is_important: true)
+      .take_ordered_list.limit(Settings.limit.blog_related)
+      .includes :blog_images
+  end
+
   scope :by_category, -> category_id do
     joins(:blog_category_relations)
     .where("blog_category_relations.blog_category_id = ?", category_id)

@@ -1,16 +1,11 @@
-<%= render "layouts/breadcrumbs" %>
 <%= render "left_sidebar", menu_detail: false %>
 <div class="site-content_wrap container">
-  <div id="primary" class="box-content col-md-12 margin-custom">
-    <main id="main" class="site-main blogs-custom" role="main">
+  <div id="primary" class="box-content col-md-12 margin-custom blog-detail-new">
+    <%= render "layouts/breadcrumbs" %>
+    <main id="main" class="site-main blogs-custom blog-detail-custom" role="main">
       <div class="box-content-custom">
         <article id="post-73" class="post-73 post type-post status-publish format-standard has-post-thumbnail hentry category-accessories category-diy-home category-tips tag-drill tag-hammer tag-hand-tools tag-power-tools has-thumb">
           <header class="entry-header">
-            <span class="post-cats">
-              <% @blog.blog_categories.uniq.each do |category| %>
-                <%= link_to category.name, blog_list_path(blog_category_id: category.id) %>
-              <% end %>
-            </span>
             <h1 class="product_title entry-title product-h1-custom"><%= @blog.title %></h1>
             <div class="entry-meta">
               <span class="post__date">
@@ -30,7 +25,7 @@
             </div>
           </div>
           <!-- .entry-content -->
-          <footer class="entry-footer">
+<!--           <footer class="entry-footer">
             <div class="entry-meta entry-meta-right">
               <span class="post__tags">
                 <% @blog.tags.uniq.each do |tag|%>
@@ -40,10 +35,11 @@
                   <% end %>
                 <% end %>
             </div>
-          </footer>
+          </footer> -->
           <!-- .entry-footer -->
         </article>
-        <nav class="navigation post-navigation" role="navigation">
+        
+        <!-- <nav class="navigation post-navigation" role="navigation">
           <h2 class="screen-reader-text">Post navigation</h2>
           <div class="nav-links">
             <% if @blog_relate_1.present? %>
@@ -57,9 +53,55 @@
               </div>
             <% end %>
           </div>
-        </nav>
+        </nav> -->
       </div>
     </main>
     <!-- #main -->
+    <div id="view-more-blogs">
+      <header class="entry-header">
+        <h2 class="product_title entry-title product-h1-custom"><%= link_to "Xem thêm", blogs_url() %></h2>
+      </header>
+      <div class="entry-content">
+        <% @more_blogs.each_with_index do |blog, idx| %>
+          <%= link_to blog.title, blog_detail_path(blog) %>
+          <% if idx != 4 %>
+            <hr>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div id="suggestion-blogs" class="blogs-custom blogs-custom-new box-content-custom home-blog-part">
+      <!-- box Tin tức khác -->
+      <div class="col-xs-12 blog-title">
+        <div class="typical-products-title brand-title">
+          <p class="typical-product-brand"><%= link_to "Có thể bạn quan tâm", blogs_url() %></p>
+        </div>
+      </div>
+      <div class="tm-posts_listing">
+        <div class="row">
+          <div class="col-xs-12 blog-list">
+            <% @suggestion_blogs.each do |blog| %>
+              <div class="col-sm-3">
+                <div class="thumbnail">
+                  <div class="blog-image">
+                    <%= link_to blog_detail_path(blog) do %>
+                      <%= image_tag blog.feature_image_thumb_url, alt: blog.feature_image_alt, title: blog.feature_image_title %>
+                    <% end %>
+                  </div>
+                  <div class="caption">
+                    <h3 class="blog-product-title"><%= link_to blog.title, blog_detail_path(blog) %></h3>
+                    <div class="tm-posts_item_meta entry-meta pull-right">
+                      <a class="text-right text-sm"><small><%= blog.created_at.strftime(Settings.format.created_at) %></small></a>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <!-- end -->
+    </div>
   </div>
 </div>

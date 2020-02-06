@@ -1,5 +1,5 @@
 <div class="woocommerce-tabs wc-tabs-wrapper new-product-description" id="sizzle1508490365017">
-  <ul class="tabs wc-tabs" role="tablist">
+  <ul class="tabs wc-tabs custom-tab-bold" role="tablist">
     <li class="description_tab active" id="tab-title-description" role="tab" aria-controls="tab-description">
       <a href="#tab-description" aria-controls="home" role="tab" data-toggle="tab">Mô tả</a>
     </li>
@@ -91,7 +91,7 @@
     </div>
 
     <% if @product.contact.present? %>
-      <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--contact panel entry-content wc-tab tab-pane active custom-white-space" id="tab-contact" role="tabpanel" aria-labelledby="tab-title-contact">
+      <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--contact panel entry-content wc-tab tab-pane custom-white-space" id="tab-contact" role="tabpanel" aria-labelledby="tab-title-contact">
         <p><%= @product.contact&.html_safe %></p>
       </div>
     <% end %>
@@ -208,6 +208,22 @@
                 </div>
               <% end %>
           <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="home-blog-part">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="typical-products-title brand-title">
+          <p class="typical-product-brand">Liên hệ</p>
+        </div>
+      </div>
+
+      <div class="tm-posts_listing">
+        <div class="col-xs-12">
+          <p><%= @product.contact&.html_safe %></p>
         </div>
       </div>
     </div>

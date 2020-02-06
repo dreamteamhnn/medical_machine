@@ -2750,9 +2750,9 @@ mark {
 
 .site-logo {
     font-style: normal;
-    font-weight: 600;
+    font-weight: normal;
     font-size: 23px;
-    font-family: 'Libre Franklin', sans-serif
+    font-family: 'Arial', sans-serif
 }
 
 .site-logo__link:hover {
@@ -6739,6 +6739,10 @@ body.wcvendors.wcvendors_vendor .entry-content > h2:nth-child(2):before {
   }
 }
 
+.paginate-other-blogs {
+    text-align: center;
+}
+
 .nav-tabs {
   &.mema-tabs {
     border-bottom: none;
@@ -7429,4 +7433,9 @@ footer {
 
 h1, h2, .post-navigation .nav-previous > a, .post-navigation .nav-next > a {
     text-transform: inherit !important;
+}
+
+.block_product_inner .block_product_thumbnail {
+    height: 223px;
+    background-color: whitesmoke;
 }
