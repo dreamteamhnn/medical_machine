@@ -20,17 +20,23 @@ class BlogsController < ApplicationController
   def load_blogs
     if params[:blog_category_id]
       @category = BlogCategory.friendly.find params[:blog_category_id]
-      @blogs = Blog.by_category(@category.id)
+      @blogs = Blog.by_category(@category.id).limit(4)
+      @other_blogs = Blog.all.where.not(id: @blogs.map(&:id)).page(params[:page]).per(Settings.limit.paginate.blogs)
       set_meta_tags @category
     elsif params[:tag_id]
       @blogs = Blog.by_tag(params[:tag_id].to_i)
     elsif params[:time]
       @blogs = Blog.by_time(params[:time].split("_").map(&:to_i))
     else
-      @blogs = Blog.all
+      @blogs = Blog.where(is_important: true).order(order: :desc).limit(4)
+      @typical_blogs = Blog.by_category(BlogCategory.friendly.find('hang-san-xuat-uy-tin')).where.not(id: @blogs.map(&:id)).order("RAND()").limit(8)
+      @smart_blogs = Blog.by_category(BlogCategory.friendly.find('kinh-nghiem-lua-chon-san-pham')).where.not(id: @blogs.map(&:id) + @typical_blogs.map(&:id)).order("RAND()").limit(8)
+      @tech_blogs = Blog.by_category(BlogCategory.friendly.find('tin-tuc-khoa-hoc-cong-nghe'))
+                        .where.not(id: @blogs.map(&:id) + @typical_blogs.map(&:id) + @smart_blogs.map(&:id)).order("RAND()").limit(4)
+      @sale_blogs = Blog.where.not(id: @blogs.map(&:id) + @typical_blogs.map(&:id) + @smart_blogs.map(&:id) + @tech_blogs.map(&:id)).order("RAND()").limit(8)
       set_meta_tags meta_tags_hash
     end
-    @blogs = @blogs.distinct.take_ordered_list.page(params[:page]).per(Settings.limit.paginate.blogs)
+    # @blogs = @blogs.distinct.take_ordered_list.page(params[:page]).per(Settings.limit.paginate.blogs)
     @breads = [{title: "Tin công nghệ", link: ""}]
   end
 
@@ -38,15 +44,35 @@ class BlogsController < ApplicationController
     @blog_categories = BlogCategory.all.order(:order)
     @tags = Tag.all
     @times = Blog.all.map {|blog| blog.time_param}.uniq
+    max_aside = 4
+    if params[:blog_category_id].present?
+      blog_size = @other_blogs.count
+      if blog_size > 16
+        max_aside = 4
+      elsif blog_size > 12
+        max_aside = 3
+      elsif blog_size > 4
+        max_aside = 2
+      elsif blog_size > 0
+        max_aside = 1
+      else
+        max_aside = 0
+      end
+    elsif Blog.count >= 8
+      max_aside = 5
+    end
+    @aside_products = Product.order("RAND()").limit(max_aside)
   end
 
   def load_blog
     @blog = Blog.friendly.find params[:id]
-    @next = next_blog
-    @prev = prev_blog
-    @blog_relate_1 = Blog.find_by id: @blog.relation_blog_id_1
-    @blog_relate_2 = Blog.find_by id: @blog.relation_blog_id_2
-    @breads = [{title: "Blog", link: blogs_path()}]
+    @more_blogs = Blog.by_category(@blog.blog_categories.first.id).where.not(id: @blog.id).order("RAND()").limit(5)
+    @suggestion_blogs = Blog.where.not(id: [@blog.id] + @more_blogs.map(&:id)).order("RAND()").limit(8)
+    # @next = next_blog
+    # @prev = prev_blog
+    # @blog_relate_1 = Blog.find_by id: @blog.relation_blog_id_1
+    # @blog_relate_2 = Blog.find_by id: @blog.relation_blog_id_2
+    @breads = [{title: "Tin tức", link: blogs_path()}]
     @breads << {title: @blog.title, link: ""}
   end
 

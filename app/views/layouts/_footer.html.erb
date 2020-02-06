@@ -130,7 +130,7 @@
                 </p>
               </div>
             </li>
-            <li class="contact-information__item contact-information__item--icon">
+<!--             <li class="contact-information__item contact-information__item--icon">
               <div class="list-item">
                 <p class="clearfix">
                   Có hàng trưng bày và dùng thử. Vui lòng liên hệ trước <a class="privacy_link" href=""><%= @company.order_phone || @company.phone %></a> để đặt lịch xem hàng.
@@ -138,31 +138,11 @@
               </div>
             </li>
 
-            <hr class="footer-custom-hr">
+            <hr class="footer-custom-hr"> -->
 
             <li class="contact-information__item contact-information__item--icon">
               <span class="icon linearicon linearicon-home4"></span>
-              <div class="list-item">
-                <p class="clearfix">
-                  Tại Hà Nội: <%= @company.hn_address %>
-                </p>
-              </div>
-            </li>
-
-            <% if @company.hn_phone.present? %>
-              <li class="contact-information__item contact-information__item--icon">
-                <span class="icon linearicon linearicon-telephone2"></span>
-                <div class="list-item">
-                  <p class="clearfix"><a class="privacy_link" href=""><%= @company.hn_phone %></a></p>
-                </div>
-              </li>
-            <% end %>
-
-            <hr class="footer-custom-hr">
-
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-home4"></span>
-              <div class="list-item">
+              <div class="list-item long-info">
                 <p class="clearfix">
                   Tại TP HCM: <%= @company.sg_address %>
                 </p>
@@ -174,6 +154,26 @@
                 <span class="icon linearicon linearicon-telephone2"></span>
                 <div class="list-item">
                   <p class="clearfix"><a class="privacy_link" href=""><%= @company.sg_phone %></a></p>
+                </div>
+              </li>
+            <% end %>
+
+            <hr class="footer-custom-hr">
+
+            <li class="contact-information__item contact-information__item--icon">
+              <span class="icon linearicon linearicon-home4"></span>
+              <div class="list-item long-info">
+                <p class="clearfix">
+                  Tại Hà Nội: <%= @company.hn_address %>
+                </p>
+              </div>
+            </li>
+
+            <% if @company.hn_phone.present? %>
+              <li class="contact-information__item contact-information__item--icon">
+                <span class="icon linearicon linearicon-telephone2"></span>
+                <div class="list-item">
+                  <p class="clearfix"><a class="privacy_link" href=""><%= @company.hn_phone %></a></p>
                 </div>
               </li>
             <% end %>

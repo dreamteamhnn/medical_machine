@@ -23,7 +23,7 @@
             </div>
           <% end %>
         </div>
-        <aside id="archives-4" class="widget widget_archive">
+<!--         <aside id="archives-4" class="widget widget_archive">
           <h5 class="widget-title">Tháng</h5>
           <label class="screen-reader-text" for="archives-dropdown-4">Archives</label>
           <select id="archives-dropdown-4">
@@ -32,7 +32,16 @@
               <option value="<%= blog_list_path(time: time[:value]) %>" <%= 'selected' if params[:time] == time[:value] %>><%= time[:title] %></option>
             <% end %>
           </select>
-        </aside>
+        </aside> -->
+
+        <% if @aside_products.present? %>
+          <aside id="archives-4" class="widget widget_archive widget-custom">
+            <h5 class="title">Sản phẩm nổi bật</h5>
+            <% @aside_products.each do |aside_product| %>
+              <%= render "aside_product", product: aside_product %>
+            <% end %>
+          </aside>
+        <% end %>
       </div>
       <div class="nav-right">
         <div class="top-nav-horizontal">

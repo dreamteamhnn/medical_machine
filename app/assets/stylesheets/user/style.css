@@ -14689,8 +14689,7 @@ header .page-title {
 }
 
 .contact-information-widget__inner li .icon {
-    font-size: 16.8px;
-    font-size: 1.05rem;
+    font-size: 13px;
     line-height: 1;
     margin-right: 13px
 }
@@ -28679,7 +28678,9 @@ body.wcvendors.wcvendors_vendor .entry-content>h2:nth-child(2):before {
 
 .woocommerce .single-product div.product .single_add_to_cart_button,
 .woocommerce.single-product div.product .single_add_to_cart_button {
-    padding: 21.5px 36px 21.5px 68px;
+    /*padding: 21.5px 36px 21.5px 68px;*/
+    padding-left: 48px;
+    padding-right: 15px !important;
 }
 
 .woocommerce .single-product div.product .single_add_to_cart_button:before,
@@ -28687,7 +28688,7 @@ body.wcvendors.wcvendors_vendor .entry-content>h2:nth-child(2):before {
     content: '\e74d';
     display: block;
     position: absolute;
-    left: 35px;
+    left: 15px;
     top: 48%;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
@@ -35351,7 +35352,7 @@ body.wcvendors.wcvendors_vendor .entry-content>h2:nth-child(2):before {
     vertical-align: top;
     white-space: nowrap;
     text-overflow: ellipsis;
-    border: 1px solid;
+    /*border: 1px solid;*/
     -webkit-box-shadow: none;
     box-shadow: none;
     -webkit-transition: .3s;
@@ -35359,7 +35360,7 @@ body.wcvendors.wcvendors_vendor .entry-content>h2:nth-child(2):before {
     text-transform: uppercase;
     font-size: 14px;
     font-size: .875rem;
-    font-weight: 500;
+    font-weight: bold; /*500*/
     letter-spacing: .08em;
     -webkit-border-radius: 0;
     border-radius: 0
@@ -36239,4 +36240,8 @@ body.woocommerce-cart .cart-content .up-sells {
 
 .add_to_cart_button.add_to_cart_button-left-menu::before {
     margin-right: 0 !important;
+}
+
+span.icon {
+    font-family: 'Linearicon' !important;
 }
