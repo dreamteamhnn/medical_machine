@@ -191,48 +191,50 @@
               <!-- end -->
 
               <!-- box Tin khoa học công nghệ -->
-              <div class="col-xs-12">
-                <div class="brand-title">
-                  <p class="typical-product-brand">Tin khoa học công nghệ</p>
-                </div>
-                <div class="row home-blog-part">
-                  <div class="col-md-8">
-                    <div class="thumbnail blog-most-popular">
-                      <div class="blog-image img-block">
-                        <%= link_to blog_detail_path(@tech_blogs.first) do %>
-                          <%= image_tag @blogs.first.feature_image_thumb_url, alt: @tech_blogs.first.feature_image_alt, title: @tech_blogs.first.feature_image_title %>
-                        <% end %>
-                      </div>
-                      <div class="caption">
-                        <h3 class="blog-product-title blog-product-special">
-                          <%= link_to @tech_blogs.first.title, blog_detail_path(@tech_blogs.first), class: "blog-title" %>
-                        </h3>
-                        <div class="blog-content">
-                          <i class="blog-content-preview"><%= @tech_blogs.first.content&.html_safe %></i>
-                        </div>
-                        <div class="clearfix"></div>
-                      </div>
-                    </div>
+              <% if @tech_blogs.present? %>
+                <div class="col-xs-12">
+                  <div class="brand-title">
+                    <p class="typical-product-brand">Tin khoa học công nghệ</p>
                   </div>
-                  <div class="col-sm-4">
-                    <% @tech_blogs[1..-1].each do |blog| %>
-                      <div class="thumbnail blog-product-custom">
-                        <div class="blog-image-custom img-block-custom">
-                          <%= link_to blog_detail_path(blog) do %>
-                            <%= image_tag blog.feature_image_thumb_url, alt: blog.feature_image_alt, title: blog.feature_image_title %>
+                  <div class="row home-blog-part">
+                    <div class="col-md-8">
+                      <div class="thumbnail blog-most-popular">
+                        <div class="blog-image img-block">
+                          <%= link_to blog_detail_path(@tech_blogs.first) do %>
+                            <%= image_tag @blogs.first.feature_image_thumb_url, alt: @tech_blogs.first.feature_image_alt, title: @tech_blogs.first.feature_image_title %>
                           <% end %>
                         </div>
                         <div class="caption">
-                          <h3 class="blog-product-title">
-                            <%= link_to blog.title, blog_detail_path(blog), class: "blog-title" %>
+                          <h3 class="blog-product-title blog-product-special">
+                            <%= link_to @tech_blogs.first.title, blog_detail_path(@tech_blogs.first), class: "blog-title" %>
                           </h3>
+                          <div class="blog-content">
+                            <i class="blog-content-preview"><%= @tech_blogs.first.content&.html_safe %></i>
+                          </div>
                           <div class="clearfix"></div>
                         </div>
                       </div>
-                    <% end %>
+                    </div>
+                    <div class="col-sm-4">
+                      <% @tech_blogs[1..-1].each do |blog| %>
+                        <div class="thumbnail blog-product-custom">
+                          <div class="blog-image-custom img-block-custom">
+                            <%= link_to blog_detail_path(blog) do %>
+                              <%= image_tag blog.feature_image_thumb_url, alt: blog.feature_image_alt, title: blog.feature_image_title %>
+                            <% end %>
+                          </div>
+                          <div class="caption">
+                            <h3 class="blog-product-title">
+                              <%= link_to blog.title, blog_detail_path(blog), class: "blog-title" %>
+                            </h3>
+                            <div class="clearfix"></div>
+                          </div>
+                        </div>
+                      <% end %>
+                    </div>
                   </div>
                 </div>
-              </div>
+              <% end %>
               <!-- end -->
 
               <!-- box Tin khuyến mại - Gói sản phẩm ưu đãi -->
