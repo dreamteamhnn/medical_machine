@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get '/danh-sach-san-pham/:category_id' => 'products#index', as: :category_products
   get '/linh-vuc/:field_id' => 'products#index', as: :product_field
   get '/hang-san-xuat/:brand_id' => 'products#index', as: :product_brand
-  get '/tat-ca-san-pham' => 'products#index', as: :all_products
+  get '/tim-kiem' => 'products#index', as: :all_products
   get '/san-pham/:id' => 'products#show', as: :friendly_product
   get '/tin-tuc/:id' => 'blogs#show', as: :blog_detail
   get '/tin-tuc' => 'blogs#index', as: :blog_list

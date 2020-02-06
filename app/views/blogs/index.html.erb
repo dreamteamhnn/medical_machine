@@ -94,7 +94,7 @@
               <!-- box Thương hiệu uy tín -->
               <div class="col-xs-12">
                 <div class="typical-products-title brand-title">
-                  <p class="typical-product-brand">Thương hiệu uy tín</p>
+                  <p class="typical-product-brand"><%= link_to "Thương hiệu uy tín", blog_list_category_path(BlogCategory.friendly.find('hang-san-xuat-uy-tin'))%></p>
                 </div>
               </div>
               <div class="tm-posts_listing">
@@ -126,7 +126,7 @@
               <!-- box Kinh nghiệm lựa chọn sản phẩm -->
               <div class="col-xs-12">
                 <div class="brand-title">
-                  <p class="typical-product-brand">Kinh nghiệm lựa chọn sản phẩm</p>
+                  <p class="typical-product-brand"><%= link_to "Kinh nghiệm lựa chọn sản phẩm", blog_list_category_path(BlogCategory.friendly.find('kinh-nghiem-lua-chon-san-pham'))%></p>
                 </div>
 
                 <div class="brand-logo-box">
@@ -194,7 +194,7 @@
               <% if @tech_blogs.present? %>
                 <div class="col-xs-12">
                   <div class="brand-title">
-                    <p class="typical-product-brand">Tin khoa học công nghệ</p>
+                    <p class="typical-product-brand"><%= link_to "Tin khoa học công nghệ", blog_list_category_path(BlogCategory.friendly.find('tin-tuc-khoa-hoc-cong-nghe'))%></p>
                   </div>
                   <div class="row home-blog-part">
                     <div class="col-md-8">
