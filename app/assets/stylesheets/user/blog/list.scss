@@ -52,10 +52,11 @@
 
   .blog-product-title {
     height: auto !important;
+    padding-top: 0px !important;
   }
 
-  .blog-image-custom {
-    height: 80px;
+  .blog-image-custom, .caption {
+    height: 120px;
   }
 
   .caption {

@@ -56,7 +56,9 @@ class BlogsController < ApplicationController
     max_aside = 4
     if params[:blog_category_id].present?
       blog_size = @other_blogs.count
-      if blog_size > 16
+      if @blogs.count == 0
+        max_aside = 0
+      elsif blog_size > 16
         max_aside = 4
       elsif blog_size > 12
         max_aside = 3
@@ -68,7 +70,8 @@ class BlogsController < ApplicationController
         max_aside = 0
       end
     elsif Blog.count >= 8
-      max_aside = 5
+      max_aside = 4
+      max_aside = 3 unless @tech_blogs.present?
     end
     @aside_products = Product.order("RAND()").limit(max_aside)
   end

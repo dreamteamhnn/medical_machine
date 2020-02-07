@@ -281,7 +281,7 @@ a:hover {
   h2, h3, h4 {
     font-size: 18px !important;
     text-transform: none !important;
-    line-height: 0px !important;
+    // line-height: 0px !important;
   }
 }
 
@@ -301,12 +301,37 @@ a:hover {
     margin-top: 20px;
   }
 
-  a:hover {
-    color: #ffd71a;
+  a.bullet {
+    text-decoration: underline;
+    display: list-item;
+    list-style-type: disc;
+    list-style-position: inside;
   }
 
   hr {
     margin: 5px 0 3px !important;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  ul li {
+    padding-left: 15px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  ul li::before {
+    content: "\2022";
+    color: #ffd71a;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 20px;
+    width: 10px;
+    margin-left: -15px;
+    margin-top: 5px;
   }
 }
 
@@ -321,24 +346,36 @@ a:hover {
   }
 
   .img-block {
-    height: 188px !important;
+    height: 229px !important;
     a, img {
       width: 100% !important;
-      height: 188px !important;
+      height: 229px !important;
     }
   }
 
   .img-block-custom {
     display: table-cell;
     vertical-align: middle;
+    padding-left: 0px;
     img {
-      height: 88px !important;
+      height: 106px !important;
       width: 100% !important;
     }
   }
 
   .blog-empty {
     margin-left: 15px;
+  }
+
+  .blog-most-popular {
+    height: 400px !important;
+  }
+
+  .thumbnail {
+    height: 213px !important;
+    .blog-image {
+      height: auto !important;
+    }
   }
 }
 
@@ -363,5 +400,42 @@ a:hover {
     &:before {
       display: none !important;
     }
+  }
+}
+
+.blog-product-title a,
+.blog-product-special .blog-title {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3 !important;
+  -webkit-box-orient: vertical !important;
+}
+
+.litecolor {
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+#product-order-modal {
+  button {
+    border: none !important;
+  }
+}
+
+.home-blog-part {
+  margin-top: 15px;
+}
+
+.blog-special {
+  .thumbnail {
+    height: 85px !important;
+    border: none !important;
+    text-align: justify;
+  }
+
+  hr {
+    margin: 15px 0 15px !important;
   }
 }

@@ -54,11 +54,11 @@
               <li>
                 <i class="fa fa-mobile"></i>
                 <span class="firstspan">Hỗ trợ 24/7</span>
-                <span class="litecolor"><%= Company.first.phone %></span> </li>
+                <span class="litecolor"><%= link_to Company.first.phone, "tel:84#{Company.first.phone}" %></span> </li>
               <li>
                 <i class="fa fa-map-marker"></i>
                 <span class="firstspan">Mail</span>
-                <span class="litecolor"><%= Company.first.email %></span> </li>
+                <span class="litecolor"><%= link_to Company.first.email, "mailto:#{Company.first.email}" %></span> </li>
             </ul>
           </div>
         </div>
