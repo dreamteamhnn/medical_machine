@@ -1,23 +1,19 @@
-<div class="home-blog-part container td-blog">
+<div class="home-blog-part container td-blog-mobile">
   <div class="row">
     <div class="col-xs-12">
       <div class="typical-products-title brand-title">
-        <p class="typical-product-brand"><%= link_to "Tin công nghệ", blogs_url() %></p>
+        <p class="typical-product-brand">Tin công nghệ</p>
       </div>
     </div>
     <div class="tm-posts_listing">
-      <div class="row">
+      <div class="row-mobile-custom">
         <div class="col-xs-12">
           <% @blogs.each do |blog| %>
-            <div class="col-sm-3">
+            <div class="col-xs-6 col-mobile-custom">
               <div class="thumbnail">
                 <div class="blog-image">
                   <%= link_to blog_detail_path(blog) do %>
-                    <% if blog.feature_image_thumb_url.present? %>
-                      <%= image_tag blog.feature_image_thumb_url, alt: blog.feature_image_alt, title: blog.feature_image_title %>
-                    <% else %>
-                      <%= image_tag "480_270.jpg", alt: "Image size 480x270" %>
-                    <% end %>
+                    <%= image_tag blog.feature_image_thumb_url, alt: blog.feature_image_alt, title: blog.feature_image_title %>
                   <% end %>
                 </div>
                 <div class="caption">

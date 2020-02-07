@@ -102,7 +102,7 @@
   <div class="home-blog-part">
     <div class="row">
       <div class="col-xs-12">
-        <div class="typical-products-title brand-title">
+        <div class="typical-products-title brand-title brand-title-show">
           <p class="typical-product-brand">Mô tả</p>
         </div>
       </div>
@@ -116,15 +116,15 @@
   </div>
 
   <div class="home-blog-part">
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="typical-products-title brand-title">
+    <div class="row row-mobile-custom">
+      <div class="col-xs-12 col-mobile-custom">
+        <div class="typical-products-title brand-title brand-title-show">
           <p class="typical-product-brand">Thông số</p>
         </div>
       </div>
 
       <div class="tm-posts_listing">
-        <div class="col-xs-12">
+        <div class="col-xs-12 col-mobile-custom">
           <% if @product.is_parameter_table %>
             <table class="shop_attributes">
               <tbody>
@@ -147,18 +147,43 @@
   </div>
 
   <div class="home-blog-part">
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="typical-products-title brand-title">
+    <div class="row row-mobile-custom">
+      <div class="col-xs-12 col-mobile-custom">
+        <div class="typical-products-title brand-title brand-title-show">
           <p class="typical-product-brand">Tài liệu</p>
         </div>
       </div>
 
       <div class="tm-posts_listing">
-        <div id="media-table" class="col-xs-12">
-          <table class="table table-bordered">
+        <div id="media-table" class="col-xs-12 col-mobile-custom">
+          <table class="table table-bordered td-document">
             <tbody>
               <% @documents.each_slice(3).to_a.each do |block| %>
+                <tr>
+                  <% block.each do |doc| %>
+                    <td>
+                      <strong><%= truncate(doc.title.html_safe, length:45) %></strong><br/>
+                      <%= truncate(doc.description.html_safe, length:45) %><br/>
+                      <a href="<%= doc.url %>">
+                        <% if doc.url.to_s.split(//).last(3).join("") == "pdf" %>
+                          <%= image_tag "/small-pdf.png", title: "pdf" %>
+                        <% elsif doc.url.to_s.split(//).last(3).join("") == "doc" || doc.url.to_s.split(//).last(3).join("") == "ocx" %>
+                          <%= image_tag "/small-word.png", title: "doc" %>
+                        <% elsif doc.url.to_s.split(//).last(3).join("") == "xls" || doc.url.to_s.split(//).last(3).join("") == "lsx" %>
+                          <%= image_tag "/small-excell.png", title: "excel" %>
+                        <% end %>
+                        <%= truncate(doc.title.html_safe, length:45) %>
+                      </a><br/>
+                      <p>Ngày tạo : <%= doc.created_at.strftime("%m/%d/%Y") %></p>
+                    </td>
+                  <% end %>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+          <table class="table table-bordered td-document-mobile">
+            <tbody>
+              <% @documents.each_slice(2).to_a.each do |block| %>
                 <tr>
                   <% block.each do |doc| %>
                     <td>
@@ -187,19 +212,33 @@
   </div>
 
   <div class="home-blog-part">
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="typical-products-title brand-title">
+    <div class="row row-mobile-custom">
+      <div class="col-xs-12 col-mobile-custom">
+        <div class="typical-products-title brand-title brand-title-show">
           <p class="typical-product-brand">Video</p>
         </div>
       </div>
 
       <div class="tm-posts_listing">
-        <div class="media-table col-xs-12">
+        <div class="media-table td-video">
           <% @videos.each_slice(3).to_a.each do |block| %>
               <% block.each do |video| %>
-                <div class="col-md-6 col-xs-12">
+                <div class="col-xs-6 col-mobile-custom">
                   <iframe width="374" height="284" src="<%= video.video_url %>" frameborder="0" allowfullscreen></iframe>
+                  <div class="content-video">
+                    <strong><%= truncate(video.title.html_safe, length:45) %></strong><br/>
+                    <%= truncate(video.description.html_safe, length:45) %><br/>
+                    <p>Ngày tạo : <%= video.created_at.strftime("%m/%d/%Y") %></p>
+                  </div>
+                </div>
+              <% end %>
+          <% end %>
+        </div>
+        <div class="media-table td-video-mobile">
+          <% @videos.each_slice(3).to_a.each do |block| %>
+              <% block.each do |video| %>
+                <div class="col-xs-6 col-mobile-custom">
+                  <iframe width="374" height="110" src="<%= video.video_url %>" frameborder="0" allowfullscreen></iframe>
                   <div class="content-video">
                     <strong><%= truncate(video.title.html_safe, length:45) %></strong><br/>
                     <%= truncate(video.description.html_safe, length:45) %><br/>

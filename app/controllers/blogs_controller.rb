@@ -30,12 +30,12 @@ class BlogsController < ApplicationController
     else
       @blogs = Blog.where(is_important: true).order(order: :desc).limit(4)
       @typical_blogs = Blog.by_category(BlogCategory.friendly.find('hang-san-xuat-uy-tin')).where.not(id: @blogs&.map(&:id)).order("RAND()").limit(8)
-      
+
       smart_except = []
       smart_except += @blogs&.map(&:id) if @blogs&.map(&:id).present?
       smart_except += @typical_blogs&.map(&:id) if @typical_blogs&.map(&:id).present?
       @smart_blogs = Blog.by_category(BlogCategory.friendly.find('kinh-nghiem-lua-chon-san-pham')).where.not(id: smart_except).order("RAND()").limit(8)
-      
+
       tech_except = smart_except
       tech_except += @smart_blogs&.map(&:id) if @smart_blogs&.map(&:id).present?
       @tech_blogs = Blog.by_category(BlogCategory.friendly.find('tin-tuc-khoa-hoc-cong-nghe')).where.not(id: tech_except).order("RAND()").limit(4)

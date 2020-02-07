@@ -17,7 +17,8 @@ class PagesController < ApplicationController
       @first_project = projects.first
       @other_projects = projects.where.not(id: @first_project.id)
     end
-    @certificates = Certificate.all.order(order: :desc).in_groups_of(3)
+    @certificates_mobile = Certificate.all.order(order: :desc)
+    @certificates = @certificates_mobile.in_groups_of(3)
   end
 
   def get_home_category

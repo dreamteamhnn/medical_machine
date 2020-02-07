@@ -1,17 +1,17 @@
-<div class="related products">
-  <div class="typical-products-title brand-title">
+<div class="related products related-mobile">
+  <div class="typical-products-title brand-title brand-title-show">
     <p class="typical-product-brand">Sản phẩm liên quan</p>
   </div>
   <div class="swiper-carousel-container">
     <div id="swiper-carousel-59e9bc5f37e5e" class="tm-willard-carousel swiper-container swiper-container-horizontal" style="cursor: -webkit-grab;">
-      <div class="row">
+      <div class="row row-mobile-custom">
         <% @related_products_1.each do |product| %>
-          <div class="col-sm-4">
+          <div class="col-sm-4 col-xs-6 col-mobile-custom">
             <%= render "pages/product_field", product: product %>
           </div>
         <% end %>
         <% @related_products_2.each do |product| %>
-          <div class="col-sm-4">
+          <div class="col-sm-4 col-xs-6 col-mobile-custom">
             <%= render "pages/product_field", product: product %>
           </div>
         <% end %>

@@ -3,7 +3,7 @@
   <div id="primary" class="box-content col-md-12 margin-custom blog-detail-new">
     <%= render "layouts/breadcrumbs" %>
     <main id="main" class="site-main blogs-custom blog-detail-custom" role="main">
-      <div class="box-content-custom">
+      <div class="box-content-custom box-content-custom-mobile">
         <article id="post-73" class="post-73 post type-post status-publish format-standard has-post-thumbnail hentry category-accessories category-diy-home category-tips tag-drill tag-hammer tag-hand-tools tag-power-tools has-thumb">
           <header class="entry-header">
             <h1 class="product_title entry-title product-h1-custom"><%= @blog.title %></h1>
@@ -38,7 +38,7 @@
           </footer> -->
           <!-- .entry-footer -->
         </article>
-        
+
         <!-- <nav class="navigation post-navigation" role="navigation">
           <h2 class="screen-reader-text">Post navigation</h2>
           <div class="nav-links">
@@ -72,41 +72,43 @@
       </div>
     </div>
     <div id="suggestion-blogs" class="blogs-custom blogs-custom-new box-content-custom home-blog-part">
-      <!-- box Tin tức khác -->
-      <div class="col-xs-12 blog-title">
-        <div class="typical-products-title brand-title">
-          <p class="typical-product-brand"><%= link_to "Có thể bạn quan tâm", blogs_url() %></p>
-        </div>
-      </div>
-      <div class="tm-posts_listing">
-        <div class="row">
-          <div class="col-xs-12 blog-list">
-            <% @suggestion_blogs.each do |blog| %>
-              <div class="col-sm-3">
-                <div class="thumbnail">
-                  <div class="blog-image">
-                    <%= link_to blog_detail_path(blog) do %>
-                      <% if blog.feature_image_thumb_url.present? %>
-                        <%= image_tag blog.feature_image_thumb_url, alt: blog.feature_image_alt, title: blog.feature_image_title %>
-                      <% else %>
-                        <%= image_tag "480_270.jpg", alt: "Image size 480x270" %>
-                      <% end %>
-                    <% end %>
-                  </div>
-                  <div class="caption">
-                    <h3 class="blog-product-title"><%= link_to blog.title, blog_detail_path(blog) %></h3>
-                    <div class="tm-posts_item_meta entry-meta pull-right">
-                      <a class="text-right text-sm"><small><%= blog.created_at.strftime(Settings.format.created_at) %></small></a>
-                    </div>
-                    <div class="clearfix"></div>
-                  </div>
-                </div>
-              </div>
-            <% end %>
+      <div class="row box-content-custom">
+        <!-- box Tin tức khác -->
+        <div class="col-xs-12">
+          <div class="typical-products-title brand-title">
+            <p class="typical-product-brand"><%= link_to "Có thể bạn quan tâm", blogs_url() %></p>
           </div>
         </div>
+        <div class="tm-posts_listing">
+          <div class="col-xs-12">
+            <div class="row-mobile-custom">
+              <% @suggestion_blogs.each do |blog| %>
+                <div class="col-sm-3 col-xs-6 col-mobile-custom">
+                  <div class="thumbnail">
+                    <div class="blog-image">
+                      <%= link_to blog_detail_path(blog) do %>
+                        <% if blog.feature_image_thumb_url.present? %>
+                          <%= image_tag blog.feature_image_thumb_url, alt: blog.feature_image_alt, title: blog.feature_image_title %>
+                        <% else %>
+                          <%= image_tag "480_270.jpg", alt: "Image size 480x270" %>
+                        <% end %>
+                      <% end %>
+                    </div>
+                    <div class="caption">
+                      <h3 class="blog-product-title"><%= link_to blog.title, blog_detail_path(blog) %></h3>
+                      <div class="tm-posts_item_meta entry-meta pull-right">
+                        <a class="text-right text-sm"><small><%= blog.created_at.strftime(Settings.format.created_at) %></small></a>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <!-- end -->
       </div>
-      <!-- end -->
     </div>
   </div>
 </div>

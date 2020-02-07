@@ -1,5 +1,5 @@
 <%= render "pages/list_categories", menu_detail: true %>
-<div class="site-content_wrap container">
+<div class="site-content_wrap container list-categories-mobile">
   <div id="product-order-placeholder"></div>
   <div id="order-result-placeholder"></div>
   <%= render "products/left_menu"%>
@@ -8,11 +8,11 @@
     <main id="main" class="site-main" role="main">
       <div id="woo-primary" class="content-area willard">
         <div id="woo-main" class="site-main" role="main">
-          <div class="row">
+          <div class="row row-mobile-custom">
             <ul class="list-category clearfix list-category-custom">
               <% @categories.each do |category| %>
                 <% category.second.each_with_index do |sub_category, j| %>
-                  <li class="col-md-3 col-xs-6 text-center">
+                  <li class="col-md-3 col-xs-6 col-mobile-custom text-center">
                     <div class="td-sub-category">
                       <%= link_to category_products_path(sub_category.first), title: "#{sub_category.first.name}" do %>
                         <% img_url = sub_category.first.img.blank? ? "/preview_no_image.jpg" : sub_category.first.img.url %>

@@ -11,8 +11,15 @@ $( document ).on('turbolinks:load', function() {
     $('.blog-list-link').on('click', function(e) {
       e.preventDefault();
     })
+
+    $('.td-certificates').remove();
+    $('.td-media-video').remove();
+    $('.td-experience-chosen').remove();
   } else {
-    $('.list-categories-content-mobile').addClass('hidden')
+    $('.list-categories-content-mobile').addClass('hidden');
+    $('.td-certificates-mobile').remove();
+    $('.td-media-video-mobile').remove();
+    $('.td-experience-chosen-mobile').remove();
   }
 
   $(window).on('resize', function() {

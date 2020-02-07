@@ -3,7 +3,7 @@
 <div class="site-content_wrap container">
   <div id="primary" class="box-content col-md-12 box-content-contact">
     <%= render "layouts/breadcrumbs" %>
-    <main id="main" class="site-main contact-custom" role="main">
+    <main id="main" class="site-main contact-custom contact-mobile" role="main">
         <div id="woo-primary" class="content-area willard">
           <div id="woo-main" class="site-main" role="main">
             <div id="media-table">
@@ -18,32 +18,26 @@
                   <div class="col-md-12" style="padding-right: 0; padding-left: 0">
                     <div class="contact-border-top">
                       <div class="col-md-6" style="margin: 15px 0;">
-                        <div class="boxes-icon" style="width: 30px; position: absolute;">
-                          <span class="inner-icon">
-                            <span class="icon"><i class="fa fa-phone" style="color:#ffb606; font-size:24px; line-height:24px; vertical-align: middle;"></i>
-                            </span>
-                          </span>
-                        </div>
-                        <div class="content-inner" style="width: calc( 100% - 30px - 15px); margin-left: 30px;">
+                        <div class="content-inner" style="width: calc( 100% - 15px)">
                           <div class="sc-heading article_heading">
-                            <h2 class="contact-heading__primary" style="font-size: 16px !important">Điện thoại</h2>
+                            <h2 class="contact-heading__primary" style="font-size: 16px !important">
+                              <i class="fa fa-phone" style="color:#ffb606; font-size:20px; line-height:24px; vertical-align: middle;"></i>
+                              Điện thoại
+                            </h2>
                           </div>
                           <div class="desc-icon-box">
                             <div class="desc-content"><%= @company.sg_phone %></div>
                           </div>
                         </div>
                       </div>
-                        
+
                       <div class="col-md-6" style="margin: 15px 0;">
-                        <div class="boxes-icon" style="width: 30px; position: absolute;">
-                          <span class="inner-icon">
-                            <span class="icon"><i class="fa fa-headphones" style="color:#ffb606; font-size:24px; line-height:24px; vertical-align: middle;"></i>
-                            </span>
-                          </span>
-                        </div>
-                        <div class="content-inner" style="width: calc( 100% - 30px - 15px); margin-left: 30px;">
+                        <div class="content-inner" style="width: calc( 100% - 15px)">
                           <div class="sc-heading article_heading">
-                            <h2 class="contact-heading__primary" style="font-size: 16px !important">Hỗ trợ Trực tuyến (24/7) (<%= @company.contact_info %>):</h2>
+                            <h2 class="contact-heading__primary" style="font-size: 16px !important">
+                              <i class="fa fa-headphones" style="color:#ffb606; font-size:20px; line-height:24px; vertical-align: middle;"></i>
+                              Hỗ trợ Trực tuyến (24/7) (<%= @company.contact_info %>):
+                            </h2>
                           </div>
                           <div class="desc-icon-box">
                             <div class="desc-content"><%= @company.phone %></div>
@@ -57,32 +51,24 @@
                   <div class="col-md-12" style="padding-right: 0; padding-left: 0">
                     <div class="contact-border-top">
                       <div class="col-md-6" style="margin: 15px 0;">
-                        <div class="boxes-icon" style="width: 30px; position: absolute;">
-                          <span class="inner-icon">
-                            <span class="icon"><i class="fa fa-envelope" style="color:#ffb606; font-size:24px; line-height:24px; vertical-align: middle;"></i>
-                            </span>
-                          </span>
-                        </div>
-                        <div class="content-inner" style="width: calc( 100% - 30px - 15px); margin-left: 30px;">
+                        <div class="content-inner" style="width: calc( 100% - 15px)">
                           <div class="sc-heading article_heading">
-                            <h2 class="contact-heading__primary" style="font-size: 16px !important">Email</h2>
+                            <h2 class="contact-heading__primary" style="font-size: 16px !important">
+                              <i class="fa fa-envelope" style="color:#ffb606; font-size:20px; line-height:24px; vertical-align: middle;"></i>Email
+                            </h2>
                           </div>
                           <div class="desc-icon-box">
                             <div class="desc-content"><%= @company.email %></div>
                           </div>
                         </div>
                       </div>
-                        
+
                       <div class="col-md-6" style="margin: 15px 0;">
-                        <div class="boxes-icon" style="width: 30px; position: absolute;">
-                          <span class="inner-icon">
-                            <span class="icon"><i class="fa fa-globe" style="color:#ffb606; font-size:24px; line-height:24px; vertical-align: middle;"></i>
-                            </span>
-                          </span>
-                        </div>
-                        <div class="content-inner" style="width: calc( 100% - 30px - 15px); margin-left: 30px;">
+                        <div class="content-inner" style="width: calc( 100% - 15px)">
                           <div class="sc-heading article_heading">
-                            <h2 class="contact-heading__primary" style="font-size: 16px !important">Website</h2>
+                            <h2 class="contact-heading__primary" style="font-size: 16px !important">
+                              <i class="fa fa-globe" style="color:#ffb606; font-size:20px; line-height:24px; vertical-align: middle;"></i>Website
+                            </h2>
                           </div>
                           <div class="desc-icon-box">
                             <div class="desc-content"><%= @company.website %></div>
@@ -103,15 +89,12 @@
 
                   <div class="col-md-12">
                     <div style="margin: 15px 0;">
-                      <div class="boxes-icon" style="width: 30px; position: absolute;">
-                        <span class="inner-icon">
-                          <span class="icon"><i class="fa fa-map-marker" style="color:#ffb606; font-size:24px; line-height:24px; vertical-align: middle;"></i>
-                          </span>
-                        </span>
-                      </div>
-                      <div class="content-inner" style="width: calc( 100% - 30px - 15px); margin-left: 30px;">
+                      <div class="content-inner" style="width: calc( 100% - 15px)">
                         <div class="sc-heading article_heading">
-                          <h2 class="contact-heading__primary" style="font-size: 16px !important">Tại Hà Nội</h2>
+                          <h2 class="contact-heading__primary" style="font-size: 16px !important">
+                            <i class="fa fa-map-marker" style="color:#ffb606; font-size:20px; line-height:24px; vertical-align: middle;"></i>
+                            Tại Hà Nội
+                          </h2>
                         </div>
                         <div class="desc-icon-box">
                           <div class="desc-content"><%= @company.hn_address %></div>
@@ -119,21 +102,24 @@
                         </div>
                       </div>
                     </div>
-                    
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.6915496438987!2d105.77569831493226!3d21.004997986011176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313453524dc911a7%3A0xf4266d4f7d434c5e!2zVGhp4bq_dCBi4buLIHRow60gbmdoaeG7h20gU3RlY2g!5e0!3m2!1sen!2s!4v1559890490197!5m2!1sen!2s" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+                    <div class="map">
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.6915496438987!2d105.77569831493226!3d21.004997986011176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313453524dc911a7%3A0xf4266d4f7d434c5e!2zVGhp4bq_dCBi4buLIHRow60gbmdoaeG7h20gU3RlY2g!5e0!3m2!1sen!2s!4v1559890490197!5m2!1sen!2s" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+
+                    <div class="map-mobile">
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.6915496438987!2d105.77569831493226!3d21.004997986011176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313453524dc911a7%3A0xf4266d4f7d434c5e!2zVGhp4bq_dCBi4buLIHRow60gbmdoaeG7h20gU3RlY2g!5e0!3m2!1sen!2s!4v1559890490197!5m2!1sen!2s" width="600" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
                   </div>
 
                   <div class="col-md-12">
                     <div style="margin: 15px 0;">
-                      <div class="boxes-icon" style="width: 30px; position: absolute;">
-                        <span class="inner-icon">
-                          <span class="icon"><i class="fa fa-map-marker" style="color:#ffb606; font-size:24px; line-height:24px; vertical-align: middle;"></i>
-                          </span>
-                        </span>
-                      </div>
-                      <div class="content-inner" style="width: calc( 100% - 30px - 15px); margin-left: 30px;">
+                      <div class="content-inner" style="width: calc( 100% - 15px)">
                         <div class="sc-heading article_heading">
-                          <h2 class="contact-heading__primary" style="font-size: 16px !important">Tại TP Hồ Chí Minh</h2>
+                          <h2 class="contact-heading__primary" style="font-size: 16px !important">
+                            <i class="fa fa-map-marker" style="color:#ffb606; font-size:20px; line-height:24px; vertical-align: middle;"></i>
+                            Tại TP Hồ Chí Minh
+                          </h2>
                         </div>
                         <div class="desc-icon-box">
                           <div class="desc-content"><%= @company.sg_address %></div>
@@ -142,7 +128,12 @@
                       </div>
                     </div>
 
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2075.897630917652!2d106.70190050289487!3d10.828679771053443!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528c4eaaf21bd%3A0x4c09b4b7864a7d3d!2zU3RlY2ggU8OgaSBHw7JuIC0gQ04gbWnhu4FuIE5hbSBDw7RuZyB0eSBW4bqtdCB0xrAga2hvYSBo4buNYyBRdeG7kWMgdOG6vw!5e0!3m2!1svi!2s!4v1559890348624!5m2!1svi!2s" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    <div class="map">
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2075.897630917652!2d106.70190050289487!3d10.828679771053443!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528c4eaaf21bd%3A0x4c09b4b7864a7d3d!2zU3RlY2ggU8OgaSBHw7JuIC0gQ04gbWnhu4FuIE5hbSBDw7RuZyB0eSBW4bqtdCB0xrAga2hvYSBo4buNYyBRdeG7kWMgdOG6vw!5e0!3m2!1svi!2s!4v1559890348624!5m2!1svi!2s" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                    <div class="map-mobile">
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2075.897630917652!2d106.70190050289487!3d10.828679771053443!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528c4eaaf21bd%3A0x4c09b4b7864a7d3d!2zU3RlY2ggU8OgaSBHw7JuIC0gQ04gbWnhu4FuIE5hbSBDw7RuZyB0eSBW4bqtdCB0xrAga2hvYSBo4buNYyBRdeG7kWMgdOG6vw!5e0!3m2!1svi!2s!4v1559890348624!5m2!1svi!2s" width="600" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
                   </div>
 
                   <div class="col-md-12" style="padding-right: 0; padding-left: 0">
