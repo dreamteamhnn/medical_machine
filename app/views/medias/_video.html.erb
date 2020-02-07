@@ -1,4 +1,4 @@
-<table class="table table-bordered width-100-percent">
+<table class="table table-bordered width-100-percent td-media-video">
   <tbody>
     <% @medias.each_slice(3).to_a.each do |block| %>
       <tr>
@@ -16,7 +16,7 @@
               <div class="custom-video-desc" title="<%= video.description %>">
                 <%= video.description %><br/>
               </div>
-              
+
               <div class="custom-video-date">
                 <p>Ngày đăng : <%= video.created_at.strftime("%m/%d/%Y") %></p>
               </div>
@@ -31,6 +31,52 @@
                   </div>
                   <div class="modal-body">
                     <iframe id="video-<%= video.id %>" class="iframe-modal" width="100%" height="100%"
+                      src="<%= video.video_url %>" frameborder="0" allowfullscreen></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="contact-border-top" style="margin-top: 10px"></div>
+          </td>
+        <% end %>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<table class="table table-bordered width-100-percent td-media-video-mobile">
+  <tbody>
+    <% @medias.each_slice(2).to_a.each do |block| %>
+      <tr>
+        <% block.each do |video| %>
+          <td class="video-td-product video-td-product-<%= video.id %>">
+            <a class="iframe-video-image clearfix" data-toggle="modal" data-video="<%= video.id %>">
+              <iframe height="110" src="<%= video.video_url %>" frameborder="0" allowfullscreen></iframe>
+              <div class="disable-iframe"></div>
+            </a>
+            <div>
+              <div class="custom-video-title" title="<%= video.title %>">
+                <strong><%= video.title %></strong><br/>
+              </div>
+
+              <div class="custom-video-desc" title="<%= video.description %>">
+                <%= video.description %><br/>
+              </div>
+
+              <div class="custom-video-date">
+                <p>Ngày đăng : <%= video.created_at.strftime("%m/%d/%Y") %></p>
+              </div>
+            </div>
+
+            <!-- Modal HTML -->
+            <div id="modal-video-<%= video.id %>" class="modal modal-video fade">
+              <div class="modal-dialog modal-custom">
+                <div class="modal-content modal-video-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  </div>
+                  <div class="modal-body">
+                    <iframe id="video-<%= video.id %>" class="iframe-modal" width="100%" height="220"
                       src="<%= video.video_url %>" frameborder="0" allowfullscreen></iframe>
                   </div>
                 </div>

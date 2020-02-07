@@ -35,7 +35,7 @@
         </aside> -->
 
         <% if @aside_products.present? %>
-          <aside id="archives-4" class="widget widget_archive widget-custom">
+          <aside id="archives-4" class="widget widget_archive widget-custom td-blog-sidebar">
             <h5 class="title">Sản phẩm nổi bật</h5>
             <% @aside_products.each do |aside_product| %>
               <%= render "aside_product", product: aside_product %>

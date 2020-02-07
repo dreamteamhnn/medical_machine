@@ -7,18 +7,32 @@
     </div>
     <div class="col-sm-12">
       <div id="certificate" class="carousel slide certificate-class" data-ride="carousel">
-        <div class="carousel-inner">
+        <div class="carousel-inner td-certificates">
           <% @certificates.each_with_index do |group, idx| %>
             <div class="item <%= 'active' if idx == 0 %>">
               <% group.each do |cert| %>
                 <% if cert.present? %>
-                  <div class="col-xs-4">
+                  <div class="col-sm-4">
                     <%= image_tag cert&.img&.url, class: "img-responsive certificate-img width-100-percent", data: {cert: cert.id} %>
                     <div class="certificate-title iframe-video-image" data-video="<%= cert.id %>">
                       <p class="image-link"><%= cert&.title %></p>
                     </div>
                   </div>
                 <% end %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+        <div class="carousel-inner td-certificates-mobile">
+          <% @certificates_mobile.each_with_index do |cert, idx| %>
+            <div class="item <%= 'active' if idx == 0 %>">
+              <% if cert.present? %>
+                <div class="col-xs-12">
+                  <%= image_tag cert&.img&.url, class: "img-responsive width-100-percent" %>
+                  <div class="certificate-title iframe-video-image" data-video="<%= cert.id %>">
+                    <p class="image-link"><%= cert&.title %></p>
+                  </div>
+                </div>
               <% end %>
             </div>
           <% end %>

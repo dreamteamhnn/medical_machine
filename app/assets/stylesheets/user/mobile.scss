@@ -39,11 +39,6 @@
     display: none !important;
   }
 
-  .product-detail {
-    padding-left: 15px !important;
-    padding-right: 15px !important;
-  }
-
   .modal-video .modal-custom {
     width: calc(100% - 20px);
   }
@@ -54,6 +49,18 @@
 
   .typical-products-mobile {
     display: block !important;
+
+    .block-product-title {
+      margin-bottom: 0;
+    }
+
+    .block_product_thumbnail {
+      height: auto;
+    }
+
+    .block-product-title {
+      padding-top: 0;
+    }
   }
 
   .ctrlq.fb-button {
@@ -76,6 +83,177 @@
 
   .site-footer-mobile {
     display: block !important;
+  }
+
+  .banner {
+    .banner-images-class {
+      height: 200px;
+    }
+
+    .carousel-inner {
+      height: 200px;
+    }
+  }
+
+  .col-mobile-custom {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .row-mobile-custom {
+    margin-left: -5px;
+    margin-right: -5px;
+  }
+
+  .td-blog {
+    display: none !important;
+  }
+
+  .td-blog-mobile {
+    display: block !important;
+
+    .tm-posts_item_meta {
+      padding: 0;
+    }
+
+    .blog-product-title {
+      height: 40px;
+
+      a {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        line-height: 14px !important;
+        height: 30px;
+        word-break: break-word;
+      }
+    }
+  }
+
+  .td-certificates {
+    display: none !important;
+  }
+
+  .td-certificates-mobile {
+    display: block !important;
+  }
+
+  .breadcrumbs {
+    width: 100% !important;
+  }
+
+  #primary {
+    padding: 0 !important;
+  }
+
+  .td-blog-product-show {
+    .caption {
+      padding: 10px 10px 0 10px;
+    }
+
+    .thumbnail {
+      height: auto;
+    }
+
+    .tm-posts_item_meta {
+      padding: 0;
+    }
+
+    .blog-product-title {
+      height: 40px;
+
+      a {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        line-height: 14px !important;
+        height: 30px;
+        word-break: break-word;
+      }
+    }
+  }
+
+  .related-mobile {
+    margin-top: 0 !important;
+
+    .product {
+      margin-bottom: 20px !important;
+    }
+  }
+
+  .brand-title-show {
+    margin-top: 5px;
+  }
+
+  .list-categories-mobile {
+    .list-category-custom {
+      width: 100% !important;
+    }
+  }
+
+  #media-table {
+    table {
+      width: 90%;
+    }
+  }
+
+  .td-document {
+    display: none;
+  }
+
+  .td-document-mobile {
+    display: block !important;
+  }
+
+  .td-video {
+    display: none;
+  }
+
+  .td-video-mobile {
+    display: block !important;
+  }
+
+  .td-media-video {
+    display: none;
+  }
+
+  .td-media-video-mobile {
+    display: block !important;
+  }
+
+  #media-table {
+    text-align: center;
+  }
+
+  .contact-mobile {
+    .contact-title {
+      font-size: 16px;
+      margin-bottom: 0;
+    }
+  }
+
+  .map {
+    display: none;
+  }
+
+  .map-mobile {
+    display: block !important;
+  }
+
+  .td-blog-sidebar {
+    display: none;
+  }
+
+  .blogs-page .blogs-custom {
+    width: calc(100% + 15px) !important;
+  }
+
+  .box-content-custom-mobile {
+    width: 100% !important;
   }
 }
 
@@ -131,11 +309,23 @@
   padding-right: 20px;
 }
 
+.td-blog-mobile {
+  display: none;
+
+  .caption {
+    padding: 10px 10px 0 10px;
+  }
+
+  .thumbnail {
+    height: auto;
+  }
+}
+
 .typical-products-mobile {
   display: none;
 
   .home-product-title {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .add_to_cart_button-left-menu {
@@ -144,11 +334,20 @@
   }
 
   .amount {
-    font-size: 16px
+    font-size: 14px
   }
 
   .block_product_inner {
     padding: 10px;
+  }
+
+  .price {
+    min-height: auto !important;
+  }
+
+  .woocommerce-LoopProduct-link {
+    height: 30px;
+    line-height: 14px !important;
   }
 }
 
@@ -175,4 +374,32 @@
     margin-top: 0 !important;
     padding-top: 0 !important;
   }
+}
+
+.td-document-mobile {
+  display: none;
+}
+
+.td-video-mobile {
+  display: none;
+}
+
+.td-media-video-mobile {
+  display: none;
+
+  .modal-video-content {
+    height: auto !important;
+    margin-top: 20vh !important;
+  }
+}
+
+.contact-custom {
+  i {
+    margin-top: -6px;
+    margin-right: 10px;
+  }
+}
+
+.map-mobile {
+  display: none;
 }

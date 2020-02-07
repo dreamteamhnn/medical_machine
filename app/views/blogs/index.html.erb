@@ -41,7 +41,7 @@
                 <div class="col-md-6">
                   <% @blogs.all[1..-1].each do |blog| %>
                     <div class="blog-product-custom">
-                      <div class="col-sm-6 blog-image-custom img-block-custom">
+                      <div class="col-xs-6 blog-image-custom img-block-custom">
                         <%= link_to blog_detail_path(blog) do %>
                           <% if blog.feature_image_thumb_url.present? %>
                             <%= image_tag blog.feature_image_thumb_url, alt: blog.feature_image_alt, title: blog.feature_image_title %>
@@ -50,7 +50,7 @@
                           <% end %>
                         <% end %>
                       </div>
-                      <div class="col-sm-6 caption">
+                      <div class="col-xs-6 caption">
                         <h3 class="blog-product-title">
                           <%= link_to blog.title, blog_detail_path(blog), class: "blog-title" %>
                         </h3>
@@ -72,10 +72,10 @@
                 </div>
               </div>
               <div class="tm-posts_listing">
-                <div class="row">
+                <div class="row row-mobile-custom">
                   <div class="col-xs-12">
                     <% @other_blogs.each do |blog| %>
-                      <div class="col-sm-3">
+                      <div class="col-sm-3 col-xs-6 col-mobile-custom">
                         <div class="thumbnail">
                           <div class="blog-image">
                             <%= link_to blog_detail_path(blog) do %>
@@ -111,10 +111,10 @@
                 </div>
               </div>
               <div class="tm-posts_listing">
-                <div class="row">
+                <div class="row row-mobile-custom">
                   <div class="col-xs-12">
                     <% @typical_blogs.each do |blog| %>
-                      <div class="col-sm-3">
+                      <div class="col-sm-3 col-xs-6 col-mobile-custom">
                         <div class="thumbnail">
                           <div class="blog-image">
                             <%= link_to blog_detail_path(blog) do %>
@@ -146,12 +146,12 @@
                   <p class="typical-product-brand"><%= link_to "Kinh nghiệm lựa chọn sản phẩm", blog_list_category_path(BlogCategory.friendly.find('kinh-nghiem-lua-chon-san-pham'))%></p>
                 </div>
 
-                <div class="brand-logo-box">
+                <div class="brand-logo-box td-experience-chosen">
                   <div id="experience-chosen" class="experience-chosen carousel slide certificate-class" data-ride="carousel">
                     <div class="carousel-inner">
                       <div class="item active">
                         <% @smart_blogs.first(4).each do |blog| %>
-                          <div class="col-xs-3">
+                          <div class="col-sm-3 col-xs-6 row-mobile-custom">
                             <%= link_to blog_detail_path(blog) do %>
                               <div class="thumbnail blog-brand">
                                 <div class="blog-image">
@@ -180,7 +180,74 @@
                       <% @smart_blogs.each_slice(4).to_a.each do |blog_array| %>
                         <div class="item">
                           <% blog_array.each do |blog| %>
-                            <div class="col-xs-3">
+                            <div class="col-sm-3 col-xs-6">
+                              <%= link_to blog_detail_path(blog) do %>
+                                <div class="thumbnail blog-brand">
+                                  <div class="blog-image">
+                                    <% if blog.feature_image_thumb_url.present? %>
+                                      <%= image_tag blog.feature_image_thumb_url, alt: blog.feature_image_alt, title: blog.feature_image_title %>
+                                    <% else %>
+                                      <%= image_tag "480_270.jpg", alt: "Image size 480x270" %>
+                                    <% end %>
+                                  </div>
+                                  <div class="caption">
+                                    <h3 class="blog-product-title blog-product-special">
+                                      <p class="blog-title">
+                                        <%= blog.title %>
+                                      </p>
+                                    </h3>
+                                    <div class="tm-posts_item_meta entry-meta pull-right">
+                                      <a class="text-right text-sm"><small><%= blog.created_at.strftime(Settings.format.created_at) %></small></a>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                  </div>
+                                </div>
+                              <% end %>
+                            </div>
+                          <% end %>
+                        </div>
+                      <% end %>
+                    </div>
+                    <a class="left carousel-control custom-carousel" href="#experience-chosen" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                    <a class="right carousel-control custom-carousel" href="#experience-chosen" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                  </div>
+                </div>
+
+                <div class="brand-logo-box td-experience-chosen-mobile">
+                  <div id="experience-chosen" class="experience-chosen carousel slide certificate-class" data-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="item active">
+                        <% @smart_blogs.first(2).each do |blog| %>
+                          <div class="col-sm-3 col-xs-6 row-mobile-custom">
+                            <%= link_to blog_detail_path(blog) do %>
+                              <div class="thumbnail blog-brand">
+                                <div class="blog-image">
+                                  <% if blog.feature_image_thumb_url.present? %>
+                                    <%= image_tag blog.feature_image_thumb_url, alt: blog.feature_image_alt, title: blog.feature_image_title %>
+                                  <% else %>
+                                    <%= image_tag "480_270.jpg", alt: "Image size 480x270" %>
+                                  <% end %>
+                                </div>
+                                <div class="caption">
+                                  <h3 class="blog-product-title blog-product-special">
+                                    <p class="blog-title">
+                                      <%= blog.title %>
+                                    </p>
+                                  </h3>
+                                  <div class="tm-posts_item_meta entry-meta pull-right">
+                                    <p class="text-right text-sm"><small><%= blog.created_at.strftime(Settings.format.created_at) %></small></p>
+                                  </div>
+                                  <div class="clearfix"></div>
+                                </div>
+                              </div>
+                            <% end %>
+                          </div>
+                        <% end %>
+                      </div>
+                      <% @smart_blogs.each_slice(2).to_a.each do |blog_array| %>
+                        <div class="item">
+                          <% blog_array.each do |blog| %>
+                            <div class="col-sm-3 col-xs-6">
                               <%= link_to blog_detail_path(blog) do %>
                                 <div class="thumbnail blog-brand">
                                   <div class="blog-image">
@@ -247,7 +314,7 @@
                     <div class="col-md-6 blog-special">
                       <% @tech_blogs[1..-1].each do |blog| %>
                         <div class="blog-product-custom">
-                          <div class="col-sm-6 blog-image-custom img-block-custom">
+                          <div class="col-xs-6 blog-image-custom img-block-custom">
                             <%= link_to blog_detail_path(blog) do %>
                               <% if blog.feature_image_thumb_url.present? %>
                                 <%= image_tag blog.feature_image_thumb_url, alt: blog.feature_image_alt, title: blog.feature_image_title %>
@@ -256,7 +323,7 @@
                               <% end %>
                             <% end %>
                           </div>
-                          <div class="col-sm-6 caption">
+                          <div class="col-xs-6 caption">
                             <h3 class="blog-product-title">
                               <%= link_to blog.title, blog_detail_path(blog), class: "blog-title" %>
                             </h3>
@@ -277,7 +344,7 @@
                   <p class="typical-product-brand">Tin khuyến mại - Gói sản phẩm ưu đãi</p>
                 </div>
 
-                <div class="brand-logo-box">
+                <div class="brand-logo-box td-experience-chosen">
                   <div id="blog-sale" class="experience-chosen carousel slide certificate-class" data-ride="carousel">
                     <div class="carousel-inner">
                       <div class="item active">
@@ -312,6 +379,73 @@
                         <div class="item">
                           <% blog_array.each do |blog| %>
                             <div class="col-xs-3">
+                              <%= link_to blog_detail_path(blog) do %>
+                                <div class="thumbnail blog-brand">
+                                  <div class="blog-image">
+                                    <% if blog.feature_image_thumb_url.present? %>
+                                      <%= image_tag blog.feature_image_thumb_url, alt: blog.feature_image_alt, title: blog.feature_image_title %>
+                                    <% else %>
+                                      <%= image_tag "480_270.jpg", alt: "Image size 480x270" %>
+                                    <% end %>
+                                  </div>
+                                  <div class="caption">
+                                    <h3 class="blog-product-title blog-product-special">
+                                      <p class="blog-title">
+                                        <%= blog.title %>
+                                      </p>
+                                    </h3>
+                                    <div class="tm-posts_item_meta entry-meta pull-right">
+                                      <a class="text-right text-sm"><small><%= blog.created_at.strftime(Settings.format.created_at) %></small></a>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                  </div>
+                                </div>
+                              <% end %>
+                            </div>
+                          <% end %>
+                        </div>
+                      <% end %>
+                    </div>
+                    <a class="left carousel-control custom-carousel" href="#blog-sale" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                    <a class="right carousel-control custom-carousel" href="#blog-sale" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                  </div>
+                </div>
+
+                <div class="brand-logo-box td-experience-chosen-mobile">
+                  <div id="blog-sale" class="experience-chosen carousel slide certificate-class" data-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="item active">
+                        <% @sale_blogs.first(2).each do |blog| %>
+                          <div class="col-xs-6">
+                            <%= link_to blog_detail_path(blog) do %>
+                              <div class="thumbnail blog-brand">
+                                <div class="blog-image">
+                                  <% if blog.feature_image_thumb_url.present? %>
+                                    <%= image_tag blog.feature_image_thumb_url, alt: blog.feature_image_alt, title: blog.feature_image_title %>
+                                  <% else %>
+                                    <%= image_tag "480_270.jpg", alt: "Image size 480x270" %>
+                                  <% end %>
+                                </div>
+                                <div class="caption">
+                                  <h3 class="blog-product-title blog-product-special">
+                                    <p class="blog-title">
+                                      <%= blog.title %>
+                                    </p>
+                                  </h3>
+                                  <div class="tm-posts_item_meta entry-meta pull-right">
+                                    <p class="text-right text-sm"><small><%= blog.created_at.strftime(Settings.format.created_at) %></small></p>
+                                  </div>
+                                  <div class="clearfix"></div>
+                                </div>
+                              </div>
+                            <% end %>
+                          </div>
+                        <% end %>
+                      </div>
+                      <% @sale_blogs.each_slice(2).to_a.each do |blog_array| %>
+                        <div class="item">
+                          <% blog_array.each do |blog| %>
+                            <div class="col-xs-6">
                               <%= link_to blog_detail_path(blog) do %>
                                 <div class="thumbnail blog-brand">
                                   <div class="blog-image">
