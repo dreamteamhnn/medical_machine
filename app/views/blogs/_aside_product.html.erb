@@ -1,5 +1,5 @@
 <div class="post-215 type-product status-publish has-post-thumbnail hentry product_shipping_class-class-2 has-thumb col-xs-12 product">
-  <div class="block_product_inner">
+  <div class="block_product_inner aside-product">
     <div class="block_product_thumbnail">
       <a href="">
         <div class="tm-thumbs-wrap effect-fade">
@@ -7,6 +7,9 @@
             <%= link_to friendly_product_path(product), title: strip_tags(product.name) do %>
               <%= image_tag product.img_1, size: '340', title: product.img_1_title, alt: product.img_1_alt if product.img_1%>
               <%= image_tag product.img_2, size: '340', title: product.img_2_title, alt: product.img_2_alt if product.img_2%>
+              <% if product.img_1.blank? && product.img_2.blank? %>
+                <%= image_tag "223_223.jpg", alt: "Image size 233x223" %>
+              <% end %>
             <% end %>
           </div>
         </div>

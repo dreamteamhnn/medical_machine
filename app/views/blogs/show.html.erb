@@ -62,12 +62,13 @@
         <h2 class="product_title entry-title product-h1-custom"><%= link_to "Xem thêm", blogs_url() %></h2>
       </header>
       <div class="entry-content">
-        <% @more_blogs.each_with_index do |blog, idx| %>
-          <%= link_to blog.title, blog_detail_path(blog) %>
-          <% if idx != 4 %>
-            <hr>
+        <ul>
+          <% @more_blogs.each_with_index do |blog, idx| %>
+            <li>
+              <%= link_to blog.title, blog_detail_path(blog) %>
+            </li>
           <% end %>
-        <% end %>
+        </ul>
       </div>
     </div>
     <div id="suggestion-blogs" class="blogs-custom blogs-custom-new box-content-custom home-blog-part">
@@ -85,7 +86,11 @@
                 <div class="thumbnail">
                   <div class="blog-image">
                     <%= link_to blog_detail_path(blog) do %>
-                      <%= image_tag blog.feature_image_thumb_url, alt: blog.feature_image_alt, title: blog.feature_image_title %>
+                      <% if blog.feature_image_thumb_url.present? %>
+                        <%= image_tag blog.feature_image_thumb_url, alt: blog.feature_image_alt, title: blog.feature_image_title %>
+                      <% else %>
+                        <%= image_tag "480_270.jpg", alt: "Image size 480x270" %>
+                      <% end %>
                     <% end %>
                   </div>
                   <div class="caption">

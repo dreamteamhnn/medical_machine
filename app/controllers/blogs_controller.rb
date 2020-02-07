@@ -70,7 +70,7 @@ class BlogsController < ApplicationController
         max_aside = 0
       end
     elsif Blog.count >= 8
-      max_aside = 5
+      max_aside = 4
       max_aside = 3 unless @tech_blogs.present?
     end
     @aside_products = Product.order("RAND()").limit(max_aside)
