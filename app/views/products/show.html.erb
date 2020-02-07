@@ -144,7 +144,7 @@
                                 <% end %>
                               </div>
                               <div class="caption">
-                                <h3 class="blog-product-title"><%= link_to blog.title, blog_detail_path(blog), class: "truncate-multiple" %></h3>
+                                <h3 class="blog-product-title"><%= link_to blog.title, blog_detail_path(blog), class: "" %></h3>
                                 <div class="tm-posts_item_meta entry-meta pull-right">
                                   <a class="text-right text-sm"><small>Ngày đăng: <%= blog.created_at.strftime(Settings.format.created_at) %></small></a>
                                 </div>
