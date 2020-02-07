@@ -276,12 +276,31 @@ a:hover {
 .blog-detail-custom {
   h1 {
     font-size: 20px !important;
+    &:before {
+      display: none !important;
+    }
   }
 
   h2, h3, h4 {
     font-size: 18px !important;
     text-transform: none !important;
     // line-height: 0px !important;
+    &:before {
+      display: none !important;
+    }
+  }
+
+  h3 {
+    padding-top: 0 !important;
+  }
+
+  h5, h6 {
+    font-size: 16px !important;
+    text-transform: none !important;
+    // line-height: 0px !important;
+    &:before {
+      display: none !important;
+    }
   }
 }
 

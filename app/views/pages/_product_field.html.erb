@@ -20,7 +20,11 @@
         </h3>
         <span class="price">
           <span class="woocs_price_code" data-product-id="215">
-            <% if product.price_currency.present? %>
+            <% if product.discount_price_currency.present? && product.price_currency.present? %>
+              <span class="woocommerce-Price-amount amount"><%= product.discount_price_currency %> - <%= product.price_currency %>
+                <span class="woocommerce-Price-currencySymbol">VNĐ</span>
+              </span>
+            <% elsif product.price_currency.present? %>
               <span class="woocommerce-Price-amount amount"><%= product.price_currency %>
                 <span class="woocommerce-Price-currencySymbol">VNĐ</span>
               </span>

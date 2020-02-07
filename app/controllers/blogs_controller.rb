@@ -59,8 +59,6 @@ class BlogsController < ApplicationController
       if @blogs.count == 0
         max_aside = 0
       elsif blog_size > 16
-        max_aside = 4
-      elsif blog_size > 12
         max_aside = 3
       elsif blog_size > 4
         max_aside = 2

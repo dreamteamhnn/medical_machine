@@ -30,14 +30,9 @@
 
                           <p class="price">
                             <span class="woocs_price_code span-left" data-product-id="215">
-                              <% if @product.discount_price_currency.present? %>
-                                <del>
-                                  <span class="woocommerce-Price-amount amount span-left"><%= @product.price_currency %>
-                                    <span class="woocommerce-Price-currencySymbol">VNĐ</span>
-                                  </span>
-                                </del>
+                              <% if @product.discount_price_currency.present? && @product.price_currency.present? %>
                                 <ins>
-                                  <span class="woocommerce-Price-amount amount span-left red custom-price"><%= @product.discount_price_currency %>
+                                  <span class="woocommerce-Price-amount amount span-left red custom-price"><%= @product.discount_price_currency %> - <%= @product.price_currency %>
                                     <span class="woocommerce-Price-currencySymbol">VNĐ</span>
                                   </span>
                                 </ins>
@@ -46,10 +41,14 @@
                                   <span class="woocommerce-Price-currencySymbol">VNĐ</span>
                                 </span>
                               <% else %>
-                                <%= link_to "Yêu cầu báo giá", order_product_path(@product),
-                                  remote: true, rel: "nofollow",
-                                  "data-product-id": @product.id,
-                                  class: "custom-add-to-cart-button" %>
+                                <ins>
+                                  <span class="woocommerce-Price-amount amount span-left red custom-price">
+                                    <%= link_to "Yêu cầu báo giá", order_product_path(@product),
+                                      remote: true, rel: "nofollow",
+                                      "data-product-id": @product.id,
+                                      class: "custom-add-to-cart-button" %>
+                                  </span>
+                                </ins>
                               <% end %>
                             </span>
                           </p>
@@ -137,7 +136,11 @@
                             <div class="thumbnail">
                               <div class="blog-image">
                                 <%= link_to blog_detail_path(blog) do %>
-                                  <%= image_tag blog.feature_image_thumb_url, alt: blog.feature_image_alt, title: blog.feature_image_title %>
+                                  <% if blog.feature_image_thumb_url.present? %>
+                                    <%= image_tag blog.feature_image_thumb_url, alt: blog.feature_image_alt, title: blog.feature_image_title %>
+                                  <% else %>
+                                    <%= image_tag "480_270.jpg", alt: "Image size 480x270" %>
+                                  <% end %>
                                 <% end %>
                               </div>
                               <div class="caption">
