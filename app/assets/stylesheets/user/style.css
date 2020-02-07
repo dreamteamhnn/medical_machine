@@ -6826,7 +6826,7 @@ h3:before {
     left: 0;
     width: 37px;
     height: 4px;
-    display: block
+    display: none;
 }
 
 h4 {
