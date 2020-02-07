@@ -11,23 +11,20 @@
             <div id="product-215" class="post-215 product type-product status-publish has-post-thumbnail hentry product_shipping_class-class-2 has-thumb swiper-slide">
               <%= form_for @product, url: products_path do |f|%>
                 <div class="single_product_wrapper">
-                  <div class="row">
-
-                    <!-- image -->
-                    <div class="col-sm-5">
-                      <div class="single-image-container">
-                        <%= render "image_detail" %>
-                      </div>
+                  <!-- image -->
+                  <div class="col-sm-5">
+                    <div class="single-image-container">
+                      <%= render "image_detail" %>
                     </div>
+                  </div>
 
-                    <!-- detail -->
-                    <div class="col-sm-7 product-detail">
-                      <div class="summary entry-summary">
-                        <div class="product-info-content">
-                          <h1 class="product_title entry-title product-h1-custom">
-                            <%= @product.name.html_safe %>
-                          </h1>
-
+                  <!-- detail -->
+                  <div class="col-sm-7 product-detail">
+                    <div class="summary entry-summary">
+                      <div class="product-info-content">
+                        <h1 class="product_title entry-title product-h1-custom">
+                          <%= @product.name.html_safe %>
+                        </h1>
                           <p class="price">
                             <span class="woocs_price_code span-left" data-product-id="215">
                               <% if @product.discount_price_currency.present? && @product.price_currency.present? %>
@@ -52,31 +49,29 @@
                               <% end %>
                             </span>
                           </p>
+                        <div class="woocommerce-product-details__short-description">
+                          <p class="black size-14">
+                            <b>Mã sản phẩm: </b><%= @product.model %>
+                          </p>
+                        </div>
 
-                          <div class="woocommerce-product-details__short-description">
-                            <p class="black size-14">
-                              <b>Mã sản phẩm: </b><%= @product.model %>
-                            </p>
-                          </div>
+                        <div class="woocommerce-product-details__short-description">
+                          <p class="black size-14">
+                            <b>Hãng sản xuất: </b><%= @product&.brand&.name %>
+                          </p>
+                        </div>
 
-                          <div class="woocommerce-product-details__short-description">
-                            <p class="black size-14">
-                              <b>Hãng sản xuất: </b><%= @product&.brand&.name %>
-                            </p>
-                          </div>
+                        <div class="woocommerce-product-details__short-description">
+                          <p class="black size-14">
+                            <b>Xuất xứ: </b><%= @product&.origin %>
+                          </p>
+                        </div>
 
-                          <div class="woocommerce-product-details__short-description">
-                            <p class="black size-14">
-                              <b>Xuất xứ: </b><%= @product&.origin %>
-                            </p>
-                          </div>
-
-                          <div class="woocommerce-product-details__short-description">
-                            <p class="black size-14">
-                              <b>Tình trạng hàng hóa: </b>Còn hàng
-                            </p>
-                          </div>
-
+                        <div class="woocommerce-product-details__short-description">
+                          <p class="black size-14">
+                            <b>Tình trạng hàng hóa: </b>Còn hàng
+                          </p>
+                        </div>
                           <div class="woocommerce-product-details__short-description">
                             <p class="change-price">
                               (* Giá trên có thể thay đổi theo thời điểm - Xin liên hệ trực tiếp để có giá tốt nhất)
@@ -88,41 +83,41 @@
                             <%= @product.short_description&.html_safe %>
                           </div>
                         </div>
-
-                        <form class="cart" method="post" enctype="multipart/form-data" data-product_id="215" data-product_variations="[hash_array]" current-image="">
-                          <div class="custom-cart-button">
-                            <%= link_to "ĐẶT HÀNG", order_product_path(@product), remote: true, rel: "nofollow",
-                              "data-product-id": @product.id, class: "single_add_to_cart_button button alt custom-button" %>
-
-                            <div class="social-network">
-                              <a href="#">
-                                <%= image_tag "facebook.svg", alt: "Facebook", width: "35", height: "35" %>
-                              </a>
-                              <a href="#">
-                                <%= image_tag "linkedin.svg", alt: "linkedin", width: "35", height: "35" %>
-                              </a>
-                              <a href="#">
-                                <%= image_tag "twitter.svg", alt: "twitter", width: "35", height: "35" %>
-                              </a>
-                              <a href="#">
-                                <%= image_tag "printerest.png", alt: "printerest", width: "35", height: "35" %>
-                              </a>
-                            </div>
-                          </div>
-                        </form>
                       </div>
-                      <!-- .summary -->
-                    </div>
-                  </div>
 
+                      <form class="cart" method="post" enctype="multipart/form-data" data-product_id="215" data-product_variations="[hash_array]" current-image="">
+                        <div class="custom-cart-button">
+                          <%= link_to "ĐẶT HÀNG", order_product_path(@product), remote: true, rel: "nofollow",
+                            "data-product-id": @product.id, class: "single_add_to_cart_button button alt custom-button" %>
+
+                          <div class="social-network">
+                            <a href="#">
+                              <%= image_tag "facebook.svg", alt: "Facebook", width: "35", height: "35" %>
+                            </a>
+                            <a href="#">
+                              <%= image_tag "linkedin.svg", alt: "linkedin", width: "35", height: "35" %>
+                            </a>
+                            <a href="#">
+                              <%= image_tag "twitter.svg", alt: "twitter", width: "35", height: "35" %>
+                            </a>
+                            <a href="#">
+                              <%= image_tag "printerest.png", alt: "printerest", width: "35", height: "35" %>
+                            </a>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <!-- .summary -->
+                  </div>
                 </div>
                 <%= render "description" %>
               <% end %>
+
               <%= render "related_products_sidebar" %>
-              <div class="home-blog-part">
-                <div class="row">
-                  <div class="col-xs-12">
-                    <div class="typical-products-title brand-title">
+              <div class="home-blog-part td-blog-product-show">
+                <div class="row row-mobile-custom">
+                  <div class="col-xs-12 col-mobile-custom">
+                    <div class="typical-products-title brand-title brand-title-show">
                       <%= link_to blog_list_path, class: "typical-product-brand" do %>
                         Tin công nghệ
                       <% end %>
@@ -132,7 +127,7 @@
                     <div class="row">
                       <div class="col-xs-12">
                         <% @blogs.each do |blog| %>
-                          <div class="col-sm-4">
+                          <div class="col-sm-4 col-xs-6 col-mobile-custom">
                             <div class="thumbnail">
                               <div class="blog-image">
                                 <%= link_to blog_detail_path(blog) do %>
