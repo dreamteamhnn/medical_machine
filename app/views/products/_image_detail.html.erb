@@ -5,6 +5,12 @@
         <%= image_tag @product.img_1, title: @product.img_1_title, alt: @product.img_1_alt, 'data-zoom-image': @product.img_1, id: 'zoom', class: "product-detail-images" %>
       </a>
     </div>
+  <% else %>
+    <div class="easyzoom is-ready easyzoom--overlay easyzoom--with-thumbnails">
+      <a href="" class="woocommerce-main-image">
+        <%= image_tag "223_223.jpg", alt: "Image size 223x223" %>
+      </a>
+    </div>
   <% end %>
 
   <div class="swiper-carousel-container">
