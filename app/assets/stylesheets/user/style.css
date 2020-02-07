@@ -7950,7 +7950,7 @@ input[type=radio]+label:before {
         left: 15px
     }
     .search-form__field[type=search] {
-        padding-left: 60px
+        padding-left: 20px
     }
     .footer-area:not(.footer-area--fullwidth) .search-form__field[type=search],
     .tm_pb_column_1_4 .search-form__field[type=search] {

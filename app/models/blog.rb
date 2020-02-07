@@ -25,6 +25,7 @@ class Blog < ApplicationRecord
 
   scope :new_articles_for_home, -> do
     where(is_important: true)
+      .order("RAND()")
       .take_ordered_list.limit(Settings.limit.blog_home_page)
       .includes :blog_images
   end
