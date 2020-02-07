@@ -2,9 +2,20 @@ class Blog < ApplicationRecord
   extend FriendlyId
   include BlogDecorator
 
-  validates :title, presence: true, uniqueness: true
-
   friendly_id :beauty_slug, use: :slugged
+
+  before_save do
+    if title_changed?
+      self.slug = beauty_slug
+    end
+  end
+
+  after_create do
+    self.slug = nil
+    self.save
+  end
+
+  validates :title, presence: true, uniqueness: true
 
   paginates_per Settings.limit.paginate.admin_blog
 
