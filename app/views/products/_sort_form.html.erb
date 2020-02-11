@@ -9,17 +9,17 @@
   <span id="sort-field">
     <form class="woocommerce-ordering">
       <select class="orderby woocommerce-orderby">
-        <option value="default">Sắp xếp theo</option>
+        <option value="default">Sắp xếp</option>
         <option value="name" <%= 'selected' if params[:sort_by] == 'name' %>>Tên</option>
         <option value="date" <%= 'selected' if params[:sort_by] == 'date' %>>Mới đến cũ</option>
-        <option value="price" <%= 'selected' if params[:sort_by] == 'price' %>>Giá thấp đến cao</option>
-        <option value="price_desc" <%= 'selected' if params[:sort_by] == 'price_desc' %>>Giá cao đến thấp</option>
+        <option value="price" <%= 'selected' if params[:sort_by] == 'price' %>>Giá thấp</option>
+        <option value="price_desc" <%= 'selected' if params[:sort_by] == 'price_desc' %>>Giá cao</option>
       </select>
     </form>
   </span>
   <span id="price-field">
-    <input type="text" id="min_price" name="min_price" value="1" data-min="1" placeholder="Giá từ">
-    <input type="text" id="max_price" name="max_price" value="100" data-max="500" placeholder="Giá đến"> triệu VNĐ
+    <input type="text" id="min_price" name="min_price" value="1" data-min="1" placeholder="Từ">
+    <input type="text" id="max_price" name="max_price" value="100" data-max="500" placeholder="Đến"> triệu
     <div class="clear"></div>
   </span>
 <% end %>

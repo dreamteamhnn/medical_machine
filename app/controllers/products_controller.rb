@@ -177,7 +177,7 @@ class ProductsController < ApplicationController
     @related_products = []
     @related_products_1 = []
     @related_products_2 = []
-    if category = @product.categories.first
+    if category = @product.categories.try(&:second) || @product.categories.first
       @related_products = Product.where(id: category.products.pluck(:id).uniq).order("RAND()")
         .limit Settings.limit.related_products
       @related_products_1 = @related_products[0..2] if @related_products[0..3]
@@ -187,6 +187,7 @@ class ProductsController < ApplicationController
 
   def load_data_index
     params[:page] ||= 1
+    @limit = params[:limit] || Settings.limit.paginate.products
     menu_item = nil
     if params[:category_id]
       menu_item = Category.friendly.find params[:category_id]
@@ -199,7 +200,7 @@ class ProductsController < ApplicationController
     set_meta_tags(menu_item) if menu_item
 
     @products_from_menu = get_products(menu_item).page(params[:page])
-      .per(Settings.limit.paginate.products)
+      .per(@limit)
 
     unless @products_from_menu.blank?
       @title = menu_item ? menu_item.name : "Tất cả sản phẩm"
@@ -210,13 +211,14 @@ class ProductsController < ApplicationController
       set_meta_tags noindex: true, follow: true
       found_products = Product.search(body: {query: {bool: {should: [{match: {title: q}}, {match: {category: q}}, {match: {brand: q}}, {match: {field: q}}]}}})
       @products_from_menu = get_products(Product.by_ids(found_products.map(&:id)))
-        .page(params[:page]).per(Settings.limit.paginate.products)
+        .page(params[:page]).per(@limit)
       get_number_show_product if @products_from_menu.present?
     end
   end
 
   def get_number_show_product
-    limit = Settings.limit.paginate.products
+    # limit = Settings.limit.paginate.products
+    limit = params[:limit].to_i
     @from = (params[:page].to_i - 1) * limit + 1
     if @products_from_menu.count >= limit
       @to = params[:page].to_i * limit
