@@ -18,8 +18,11 @@ class BlogsController < ApplicationController
 
   private
   def load_blogs
+    @breads = [{title: "Tin công nghệ", link: ""}]
     if params[:blog_category_id]
       @category = BlogCategory.friendly.find params[:blog_category_id]
+      @breads = [{title: "Tin công nghệ", link: blog_list_path()}]
+      @breads << {title: @category.name, link: ""}
       @blogs = Blog.by_category(@category.id).limit(4)
       @other_blogs = Blog.all.where.not(id: @blogs.map(&:id)).page(params[:page]).per(Settings.limit.paginate.blogs)
       set_meta_tags @category
@@ -46,7 +49,6 @@ class BlogsController < ApplicationController
       set_meta_tags meta_tags_hash
     end
     # @blogs = @blogs.distinct.take_ordered_list.page(params[:page]).per(Settings.limit.paginate.blogs)
-    @breads = [{title: "Tin công nghệ", link: ""}]
   end
 
   def load_left_menu
@@ -76,13 +78,15 @@ class BlogsController < ApplicationController
 
   def load_blog
     @blog = Blog.friendly.find params[:id]
-    @more_blogs = Blog.by_category(@blog.blog_categories.first.id).where.not(id: @blog.id).order("RAND()").limit(5)
+    @category = @blog.blog_categories.first
+    @more_blogs = Blog.by_category(@category.id).where.not(id: @blog.id).order("RAND()").limit(5)
     @suggestion_blogs = Blog.where.not(id: [@blog.id] + @more_blogs.map(&:id)).order("RAND()").limit(8)
     # @next = next_blog
     # @prev = prev_blog
     # @blog_relate_1 = Blog.find_by id: @blog.relation_blog_id_1
     # @blog_relate_2 = Blog.find_by id: @blog.relation_blog_id_2
-    @breads = [{title: "Tin tức", link: blogs_path()}]
+    @breads = [{title: "Tin công nghệ", link: blog_list_path()}]
+    @breads << {title: @category.name, link: blog_list_category_path(@category)}
     @breads << {title: @blog.title, link: ""}
   end
 

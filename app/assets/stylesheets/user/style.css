@@ -30268,7 +30268,6 @@ body.wcvendors.wcvendors_vendor .entry-content>h2:nth-child(2):before {
 
 @media (min-width:768px) {
     .cross-sels,
-    .related,
     .up-sells {
         padding-top: 40px
     }
@@ -35893,7 +35892,8 @@ body.wcvendors.wcvendors_vendor .entry-content>h2:nth-child(2):before {
 
 @media (min-width:992px) {
     .woocommerce-ordering select {
-        width: 320px;
+        /*width: 320px;*/
+        width: 209px;
         padding: 7px 20px 5px 22px
     }
 }
