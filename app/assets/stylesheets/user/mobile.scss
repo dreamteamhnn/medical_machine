@@ -21,13 +21,12 @@
 
   .custom-cart-button {
     text-align: center !important;
+    margin-top: 5px;
   }
 
   .social-network {
-    float: inherit !important;
-
     a {
-      margin: 5px !important;
+      margin: 0px !important;
     }
   }
 
@@ -124,10 +123,11 @@
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
+        -webkit-line-clamp: 3;
         line-height: 14px !important;
-        height: 30px;
+        height: 41px;
         word-break: break-word;
+        margin-top: -25px !important;
       }
     }
   }
@@ -223,6 +223,7 @@
 
   .td-media-video-mobile {
     display: block !important;
+    text-align: left;
   }
 
   #media-table {
@@ -322,7 +323,7 @@
 }
 
 .typical-products-mobile {
-  display: none;
+  // display: none;
 
   .home-product-title {
     font-size: 14px;
@@ -346,8 +347,11 @@
   }
 
   .woocommerce-LoopProduct-link {
-    height: 30px;
+    height: 41px;
+    text-align: left !important;
     line-height: 14px !important;
+    -webkit-line-clamp: 3 !important;
+    margin-top: 15px !important;
   }
 }
 
@@ -391,6 +395,14 @@
     height: auto !important;
     margin-top: 20vh !important;
   }
+
+  .video-td-product {
+    padding-right: 25px !important;
+  }
+
+  .iframe-video-image {
+    width: 100% !important;
+  }
 }
 
 .contact-custom {
@@ -404,7 +416,7 @@
   display: none;
 }
 
-@media(max-width: 360px) {
+@media only screen and (max-width:768px) {
   .add_to_cart_button,
   .products .product .add_to_cart_button.product_type_variable {
     padding: 7px 5px !important;
@@ -430,6 +442,83 @@
   }
 
   .list-item-address {
+    line-height: 19px !important;
+  }
+
+  .contact-information-widget__inner .contact-information__item--icon {
     line-height: 15px !important;
   }
+
+  .media-tr-mm {
+    text-align: left;
+  }
+
+  .single_add_to_cart_button {
+    float: left;
+  }
+
+  .page-numbers {
+    line-height: 35px !important;
+    min-width: 35px !important;
+    height: 35px !important;
+
+    &.next,
+    &.prev {
+      margin-top: 0px !important;
+      width: 35px !important;
+      padding: 0 !important;
+      display: inline-block !important;
+    }
+  }
+
+  .custom-cart-button {
+    padding-left: 0px !important;
+  }
+
+  .customer-message {
+    font-size: 13px;
+  }
+
+  .zoomContainer {
+    display: none !important;
+  }
+
+  h1.page-title-custom {
+    font-size: 18px !important;
+  }
+
+  .woocommerce nav.woocommerce-pagination a.next:before,
+  .woocommerce nav.woocommerce-pagination a.prev:before {
+    display: none !important;
+  }
+
+  .woocommerce nav.woocommerce-pagination a.prev {
+    margin-bottom: 5px !important;
+  }
+
+  .woocommerce-pagination {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+  }
+
+  #price-field {
+    width: 60% !important;
+    input {
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+    }
+  }
+
+  #sort-field {
+    padding-right: 4px !important;
+  }
+
+  #amount-field {
+    width: 40px !important;
+    margin-left: -9% !important;
+  }
+}
+
+#tm_willard_contact_information_widget-1 {
+  letter-spacing: normal !important;
 }
