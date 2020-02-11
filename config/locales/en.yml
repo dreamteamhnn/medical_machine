@@ -32,10 +32,10 @@ en:
   site_name: "stechsaigon.com"
   views:
     pagination:
-      first: "ĐẦU"
-      last: "CUỐI"
-      previous: "QUAY LẠI"
-      next: "TIẾP THEO"
+      first: "<<"
+      last: ">>"
+      previous: "<"
+      next: ">"
       truncate: "…"
   helpers:
     page_entries_info:

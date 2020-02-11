@@ -46,12 +46,12 @@
 </table>
 <table class="table table-bordered width-100-percent td-media-video-mobile">
   <tbody>
-    <% @medias.each_slice(2).to_a.each do |block| %>
+    <% @medias.each_slice(1).to_a.each do |block| %>
       <tr>
         <% block.each do |video| %>
           <td class="video-td-product video-td-product-<%= video.id %>">
             <a class="iframe-video-image clearfix" data-toggle="modal" data-video="<%= video.id %>">
-              <iframe height="110" src="<%= video.video_url %>" frameborder="0" allowfullscreen></iframe>
+              <iframe height="210" src="<%= video.video_url %>" frameborder="0" allowfullscreen></iframe>
               <div class="disable-iframe"></div>
             </a>
             <div>
@@ -92,5 +92,4 @@
 </table>
 <div class="paginate-medias">
   <%= paginate @medias %>
-  <%= page_entries_info @medias, entry_name: "video" %>
 </div>
