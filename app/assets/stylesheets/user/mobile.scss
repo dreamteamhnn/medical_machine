@@ -403,3 +403,33 @@
 .map-mobile {
   display: none;
 }
+
+@media(max-width: 360px) {
+  .add_to_cart_button,
+  .products .product .add_to_cart_button.product_type_variable {
+    padding: 7px 5px !important;
+    font-size: 11px !important;
+    height: 33px !important;
+  }
+
+  .price-add-to-cart-wrap {
+    margin-top: 5px;
+  }
+
+  .typical-products-mobile .amount,
+  .block_product_inner .block_product_content .woocs_price_code {
+    font-size: 13px !important;
+  }
+
+  .block_product_inner .block_product_thumbnail {
+    height: 120px !important;
+  }
+
+  .woocommerce .product .price {
+    min-height: 20px !important;
+  }
+
+  .list-item-address {
+    line-height: 15px !important;
+  }
+}

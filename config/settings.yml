@@ -17,7 +17,7 @@ limit:
   new_products: 5
   new_blogs: 3
   paginate:
-    products: 16
+    products: 18
     blogs: 20
     documents: 12
     videos: 12

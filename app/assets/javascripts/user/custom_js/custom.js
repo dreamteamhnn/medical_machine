@@ -34,6 +34,13 @@ $(document).on('turbolinks:load', function(){
     location.href = url;
   });
 
+  $(".woocommerce-limit").on("change", function() {
+    var sym = location.href.indexOf("?") != -1 ? "&" : "?";
+    var sortParam = $(this).val() == "default" ? "" : (sym + "limit=" + $(this).val());
+    var url = removeParam("limit", location.href) + sortParam;
+    location.href = url;
+  });
+
   $("#archives-dropdown-4").on("change", function() {
     location.href = $(this).val();
   });
@@ -110,4 +117,21 @@ $(document).on('turbolinks:load', function(){
     var id = $(this).data("cert");
     $("#modal-video-" + id).modal("show");
   })
+
+  $(".btn-show-detail").on("click", function() {
+    var visible = $(this).data("attr");
+    if (visible == "show") {
+      $(".detail_cate").css("height", "auto");
+      $(this).data("attr", "hide");
+      $(".fa-long-arrow-down").addClass("fa-long-arrow-up").removeClass("fa-long-arrow-down");
+      $(".detail-button").text("Ẩn bớt");
+    } else {
+      $(".detail_cate").css("height", "400px");
+      $(this).data("attr", "show");
+      $(".fa-long-arrow-up").addClass("fa-long-arrow-down").removeClass("fa-long-arrow-up");
+      $(".detail-button").text("Xem thêm");
+    }
+  })
 });
+
+
