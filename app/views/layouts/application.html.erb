@@ -12,6 +12,19 @@
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbEWIklaDSw8BsgQhkabXXYnM3DcKFNyQ&callback">
     </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "url": "http://stechsaigon.com/",
+    "name": "Stech Sài Gòn",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+84-986-406-636",
+      "contactType": "Customer service"
+    }
+  }
+  </script>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -19,6 +32,7 @@
 
 <body class="home page-template-default page page-id-48 custom-background use-tm-pb-builder header-layout-fullwidth content-layout-boxed footer-layout-fullwidth blog-default position-fullwidth sidebar-1-4 header-default footer-default tm_pb_builder currency-usd woocommerce <%= 'single-product' if (params[:controller] == 'products' || params[:controller] == 'categories')%>">
   <%= render "layouts/chat" %>
+  <%= render "layouts/call" %>
   <div id="page" class="site">
     <!-- <a class="skip-link screen-reader-text" href="https://ld-wp.template-help.com/woocommerce_58679/#content">Skip to content</a> -->
     <%= render "layouts/header" %>
