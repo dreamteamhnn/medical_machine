@@ -1,0 +1,59 @@
+<% if @first_project.present? %>
+  <div id="custom-project-mobile" class="typical-projects container">
+    <div class="row">
+      <!-- box Tin tức nổi bật -->
+      <div class="col-xs-12">
+        <div class="brand-title">
+          <p class="typical-product-brand">Dự án tiêu biểu</p>
+        </div>
+        <div class="row home-blog-part blog-special">
+          <div class="col-md-6">
+            <div class="blog-most-popular">
+              <div class="blog-image img-block">
+                <%= link_to @first_project.link do %>
+                  <% if @first_project.img.url.present? %>
+                    <%= image_tag @first_project.img.url, alt: "#{@first_project.title.convert_vietnamese_to_unicode}-alt", title: "#{@first_project.title.convert_vietnamese_to_unicode}-title" %>
+                  <% else %>
+                    <%= image_tag "1200_628.jpg", alt: "Image size 1200x628" %>
+                  <% end %>
+                <% end %>
+              </div>
+              <div class="caption">
+                <h3 class="blog-product-title blog-product-special">
+                  <%= link_to @first_project.title, @first_project.link, class: "blog-title" %>
+                </h3>
+                <!-- <div class="thumbnail blog-content">
+                  <i class="blog-content-preview"><%= @first_project.content&.html_safe %></i>
+                </div> -->
+                <div class="clearfix"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <% @other_projects.each do |project| %>
+              <div class="blog-product-custom">
+                <div class="col-xs-6 blog-image-custom img-block-custom">
+                  <%= link_to project.link do %>
+                    <% if project.img.url.present? %>
+                      <%= image_tag project.img.url, alt: "#{project.title.convert_vietnamese_to_unicode}-alt", title: "#{project.title.convert_vietnamese_to_unicode}-title" %>
+                    <% else %>
+                      <%= image_tag "1200_628.jpg", alt: "Image size 1200x628" %>
+                    <% end %>
+                  <% end %>
+                </div>
+                <div class="col-xs-6 caption">
+                  <h3 class="blog-product-title">
+                    <%= link_to project.title, project.link, class: "blog-title" %>
+                  </h3>
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+              <hr>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <!-- end -->
+    </div>
+  </div>
+<% end %>
