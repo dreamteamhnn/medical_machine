@@ -6,4 +6,4 @@ Ruby 2.3.8
 Rails 5.1.4
 bundler-1.17.1
 
-![alt text](https://github.com/tranhuyhoangbka/teacup/blob/deploy_template/public/assets/images/maxresdefault.jpg)
+!![alt text](https://github.com/tranhuyhoangbka/teacup/blob/deploy_template/public/assets/images/maxresdefault.jpg)
