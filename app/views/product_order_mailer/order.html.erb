@@ -15,20 +15,6 @@
 <p><strong>Xuất xứ: </strong><%= @product.location %></p>
 <p><strong>Lĩnh vực: </strong><%= @product.fields.map(&:name).join(", ") %></p>
 
-<!-- <h3>Ảnh sản phẩm</h3>:
-<% @product.product_images.each do |img| %>
-  <span>
-    <%= link_to product_url(@product) do %>
-      <%= image_tag img.url_url(:product_thumb), title: img.title, alt: img.alt %>
-    <% end %>
-  </span> &nbsp;&nbsp;
-  <span>
-    <%= link_to product_url(@product) do %>
-      <%= image_tag img.url_url(:product_thumb), title: img.title, alt: img.alt %>
-    <% end %>
-  </span> &nbsp;&nbsp;
-<% end %> -->
-
 <h3>Ảnh sản phẩm</h3>:
 <span>
   <%= link_to product_url(@product) do %>
