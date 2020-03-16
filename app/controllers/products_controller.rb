@@ -37,7 +37,7 @@ class ProductsController < ApplicationController
     return unless @data_valid
     @order.save
     user_info = params.as_json(only: ORDER_ATTRS).symbolize_keys
-    ProductOrderMailer.order(user_info, @product).deliver_later
+    ProductOrderMailer.order(user_info, @product).deliver_now
   end
 
   private

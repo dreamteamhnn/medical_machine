@@ -124,13 +124,13 @@
             <li class="contact-information__item contact-information__item--icon">
               <span class="icon linearicon linearicon-telephone"></span>
               <div class="list-item">
-                <p class="clearfix"><%= @company.contact_info %>: <a class="privacy_link" href=""><%= @company.phone %></a></p>
+                <p class="clearfix"><%= @company.contact_info %>: <a class="privacy_link" href="tel:84<%= @company.phone %>"><%= @company.phone %></a></p>
               </div>
             </li>
 
             <li class="contact-information__item contact-information__item--icon">
               <span class="icon linearicon linearicon-envelope-open"></span>
-              <a href="mailto:laihuutoan@gmail.com"><%= @company.email %></a>
+              <a href="mailto:<%= @company.email %>"><%= @company.email %></a>
             </li>
             <li class="contact-information__item contact-information__item--icon">
               <span class="icon linearicon linearicon-home4"></span>
@@ -163,7 +163,7 @@
               <li class="contact-information__item contact-information__item--icon">
                 <span class="icon linearicon linearicon-telephone2"></span>
                 <div class="list-item">
-                  <p class="clearfix"><a class="privacy_link" href=""><%= @company.sg_phone %></a></p>
+                  <p class="clearfix"><a class="privacy_link" href="tel:84<%= @company.sg_phone %>"><%= @company.sg_phone %></a></p>
                 </div>
               </li>
             <% end %>
@@ -183,7 +183,7 @@
               <li class="contact-information__item contact-information__item--icon">
                 <span class="icon linearicon linearicon-telephone2"></span>
                 <div class="list-item">
-                  <p class="clearfix"><a class="privacy_link" href=""><%= @company.hn_phone %></a></p>
+                  <p class="clearfix"><a class="privacy_link" href="tel:84<%= @company.hn_phone %>"><%= @company.hn_phone %></a></p>
                 </div>
               </li>
             <% end %>
@@ -366,7 +366,7 @@
 
             <li class="contact-information__item contact-information__item--icon">
               <span class="icon linearicon linearicon-envelope-open"></span>
-              <a href="mailto:laihuutoan@gmail.com"><%= @company.email %></a>
+              <a href="mailto:<%= @company.email %>"><%= @company.email %></a>
             </li>
             <li class="contact-information__item contact-information__item--icon">
               <span class="icon linearicon linearicon-home4"></span>
