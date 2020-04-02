@@ -42,10 +42,10 @@ class CategoriesController < ApplicationController
       ongs = Category.where(id: @category_lv_1.id)
     end
     ongs.each do |ong|
-      bos = ong.childrens
+      bos = ong.childrens.order('category_order IS NULL, category_order ASC')
       mang_bo = []
       bos.each do |bo|
-        mang_con = bo.childrens
+        mang_con = bo.childrens.order('category_order IS NULL, category_order ASC')
         mang_bo << [bo, mang_con]
       end
       mang_ong << [ong, mang_bo]

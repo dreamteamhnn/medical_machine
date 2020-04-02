@@ -1,11 +1,11 @@
 class PagesController < ApplicationController
   def home
-    @top_categories = Category.top_categories
+    @top_categories = Category.top_categories.limit(Settings.list_categories)
     @blogs = Blog.new_articles_for_home
     @sliders = SliderCatalog.where(image_type: "slider")
-    @catalogs = SliderCatalog.where(image_type: "catalog").limit Settings.limit.catalog
-    @product_labels = Label.all.order(:block_order)
-      .includes(products: [:categories]).limit Settings.limit.label_block
+    # @catalogs = SliderCatalog.where(image_type: "catalog").limit Settings.limit.catalog
+    # @product_labels = Label.all.order(:block_order)
+    #   .includes(products: [:categories]).limit Settings.limit.label_block
     @brand_logos = Brand.where("image IS NOT NULL AND home_order IS NOT NULL")
                         .order(:home_order)
     get_home_category
@@ -19,6 +19,7 @@ class PagesController < ApplicationController
     end
     @certificates_mobile = Certificate.all.order(order: :desc)
     @certificates = @certificates_mobile.in_groups_of(3)
+    update_cloudinary_image_url
   end
 
   def get_home_category
@@ -63,5 +64,18 @@ class PagesController < ApplicationController
         creator: "@author_handle",
       }
     }
+  end
+
+  def update_cloudinary_image_url
+    Product.all.each do |p|
+      if p.img_1.present? && p.img_1.include?("/upload/") && !p.img_1.include?("q_auto")
+        p.img_1["/upload/"] = "/upload/q_auto/"
+      end
+
+      if p.img_2.present? && p.img_2.include?("/upload/") && !p.img_2.include?("q_auto")
+        p.img_2["/upload/"] = "/upload/q_auto/"
+      end
+      p.save
+    end
   end
 end
