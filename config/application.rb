@@ -13,9 +13,9 @@ module MedicalMachine
     config.load_defaults 5.1
 
     config.assets.compile = true
-    config.assets.image_optim.nice = 20
-    config.assets.image_optim.svgo = false
-    config.assets.image_optim.gifsicle.careful = true
+    # config.assets.image_optim.nice = 20
+    # config.assets.image_optim.svgo = false
+    # config.assets.image_optim.gifsicle.careful = true
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

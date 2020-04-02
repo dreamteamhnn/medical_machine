@@ -9,7 +9,7 @@
       <div class="col-sm-6 the-most-product">
         <div class="project-image-1">
           <%= link_to @first_project.link do %>
-            <%= image_tag @first_project.img.url, class: "img-responsive width-100-percent" %>
+            <%= image_tag @first_project.img_url(:project_thumb), class: "img-responsive width-100-percent" %>
             <p class="project-title"><%= @first_project.title %></p>
           <% end %>
         </div>
@@ -20,7 +20,7 @@
             <div class="col-sm-6 #{'config-padding-30-0' if idx%2 == 0}">
               <div class="project-image-2">
                 <%= link_to project.link do %>
-                  <%= image_tag project.img.url, class: "img-responsive width-100-percent" %>
+                  <%= image_tag project.img_url(:project_thumb), class: "img-responsive width-100-percent" %>
                   <p class="project-title"><%= project.title %></p>
                 <% end %>
               </div>

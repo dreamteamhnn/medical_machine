@@ -39,6 +39,30 @@ class ImageUploader < CarrierWave::Uploader::Base
     process resize_to_fit: [210, 210]
   end
 
+  version :brand_thumb, if: :is_brand_img? do
+    process resize_to_fit: [150, 75]
+  end
+
+  version :feedback_thumb, if: :is_feedback_img? do
+    process resize_to_fit: [56, 56]
+  end
+
+  version :cetificate_thumb, if: :is_cetificate_img? do
+    process resize_to_fit: [236, 334]
+  end
+
+  version :cetificate_active_thumb, if: :is_cetificate_img? do
+    process resize_to_fit: [903, 1277]
+  end
+
+  version :slider_thumb, if: :is_slider_img? do
+    process resize_to_fit: [890, 376]
+  end
+
+  version :project_thumb, if: :is_project_img? do
+    process resize_to_fit: [555, 290]
+  end
+
   def extension_whitelist
     %w(jpg jpeg png)
   end
@@ -91,11 +115,31 @@ class ImageUploader < CarrierWave::Uploader::Base
     model.is_a? ProductImage
   end
 
-  def is_company?
+  def is_company? _pic
     model.is_a? Company
   end
 
-  def is_product?
+  def is_product? _pic
     model.is_a? ProductImage
+  end
+
+  def is_brand_img? _pic
+    model.is_a? Brand
+  end
+
+  def is_feedback_img? _pic
+    model.is_a? Feedback
+  end
+
+  def is_cetificate_img? _pic
+    model.is_a? Certificate
+  end
+
+  def is_slider_img? _pic
+    model.is_a? SliderCatalog
+  end
+
+  def is_project_img? _pic
+    model.is_a? Project
   end
 end
