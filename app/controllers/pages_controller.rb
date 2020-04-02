@@ -68,12 +68,12 @@ class PagesController < ApplicationController
 
   def update_cloudinary_image_url
     Product.all.each do |p|
-      if p.img_1.present? && p.img_1.include?("/upload/") && !p.img_1.include?("q_auto")
-        p.img_1["/upload/"] = "/upload/q_auto/"
+      if p.img_1.present? && p.img_1.include?("/upload/") && !p.img_1.include?("f_auto")
+        p.img_1["/upload/q_auto/"] = "/upload/q_auto/f_auto/"
       end
 
-      if p.img_2.present? && p.img_2.include?("/upload/") && !p.img_2.include?("q_auto")
-        p.img_2["/upload/"] = "/upload/q_auto/"
+      if p.img_2.present? && p.img_2.include?("/upload/") && !p.img_2.include?("f_auto")
+        p.img_2["/upload/q_auto/"] = "/upload/q_auto/f_auto/"
       end
       p.save
     end
