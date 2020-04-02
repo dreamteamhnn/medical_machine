@@ -21,10 +21,10 @@
 	</div>
 	<div class="row col-md-12 move-group-button">
 		<div class="col-md-6 button-left">
-			<button id="chevron-left" onclick="tab2_To_tab1(<%= params[:category_id] %>);" class="chevron-button"><i class="fa fa-chevron-left"></i></button>
+			<button id="chevron-left" onclick="tab2_To_tab1(<%= (params[:category_id] == nil || params[:category_id] == 0) ? 1 : params[:category_id] %>);" class="chevron-button"><i class="fa fa-chevron-left"></i></button>
 		</div>
 		<div class="col-md-6">
-			<button id="chevron-right" onclick="tab1_To_tab2(<%= params[:category_id] %>);" class="chevron-button"><i class="fa fa-chevron-right"></i></button>
+			<button id="chevron-right" onclick="tab1_To_tab2(<%= (params[:category_id] == nil || params[:category_id] == 0) ? 1 : params[:category_id] %>);" class="chevron-button"><i class="fa fa-chevron-right"></i></button>
 		</div>
 	</div>
 	<div class="row col-md-12">
@@ -37,7 +37,6 @@
 					    <th>TT</th>
 					    <th>Image</th>
 					    <th>Name</th>
-					    <th>Model</th>
 					    <th class="multiple-category-cb">
 						  <input id="multiple-category-check-all" type="checkbox" value="all">
 						</th>
@@ -46,17 +45,14 @@
 				<tbody>
 					<% @selected_products.each do |product| %>
 						<tr>
-						    <td>
-						    	<p style="width: 20px !important">
-						    		<%= product.id %>
-						    	</p>
+						    <td style="width: 20px !important">
+						    	<%= product.id %>
 						    </td>
 						    <td>
-						    	<input type="text" style="width: 40px;" name="selected-order" value="<%= ProductCategory.find_by(category_id: params[:category_id], product_id: product.id).try(&:list_order) %>">
+						    	<input type="text" style="width: 40px;" name="selected-order" value="<%= product.try(&:no_order) %>">
 						    </td>
 						    <td style="width: 40px !important; text-align: center;"><img src="<%= product.img_1 %>" style='height:40px; width:40px'></td>
 						    <td title="<%= product.name.html_safe %>"><p><%= product.name.html_safe %></p></td>
-						    <td><p><%= product.model %></p></td>
 						    <td class="multiple-category-cb-1">
 						      <input type="checkbox" value="<%= product.id %>" onclick='handleClickSelected("<%= product.id %>");' name="check-tab1" class="multiple-category-cb-id">
 						    </td>
@@ -83,10 +79,8 @@
 				<tbody>
 					<% @unselected_products.each do |product| %>
 						<tr>
-						    <td>
-						    	<p style="width: 20px !important">
-						    		<%= product.id %>
-						    	</p>
+						    <td style="width: 20px !important">
+						    	<%= product.id %>
 						    </td>
 						    <td style="width: 40px !important; text-align: center;"><img src="<%= product.img_1 %>" style='height:40px; width:40px'></td>
 						    <td title="<%= product.name %>"><p><%= product.name.html_safe %></p></td>

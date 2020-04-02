@@ -76,6 +76,8 @@ GEM
       sassc (>= 2.0.0)
     builder (3.2.3)
     byebug (11.0.1)
+    canonical-rails (0.2.8)
+      rails (>= 4.1, < 6.1)
     capistrano (3.4.0)
       i18n
       rake (>= 10.0.0)
@@ -379,6 +381,7 @@ DEPENDENCIES
   axlsx_rails
   bootstrap-kaminari-views
   bootstrap-sass
+  canonical-rails
   capistrano (= 3.4.0)
   capistrano-bundler
   capistrano-cookbook

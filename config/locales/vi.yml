@@ -1,0 +1,74 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# vi:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+vi:
+  site_name: "stechsaigon.com"
+  views:
+    pagination:
+      first: "<<"
+      last: ">>"
+      previous: "<"
+      next: ">"
+      truncate: "…"
+  helpers:
+    page_entries_info:
+      one_page:
+        display_entries:
+          zero: "Không tìm thấy %{entry_name} nào"
+          one: "Hiển thị <b>1</b> %{entry_name}"
+          other: "Hiển thị <b>tất cả %{count}</b> %{entry_name}"
+      more_pages:
+        display_entries: "Hiển thị <b>%{first}&nbsp;-&nbsp;%{last}</b>&nbsp;%{entry_name} trong tổng số <b>%{total}</b>"
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      short: "%b %d"
+      long: "%B %d, %Y"
+  time:
+    formats:
+      with_time: "Lúc %k:%M Ngày %d/%m/%Y"
+
+  activerecord:
+    models:
+      customer_order: "Đơn hàng"
+    attributes:
+      customer_order:
+        customer_name: "Tên khách hàng"
+        phone_number: "Số điện thoại"
+        shipping_address: "Địa chỉ giao hàng"
+        billing_address: "Địa chỉ thanh toán"
+        email: "Email"
+    errors:
+      models:
+        customer_order:
+          blank: "%{attribute} không được bỏ trống"
+          too_long: "%{attribute} quá ngắn  vui lòng nhập nhiều hơn %{count} ký tự"
+          too_short: "%{attribute} quá dài  vui lòng nhập nhập tối đa là %{count} ký tự"
+          invalid: "%{attribute} không hợp lệ"

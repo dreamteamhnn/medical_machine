@@ -1,5 +1,7 @@
 $(document).on('turbolinks:load', function(){
-    $('#table1').DataTable();
+    $('#table1').DataTable( {
+        "order": [[ 2, "asc" ]]
+    } );;
     $('#table2').DataTable();
     $('.dataTables_length').addClass('bs-select');
 } );
@@ -54,10 +56,22 @@ $(document).on('click', "#save-change", function() {
     var id = null;
     if (url != null) {
         id = url[0].split("=")[1];
+    } else {
+        id = window.location.href.split("=")[1];
+    }
+
+    if (id == undefined) {
+        id = 1;
     }
     $('input[name="category_id"]').val(id);
     $('input[name="order_id"]').val(JSON.stringify(submitArray));
     $('input[name="commit"]').val('save-change');
+
+    unSelectedIds = []
+    selectedIds = []
+    $('input:hidden[name=selectedIds]').val(selectedIds);
+    $('input:hidden[name=unselectedIds]').val(unSelectedIds);
+
     $("#multiple-submit").click();
 })
 

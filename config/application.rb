@@ -36,6 +36,9 @@ module MedicalMachine
 
     config.autoload_paths << Rails.root.join('lib/')
     config.autoload_paths += %W(#{config.root}/app/models/ckeditor #{config.root}/config/routes)
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+    config.i18n.available_locales = [:en, :vi]
+    config.i18n.default_locale = :vi
     require 'monkey_patch/string'
   end
 end

@@ -25,7 +25,7 @@ class Category < ApplicationRecord
 
   before_validation :set_slug
 
-  validates :img, presence: true
+  # validates :img, presence: true
 
   CATEGORY_ATTRS = [:name, :description, :category_order, :home_block_id,
     :home_order_id, :slug, :img]

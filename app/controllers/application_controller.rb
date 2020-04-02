@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
     get_brands
     @service = Blog.where(is_service: true).first
     @company = Company.first
+    I18n.locale = params[:locale] || I18n.default_locale
   end
 
   def get_categories_anphabet
