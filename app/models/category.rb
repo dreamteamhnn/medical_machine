@@ -39,6 +39,11 @@ class Category < ApplicationRecord
       Settings.category.lowest_level)
   end
 
+  scope :by_anphabets, -> character do
+    where("LEFT(name, 1) IN (?) AND level = ?", character,
+      Settings.category.lowest_level)
+  end
+
   def list_home_products
     # return unless level == Settings.category.middle_level
     list_categories = [id]

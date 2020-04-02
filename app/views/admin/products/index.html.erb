@@ -87,7 +87,8 @@
                   <input type="checkbox" value="<%= product.id %>" class="product-cb-id">
                 </td>
                 <td>
-                  <%= (page.to_i - 1)*(params[:limit].to_i) + index + 1 %>
+                  <!%= (page.to_i - 1)*(params[:limit].to_i) + index + 1 %>
+                  <%= product.id %>
                 </td>
                 <td>
                   <p><input style="width: 50px !important" type="text" id="p-order-<%= product.id %>" value="<%= product.try(:no_order) %>" onchange='changePOrder("<%= product.id %>")'></p>
