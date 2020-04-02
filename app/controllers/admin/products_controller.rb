@@ -237,7 +237,7 @@ class Admin::ProductsController < Admin::BaseController
     category_arr = category_arr.flatten
     params[:limit] = 5 if params[:limit] == nil
     @search = Product.all.ransack params[:q]
-    return @search.result.where('name LIKE ?', "%#{params[:term]}%").page(params[:page]).per(params[:limit]) unless category_arr.size > 0
-    Product.by_categories(category_arr).ransack(params[:q]).result.page(params[:page]).per(params[:limit])
+    return @search.result.where('name LIKE ?', "%#{params[:term]}%").order('no_order IS NULL, no_order ASC').page(params[:page]).per(params[:limit]) unless category_arr.size > 0
+    Product.by_categories(category_arr).ransack(params[:q]).result.order('no_order IS NULL, no_order ASC').page(params[:page]).per(params[:limit])
   end
 end

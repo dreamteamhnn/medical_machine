@@ -2,7 +2,7 @@ class Admin::MultipleCategoriesController < Admin::BaseController
 	before_action :load_categories, only: :edit
 
 	def edit
-		@selected_products = Category.find_by(id: params[:category_id]).try(&:products).try(:uniq) || []
+		@selected_products = Category.find_by(id: params[:category_id] || Category.first.id).try(&:products).order('no_order IS NULL, no_order ASC').try(:uniq) || []
 		@unselected_products = Product.where.not(id: @selected_products.map(&:id)).try(:uniq) || []
 	end
 
@@ -21,9 +21,9 @@ class Admin::MultipleCategoriesController < Admin::BaseController
 			elsif params[:commit] == 'save-change' && params[:order_id].present?
 				order_ids = JSON.parse(params[:order_id])
 				order_ids.each do |obj|
-					exist_record = ProductCategory.find_by(category_id: category_id, product_id: obj["id"])
+					exist_record = Product.find_by(id: obj["id"])
 					order_value = obj["order"].try(:to_i) != 0 ? obj["order"].try(:to_i) : nil
-					exist_record.update_attributes(list_order: order_value) if exist_record.present?
+					exist_record.update_attributes(no_order: order_value) if exist_record.present?
 				end
 			end
 			flash[:notice] = "Update thành công"

@@ -66,6 +66,7 @@ gem 'friendly_id', '~> 5.1.0'
 
 # Seo support
 gem "meta-tags"
+gem "canonical-rails"
 group :development, :test do
   # Debug
   gem "pry-rails"

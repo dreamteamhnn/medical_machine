@@ -1,14 +1,30 @@
 <div class="fb-livechat">
   <div class="ctrlq fb-overlay"></div>
-  <div class="fb-widget">
-    <div class="ctrlq fb-close"></div>
-    <div class="fb-page" data-href="<%= @company.facebook %>" data-tabs="messages" data-width="360" data-height="400" data-small-header="true" data-hide-cover="true" data-show-facepile="false"> </div>
-    <div class="fb-credit"> <a href="http://stechsaigon.com" target="_blank">Powered by stechsaigon.com</a> </div>
-    <div id="fb-root"></div>
+  <div class="fb-widget" style="right: 50px !important">
+  <div class="ctrlq fb-close"  style="right: 50px !important"></div>
+  <div class="fb-page" data-href="<%= @company.facebook %>" data-tabs="messages" data-width="360" data-height="400" data-small-header="true" data-hide-cover="true" data-show-facepile="false"> </div>
+  <div class="fb-credit"> <a href="http://stechsaigon.com" target="_blank">Powered by stechsaigon.com</a> </div>
+  <div id="fb-root"></div>
   </div>
   <a href="https://m.me/<%= @company.fanpage %>" title="Gửi tin nhắn cho chúng tôi qua Facebook" class="ctrlq fb-button">
-    <!-- <div class="bubble">1</div>
-    <div class="bubble-msg">Bạn cần hỗ trợ?</div> -->
+  <!-- <div class="bubble">1</div>
+  <div class="bubble-msg">Bạn cần hỗ trợ?</div> -->
   </a>
 </div>
 <script src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9"></script>
+
+<!--Start of Tawk.to Script (0.3.3)-->
+<script type="text/javascript">
+  var Tawk_API = Tawk_API || {};
+  var Tawk_LoadStart = new Date();
+  (function() {
+      var s1 = document.createElement("script"),
+          s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/58ad4a9166272e0ab03821f1/default';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+  })();
+</script>
+<!--End of Tawk.to Script (0.3.3)-->
