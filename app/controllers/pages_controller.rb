@@ -19,7 +19,6 @@ class PagesController < ApplicationController
     end
     @certificates_mobile = Certificate.all.order(order: :desc)
     @certificates = @certificates_mobile.in_groups_of(3)
-    update_cloudinary_image_url
   end
 
   def get_home_category
