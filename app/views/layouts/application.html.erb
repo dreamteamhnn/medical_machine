@@ -3,7 +3,7 @@
 
 <head>
   <%= csrf_meta_tags %>
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <%= favicon_link_tag 'favicon.ico' %>
   <%= display_meta_tags site: 'stechsaigon.com' %>
   <%= render 'layouts/google_analytic' if Rails.env.production? %>
   <%= stylesheet_link_tag "application", media: "all",
