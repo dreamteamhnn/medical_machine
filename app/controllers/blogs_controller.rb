@@ -25,7 +25,7 @@ class BlogsController < ApplicationController
       @breads << {title: @category.name, link: ""}
       @blogs = Blog.by_category(@category.id).limit(4)
       @other_blogs = Blog.all.where.not(id: @blogs.map(&:id)).page(params[:page]).per(Settings.limit.paginate.blogs)
-      set_meta_tags @category
+      set_meta_tags meta_tags_hash(@category)
     elsif params[:tag_id]
       @blogs = Blog.by_tag(params[:tag_id].to_i)
     elsif params[:time]
@@ -98,9 +98,9 @@ class BlogsController < ApplicationController
     Blog.where("id < ?", params[:id]).last
   end
 
-  def meta_tags_hash
-    simple_title = 'Tin công nghệ'
-    description = simple_title
+  def meta_tags_hash category=nil
+    simple_title = category.present? ? category.name : 'Tin công nghệ'
+    description = "#{simple_title} - #{t("site_name")} - #{Company.first.about}"
     url = request.url
     {
       title: simple_title,
