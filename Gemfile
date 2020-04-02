@@ -41,8 +41,8 @@ gem "carrierwave", "~> 1.0"
 gem "cloudinary"
 
 # Image optimizing
-gem "image_optim_rails"
-gem "image_optim_pack"
+# gem "image_optim_rails"
+# gem "image_optim_pack"
 
 # Setting
 gem "config"

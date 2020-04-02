@@ -13,7 +13,7 @@
               <% group.each do |cert| %>
                 <% if cert.present? %>
                   <div class="col-sm-4">
-                    <%= image_tag cert&.img&.url, class: "img-responsive certificate-img width-100-percent", data: {cert: cert.id} %>
+                    <%= image_tag cert.img_url(:cetificate_thumb), class: "img-responsive certificate-img width-100-percent", data: {cert: cert.id} %>
                     <div class="certificate-title iframe-video-image" data-video="<%= cert.id %>">
                       <p class="image-link"><%= cert&.title %></p>
                     </div>
@@ -28,7 +28,7 @@
             <div class="item <%= 'active' if idx == 0 %>">
               <% if cert.present? %>
                 <div class="col-xs-12">
-                  <%= image_tag cert&.img&.url, class: "img-responsive width-100-percent" %>
+                  <%= image_tag cert.img_url(:cetificate_thumb), class: "img-responsive width-100-percent" %>
                   <div class="certificate-title iframe-video-image" data-video="<%= cert.id %>">
                     <p class="image-link"><%= cert&.title %></p>
                   </div>
@@ -55,7 +55,7 @@
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
-                  <%= image_tag cert&.img&.url, class: "img-responsive height-100-percent" %>
+                  <%= image_tag cert.img_url(:cetificate_active_thumb), class: "img-responsive height-100-percent" %>
                 </div>
               </div>
             </div>
