@@ -11,6 +11,30 @@ class CategoriesController < ApplicationController
   end
 
   private
+
+  def meta_tags_hash
+    description = @category.description
+    {
+      description: description,
+      keywords: ["stechsaigon.com", @category.name],
+      index: true,
+      og: {
+        title: I18n.t("site_name"),
+        type: "article",
+        description: description,
+        url: request.url,
+        site_name: I18n.t('site_name')
+      },
+      twitter: {
+        card: "summary",
+        site: "@publisher_handle",
+        title: I18n.t("site_name"),
+        description: description,
+        creator: "@author_handle",
+      }
+    }
+  end
+
   def load_left_menu_data is_current_category = false
     mang_ong = []
     ongs = Category.where(level: Settings.category.highest_level)
@@ -37,6 +61,7 @@ class CategoriesController < ApplicationController
                   product = Product.find_by(slug: params[:id])
                   product&.categories&.first
                 end
+    set_meta_tags(meta_tags_hash) if @category.present?
     return load_left_menu_data unless @category
     if @category.level == Settings.category.middle_level
       @category_lv_1 = @category&.parents&.first

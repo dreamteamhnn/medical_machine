@@ -83,7 +83,7 @@ class MediasController < ApplicationController
       meta_tags_hash = default_meta_tags
       media_type_name = default_meta_tags[:title]
       meta_tags_hash[:title] = "#{media_type_name} lĩnh vực #{@field.name}"
-      # meta_tags_hash[:description] = @field.description ? @field.simple_text(@field.description, Settings.seo.max_length.description) : "#{meta_tags_hash[:title]} - #{I18n.t('site_name')}"
+      meta_tags_hash[:description] = "#{meta_tags_hash[:title]} - #{I18n.t('site_name')} - #{Company.first.about}"
       meta_tags_hash[:keywords] = [media_type_name, @field.name, I18n.t('site_name')]
       meta_tags_hash[:twitter][:title] = meta_tags_hash[:og][:title] = meta_tags_hash[:title]
       meta_tags_hash[:twitter][:description] = meta_tags_hash[:og][:description] = meta_tags_hash[:description]
@@ -95,7 +95,7 @@ class MediasController < ApplicationController
 
   def default_meta_tags
     title = params[:media_type] == "0" ? "Tài liệu" : "Video"
-    description = "#{title} - #{t('site_name')}"
+    description = "#{title} - #{t('site_name')} - #{Company.first.about}"
     {
       title: title,
       description: description,
