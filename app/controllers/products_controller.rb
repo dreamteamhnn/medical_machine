@@ -48,10 +48,10 @@ class ProductsController < ApplicationController
       ongs = Category.where(id: @category_lv_1.id)
     end
     ongs.each do |ong|
-      bos = ong.childrens
+      bos = ong.childrens.order('category_order IS NULL, category_order ASC')
       mang_bo = []
       bos.each do |bo|
-        mang_con = bo.childrens
+        mang_con = bo.childrens.order('category_order IS NULL, category_order ASC')
         mang_bo << [bo, mang_con]
       end
       mang_ong << [ong, mang_bo]
@@ -71,7 +71,7 @@ class ProductsController < ApplicationController
         if category.childrens
           @childs = []
           category.childrens.each do |child|
-            products = params[:brand_id] ? child.products
+            products = params[:brand_id] ? child.products.order('no_order IS NULL, no_order ASC')
               .where(brand_id: params[:brand_id]) : child.products
             if products.size > 0
               @childs << {name: child.name, id: child.id, products: products
@@ -84,7 +84,7 @@ class ProductsController < ApplicationController
         if category.childrens
           @childs = []
           category.childrens.each do |child|
-            products = child.product_for_block_list(params[:brand_id])
+            products = child.product_for_block_list(params[:brand_id]).order('no_order IS NULL, no_order ASC')
             if products.size > 0
               @childs << {name: child.name, id: child.id, products: products}
             end
@@ -199,7 +199,7 @@ class ProductsController < ApplicationController
 
     set_meta_tags(menu_item) if menu_item
 
-    @products_from_menu = get_products(menu_item).page(params[:page])
+    @products_from_menu = get_products(menu_item).order('no_order IS NULL, no_order ASC').page(params[:page])
       .per(@limit)
 
     unless @products_from_menu.blank?
@@ -210,7 +210,7 @@ class ProductsController < ApplicationController
     if (q = params[:query]).present?
       set_meta_tags noindex: true, follow: true
       found_products = Product.search(body: {query: {bool: {should: [{match: {title: q}}, {match: {category: q}}, {match: {brand: q}}, {match: {field: q}}]}}})
-      @products_from_menu = get_products(Product.by_ids(found_products.map(&:id)))
+      @products_from_menu = get_products(Product.by_ids(found_products.map(&:id))).order('no_order IS NULL, no_order ASC')
         .page(params[:page]).per(@limit)
       get_number_show_product if @products_from_menu.present?
     end

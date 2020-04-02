@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   private
   def get_top_menu_data
     @subcriber = Subcriber.new
-    get_categories_anphabet
+    # get_categories_anphabet
     @fields = Field.all.limit Settings.limit.product_field
     get_brands
     @service = Blog.where(is_service: true).first

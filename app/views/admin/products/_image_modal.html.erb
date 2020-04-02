@@ -29,9 +29,11 @@
                               <%= hidden_field_tag "current_image_ids[]", id %>
                           <% end %>
                           <% folder.images.each_with_index do |image, index| %>
+                            <% img_url = image.image_url.url %>
+                            <% img_url["/upload/"] = "/upload/q_auto/" unless img_url.include? "q_auto" %>
                               <li id="preview-img-<%= image.id %>">
                                   <a href="" data-rel="colorbox" class="cboxElement">
-                                      <%= image_tag image.image_url.url, style: 'height:150px;width:150px;', class: "image_cm preview-img" %>
+                                      <%= image_tag img_url, style: 'height:150px;width:150px;', class: "image_cm preview-img" %>
                                   </a>
 
                                   <div class="tools tools-top">
