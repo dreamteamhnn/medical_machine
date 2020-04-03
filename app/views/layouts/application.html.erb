@@ -6,10 +6,12 @@
   <%= favicon_link_tag 'favicon.ico' %>
   <%= display_meta_tags site: 'stechsaigon.com' %>
   <%= render 'layouts/google_analytic' if Rails.env.production? %>
-  
-<!--   <script async defer
+  <%= stylesheet_link_tag "application", media: "all",
+      "data-turbolinks-track": "reload" %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbEWIklaDSw8BsgQhkabXXYnM3DcKFNyQ&callback">
-  </script> -->
+    </script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -27,7 +29,6 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <%= canonical_tag %>
-  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
 </head>
 
 <body class="home page-template-default page page-id-48 custom-background use-tm-pb-builder header-layout-fullwidth content-layout-boxed footer-layout-fullwidth blog-default position-fullwidth sidebar-1-4 header-default footer-default tm_pb_builder currency-usd woocommerce <%= 'single-product' if (params[:controller] == 'products' || params[:controller] == 'categories')%>">
@@ -56,6 +57,5 @@
     </div>
   </div>
 </body>
-<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
 </html>
