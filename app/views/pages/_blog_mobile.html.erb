@@ -13,7 +13,7 @@
               <div class="thumbnail">
                 <div class="blog-image">
                   <%= link_to blog_detail_path(blog) do %>
-                    <%= image_tag blog.feature_image_thumb_url, alt: blog.feature_image_alt, title: blog.feature_image_title %>
+                    <%= image_tag blog.feature_image_thumb_url, class: "lazy", alt: blog.feature_image_alt, title: blog.feature_image_title %>
                   <% end %>
                 </div>
                 <div class="caption">

@@ -11,22 +11,16 @@
 <!-- created with PRO Sitemap Service https://pro-sitemaps.com -->
 
   <url>
-       <loc>http://stechsaigon.com/san-pham/be-rua-sieu-am-elma-easy-10h-0-8-lit-co-gia-nhiet-p21</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.8000</priority>
-       <video:video>
-         <video:thumbnail_loc>https://i.ytimg.com/vi/Ti0Hh-qblk4/2.jpg</video:thumbnail_loc> 
-         <video:title>stechsaigon.com | Bể rửa siêu âm Elma™ Easy 10H - 0. 8 lít - Có gia</video:title>
-         <video:description>Bể rửa siêu âm có gia nhiệt 0. 8 lít Easy 10Hđược sản xuất bởi hãng Elma-Đức.  Phù hợp với các ứng dụng: Rửa dụng cụ nha khoa, dụng cụ phẫu thuật, đồng hồ, trang sức và kính mắt. Sản phẩm được bảo hành chính hãng 12 tháng, và hỗ trợ kỹ thuật trọn đời</video:description>
-         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/Ti0Hh-qblk4</video:player_loc>
-       </video:video>
-  </url>
-  <url>
        <loc>http://stechsaigon.com/video/</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/Ti0Hh-qblk4/2.jpg</video:thumbnail_loc> 
+         <video:title>stechsaigon.com | Video</video:title>
+         <video:description>Video - stechsaigon.com - Stech Sài Gòn là chi nhánh miền Nam của Công ty TNHH XNK vật tư khoa học quốc tế. Với nhiệm vụ đưa các sản phẩm thết bị công nghệ, thiết bị khoa học kỹ thuật mới nhất, tiên tiến nhất với giá thành tốt nhất cùng dịch vụ chuyên nghiệp tới tay khách hàng. Với sản phẩm đa dạng,</video:description>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/Ti0Hh-qblk4</video:player_loc>
+       </video:video>
        <video:video>
          <video:thumbnail_loc>https://i.ytimg.com/vi/S8tCB2fZLTI/2.jpg</video:thumbnail_loc> 
          <video:title>stechsaigon.com | Video</video:title>
@@ -96,7 +90,7 @@
   </url>
   <url>
        <loc>http://stechsaigon.com/san-pham/be-rua-sieu-am-elma-easy-20-1-75-lit--p3</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <video:video>
@@ -108,7 +102,7 @@
   </url>
   <url>
        <loc>http://stechsaigon.com/san-pham/may-dap-vien-1-chay-tam-sai-tdp-1-5-p454</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <video:video>
@@ -126,7 +120,7 @@
   </url>
   <url>
        <loc>http://stechsaigon.com/san-pham/may-dap-vien-1-chay-tam-sai-tdp-5-p456</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <video:video>
@@ -137,20 +131,8 @@
        </video:video>
   </url>
   <url>
-       <loc>http://stechsaigon.com/san-pham/be-rua-sieu-am-elma-s120h-12-75-lit--p33</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
-       <video:video>
-         <video:thumbnail_loc>https://i.ytimg.com/vi/pWxcJKIIpXo/2.jpg</video:thumbnail_loc> 
-         <video:title>stechsaigon.com | Bể rửa siêu âm Elma™ S120H - 12. 75 lít</video:title>
-         <video:description>Bể rửa siêu âm ElmaS120Hlà dòng sản phẩm bể rửa siêu âm chuyên dụng Elmasonic S của hãng Elma - Đức chuyên dụng làm sạch: Dụng cụ, Chi tiết đồng hồ, Trang sức, Chi tiết máy. Dòng Elmasonic S bao gồm một loạt 16 kích cỡ máy (khối lượng nạp từ 0,5 đến 90 lít) và các chức năng điều khiển vi xử lý như</video:description>
-         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/pWxcJKIIpXo</video:player_loc>
-       </video:video>
-  </url>
-  <url>
        <loc>http://stechsaigon.com/san-pham/tu-say-tiet-trung-khong-khi-nong-300-do-faithful-gx-125b-125-lit</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <video:video>
@@ -161,27 +143,33 @@
        </video:video>
   </url>
   <url>
-       <loc>http://stechsaigon.com/video/review-tren-tay-san-pham/</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <loc>http://stechsaigon.com/medias/?page=2</loc>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
+       <priority>0.9500</priority>
        <video:video>
          <video:thumbnail_loc>https://i.ytimg.com/vi/DVTtGBGIaw8/2.jpg</video:thumbnail_loc> 
-         <video:title>stechsaigon.com | Video lĩnh vực Review / Trên tay sản phẩm</video:title>
-         <video:description>Video lĩnh vực Review / Trên tay sản phẩm - stechsaigon.com - Stech Sài Gòn là chi nhánh miền Nam của Công ty TNHH XNK vật tư khoa học quốc tế. Với nhiệm vụ đưa các sản phẩm thết bị công nghệ, thiết bị khoa học kỹ thuật mới nhất, tiên tiến nhất với giá thành tốt nhất cùng dịch vụ chuyên nghiệp tới</video:description>
+         <video:title>stechsaigon.com | Video</video:title>
+         <video:description>Video - stechsaigon.com - Stech Sài Gòn là chi nhánh miền Nam của Công ty TNHH XNK vật tư khoa học quốc tế. Với nhiệm vụ đưa các sản phẩm thết bị công nghệ, thiết bị khoa học kỹ thuật mới nhất, tiên tiến nhất với giá thành tốt nhất cùng dịch vụ chuyên nghiệp tới tay khách hàng. Với sản phẩm đa dạng,</video:description>
          <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/DVTtGBGIaw8</video:player_loc>
        </video:video>
        <video:video>
          <video:thumbnail_loc>https://i.ytimg.com/vi/FBiPcTH_wRM/2.jpg</video:thumbnail_loc> 
-         <video:title>stechsaigon.com | Video lĩnh vực Review / Trên tay sản phẩm</video:title>
-         <video:description>Video lĩnh vực Review / Trên tay sản phẩm - stechsaigon.com - Stech Sài Gòn là chi nhánh miền Nam của Công ty TNHH XNK vật tư khoa học quốc tế. Với nhiệm vụ đưa các sản phẩm thết bị công nghệ, thiết bị khoa học kỹ thuật mới nhất, tiên tiến nhất với giá thành tốt nhất cùng dịch vụ chuyên nghiệp tới</video:description>
+         <video:title>stechsaigon.com | Video</video:title>
+         <video:description>Video - stechsaigon.com - Stech Sài Gòn là chi nhánh miền Nam của Công ty TNHH XNK vật tư khoa học quốc tế. Với nhiệm vụ đưa các sản phẩm thết bị công nghệ, thiết bị khoa học kỹ thuật mới nhất, tiên tiến nhất với giá thành tốt nhất cùng dịch vụ chuyên nghiệp tới tay khách hàng. Với sản phẩm đa dạng,</video:description>
          <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/FBiPcTH_wRM</video:player_loc>
        </video:video>
        <video:video>
          <video:thumbnail_loc>https://i.ytimg.com/vi/WA4dkw1nj4Q/2.jpg</video:thumbnail_loc> 
-         <video:title>stechsaigon.com | Video lĩnh vực Review / Trên tay sản phẩm</video:title>
-         <video:description>Video lĩnh vực Review / Trên tay sản phẩm - stechsaigon.com - Stech Sài Gòn là chi nhánh miền Nam của Công ty TNHH XNK vật tư khoa học quốc tế. Với nhiệm vụ đưa các sản phẩm thết bị công nghệ, thiết bị khoa học kỹ thuật mới nhất, tiên tiến nhất với giá thành tốt nhất cùng dịch vụ chuyên nghiệp tới</video:description>
+         <video:title>stechsaigon.com | Video</video:title>
+         <video:description>Video - stechsaigon.com - Stech Sài Gòn là chi nhánh miền Nam của Công ty TNHH XNK vật tư khoa học quốc tế. Với nhiệm vụ đưa các sản phẩm thết bị công nghệ, thiết bị khoa học kỹ thuật mới nhất, tiên tiến nhất với giá thành tốt nhất cùng dịch vụ chuyên nghiệp tới tay khách hàng. Với sản phẩm đa dạng,</video:description>
          <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/WA4dkw1nj4Q</video:player_loc>
+       </video:video>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/pWxcJKIIpXo/2.jpg</video:thumbnail_loc> 
+         <video:title>stechsaigon.com | Video</video:title>
+         <video:description>Video - stechsaigon.com - Stech Sài Gòn là chi nhánh miền Nam của Công ty TNHH XNK vật tư khoa học quốc tế. Với nhiệm vụ đưa các sản phẩm thết bị công nghệ, thiết bị khoa học kỹ thuật mới nhất, tiên tiến nhất với giá thành tốt nhất cùng dịch vụ chuyên nghiệp tới tay khách hàng. Với sản phẩm đa dạng,</video:description>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/pWxcJKIIpXo</video:player_loc>
        </video:video>
   </url>
 </urlset>
