@@ -9,6 +9,8 @@ class ImageUploader < CarrierWave::Uploader::Base
   #process :watermark
   # storage :fog
 
+  # process convert_to_webp: [{ quality: 80, method: 5 }]
+
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
@@ -31,6 +33,46 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
+  version :blog_webp, if: :is_blog_img? do
+    process resize_to_fit: [290, 230]
+    process convert_to_webp: [{ quality: 80, method: 5 }]
+  end
+
+  version :product_webp, if: :is_product_img? do
+    process resize_to_fit: [210, 210]
+    process convert_to_webp: [{ quality: 80, method: 5 }]
+  end
+
+  version :brand_webp, if: :is_brand_img? do
+    process resize_to_fit: [150, 75]
+    process convert_to_webp: [{ quality: 80, method: 5 }]
+  end
+
+  version :feedback_webp, if: :is_feedback_img? do
+    process resize_to_fit: [56, 56]
+    process convert_to_webp: [{ quality: 80, method: 5 }]
+  end
+
+  version :cetificate_webp, if: :is_cetificate_img? do
+    process resize_to_fit: [236, 334]
+    process convert_to_webp: [{ quality: 80, method: 5 }]
+  end
+
+  version :cetificate_active_webp, if: :is_cetificate_img? do
+    process resize_to_fit: [903, 1277]
+    process convert_to_webp: [{ quality: 80, method: 5 }]
+  end
+
+  version :slider_webp, if: :is_slider_img? do
+    process resize_to_fit: [890, 376]
+    process convert_to_webp: [{ quality: 80, method: 5 }]
+  end
+
+  version :project_webp, if: :is_project_img? do
+    process resize_to_fit: [555, 290]
+    process convert_to_webp: [{ quality: 80, method: 5 }]
+  end
+
   version :blog_thumb, if: :is_blog_img? do
     process resize_to_fit: [290, 230]
   end
@@ -68,23 +110,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   def watermark
-    # manipulate! do |img|
-    #   img.combine_options do |cmd|
-    #     draw_text = Company.first.mark
-    #     cmd.gravity 'south'
-    #     cmd.draw "text 10,10 '#{draw_text}'"
-    #     cmd.font '-*-helvetica-*-r-*-*-25-*-*-*-*-*-*-2'
-    #     cmd.fill 'black'
-    #   end
-    #   img
-    # end
-    # manipulate! do |img|
-    #   img.combine_options do |cmd|
-    #     cmd.draw 'image Over 0,0 0,0 "public/watermark.png"'
-    #   end
-    #   img
-    # end
-
     if is_product?
       watermark = Company.first.watermark.url || "public/watermark.png"
       manipulate! do |img|
@@ -95,17 +120,6 @@ class ImageUploader < CarrierWave::Uploader::Base
     end
   end
 
-  # Add a white list of extensions which are allowed to be uploaded.
-  # For images you might use something like this:
-  # def extension_whitelist
-  #   %w(jpg jpeg gif png)
-  # end
-
-  # Override the filename of the uploaded files:
-  # Avoid using model.id or version_name here, see uploader/store.rb for details.
-  # def filename
-  #   "something.jpg" if original_filename
-  # end
   private
   def is_blog_img? _pic
     model.is_a? BlogImage
@@ -141,5 +155,24 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   def is_project_img? _pic
     model.is_a? Project
+  end
+
+  def convert_to_webp(options = {})
+    # Build path for new file
+    webp_path = "#{path}.webp"
+
+    # Encode (convert) image to webp format with passed options
+    WebP.encode(path, webp_path, options)
+
+    # HACK: Changing of this two instance variables is the only way 
+    #   I found to make CarrierWave save new file that was created 
+    #   by encoding original image.
+    @filename = webp_path.split('/').pop
+
+    @file = CarrierWave::SanitizedFile.new(
+      tempfile: webp_path,
+      filename: webp_path,
+      content_type: 'image/webp'
+    )
   end
 end

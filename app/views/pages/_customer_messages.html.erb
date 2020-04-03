@@ -16,7 +16,11 @@
               <div class="customer-info">
                 <div class="customer-data w-75">
                   <% if feedback.avatar %>
-                    <%= image_tag feedback.avatar_url(:feedback_thumb), class: "d-none d-md-block", style: "border-radius: 50%; object-fit: cover; border: 2px solid #fff; height: 60px; width: 60px;" %>
+                    <picture>
+                      <source srcset="<%= feedback.avatar_url(:feedback_webp) %>.webp" type="image/webp">
+                      <source srcset="<%= feedback.avatar_url(:feedback_thumb) %>" type="image/jpeg">
+                      <img src="<%= feedback.avatar_url(:feedback_thumb) %>" class="d-none d-md-block", style="border-radius: 50%; object-fit: cover; border: 2px solid #fff; height: 60px; width: 60px;">
+                    </picture>
                   <% else %>
                     <img style="border-radius: 50%; object-fit: cover; border: 2px solid #fff; height: 60px; width: 60px;" src="https://relipasoft.com/vi/wp-content/uploads/sites/4/2018/07/alexander-60x60.png" alt="Customer 1">
                   <% end %>
