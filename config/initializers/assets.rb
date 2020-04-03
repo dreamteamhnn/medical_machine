@@ -12,7 +12,8 @@ Rails.application.config.assets.precompile += Ckeditor.assets
 Rails.application.config.assets.precompile += %w(ckeditor/*)
 Rails.application.config.assets.precompile += %w[ckeditor/config.js]
 Rails.application.config.assets.precompile += %w( ckeditor/filebrowser/images/gal_del.png )
-# Rails.application.config.assets.precompile += %w( *.js )
+Rails.application.config.assets.precompile += %w( application_mobile.js )
+Rails.application.config.assets.precompile += %w( *.js )
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets

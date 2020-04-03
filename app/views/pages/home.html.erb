@@ -33,24 +33,31 @@
         </div>
       </div>
 
-      <%= render "projects" %>
-      <%= render "projects_mobile" %>
-
-      <%= render "products" %>
-      <%= render "products_mobile" %>
+      <% unless @is_mobile %>
+        <%= render "projects" %>
+        <%= render "products" %>
+      <% else %>
+        <%= render "projects_mobile" %>
+        <%= render "products_mobile" %>
+      <% end %>
 
       <%= render "customer_messages" %>
 
       <%= render "certificates" %>
 
-      <%= render "blog" %>
-      <%= render "blog_mobile" %>
+      <% unless @is_mobile %>
+        <%= render "blog" %>
+      <% else %>
+        <%= render "blog_mobile" %>
+      <% end %>
       <!-- .entry-content -->
 
       <footer class="entry-footer">
       </footer>
       <!-- .entry-footer -->
-      <%= render "brand_slider" %>
+      <% unless @is_mobile %>
+        <%= render "brand_slider" %>
+      <% end %>
     </article>
     <!-- #post-## -->
 
