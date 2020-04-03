@@ -16,6 +16,5 @@
 //= require turbolinks
 
 //= require_tree ./user/left_menu_js/
-//= require_tree ./user/zzfb_chat/
 //= require ./user/slider_jssor_js/jssor.slider.min.js
 //= require ./user/mobile.js
