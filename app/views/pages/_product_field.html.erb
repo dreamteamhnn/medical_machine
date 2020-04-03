@@ -4,8 +4,14 @@
       <div class="block_product_thumbnail clearfix">
         <div class="tm-thumbs-wrap <%= (product.img_1.present? && product.img_2.present?) ? 'effect-fade' : '' %>">
           <div class="tm-thumbs-wrap__inner product-image-box text-center">
-            <%= image_tag product.img_1, class: "lazy", size: "340x500", title: product.img_1_title, alt: product.img_1_alt if product.img_1.present? %>
-            <%= image_tag product.img_2, class: "lazy", size: "340x500", title: product.img_2_title, alt: product.img_2_alt if product.img_2.present? %>
+            <% if @is_mobile %>
+              <%= image_tag product.opt_src(product.img_1, 128), class: "lazy", size: "340x500", title: product.img_1_title, alt: product.img_1_alt if product.img_1.present? %>
+              <%= image_tag product.opt_src(product.img_2, 128), class: "lazy", size: "340x500", title: product.img_2_title, alt: product.img_2_alt if product.img_2.present? %>
+            <% else %>
+              <%= image_tag product.opt_src(product.img_1, 223), class: "lazy", size: "340x500", title: product.img_1_title, alt: product.img_1_alt if product.img_1.present? %>
+              <%= image_tag product.opt_src(product.img_2, 223), class: "lazy", size: "340x500", title: product.img_2_title, alt: product.img_2_alt if product.img_2.present? %>
+            <% end %>
+
             <% if product.img_1.blank? && product.img_2.blank? %>
               <%= image_tag "223_223.jpg", alt: "Image size 233x223" %>
             <% end %>
