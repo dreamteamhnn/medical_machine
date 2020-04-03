@@ -21,7 +21,13 @@
                 <div class="carousel-inner">
                   <% @sliders.each_with_index do |slider, index| %>
                     <div class="item <%= 'active' if index == 0 %> item-1">
-                      <%= link_to "#{image_tag slider.url_url(:slider_thumb), style: 'height:100%;width:auto;', title: slider.title, alt: slider.alt}".html_safe, products_path(), class: "lazy" %>
+                      <a class="lazy" href="<%= products_path() %>">
+                        <picture>
+                          <source srcset="<%= slider.url_url(:slider_webp) %>.webp" type="image/webp">
+                          <source srcset="<%= slider.url_url(:slider_thumb) %>" type="image/jpeg">
+                          <img src="<%= slider.url_url(:slider_thumb) %>" class="lazy" style='height:100%;width:auto;' title="<%= slider.title %>" alt="<%= slider.alt %>">
+                        </picture>
+                      </a>
                     </div>
                   <% end %>
                 </div>

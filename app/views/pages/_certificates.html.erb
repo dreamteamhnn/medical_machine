@@ -14,7 +14,11 @@
                 <% group.each do |cert| %>
                   <% if cert.present? %>
                     <div class="col-sm-4">
-                      <%= image_tag cert.img_url(:cetificate_thumb), class: "lazy img-responsive certificate-img width-100-percent", data: {cert: cert.id} %>
+                      <picture>
+                        <source srcset="<%= cert.img_url(:cetificate_webp) %>.webp" type="image/webp">
+                        <source srcset="<%= cert.img_url(:cetificate_thumb) %>" type="image/jpeg">
+                        <img src="<%= cert.img_url(:cetificate_thumb) %>" class="lazy img-responsive certificate-img width-100-percent" data-cert="<%= cert.id %>">
+                      </picture>
                       <div class="certificate-title iframe-video-image" data-video="<%= cert.id %>">
                         <p class="image-link"><%= cert&.title %></p>
                       </div>
@@ -60,7 +64,11 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                   </div>
                   <div class="modal-body">
-                    <%= image_tag cert.img_url(:cetificate_active_thumb), class: "lazy img-responsive height-100-percent" %>
+                    <picture>
+                      <source srcset="<%= cert.img_url(:cetificate_active_webp) %>.webp" type="image/webp">
+                      <source srcset="<%= cert.img_url(:cetificate_active_thumb) %>" type="image/jpeg">
+                      <img src="<%= cert.img_url(:cetificate_active_thumb) %>" class="lazy img-responsive height-100-percent">
+                    </picture>
                   </div>
                 </div>
               </div>
