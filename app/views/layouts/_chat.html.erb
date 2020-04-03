@@ -6,12 +6,11 @@
   <div class="fb-credit"> <a href="http://stechsaigon.com" target="_blank">Powered by stechsaigon.com</a> </div>
   <div id="fb-root"></div>
   </div>
-  <a href="https://m.me/<%= @company.fanpage %>" title="Gửi tin nhắn cho chúng tôi qua Facebook" class="ctrlq fb-button">
+  <a href="https://m.me/<%= @company.fanpage.split("/").last %>" title="Gửi tin nhắn cho chúng tôi qua Facebook" class="ctrlq fb-button">
   <!-- <div class="bubble">1</div>
   <div class="bubble-msg">Bạn cần hỗ trợ?</div> -->
   </a>
 </div>
-<script src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9"></script>
 
 <% unless @is_mobile %>
   <!--Start of Tawk.to Script (0.3.3)-->
