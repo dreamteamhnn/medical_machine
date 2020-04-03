@@ -75,6 +75,9 @@ GEM
       autoprefixer-rails (>= 5.2.1)
       sassc (>= 2.0.0)
     builder (3.2.3)
+    bullet (5.9.0)
+      activesupport (>= 3.0.0)
+      uniform_notifier (~> 1.11)
     byebug (11.0.1)
     canonical-rails (0.2.8)
       rails (>= 4.1, < 6.1)
@@ -360,6 +363,7 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    uniform_notifier (1.13.0)
     view_source_map (0.1.5)
       rails (>= 3.2)
     warden (1.2.8)
@@ -381,6 +385,7 @@ DEPENDENCIES
   axlsx_rails
   bootstrap-kaminari-views
   bootstrap-sass
+  bullet (~> 5.7, >= 5.7.5)
   canonical-rails
   capistrano (= 3.4.0)
   capistrano-bundler
