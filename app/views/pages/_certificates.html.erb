@@ -7,61 +7,67 @@
     </div>
     <div class="col-sm-12">
       <div id="certificate" class="carousel slide certificate-class" data-ride="carousel">
-        <div class="carousel-inner td-certificates">
-          <% @certificates.each_with_index do |group, idx| %>
-            <div class="item <%= 'active' if idx == 0 %>">
-              <% group.each do |cert| %>
+        <% unless @is_mobile %>
+          <div class="carousel-inner td-certificates">
+            <% @certificates.each_with_index do |group, idx| %>
+              <div class="item <%= 'active' if idx == 0 %>">
+                <% group.each do |cert| %>
+                  <% if cert.present? %>
+                    <div class="col-sm-4">
+                      <%= image_tag cert.img_url(:cetificate_thumb), class: "img-responsive certificate-img width-100-percent", data: {cert: cert.id} %>
+                      <div class="certificate-title iframe-video-image" data-video="<%= cert.id %>">
+                        <p class="image-link"><%= cert&.title %></p>
+                      </div>
+                    </div>
+                  <% end %>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        <% else %>
+          <div class="carousel-inner td-certificates-mobile">
+            <% @certificates_mobile.each_with_index do |cert, idx| %>
+              <div class="item <%= 'active' if idx == 0 %>">
                 <% if cert.present? %>
-                  <div class="col-sm-4">
-                    <%= image_tag cert.img_url(:cetificate_thumb), class: "img-responsive certificate-img width-100-percent", data: {cert: cert.id} %>
+                  <div class="col-xs-12">
+                    <%= image_tag cert.img_url(:cetificate_thumb), class: "img-responsive width-100-percent" %>
                     <div class="certificate-title iframe-video-image" data-video="<%= cert.id %>">
                       <p class="image-link"><%= cert&.title %></p>
                     </div>
                   </div>
                 <% end %>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
-        <div class="carousel-inner td-certificates-mobile">
-          <% @certificates_mobile.each_with_index do |cert, idx| %>
-            <div class="item <%= 'active' if idx == 0 %>">
-              <% if cert.present? %>
-                <div class="col-xs-12">
-                  <%= image_tag cert.img_url(:cetificate_thumb), class: "img-responsive width-100-percent" %>
-                  <div class="certificate-title iframe-video-image" data-video="<%= cert.id %>">
-                    <p class="image-link"><%= cert&.title %></p>
-                  </div>
-                </div>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+
         <a class="left carousel-control" href="#certificate" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
         <a class="right carousel-control" href="#certificate" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
       </div>
     </div>
   </div>
 
-  <% @certificates.each_with_index do |group, idx| %>
-    <div class="item <%= 'active' if idx == 0 %>">
-      <% group.each do |cert| %>
-        <% if cert.present? %>
-          <!-- Modal HTML -->
-          <div id="modal-video-<%= cert.id %>" class="modal modal-video fade">
-            <div class="modal-dialog modal-custom">
-              <div class="modal-content modal-video-content" style="height: 80%; margin-top: 0px;">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                </div>
-                <div class="modal-body">
-                  <%= image_tag cert.img_url(:cetificate_active_thumb), class: "img-responsive height-100-percent" %>
+  <% unless @is_mobile %>
+    <% @certificates.each_with_index do |group, idx| %>
+      <div class="item <%= 'active' if idx == 0 %>">
+        <% group.each do |cert| %>
+          <% if cert.present? %>
+            <!-- Modal HTML -->
+            <div id="modal-video-<%= cert.id %>" class="modal modal-video fade">
+              <div class="modal-dialog modal-custom">
+                <div class="modal-content modal-video-content" style="height: 80%; margin-top: 0px;">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  </div>
+                  <div class="modal-body">
+                    <%= image_tag cert.img_url(:cetificate_active_thumb), class: "img-responsive height-100-percent" %>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   <% end %>
 </div>

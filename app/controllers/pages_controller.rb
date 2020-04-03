@@ -6,8 +6,7 @@ class PagesController < ApplicationController
     # @catalogs = SliderCatalog.where(image_type: "catalog").limit Settings.limit.catalog
     # @product_labels = Label.all.order(:block_order)
     #   .includes(products: [:categories]).limit Settings.limit.label_block
-    @brand_logos = Brand.where("image IS NOT NULL AND home_order IS NOT NULL")
-                        .order(:home_order)
+    @brand_logos = Brand.where("image IS NOT NULL AND home_order IS NOT NULL").order(:home_order)
     get_home_category
     @company = Company.first
     set_meta_tags meta_tags_hash

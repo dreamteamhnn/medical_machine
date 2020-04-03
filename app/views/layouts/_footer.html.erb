@@ -1,473 +1,440 @@
-<footer id="colophon" class="site-footer default before-full-width-area" role="contentinfo">
-  <div class="footer-area-wrap second-footer-area-wrap invert">
-    <div class="container">
-      <section id="second-footer-area" class="second-footer-area widget-area footer-area--4-cols row">
-        <aside id="text-4" class="col-xs-12 col-sm-12 col-md-6 col-lg-3  widget contact-information-widget footer-aside-index">
-          <h5 class="widget-title">Giới thiệu</h5>
-          <ul class="contact-information-widget__inner">
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-chevron-right"></span>
-              <div class="list-item">
-                <a href="#"><p class="clearfix">Câu chuyện về Stech</p></a>
-              </div>
-            </li>
-
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-chevron-right"></span>
-              <div class="list-item">
-                <a href="#"><p class="clearfix">Tầm nhìn - Sứ mệnh</p></a>
-              </div>
-            </li>
-
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-chevron-right"></span>
-              <div class="list-item">
-                <a href="#"><p class="clearfix">Cơ hội hợp tác</p></a>
-              </div>
-            </li>
-
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-chevron-right"></span>
-              <div class="list-item">
-                <a href="#"><p class="clearfix">Tin tức khoa học</p></a>
-              </div>
-            </li>
-
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-chevron-right"></span>
-              <div class="list-item">
-                <a href="#"><p class="clearfix">Tải tài liệu - Catalog</p></a>
-              </div>
-            </li>
-
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-chevron-right"></span>
-              <div class="list-item">
-                <a href="#"><p class="clearfix">Câu hỏi thường gặp</p></a>
-              </div>
-            </li>
-
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-chevron-right"></span>
-              <div class="list-item">
-                <a href="../sitemap.html"><p class="clearfix">Sitemap</p></a>
-              </div>
-            </li>
-
-            <!-- Sitemap -->
-          </ul>
-          <!-- <div>
-              <a rel="nofollow" href="http://online.gov.vn">
-                <%= image_tag "gov.png", alt: "Đã thông báo bộ công thương", style:"width: 150px;padding-top: 15px;" %>
-              </a>
-          </div> -->
-        </aside>
-
-        <aside id="text-4" class="col-xs-12 col-sm-12 col-md-6 col-lg-3  widget contact-information-widget footer-aside-index">
-          <h5 class="widget-title">Hỗ trợ khách hàng</h5>
-          <ul class="contact-information-widget__inner">
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-chevron-right"></span>
-              <div class="list-item">
-                <a href="#"><p class="clearfix">Hướng dẫn mua hàng</p></a>
-              </div>
-            </li>
-
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-chevron-right"></span>
-              <div class="list-item">
-                <a href="#"><p class="clearfix">Hướng dẫn thanh toán</p></a>
-              </div>
-            </li>
-
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-chevron-right"></span>
-              <div class="list-item">
-                <a href="#"><p class="clearfix">Chính sách vận chuyển</p></a>
-              </div>
-            </li>
-
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-chevron-right"></span>
-              <div class="list-item">
-                <a href="#"><p class="clearfix">Chính sách bảo hành</p></a>
-              </div>
-            </li>
-
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-chevron-right"></span>
-              <div class="list-item">
-                <a href="#"><p class="clearfix">Chính sách đổi trả hàng</p></a>
-              </div>
-            </li>
-
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-chevron-right"></span>
-              <div class="list-item">
-                <a href="#"><p class="clearfix">Chính sách bảo mật</p></a>
-              </div>
-            </li>
-
-            <!-- LOGO bo cong thuong -->
-          </ul>
-<!--           <div class="clear">
-              <a rel="nofollow" href="https://www.dmca.com" title="DMCA.com Protection Status" class="dmca-badge">
-                <%= image_tag "dmca_green.png", alt: "DMCA.com Protection Status", style:"padding: 20px 0 0 20px;" %>
-              </a>
-          </div> -->
-        </aside>
-
-        <!-- Contact info -->
-        <aside id="tm_willard_contact_information_widget-1" class="col-xs-12 col-sm-12 col-md-6 col-lg-3  widget contact-information-widget footer-aside-index">
-          <h5 class="widget-title">Liên hệ mua hàng</h5>
-          <ul class="contact-information-widget__inner">
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-telephone"></span>
-              <div class="list-item">
-                <p class="clearfix"><%= @company.contact_info %>: <a class="privacy_link" href="tel:84<%= @company.phone %>"><%= @company.phone %></a></p>
-              </div>
-            </li>
-
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-envelope-open"></span>
-              <a href="mailto:<%= @company.email %>"><%= @company.email %></a>
-            </li>
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-home4"></span>
-              <div class="list-item">
-                <p class="clearfix">
-                  Hệ thống chi nhánh:
-                </p>
-              </div>
-            </li>
-<!--             <li class="contact-information__item contact-information__item--icon">
-              <div class="list-item">
-                <p class="clearfix">
-                  Có hàng trưng bày và dùng thử. Vui lòng liên hệ trước <a class="privacy_link" href=""><%= @company.order_phone || @company.phone %></a> để đặt lịch xem hàng.
-                </p>
-              </div>
-            </li>
-
-            <hr class="footer-custom-hr"> -->
-
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-home4"></span>
-              <div class="list-item long-info">
-                <p class="clearfix">
-                  Tại TP HCM: <%= @company.sg_address %>
-                </p>
-              </div>
-            </li>
-
-            <% if @company.sg_phone.present? %>
+<% unless @is_mobile %>
+  <footer id="colophon" class="site-footer default before-full-width-area" role="contentinfo">
+    <div class="footer-area-wrap second-footer-area-wrap invert">
+      <div class="container">
+        <section id="second-footer-area" class="second-footer-area widget-area footer-area--4-cols row">
+          <aside id="text-4" class="col-xs-12 col-sm-12 col-md-6 col-lg-3  widget contact-information-widget footer-aside-index">
+            <h5 class="widget-title">Giới thiệu</h5>
+            <ul class="contact-information-widget__inner">
               <li class="contact-information__item contact-information__item--icon">
-                <span class="icon linearicon linearicon-telephone2"></span>
+                <span class="icon linearicon linearicon-chevron-right"></span>
                 <div class="list-item">
-                  <p class="clearfix"><a class="privacy_link" href="tel:84<%= @company.sg_phone %>"><%= @company.sg_phone %></a></p>
+                  <a href="#"><p class="clearfix">Câu chuyện về Stech</p></a>
                 </div>
               </li>
-            <% end %>
 
-            <hr class="footer-custom-hr">
-
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-home4"></span>
-              <div class="list-item long-info">
-                <p class="clearfix">
-                  Tại Hà Nội: <%= @company.hn_address %>
-                </p>
-              </div>
-            </li>
-
-            <% if @company.hn_phone.present? %>
               <li class="contact-information__item contact-information__item--icon">
-                <span class="icon linearicon linearicon-telephone2"></span>
+                <span class="icon linearicon linearicon-chevron-right"></span>
                 <div class="list-item">
-                  <p class="clearfix"><a class="privacy_link" href="tel:84<%= @company.hn_phone %>"><%= @company.hn_phone %></a></p>
+                  <a href="#"><p class="clearfix">Tầm nhìn - Sứ mệnh</p></a>
                 </div>
               </li>
-            <% end %>
-          </ul>
-        </aside>
 
-        <!-- Column tag -->
-        <aside id="woocommerce_product_tag_cloud-4" class="col-xs-12 col-sm-12 col-md-6 col-lg-3  widget woocommerce widget_product_tag_cloud footer-aside-index">
-          <h5 class="widget-title">Truy cập nhanh</h5>
-          <div class="tagcloud">
-            <% Tag.first(15).each_with_index do |t, index| %>
-              <a href="<%= t.tag_url %>" class="tag-link-position-<%= index + 2 %>" title="" style="font-size: 19.666666666667pt;">
-                <%= t.name %>
-              </a>
-            <% end %>
-          </div>
-        </aside>
-      </section>
+              <li class="contact-information__item contact-information__item--icon">
+                <span class="icon linearicon linearicon-chevron-right"></span>
+                <div class="list-item">
+                  <a href="#"><p class="clearfix">Cơ hội hợp tác</p></a>
+                </div>
+              </li>
+
+              <li class="contact-information__item contact-information__item--icon">
+                <span class="icon linearicon linearicon-chevron-right"></span>
+                <div class="list-item">
+                  <a href="#"><p class="clearfix">Tin tức khoa học</p></a>
+                </div>
+              </li>
+
+              <li class="contact-information__item contact-information__item--icon">
+                <span class="icon linearicon linearicon-chevron-right"></span>
+                <div class="list-item">
+                  <a href="#"><p class="clearfix">Tải tài liệu - Catalog</p></a>
+                </div>
+              </li>
+
+              <li class="contact-information__item contact-information__item--icon">
+                <span class="icon linearicon linearicon-chevron-right"></span>
+                <div class="list-item">
+                  <a href="#"><p class="clearfix">Câu hỏi thường gặp</p></a>
+                </div>
+              </li>
+
+              <li class="contact-information__item contact-information__item--icon">
+                <span class="icon linearicon linearicon-chevron-right"></span>
+                <div class="list-item">
+                  <a href="../sitemap.xml"><p class="clearfix">Sitemap</p></a>
+                </div>
+              </li>
+
+              <!-- Sitemap -->
+            </ul>
+          </aside>
+
+          <aside id="text-4" class="col-xs-12 col-sm-12 col-md-6 col-lg-3  widget contact-information-widget footer-aside-index">
+            <h5 class="widget-title">Hỗ trợ khách hàng</h5>
+            <ul class="contact-information-widget__inner">
+              <li class="contact-information__item contact-information__item--icon">
+                <span class="icon linearicon linearicon-chevron-right"></span>
+                <div class="list-item">
+                  <a href="#"><p class="clearfix">Hướng dẫn mua hàng</p></a>
+                </div>
+              </li>
+
+              <li class="contact-information__item contact-information__item--icon">
+                <span class="icon linearicon linearicon-chevron-right"></span>
+                <div class="list-item">
+                  <a href="#"><p class="clearfix">Hướng dẫn thanh toán</p></a>
+                </div>
+              </li>
+
+              <li class="contact-information__item contact-information__item--icon">
+                <span class="icon linearicon linearicon-chevron-right"></span>
+                <div class="list-item">
+                  <a href="#"><p class="clearfix">Chính sách vận chuyển</p></a>
+                </div>
+              </li>
+
+              <li class="contact-information__item contact-information__item--icon">
+                <span class="icon linearicon linearicon-chevron-right"></span>
+                <div class="list-item">
+                  <a href="#"><p class="clearfix">Chính sách bảo hành</p></a>
+                </div>
+              </li>
+
+              <li class="contact-information__item contact-information__item--icon">
+                <span class="icon linearicon linearicon-chevron-right"></span>
+                <div class="list-item">
+                  <a href="#"><p class="clearfix">Chính sách đổi trả hàng</p></a>
+                </div>
+              </li>
+
+              <li class="contact-information__item contact-information__item--icon">
+                <span class="icon linearicon linearicon-chevron-right"></span>
+                <div class="list-item">
+                  <a href="#"><p class="clearfix">Chính sách bảo mật</p></a>
+                </div>
+              </li>
+
+              <!-- LOGO bo cong thuong -->
+            </ul>
+          </aside>
+
+          <!-- Contact info -->
+          <aside id="tm_willard_contact_information_widget-1" class="col-xs-12 col-sm-12 col-md-6 col-lg-3  widget contact-information-widget footer-aside-index">
+            <h5 class="widget-title">Liên hệ mua hàng</h5>
+            <ul class="contact-information-widget__inner">
+              <li class="contact-information__item contact-information__item--icon">
+                <span class="icon linearicon linearicon-telephone"></span>
+                <div class="list-item">
+                  <p class="clearfix"><%= @company.contact_info %>: <a class="privacy_link" href="tel:84<%= @company.phone %>"><%= @company.phone %></a></p>
+                </div>
+              </li>
+
+              <li class="contact-information__item contact-information__item--icon">
+                <span class="icon linearicon linearicon-envelope-open"></span>
+                <a href="mailto:<%= @company.email %>"><%= @company.email %></a>
+              </li>
+              <li class="contact-information__item contact-information__item--icon">
+                <span class="icon linearicon linearicon-home4"></span>
+                <div class="list-item">
+                  <p class="clearfix">
+                    Hệ thống chi nhánh:
+                  </p>
+                </div>
+              </li>
+
+              <li class="contact-information__item contact-information__item--icon">
+                <span class="icon linearicon linearicon-home4"></span>
+                <div class="list-item long-info">
+                  <p class="clearfix">
+                    Tại TP HCM: <%= @company.sg_address %>
+                  </p>
+                </div>
+              </li>
+
+              <% if @company.sg_phone.present? %>
+                <li class="contact-information__item contact-information__item--icon">
+                  <span class="icon linearicon linearicon-telephone2"></span>
+                  <div class="list-item">
+                    <p class="clearfix"><a class="privacy_link" href="tel:84<%= @company.sg_phone %>"><%= @company.sg_phone %></a></p>
+                  </div>
+                </li>
+              <% end %>
+
+              <hr class="footer-custom-hr">
+
+              <li class="contact-information__item contact-information__item--icon">
+                <span class="icon linearicon linearicon-home4"></span>
+                <div class="list-item long-info">
+                  <p class="clearfix">
+                    Tại Hà Nội: <%= @company.hn_address %>
+                  </p>
+                </div>
+              </li>
+
+              <% if @company.hn_phone.present? %>
+                <li class="contact-information__item contact-information__item--icon">
+                  <span class="icon linearicon linearicon-telephone2"></span>
+                  <div class="list-item">
+                    <p class="clearfix"><a class="privacy_link" href="tel:84<%= @company.hn_phone %>"><%= @company.hn_phone %></a></p>
+                  </div>
+                </li>
+              <% end %>
+            </ul>
+          </aside>
+
+          <!-- Column tag -->
+          <aside id="woocommerce_product_tag_cloud-4" class="col-xs-12 col-sm-12 col-md-6 col-lg-3  widget woocommerce widget_product_tag_cloud footer-aside-index">
+            <h5 class="widget-title">Truy cập nhanh</h5>
+            <div class="tagcloud">
+              <% Tag.first(15).each_with_index do |t, index| %>
+                <a href="<%= t.tag_url %>" class="tag-link-position-<%= index + 2 %>" title="" style="font-size: 19.666666666667pt;">
+                  <%= t.name %>
+                </a>
+              <% end %>
+            </div>
+          </aside>
+        </section>
+      </div>
     </div>
-  </div>
-  <div class="footer-container invert">
-    <div class="site-info container">
-      <div class="site-info-wrap">
-        <div class="site-info-logo_copyright">
-          <div class="footer-logo">
-            <%= link_to root_path, class: "site-logo__link", rel: "home" do %>
-              <%= image_tag @company.logo.url, size: '184x45', title: @company.logo_title, alt: @company.logo_alt, class: "site-link__img" if @company.logo %>
-            <% end %>
+    <div class="footer-container invert">
+      <div class="site-info container">
+        <div class="site-info-wrap">
+          <div class="site-info-logo_copyright">
+            <div class="footer-logo">
+              <%= link_to root_path, class: "site-logo__link", rel: "home" do %>
+                <%= image_tag @company.logo.url, size: '184x45', title: @company.logo_title, alt: @company.logo_alt, class: "site-link__img" if @company.logo %>
+              <% end %>
+            </div>
+            <div class="footer-copyright">Copyright © 2016 STECH INTERNATIONAL ., LTD <a class="privacy_link" href="">Privacy Policy</a></div>
           </div>
-          <div class="footer-copyright">Copyright © 2016 STECH INTERNATIONAL ., LTD <a class="privacy_link" href="">Privacy Policy</a></div>
-        </div>
-        
-        <div class="social-list social-list--footer social-list--icon">
-          <ul id="social-list-1" class="social-list__items inline-list">
-            <li id="menu-item-44" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-44"><a href="http://youtube.com/"><span class="screen-reader-text">Youtube</span></a></li>
-            <li id="menu-item-44" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-44"><a href="http://facebook.com/"><span class="screen-reader-text">Facebook</span></a></li>
-            <li id="menu-item-45" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-45"><a href="http://twitter.com/"><span class="screen-reader-text">Twitter</span></a></li>
-            <li id="menu-item-46" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46"><a href="http://linkedin.com/"><span class="screen-reader-text">Linkedin</span></a></li>
-            <li id="menu-item-47" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-47"><a href="http://instagram.com/"><span class="screen-reader-text">Instagram</span></a></li>
-          </ul>
-        </div>
+          
+          <div class="social-list social-list--footer social-list--icon">
+            <ul id="social-list-1" class="social-list__items inline-list">
+              <li id="menu-item-44" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-44"><a href="http://youtube.com/"><span class="screen-reader-text">Youtube</span></a></li>
+              <li id="menu-item-44" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-44"><a href="http://facebook.com/"><span class="screen-reader-text">Facebook</span></a></li>
+              <li id="menu-item-45" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-45"><a href="http://twitter.com/"><span class="screen-reader-text">Twitter</span></a></li>
+              <li id="menu-item-46" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46"><a href="http://linkedin.com/"><span class="screen-reader-text">Linkedin</span></a></li>
+              <li id="menu-item-47" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-47"><a href="http://instagram.com/"><span class="screen-reader-text">Instagram</span></a></li>
+            </ul>
+          </div>
 
-        <div class="clear">
-          <a href="//www.dmca.com/Protection/Status.aspx?ID=f66ba118-774c-42ec-bb4e-710d58673d21" title="DMCA.com Protection Status" class="dmca-badge" target="blank"> <img src ="https://images.dmca.com/Badges/DMCA_logo-grn-btn120w.png?ID=f66ba118-774c-42ec-bb4e-710d58673d21"  alt="DMCA.com Protection Status" /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
+          <div class="clear">
+            <a href="//www.dmca.com/Protection/Status.aspx?ID=f66ba118-774c-42ec-bb4e-710d58673d21" title="DMCA.com Protection Status" class="dmca-badge" target="blank"> <img src ="https://images.dmca.com/Badges/DMCA_logo-grn-btn120w.png?ID=f66ba118-774c-42ec-bb4e-710d58673d21"  alt="DMCA.com Protection Status" /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
-
-
-<footer id="colophon" class="site-footer-mobile default before-full-width-area" role="contentinfo">
-  <div class="footer-area-wrap second-footer-area-wrap invert">
-    <div class="container">
-      <section id="second-footer-area" class="second-footer-area widget-area footer-area--4-cols row">
-        <aside id="text-4" class="col-xs-12 col-sm-12 col-md-6 col-lg-3  widget contact-information-widget footer-aside-index">
-          <h5 class="widget-title" data-toggle="collapse" data-target="#introduce">
-            Giới thiệu
-            <i class="fa fa-angle-down"></i>
-          </h5>
-          <ul class="contact-information-widget__inner collapse" id="introduce">
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-chevron-right"></span>
-              <div class="list-item">
-                <a href="#"><p class="clearfix">Câu chuyện về Stech</p></a>
-              </div>
-            </li>
-
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-chevron-right"></span>
-              <div class="list-item">
-                <a href="#"><p class="clearfix">Tầm nhìn - Sứ mệnh</p></a>
-              </div>
-            </li>
-
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-chevron-right"></span>
-              <div class="list-item">
-                <a href="#"><p class="clearfix">Cơ hội hợp tác</p></a>
-              </div>
-            </li>
-
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-chevron-right"></span>
-              <div class="list-item">
-                <a href="#"><p class="clearfix">Tin tức khoa học</p></a>
-              </div>
-            </li>
-
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-chevron-right"></span>
-              <div class="list-item">
-                <a href="#"><p class="clearfix">Tải tài liệu - Catalog</p></a>
-              </div>
-            </li>
-
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-chevron-right"></span>
-              <div class="list-item">
-                <a href="#"><p class="clearfix">Câu hỏi thường gặp</p></a>
-              </div>
-            </li>
-
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-chevron-right"></span>
-              <div class="list-item">
-                <a href="../sitemap.html"><p class="clearfix">Sitemap</p></a>
-              </div>
-            </li>
-
-            <!-- Sitemap -->
-          </ul>
-        </aside>
-
-        <aside id="text-4" class="col-xs-12 col-sm-12 col-md-6 col-lg-3  widget contact-information-widget footer-aside-index">
-          <h5 class="widget-title" data-toggle="collapse" data-target="#support">
-            Hỗ trợ khách hàng
-            <i class="fa fa-angle-down"></i>
-          </h5>
-          <ul class="contact-information-widget__inner collapse" id="support">
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-chevron-right"></span>
-              <div class="list-item">
-                <a href="#"><p class="clearfix">Hướng dẫn mua hàng</p></a>
-              </div>
-            </li>
-
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-chevron-right"></span>
-              <div class="list-item">
-                <a href="#"><p class="clearfix">Hướng dẫn thanh toán</p></a>
-              </div>
-            </li>
-
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-chevron-right"></span>
-              <div class="list-item">
-                <a href="#"><p class="clearfix">Chính sách vận chuyển</p></a>
-              </div>
-            </li>
-
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-chevron-right"></span>
-              <div class="list-item">
-                <a href="#"><p class="clearfix">Chính sách bảo hành</p></a>
-              </div>
-            </li>
-
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-chevron-right"></span>
-              <div class="list-item">
-                <a href="#"><p class="clearfix">Chính sách đổi trả hàng</p></a>
-              </div>
-            </li>
-
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-chevron-right"></span>
-              <div class="list-item">
-                <a href="#"><p class="clearfix">Chính sách bảo mật</p></a>
-              </div>
-            </li>
-
-            <!-- LOGO bo cong thuong -->
-          </ul>
-        </aside>
-
-        <!-- Contact info -->
-        <aside id="tm_willard_contact_information_widget-1" class="col-xs-12 col-sm-12 col-md-6 col-lg-3  widget contact-information-widget footer-aside-index">
-          <h5 class="widget-title">Liên hệ mua hàng</h5>
-          <ul class="contact-information-widget__inner">
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-telephone"></span>
-              <div class="list-item">
-                <p class="clearfix"><%= @company.contact_info %>: <a class="privacy_link" href=""><%= @company.phone %></a></p>
-              </div>
-            </li>
-
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-envelope-open"></span>
-              <a href="mailto:<%= @company.email %>"><%= @company.email %></a>
-            </li>
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-home4"></span>
-              <div class="list-item">
-                <p class="clearfix">
-                  Hệ thống chi nhánh:
-                </p>
-              </div>
-            </li>
-<!--             <li class="contact-information__item contact-information__item--icon">
-              <div class="list-item">
-                <p class="clearfix">
-                  Có hàng trưng bày và dùng thử. Vui lòng liên hệ trước <a class="privacy_link" href=""><%= @company.order_phone || @company.phone %></a> để đặt lịch xem hàng.
-                </p>
-              </div>
-            </li>
-
-            <hr class="footer-custom-hr"> -->
-
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-home4"></span>
-              <div class="list-item list-item-address">
-                <p class="clearfix">
-                  Tại TP HCM: <%= @company.sg_address %>
-                </p>
-              </div>
-            </li>
-
-            <% if @company.sg_phone.present? %>
+  </footer>
+<% else %>
+  <footer id="colophon" class="site-footer-mobile default before-full-width-area" role="contentinfo">
+    <div class="footer-area-wrap second-footer-area-wrap invert">
+      <div class="container">
+        <section id="second-footer-area" class="second-footer-area widget-area footer-area--4-cols row">
+          <aside id="text-4" class="col-xs-12 col-sm-12 col-md-6 col-lg-3  widget contact-information-widget footer-aside-index">
+            <h5 class="widget-title" data-toggle="collapse" data-target="#introduce">
+              Giới thiệu
+              <i class="fa fa-angle-down"></i>
+            </h5>
+            <ul class="contact-information-widget__inner collapse" id="introduce">
               <li class="contact-information__item contact-information__item--icon">
-                <span class="icon linearicon linearicon-telephone2"></span>
+                <span class="icon linearicon linearicon-chevron-right"></span>
                 <div class="list-item">
-                  <p class="clearfix"><a class="privacy_link" href=""><%= @company.sg_phone %></a></p>
+                  <a href="#"><p class="clearfix">Câu chuyện về Stech</p></a>
                 </div>
               </li>
-            <% end %>
 
-            <hr class="footer-custom-hr">
-
-            <li class="contact-information__item contact-information__item--icon">
-              <span class="icon linearicon linearicon-home4"></span>
-              <div class="list-item list-item-address">
-                <p class="clearfix">
-                  Tại Hà Nội: <%= @company.hn_address %>
-                </p>
-              </div>
-            </li>
-
-            <% if @company.hn_phone.present? %>
               <li class="contact-information__item contact-information__item--icon">
-                <span class="icon linearicon linearicon-telephone2"></span>
+                <span class="icon linearicon linearicon-chevron-right"></span>
                 <div class="list-item">
-                  <p class="clearfix"><a class="privacy_link" href=""><%= @company.hn_phone %></a></p>
+                  <a href="#"><p class="clearfix">Tầm nhìn - Sứ mệnh</p></a>
                 </div>
               </li>
-            <% end %>
-            
-          </ul>
-        </aside>
 
-        <!-- Column tag -->
-        <aside id="woocommerce_product_tag_cloud-4" class="col-xs-12 col-sm-12 col-md-6 col-lg-3  widget woocommerce widget_product_tag_cloud footer-aside-index">
-          <h5 class="widget-title" data-toggle="collapse" data-target="#link_to">
-            Truy cập nhanh
-            <i class="fa fa-angle-down"></i>
-          </h5>
-          <div class="tagcloud collapse" id="link_to">
-            <% Tag.first(15).each_with_index do |t, index| %>
-              <a href="<%= t.tag_url %>" class="tag-link-position-<%= index + 2 %>" title="" style="font-size: 19.666666666667pt;">
-                <%= t.name %>
-              </a>
-            <% end %>
-          </div>
-        </aside>
-      </section>
+              <li class="contact-information__item contact-information__item--icon">
+                <span class="icon linearicon linearicon-chevron-right"></span>
+                <div class="list-item">
+                  <a href="#"><p class="clearfix">Cơ hội hợp tác</p></a>
+                </div>
+              </li>
+
+              <li class="contact-information__item contact-information__item--icon">
+                <span class="icon linearicon linearicon-chevron-right"></span>
+                <div class="list-item">
+                  <a href="#"><p class="clearfix">Tin tức khoa học</p></a>
+                </div>
+              </li>
+
+              <li class="contact-information__item contact-information__item--icon">
+                <span class="icon linearicon linearicon-chevron-right"></span>
+                <div class="list-item">
+                  <a href="#"><p class="clearfix">Tải tài liệu - Catalog</p></a>
+                </div>
+              </li>
+
+              <li class="contact-information__item contact-information__item--icon">
+                <span class="icon linearicon linearicon-chevron-right"></span>
+                <div class="list-item">
+                  <a href="#"><p class="clearfix">Câu hỏi thường gặp</p></a>
+                </div>
+              </li>
+
+              <li class="contact-information__item contact-information__item--icon">
+                <span class="icon linearicon linearicon-chevron-right"></span>
+                <div class="list-item">
+                  <a href="../sitemap.xml"><p class="clearfix">Sitemap</p></a>
+                </div>
+              </li>
+
+              <!-- Sitemap -->
+            </ul>
+          </aside>
+
+          <aside id="text-4" class="col-xs-12 col-sm-12 col-md-6 col-lg-3  widget contact-information-widget footer-aside-index">
+            <h5 class="widget-title" data-toggle="collapse" data-target="#support">
+              Hỗ trợ khách hàng
+              <i class="fa fa-angle-down"></i>
+            </h5>
+            <ul class="contact-information-widget__inner collapse" id="support">
+              <li class="contact-information__item contact-information__item--icon">
+                <span class="icon linearicon linearicon-chevron-right"></span>
+                <div class="list-item">
+                  <a href="#"><p class="clearfix">Hướng dẫn mua hàng</p></a>
+                </div>
+              </li>
+
+              <li class="contact-information__item contact-information__item--icon">
+                <span class="icon linearicon linearicon-chevron-right"></span>
+                <div class="list-item">
+                  <a href="#"><p class="clearfix">Hướng dẫn thanh toán</p></a>
+                </div>
+              </li>
+
+              <li class="contact-information__item contact-information__item--icon">
+                <span class="icon linearicon linearicon-chevron-right"></span>
+                <div class="list-item">
+                  <a href="#"><p class="clearfix">Chính sách vận chuyển</p></a>
+                </div>
+              </li>
+
+              <li class="contact-information__item contact-information__item--icon">
+                <span class="icon linearicon linearicon-chevron-right"></span>
+                <div class="list-item">
+                  <a href="#"><p class="clearfix">Chính sách bảo hành</p></a>
+                </div>
+              </li>
+
+              <li class="contact-information__item contact-information__item--icon">
+                <span class="icon linearicon linearicon-chevron-right"></span>
+                <div class="list-item">
+                  <a href="#"><p class="clearfix">Chính sách đổi trả hàng</p></a>
+                </div>
+              </li>
+
+              <li class="contact-information__item contact-information__item--icon">
+                <span class="icon linearicon linearicon-chevron-right"></span>
+                <div class="list-item">
+                  <a href="#"><p class="clearfix">Chính sách bảo mật</p></a>
+                </div>
+              </li>
+
+              <!-- LOGO bo cong thuong -->
+            </ul>
+          </aside>
+
+          <!-- Contact info -->
+          <aside id="tm_willard_contact_information_widget-1" class="col-xs-12 col-sm-12 col-md-6 col-lg-3  widget contact-information-widget footer-aside-index">
+            <h5 class="widget-title">Liên hệ mua hàng</h5>
+            <ul class="contact-information-widget__inner">
+              <li class="contact-information__item contact-information__item--icon">
+                <span class="icon linearicon linearicon-telephone"></span>
+                <div class="list-item">
+                  <p class="clearfix"><%= @company.contact_info %>: <a class="privacy_link" href=""><%= @company.phone %></a></p>
+                </div>
+              </li>
+
+              <li class="contact-information__item contact-information__item--icon">
+                <span class="icon linearicon linearicon-envelope-open"></span>
+                <a href="mailto:<%= @company.email %>"><%= @company.email %></a>
+              </li>
+              <li class="contact-information__item contact-information__item--icon">
+                <span class="icon linearicon linearicon-home4"></span>
+                <div class="list-item">
+                  <p class="clearfix">
+                    Hệ thống chi nhánh:
+                  </p>
+                </div>
+              </li>
+
+              <li class="contact-information__item contact-information__item--icon">
+                <span class="icon linearicon linearicon-home4"></span>
+                <div class="list-item list-item-address">
+                  <p class="clearfix">
+                    Tại TP HCM: <%= @company.sg_address %>
+                  </p>
+                </div>
+              </li>
+
+              <% if @company.sg_phone.present? %>
+                <li class="contact-information__item contact-information__item--icon">
+                  <span class="icon linearicon linearicon-telephone2"></span>
+                  <div class="list-item">
+                    <p class="clearfix"><a class="privacy_link" href=""><%= @company.sg_phone %></a></p>
+                  </div>
+                </li>
+              <% end %>
+
+              <hr class="footer-custom-hr">
+
+              <li class="contact-information__item contact-information__item--icon">
+                <span class="icon linearicon linearicon-home4"></span>
+                <div class="list-item list-item-address">
+                  <p class="clearfix">
+                    Tại Hà Nội: <%= @company.hn_address %>
+                  </p>
+                </div>
+              </li>
+
+              <% if @company.hn_phone.present? %>
+                <li class="contact-information__item contact-information__item--icon">
+                  <span class="icon linearicon linearicon-telephone2"></span>
+                  <div class="list-item">
+                    <p class="clearfix"><a class="privacy_link" href=""><%= @company.hn_phone %></a></p>
+                  </div>
+                </li>
+              <% end %>
+              
+            </ul>
+          </aside>
+
+          <!-- Column tag -->
+          <aside id="woocommerce_product_tag_cloud-4" class="col-xs-12 col-sm-12 col-md-6 col-lg-3  widget woocommerce widget_product_tag_cloud footer-aside-index">
+            <h5 class="widget-title" data-toggle="collapse" data-target="#link_to">
+              Truy cập nhanh
+              <i class="fa fa-angle-down"></i>
+            </h5>
+            <div class="tagcloud collapse" id="link_to">
+              <% Tag.first(15).each_with_index do |t, index| %>
+                <a href="<%= t.tag_url %>" class="tag-link-position-<%= index + 2 %>" title="" style="font-size: 19.666666666667pt;">
+                  <%= t.name %>
+                </a>
+              <% end %>
+            </div>
+          </aside>
+        </section>
+      </div>
     </div>
-  </div>
-  <div class="footer-container text-center invert">
-    <div class="site-info container">
-      <div class="site-info-wrap">
-        <div class="site-info-logo_copyright">
-          <div class="footer-logo">
-            <%= link_to root_path, class: "site-logo__link", rel: "home" do %>
-              <%= image_tag @company.logo.url, size: '184x45', title: @company.logo_title, alt: @company.logo_alt, class: "site-link__img" if @company.logo %>
-            <% end %>
+    <div class="footer-container text-center invert">
+      <div class="site-info container">
+        <div class="site-info-wrap">
+          <div class="site-info-logo_copyright">
+            <div class="footer-logo">
+              <%= link_to root_path, class: "site-logo__link", rel: "home" do %>
+                <%= image_tag @company.logo.url, size: '184x45', title: @company.logo_title, alt: @company.logo_alt, class: "site-link__img" if @company.logo %>
+              <% end %>
+            </div>
+            <div class="footer-copyright">Copyright © 2016 STECH INTERNATIONAL ., LTD <a class="privacy_link" href="">Privacy Policy</a></div>
           </div>
-          <div class="footer-copyright">Copyright © 2016 STECH INTERNATIONAL ., LTD <a class="privacy_link" href="">Privacy Policy</a></div>
-        </div>
-        <div class="social-list social-list--footer social-list--icon">
-          <ul id="social-list-1" class="social-list__items inline-list">
-            <li id="menu-item-43" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43">
-              <a href="//www.dmca.com/Protection/Status.aspx?ID=f66ba118-774c-42ec-bb4e-710d58673d21" title="DMCA.com Protection Status" class="dmca-badge">
-                <img src ="https://images.dmca.com/Badges/DMCA_logo-grn-btn100w.png?ID=f66ba118-774c-42ec-bb4e-710d58673d21"  alt="DMCA.com Protection Status" />
-              </a>
-              <!-- <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script> -->
-            </li>
-            <li id="menu-item-44" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-44"><a href="http://youtube.com/"><span class="screen-reader-text">Youtube</span></a></li>
-            <li id="menu-item-44" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-44"><a href="http://facebook.com/"><span class="screen-reader-text">Facebook</span></a></li>
-            <li id="menu-item-45" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-45"><a href="http://twitter.com/"><span class="screen-reader-text">Twitter</span></a></li>
-            <li id="menu-item-46" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46"><a href="http://linkedin.com/"><span class="screen-reader-text">Linkedin</span></a></li>
-            <li id="menu-item-47" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-47"><a href="http://instagram.com/"><span class="screen-reader-text">Instagram</span></a></li>
-          </ul>
+          <div class="social-list social-list--footer social-list--icon">
+            <ul id="social-list-1" class="social-list__items inline-list">
+              <li id="menu-item-44" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-44"><a href="http://youtube.com/"><span class="screen-reader-text">Youtube</span></a></li>
+              <li id="menu-item-44" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-44"><a href="http://facebook.com/"><span class="screen-reader-text">Facebook</span></a></li>
+              <li id="menu-item-45" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-45"><a href="http://twitter.com/"><span class="screen-reader-text">Twitter</span></a></li>
+              <li id="menu-item-46" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46"><a href="http://linkedin.com/"><span class="screen-reader-text">Linkedin</span></a></li>
+              <li id="menu-item-47" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-47"><a href="http://instagram.com/"><span class="screen-reader-text">Instagram</span></a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
+<% end %>

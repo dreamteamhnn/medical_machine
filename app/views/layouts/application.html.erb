@@ -8,10 +8,11 @@
   <%= render 'layouts/google_analytic' if Rails.env.production? %>
   <%= stylesheet_link_tag "application", media: "all",
       "data-turbolinks-track": "reload" %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <script async defer
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' unless @is_mobile %>
+  <%= javascript_include_tag 'application_mobile', 'data-turbolinks-track': 'reload' if @is_mobile %>
+<!--   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbEWIklaDSw8BsgQhkabXXYnM3DcKFNyQ&callback">
-    </script>
+    </script> -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
