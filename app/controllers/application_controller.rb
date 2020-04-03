@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
     get_brands
     @service = Blog.where(is_service: true).first
     @company = Company.first
+    @is_mobile = mobile_device?
     I18n.locale = params[:locale] || I18n.default_locale
   end
 
@@ -28,5 +29,13 @@ class ApplicationController < ActionController::Base
     brands = Brand.all
     slice_size = (brands.size/Settings.limit.menu_block.brand).ceil
     @brand_array = brands.each_slice(slice_size).to_a
+  end
+
+  def mobile_device?
+    if session[:mobile_param]
+      session[:mobile_param] == "1"
+    else
+      request.user_agent =~ /Mobile|webOS/
+    end.present?
   end
 end
