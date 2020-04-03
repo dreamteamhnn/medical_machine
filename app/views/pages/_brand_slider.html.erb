@@ -5,7 +5,11 @@
     <% @brand_logos.each do |brand| %>
       <div class="brand-logo-border" style="margin: 5px;">
         <a href="<%= product_brand_path(brand) %>">
-          <img data-u="image" src="<%= brand.image_url(:brand_thumb) %>" alt="<%= brand.name %>", title="<%= brand.name %>", class="lazy brand-logo img-responsive" />
+          <picture>
+            <source srcset="<%= brand.image_url(:brand_webp) %>.webp" type="image/webp">
+            <source srcset="<%= brand.image_url(:brand_thumb) %>" type="image/jpeg">
+            <img data-u="image" src="<%= brand.image_url(:brand_thumb) %>" alt="<%= brand.name %>", title="<%= brand.name %>", class="lazy brand-logo img-responsive">
+          </picture>
         </a>
       </div>
     <% end %>

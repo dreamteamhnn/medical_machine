@@ -14,7 +14,7 @@
                 <div class="blog-image">
                   <%= link_to blog_detail_path(blog) do %>
                     <% if blog.feature_image_thumb_url.present? %>
-                      <%= image_tag blog.feature_image_thumb_url, class: "lazy", alt: blog.feature_image_alt, title: blog.feature_image_title %>
+                      <%= image_tag blog.feature_image_thumb_url, alt: blog.feature_image_alt, title: blog.feature_image_title %>
                     <% else %>
                       <%= image_tag "480_270.jpg", alt: "Image size 480x270" %>
                     <% end %>
