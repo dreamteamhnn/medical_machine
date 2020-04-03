@@ -96,6 +96,13 @@ class Product < ApplicationRecord
     helper.number_to_currency(discount_price*1000, unit: "", delimiter: ".", precision: 0)
   end
 
+  def opt_src org_src, sz
+    if org_src.include?("f_auto")
+      org_src["/f_auto/"] = "/f_auto/w_#{sz},h_#{sz}/"
+    end
+    org_src
+  end
+
   def name_multi
     length = name.length
     return name unless length < 44
