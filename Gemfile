@@ -101,6 +101,8 @@ group :development do
   gem "capistrano-cookbook", require: false
   # view partial view path
   gem "view_source_map"
+  # N+1 checking
+  gem "bullet", "~> 5.7", ">= 5.7.5"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
