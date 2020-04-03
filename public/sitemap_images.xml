@@ -12,7 +12,7 @@
 
   <url>
        <loc>http://stechsaigon.com/</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>1.0000</priority>
        <image:image>
@@ -252,16 +252,16 @@
          <image:caption>Cetificate active thumb zenithlab2018</image:caption>
        </image:image>
        <image:image>
-         <image:loc>http://stechsaigon.com/uploads/blog_image/url/103/blog_thumb_Tu-an-toan-sinh-hoc-stechsaigon.jpg</image:loc>
-       </image:image>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/blog_image/url/97/blog_thumb_101.png</image:loc>
-       </image:image>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/blog_image/url/101/blog_thumb_viet-nam-che-1581230553830226382178-2.png</image:loc>
+         <image:loc>http://stechsaigon.com/uploads/blog_image/url/104/blog_thumb_May-ly-tam-stechsaigon.jpg</image:loc>
        </image:image>
        <image:image>
          <image:loc>http://stechsaigon.com/uploads/blog_image/url/102/blog_thumb_Noi-hap-tiet-trung-stechsaigon.jpg</image:loc>
+       </image:image>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/blog_image/url/99/blog_thumb_8382811213058676096031423529286253323223040n-158104864547592255861.jpg</image:loc>
+       </image:image>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/blog_image/url/105/blog_thumb_Noi-hap-tiet-trung-stechsaigon.jpg</image:loc>
        </image:image>
        <image:image>
          <image:loc>http://stechsaigon.com/uploads/brand/image/36/brand_thumb_Hang-Elma-Duc-Logo.jpg</image:loc>
@@ -526,7 +526,7 @@
   </url>
   <url>
        <loc>http://stechsaigon.com/tin-tuc/ban-giao-lap-dat-tai-lo-nung-nabertherm-tai-nha-may-hyosung-vung-tau-241219</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
        <image:image>
@@ -551,13 +551,7 @@
          <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/24/content_d10ba3838d05745b2d14.jpg</image:loc>
        </image:image>
        <image:image>
-         <image:loc>http://stechsaigon.com/uploads/blog_image/url/104/blog_thumb_May-ly-tam-stechsaigon.jpg</image:loc>
-       </image:image>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/blog_image/url/105/blog_thumb_Noi-hap-tiet-trung-stechsaigon.jpg</image:loc>
-       </image:image>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/blog_image/url/99/blog_thumb_8382811213058676096031423529286253323223040n-158104864547592255861.jpg</image:loc>
+         <image:loc>http://stechsaigon.com/uploads/blog_image/url/101/blog_thumb_viet-nam-che-1581230553830226382178-2.png</image:loc>
        </image:image>
        <image:image>
          <image:loc>http://stechsaigon.com/uploads/blog_image/url/100/blog_thumb_nb-15806014911461882818525.png</image:loc>
@@ -565,10 +559,13 @@
        <image:image>
          <image:loc>http://stechsaigon.com/uploads/blog_image/url/98/blog_thumb_who-huong-dan-tu-pha-che-nuoc-rua-tay-kho-chong-virus-corona.jpg</image:loc>
        </image:image>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/blog_image/url/103/blog_thumb_Tu-an-toan-sinh-hoc-stechsaigon.jpg</image:loc>
+       </image:image>
   </url>
   <url>
-       <loc>http://stechsaigon.com/san-pham/be-on-nhiet-trung-quoc-4-vi-tri-hh-4-p2607</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <loc>http://stechsaigon.com/san-pham/be-dieu-nhiet-lanh-tuan-hoan-12-lit-han-quoc-labtech-lcc-r212u</loc>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
        <image:image>
@@ -589,8 +586,8 @@
        </image:image>
   </url>
   <url>
-       <loc>http://stechsaigon.com/san-pham/be-cach-thuy-daihan-11-lit-wb-11-p478</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <loc>http://stechsaigon.com/san-pham/be-cach-dau-hien-so-daihan-whb-6-p480</loc>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
        <image:image>
@@ -599,34 +596,94 @@
        </image:image>
   </url>
   <url>
-       <loc>http://stechsaigon.com/san-pham/may-ly-tam-hettich-eba-280s-p396</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <loc>http://stechsaigon.com/san-pham/may-ly-tam-hettich-rotofix-46h-p445</loc>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
        <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/189/content_May-ly-tam-Hettich-EBA-280S.jpg</image:loc>
-       </image:image>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/190/content_May-ly-tam-Hettich-EBA280S.jpg</image:loc>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/261/content_Hettich-Rotoffix46H.jpg</image:loc>
        </image:image>
   </url>
   <url>
-       <loc>http://stechsaigon.com/tin-tuc/tu-an-toan-sinh-hoc-nguyen-ly-hoat-dong-phan-loai-va-ung-dung</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <loc>http://stechsaigon.com/san-pham/may-li-tam-da-nang-hermle-z306-rotor-goc-12-ong-x-15ml-code-221-54-v02-p303</loc>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
        <image:image>
-         <image:loc>http://stechsaigon.com/uploads/blog_image/url/103/Tu-an-toan-sinh-hoc-stechsaigon.jpg</image:loc>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/112/content_1.PNG</image:loc>
+       </image:image>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/113/content_2.PNG</image:loc>
+       </image:image>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/114/content_22154v02.PNG</image:loc>
+       </image:image>
+  </url>
+  <url>
+       <loc>http://stechsaigon.com/san-pham/may-ly-tam-loc-tach-sieva-2-p295</loc>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/97/content_sieva2.PNG</image:loc>
+       </image:image>
+  </url>
+  <url>
+       <loc>http://stechsaigon.com/tin-tuc/may-ly-tam-cau-tao--nguyen-ly-vanhung-luu-y-khi-su-dung</loc>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/blog_image/url/104/May-ly-tam-stechsaigon.jpg</image:loc>
        </image:image>
        <image:image>
          <image:loc>http://stechsaigon.com/uploads/blog_image/url/96/blog_thumb_Hyosung-Vung-Tau.jpg</image:loc>
        </image:image>
   </url>
   <url>
-       <loc>http://stechsaigon.com/tin-tuc/tu-say-ung-dung-va-cac-loai-tu-say-duoc-su-dung-rong-rai</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <loc>http://stechsaigon.com/tin-tuc/noi-hap-tiet-trung-nguyen-ly-hoat-dong-chuc-nang-va-ung-dung</loc>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.8000</priority>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/blog_image/url/102/Noi-hap-tiet-trung-stechsaigon.jpg</image:loc>
+       </image:image>
+  </url>
+  <url>
+       <loc>http://stechsaigon.com/tin-tuc/viet-nam-nuoi-cay-va-phan-lap-thanh-cong-virus-corona-moi</loc>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/blog_image/url/99/8382811213058676096031423529286253323223040n-158104864547592255861.jpg</image:loc>
+       </image:image>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/blog_image/url/97/blog_thumb_101.png</image:loc>
+       </image:image>
+  </url>
+  <url>
+       <loc>http://stechsaigon.com/tin-tuc/jibimed-thuong-hieu-noi-hap-so-1-trung-quoc</loc>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/blog_image/url/105/Noi-hap-tiet-trung-stechsaigon.jpg</image:loc>
+       </image:image>
+  </url>
+  <url>
+       <loc>http://stechsaigon.com/tin-tuc/tu-an-toan-sinh-hoc-nguyen-ly-hoat-dong-phan-loai-va-ung-dung</loc>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/blog_image/url/103/Tu-an-toan-sinh-hoc-stechsaigon.jpg</image:loc>
+       </image:image>
+  </url>
+  <url>
+       <loc>http://stechsaigon.com/tin-tuc/tu-say-ung-dung-va-cac-loai-tu-say-duoc-su-dung-rong-rai</loc>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
        <image:image>
          <image:loc>http://stechsaigon.com/uploads/blog_image/url/97/101.png</image:loc>
        </image:image>
@@ -647,72 +704,8 @@
        </image:image>
   </url>
   <url>
-       <loc>http://stechsaigon.com/tin-tuc/viet-nam-che-tao-thanh-cong-kit-thu-nhanh-virus-2019-ncov</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.8000</priority>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/blog_image/url/101/viet-nam-che-1581230553830226382178-2.png</image:loc>
-       </image:image>
-  </url>
-  <url>
-       <loc>http://stechsaigon.com/tin-tuc/noi-hap-tiet-trung-nguyen-ly-hoat-dong-chuc-nang-va-ung-dung</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.8000</priority>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/blog_image/url/102/Noi-hap-tiet-trung-stechsaigon.jpg</image:loc>
-       </image:image>
-  </url>
-  <url>
-       <loc>http://stechsaigon.com/san-pham/noi-hap-tiet-trung-nam-ngang-jibimed-ws-400ydc-400-lit--p174</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
-       <image:image>
-         <image:loc>http://stechsaigon.com/small-excell.png</image:loc>
-         <image:caption>excel</image:caption>
-       </image:image>
-  </url>
-  <url>
-       <loc>http://stechsaigon.com/tin-tuc/viet-nam-nuoi-cay-va-phan-lap-thanh-cong-virus-corona-moi</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/blog_image/url/99/8382811213058676096031423529286253323223040n-158104864547592255861.jpg</image:loc>
-       </image:image>
-  </url>
-  <url>
-       <loc>http://stechsaigon.com/tin-tuc/jibimed-thuong-hieu-noi-hap-so-1-trung-quoc</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/blog_image/url/105/Noi-hap-tiet-trung-stechsaigon.jpg</image:loc>
-       </image:image>
-  </url>
-  <url>
-       <loc>http://stechsaigon.com/tin-tuc/may-ly-tam-cau-tao--nguyen-ly-vanhung-luu-y-khi-su-dung</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/blog_image/url/104/May-ly-tam-stechsaigon.jpg</image:loc>
-       </image:image>
-  </url>
-  <url>
-       <loc>http://stechsaigon.com/tin-tuc/nhat-ban-phan-lap-thanh-cong-virus-corona-moi</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/blog_image/url/100/nb-15806014911461882818525.png</image:loc>
-       </image:image>
-  </url>
-  <url>
        <loc>http://stechsaigon.com/tin-tuc/who-huong-dan-tu-pha-che-nuoc-rua-tay-kho-chong-virus-corona</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <image:image>
@@ -720,8 +713,26 @@
        </image:image>
   </url>
   <url>
+       <loc>http://stechsaigon.com/tin-tuc/nhat-ban-phan-lap-thanh-cong-virus-corona-moi</loc>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/blog_image/url/100/nb-15806014911461882818525.png</image:loc>
+       </image:image>
+  </url>
+  <url>
+       <loc>http://stechsaigon.com/tin-tuc/viet-nam-che-tao-thanh-cong-kit-thu-nhanh-virus-2019-ncov</loc>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/blog_image/url/101/viet-nam-che-1581230553830226382178-2.png</image:loc>
+       </image:image>
+  </url>
+  <url>
        <loc>http://stechsaigon.com/loai-san-pham/thiet-bi-thi-nghiem-c1/</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <image:image>
@@ -902,8 +913,18 @@
        </image:image>
   </url>
   <url>
+       <loc>http://stechsaigon.com/san-pham/noi-hap-tiet-trung-de-ban-jibimed-yx-18lm-18-lit--p139</loc>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
+       <image:image>
+         <image:loc>http://stechsaigon.com/small-excell.png</image:loc>
+         <image:caption>excel</image:caption>
+       </image:image>
+  </url>
+  <url>
        <loc>http://stechsaigon.com/san-pham/may-ly-tam-da-nang-hermle-z206a12-x-15ml--6000-vong-phut-p250</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <image:image>
@@ -927,7 +948,7 @@
   </url>
   <url>
        <loc>http://stechsaigon.com/san-pham/may-ly-tam-phan-tich-dau-oleum-p251</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <image:image>
@@ -939,7 +960,7 @@
   </url>
   <url>
        <loc>http://stechsaigon.com/san-pham/may-ly-tam-toc-do-cao-hermle-z-32-hk-p252</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <image:image>
@@ -975,7 +996,7 @@
   </url>
   <url>
        <loc>http://stechsaigon.com/san-pham/may-ly-tam-hermle-z207a-8-x-15ml-duc-p248</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <image:image>
@@ -987,7 +1008,7 @@
   </url>
   <url>
        <loc>http://stechsaigon.com/san-pham/may-ly-tam-hermle-dung-cho-ong-mao-dan--13-000-vongphut-z207h-p249</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <image:image>
@@ -999,7 +1020,7 @@
   </url>
   <url>
        <loc>http://stechsaigon.com/san-pham/may-ly-tam-toc-do-cao-hermle-z-36-hk-p267</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <image:image>
@@ -1026,7 +1047,7 @@
   </url>
   <url>
        <loc>http://stechsaigon.com/san-pham/may-ly-tam-toc-do-cao-hermle-z-496-p278</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <image:image>
@@ -1047,7 +1068,7 @@
   </url>
   <url>
        <loc>http://stechsaigon.com/san-pham/may-ly-tam-toc-do-cao-24-x-2ml--13500-rpm-z207m-p284</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <image:image>
@@ -1059,7 +1080,7 @@
   </url>
   <url>
        <loc>http://stechsaigon.com/san-pham/may-ly-tam-hermle-mini-z130m-p282</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <image:image>
@@ -1068,7 +1089,7 @@
   </url>
   <url>
        <loc>http://stechsaigon.com/san-pham/may-ly-tam-toc-do-cao-24-x-2ml--13500-rpm-z207m--rotor-24-ong-x-1-52-0ml-p285</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <image:image>
@@ -1083,7 +1104,7 @@
   </url>
   <url>
        <loc>http://stechsaigon.com/san-pham/may-ly-tam-toc-do-cao-24-x-2ml--13500-rpm-z207m--roto-24-ong-x-1-52-0ml-p286</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <image:image>
@@ -1098,7 +1119,7 @@
   </url>
   <url>
        <loc>http://stechsaigon.com/san-pham/may-ly-tam-toc-do-cao-24-x-2ml--13500-rpm-z207m--roto-18-ong-x2-0ml-p287</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <image:image>
@@ -1113,7 +1134,7 @@
   </url>
   <url>
        <loc>http://stechsaigon.com/san-pham/may-ly-tam-hermle-micro-z216m-p288</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <image:image>
@@ -1125,7 +1146,7 @@
   </url>
   <url>
        <loc>http://stechsaigon.com/san-pham/may-ly-tam-microlit-lanh-z216mk-p289</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <image:image>
@@ -1151,17 +1172,8 @@
        </image:image>
   </url>
   <url>
-       <loc>http://stechsaigon.com/san-pham/may-ly-tam-loc-tach-sieva-2-p295</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/97/content_sieva2.PNG</image:loc>
-       </image:image>
-  </url>
-  <url>
        <loc>http://stechsaigon.com/san-pham/may-ly-tam-loc-tach-sieva-2--roto-gio-duc-lo-500ml-p296</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <image:image>
@@ -1173,7 +1185,7 @@
   </url>
   <url>
        <loc>http://stechsaigon.com/san-pham/may-li-tam-da-nang-hermle-z306-p297</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <image:image>
@@ -1185,7 +1197,7 @@
   </url>
   <url>
        <loc>http://stechsaigon.com/loai-san-pham/Thiet-bi-y-te-c75/</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <image:image>
@@ -1199,7 +1211,7 @@
   </url>
   <url>
        <loc>http://stechsaigon.com/loai-san-pham/Thiet-bi-do-luong-c62/</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <image:image>
@@ -1225,7 +1237,7 @@
   </url>
   <url>
        <loc>http://stechsaigon.com/san-pham/may-ly-tam-quay-tay-hettich-handzentrifuge-p391</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <image:image>
@@ -1234,7 +1246,7 @@
   </url>
   <url>
        <loc>http://stechsaigon.com/san-pham/may-ly-tam-hettich-eba-200-p392</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <image:image>
@@ -1246,7 +1258,7 @@
   </url>
   <url>
        <loc>http://stechsaigon.com/san-pham/may-ly-tam-hettich-eba-200s-p393</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <image:image>
@@ -1258,7 +1270,7 @@
   </url>
   <url>
        <loc>http://stechsaigon.com/san-pham/may-ly-tam-hettich-eba-270-p394</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <image:image>
@@ -1270,7 +1282,7 @@
   </url>
   <url>
        <loc>http://stechsaigon.com/san-pham/may-ly-tam-hettich-eba-280-p395</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <image:image>
@@ -1281,8 +1293,20 @@
        </image:image>
   </url>
   <url>
+       <loc>http://stechsaigon.com/san-pham/may-ly-tam-hettich-eba-280s-p396</loc>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/189/content_May-ly-tam-Hettich-EBA-280S.jpg</image:loc>
+       </image:image>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/190/content_May-ly-tam-Hettich-EBA280S.jpg</image:loc>
+       </image:image>
+  </url>
+  <url>
        <loc>http://stechsaigon.com/san-pham/may-ly-tam-hettich-eba-280s-6x15ml-p397</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <image:image>
@@ -1300,7 +1324,7 @@
   </url>
   <url>
        <loc>http://stechsaigon.com/san-pham/may-ly-tam-hettich-eba-280s-8x7ml-p399</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <image:image>
@@ -1321,7 +1345,7 @@
   </url>
   <url>
        <loc>http://stechsaigon.com/san-pham/may-ly-tam-hettich-eba-280s-12x5ml-p402</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <image:image>
@@ -1333,7 +1357,7 @@
   </url>
   <url>
        <loc>http://stechsaigon.com/san-pham/may-ly-tam-hettich-eba-280s12x7ml-p404</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <image:image>
@@ -1345,7 +1369,7 @@
   </url>
   <url>
        <loc>http://stechsaigon.com/san-pham/may-ly-tam-hettich-eba-280s-6x50ml-p405</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <image:image>
@@ -1393,7 +1417,7 @@
   </url>
   <url>
        <loc>http://stechsaigon.com/san-pham/may-ly-tam-hettich-eba-280s-12x15ml-p412</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <image:image>
@@ -1411,7 +1435,7 @@
   </url>
   <url>
        <loc>http://stechsaigon.com/san-pham/may-li-tam-da-nang-hermle-z306--rotor-goc-6-ong-x-50ml-code-221-55-v02-p300</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <image:image>
@@ -1426,7 +1450,7 @@
   </url>
   <url>
        <loc>http://stechsaigon.com/san-pham/may-li-tam-da-nang-hermle-z306--rotor-goc-24-ong-x-1-52-0-ml--code-220-87-v16-p301</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <image:image>
@@ -1441,7 +1465,7 @@
   </url>
   <url>
        <loc>http://stechsaigon.com/san-pham/may-li-tam-da-nang-hermle-z306-rotor-goc-30-ong-x-15ml--code-221-19-v02-p302</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <image:image>
@@ -1455,23 +1479,8 @@
        </image:image>
   </url>
   <url>
-       <loc>http://stechsaigon.com/san-pham/may-li-tam-da-nang-hermle-z306-rotor-goc-12-ong-x-15ml-code-221-54-v02-p303</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/112/content_1.PNG</image:loc>
-       </image:image>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/113/content_2.PNG</image:loc>
-       </image:image>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/114/content_22154v02.PNG</image:loc>
-       </image:image>
-  </url>
-  <url>
        <loc>http://stechsaigon.com/san-pham/may-li-tam-da-nang-hermle-z306-rotor-goc-24-ong-x-1-52-0ml-code-220-87-v15-p304</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <image:image>
@@ -1485,38 +1494,8 @@
        </image:image>
   </url>
   <url>
-       <loc>http://stechsaigon.com/san-pham/may-ly-tam-lanh-dung-tich-lon-hettich-rotixa-500rs-p433</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/241/content_ROTIXA-_500_RS.png</image:loc>
-       </image:image>
-  </url>
-  <url>
-       <loc>http://stechsaigon.com/san-pham/may-ly-tam-hettich-universal-320-p443</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/263/content_Hettich-Universal--320.jpg</image:loc>
-       </image:image>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/264/content_Hettich-Universal-320-dong-mo.jpg</image:loc>
-       </image:image>
-  </url>
-  <url>
-       <loc>http://stechsaigon.com/san-pham/may-ly-tam-hettich-mikro-185-24x1-52ml-p447</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/258/content_May-ly-tam-Hettich-Mikro-185.jpg</image:loc>
-       </image:image>
-  </url>
-  <url>
        <loc>http://stechsaigon.com/san-pham/may-ly-tam-lanh-hettich-rotina-420r-p442</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <image:image>
@@ -1527,37 +1506,149 @@
        </image:image>
   </url>
   <url>
-       <loc>http://stechsaigon.com/san-pham/may-ly-tam-lanh-da-nang-hermle-z326k-p307</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <loc>http://stechsaigon.com/san-pham/may-ly-tam-hettich-rotana-460-p435</loc>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
        <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/125/content_1.PNG</image:loc>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/243/content_rotanta460-img01.png</image:loc>
        </image:image>
        <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/126/content_2.PNG</image:loc>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/244/content_rotanta460-ft.png</image:loc>
+       </image:image>
+  </url>
+  <url>
+       <loc>http://stechsaigon.com/san-pham/may-ly-tam-da-nang-hermle-z326-p306</loc>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/123/content_1.PNG</image:loc>
        </image:image>
        <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/127/content_22112v03.PNG</image:loc>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/124/content_2.PNG</image:loc>
+       </image:image>
+  </url>
+  <url>
+       <loc>http://stechsaigon.com/san-pham/may-ly-tam-lanh-dung-tich-lon-hettich-roto-silenta-630rs-p434</loc>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/242/content_roto-silenta-630rs-.png</image:loc>
+       </image:image>
+  </url>
+  <url>
+       <loc>http://stechsaigon.com/san-pham/may-ly-tam-hettich-mikro-220r-p452</loc>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.5120</priority>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/253/content_May-ly-tam-Hettich-Mikro-220R.jpg</image:loc>
+       </image:image>
+  </url>
+  <url>
+       <loc>http://stechsaigon.com/san-pham/may-ly-tam-hettich-mikro-200r-p450</loc>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.5120</priority>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/255/content_May-ly-tam-Hettich-Mikro-200R-dong-mo.jpg</image:loc>
+       </image:image>
+  </url>
+  <url>
+       <loc>http://stechsaigon.com/san-pham/may-ly-tam-hettich-mikro-200-p449</loc>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.5120</priority>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/256/content_May-ly-tam-Hettich-Mikro-200.jpg</image:loc>
        </image:image>
        <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/128/content_22072v06.PNG</image:loc>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/257/content_May-ly-tam-Hettich-Mikro-200-mo-nap.jpg</image:loc>
+       </image:image>
+  </url>
+  <url>
+       <loc>http://stechsaigon.com/san-pham/may-ly-tam-hettich-mikro-185-18x1-52ml-p448</loc>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.5120</priority>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/258/content_May-ly-tam-Hettich-Mikro-185.jpg</image:loc>
+       </image:image>
+  </url>
+  <url>
+       <loc>http://stechsaigon.com/san-pham/may-ly-tam-hettich-heamatokrit-200-24-ong-p432</loc>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.5120</priority>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/227/content_May-ly-tam-Hettich-EBA200.jpg</image:loc>
        </image:image>
        <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/129/content_22119v02.PNG</image:loc>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/228/content_May-ly-tam-Hettich-EBA-200.jpg</image:loc>
+       </image:image>
+  </url>
+  <url>
+       <loc>http://stechsaigon.com/san-pham/may-ly-tam-lanh-dung-tich-lon-hettich-rotixa-500rs-p433</loc>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.5120</priority>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/241/content_ROTIXA-_500_RS.png</image:loc>
+       </image:image>
+  </url>
+  <url>
+       <loc>http://stechsaigon.com/san-pham/may-ly-tam-hettich-rotofix-46-p446</loc>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.5120</priority>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/259/content_Hettich-Rotofix-46.jpg</image:loc>
+       </image:image>
+  </url>
+  <url>
+       <loc>http://stechsaigon.com/san-pham/may-ly-tam-hettich-rotofix-32a-p440</loc>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.5120</priority>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/233/content_Hettich-Rotofix_32A.jpg</image:loc>
        </image:image>
        <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/130/content_22154v02.PNG</image:loc>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/234/content_Hettich-Rotofix_32A-mo.jpg</image:loc>
+       </image:image>
+  </url>
+  <url>
+       <loc>http://stechsaigon.com/san-pham/may-ly-tam-da-nang-hermle-z366-p325</loc>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.5120</priority>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/133/content_366.PNG</image:loc>
        </image:image>
        <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/131/content_22155v02.PNG</image:loc>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/132/content_3.PNG</image:loc>
+         <image:caption>http://stechsaigon.com/san-pham/may-ly-tam-da-nang-hermle-z366-p325</image:caption>
+       </image:image>
+  </url>
+  <url>
+       <loc>http://stechsaigon.com/san-pham/may-ly-tam-hettich-rotina-380-p439</loc>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.5120</priority>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/235/content_Hettich-Rotina380.jpg</image:loc>
+       </image:image>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/236/content_Hettich-Rotina-380.jpg</image:loc>
        </image:image>
   </url>
   <url>
        <loc>http://stechsaigon.com/san-pham/may-ly-tam-da-nang-hermle-z366k-p326</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
+       <priority>0.5120</priority>
        <image:image>
          <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/136/content_366k.PNG</image:loc>
        </image:image>
@@ -1587,222 +1678,8 @@
        </image:image>
   </url>
   <url>
-       <loc>http://stechsaigon.com/san-pham/may-ly-tam-hettich-mikro-200r-p450</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/255/content_May-ly-tam-Hettich-Mikro-200R-dong-mo.jpg</image:loc>
-       </image:image>
-  </url>
-  <url>
-       <loc>http://stechsaigon.com/san-pham/may-ly-tam-hettich-mikro-200-p449</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/256/content_May-ly-tam-Hettich-Mikro-200.jpg</image:loc>
-       </image:image>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/257/content_May-ly-tam-Hettich-Mikro-200-mo-nap.jpg</image:loc>
-       </image:image>
-  </url>
-  <url>
-       <loc>http://stechsaigon.com/san-pham/may-ly-tam-lanh-da-nang-z446k-p339</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/158/content_Hermle-Z-446K-May-ly-tam-da-nang.jpg</image:loc>
-       </image:image>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/157/content_1.PNG</image:loc>
-       </image:image>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/151/content_22118v02.PNG</image:loc>
-       </image:image>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/152/content_22120v02.PNG</image:loc>
-       </image:image>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/153/content_22121v02_6_%E1%BB%91ng.PNG</image:loc>
-       </image:image>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/154/content_22122v02.PNG</image:loc>
-       </image:image>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/155/content_22128v02.PNG</image:loc>
-       </image:image>
-  </url>
-  <url>
-       <loc>http://stechsaigon.com/san-pham/may-ly-tam-lanh-hettich-universal-320r-p444</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/262/content_Hettich-Universal-320R.jpg</image:loc>
-       </image:image>
-  </url>
-  <url>
-       <loc>http://stechsaigon.com/san-pham/may-ly-tam-da-nang-hermle-z366-p325</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/133/content_366.PNG</image:loc>
-       </image:image>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/132/content_3.PNG</image:loc>
-         <image:caption>http://stechsaigon.com/san-pham/may-ly-tam-da-nang-hermle-z366-p325</image:caption>
-       </image:image>
-  </url>
-  <url>
-       <loc>http://stechsaigon.com/san-pham/may-ly-tam-hettich-rotana-460-p435</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/243/content_rotanta460-img01.png</image:loc>
-       </image:image>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/244/content_rotanta460-ft.png</image:loc>
-       </image:image>
-  </url>
-  <url>
-       <loc>http://stechsaigon.com/san-pham/may-ly-tam-da-nang-hermle-z446-p338</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/149/content_Hermle-Z446-May-ly-tam-da-nang.jpg</image:loc>
-       </image:image>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/150/content_1.PNG</image:loc>
-       </image:image>
-  </url>
-  <url>
-       <loc>http://stechsaigon.com/san-pham/may-ly-tam-hettich-rotofix-32a-p440</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/233/content_Hettich-Rotofix_32A.jpg</image:loc>
-       </image:image>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/234/content_Hettich-Rotofix_32A-mo.jpg</image:loc>
-       </image:image>
-  </url>
-  <url>
-       <loc>http://stechsaigon.com/san-pham/may-ly-tam-da-nang-hermle-z326-p306</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/123/content_1.PNG</image:loc>
-       </image:image>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/124/content_2.PNG</image:loc>
-       </image:image>
-  </url>
-  <url>
-       <loc>http://stechsaigon.com/san-pham/may-ly-tam-hettich-mikro-220-p451</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/254/content_May-ly-tam-Hettich-Mikro-200-thang.jpg</image:loc>
-       </image:image>
-  </url>
-  <url>
-       <loc>http://stechsaigon.com/san-pham/may-ly-tam-hettich-mikro-220r-p452</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/253/content_May-ly-tam-Hettich-Mikro-220R.jpg</image:loc>
-       </image:image>
-  </url>
-  <url>
-       <loc>http://stechsaigon.com/san-pham/may-ly-tam-hettich-heamatokrit-200-24-ong-p432</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/227/content_May-ly-tam-Hettich-EBA200.jpg</image:loc>
-       </image:image>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/228/content_May-ly-tam-Hettich-EBA-200.jpg</image:loc>
-       </image:image>
-  </url>
-  <url>
-       <loc>http://stechsaigon.com/san-pham/may-ly-tam-hettich-rotina-420-p441</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/231/content_Hettich-Rotina420R.jpg</image:loc>
-       </image:image>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/232/content_Hettich-Rotina-420.jpg</image:loc>
-       </image:image>
-  </url>
-  <url>
-       <loc>http://stechsaigon.com/san-pham/may-ly-tam-hettich-rotofix-46-p446</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/259/content_Hettich-Rotofix-46.jpg</image:loc>
-       </image:image>
-  </url>
-  <url>
-       <loc>http://stechsaigon.com/san-pham/may-ly-tam-lanh-dung-tich-lon-hettich-roto-silenta-630rs-p434</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/242/content_roto-silenta-630rs-.png</image:loc>
-       </image:image>
-  </url>
-  <url>
-       <loc>http://stechsaigon.com/san-pham/may-li-tam-da-nang-hermle-z306-rotor-goc-30-ong-x-1-52-0ml-code-221-17-v07-p305</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/120/content_1.PNG</image:loc>
-       </image:image>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/119/content_2.PNG</image:loc>
-       </image:image>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/121/content_22117v07.PNG</image:loc>
-       </image:image>
-  </url>
-  <url>
-       <loc>http://stechsaigon.com/san-pham/may-ly-tam-hettich-rotina-380-p439</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/235/content_Hettich-Rotina380.jpg</image:loc>
-       </image:image>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/236/content_Hettich-Rotina-380.jpg</image:loc>
-       </image:image>
-  </url>
-  <url>
-       <loc>http://stechsaigon.com/san-pham/may-ly-tam-hettich-rotofix-46h-p445</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.5120</priority>
-       <image:image>
-         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/261/content_Hettich-Rotoffix46H.jpg</image:loc>
-       </image:image>
-  </url>
-  <url>
        <loc>http://stechsaigon.com/san-pham/may-ly-tam-hettich-lanh-rotana-460r-rotor-vang-4-nhanh-p438</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.5120</priority>
        <image:image>
@@ -1834,8 +1711,131 @@
        </image:image>
   </url>
   <url>
+       <loc>http://stechsaigon.com/san-pham/may-li-tam-da-nang-hermle-z306-rotor-goc-30-ong-x-1-52-0ml-code-221-17-v07-p305</loc>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.5120</priority>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/120/content_1.PNG</image:loc>
+       </image:image>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/119/content_2.PNG</image:loc>
+       </image:image>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/121/content_22117v07.PNG</image:loc>
+       </image:image>
+  </url>
+  <url>
+       <loc>http://stechsaigon.com/san-pham/may-ly-tam-da-nang-hermle-z446-p338</loc>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.5120</priority>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/149/content_Hermle-Z446-May-ly-tam-da-nang.jpg</image:loc>
+       </image:image>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/150/content_1.PNG</image:loc>
+       </image:image>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/151/content_22118v02.PNG</image:loc>
+       </image:image>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/152/content_22120v02.PNG</image:loc>
+       </image:image>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/153/content_22121v02_6_%E1%BB%91ng.PNG</image:loc>
+       </image:image>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/154/content_22122v02.PNG</image:loc>
+       </image:image>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/155/content_22128v02.PNG</image:loc>
+       </image:image>
+  </url>
+  <url>
+       <loc>http://stechsaigon.com/san-pham/may-ly-tam-lanh-da-nang-hermle-z326k-p307</loc>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.5120</priority>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/125/content_1.PNG</image:loc>
+       </image:image>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/126/content_2.PNG</image:loc>
+       </image:image>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/127/content_22112v03.PNG</image:loc>
+       </image:image>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/128/content_22072v06.PNG</image:loc>
+       </image:image>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/129/content_22119v02.PNG</image:loc>
+       </image:image>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/130/content_22154v02.PNG</image:loc>
+       </image:image>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/131/content_22155v02.PNG</image:loc>
+       </image:image>
+  </url>
+  <url>
+       <loc>http://stechsaigon.com/san-pham/may-ly-tam-lanh-da-nang-z446k-p339</loc>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.5120</priority>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/158/content_Hermle-Z-446K-May-ly-tam-da-nang.jpg</image:loc>
+       </image:image>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/157/content_1.PNG</image:loc>
+       </image:image>
+  </url>
+  <url>
+       <loc>http://stechsaigon.com/san-pham/may-ly-tam-hettich-rotina-420-p441</loc>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.5120</priority>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/231/content_Hettich-Rotina420R.jpg</image:loc>
+       </image:image>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/232/content_Hettich-Rotina-420.jpg</image:loc>
+       </image:image>
+  </url>
+  <url>
+       <loc>http://stechsaigon.com/san-pham/may-ly-tam-hettich-mikro-220-p451</loc>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.5120</priority>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/254/content_May-ly-tam-Hettich-Mikro-200-thang.jpg</image:loc>
+       </image:image>
+  </url>
+  <url>
+       <loc>http://stechsaigon.com/san-pham/may-ly-tam-lanh-hettich-universal-320r-p444</loc>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.5120</priority>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/262/content_Hettich-Universal-320R.jpg</image:loc>
+       </image:image>
+  </url>
+  <url>
+       <loc>http://stechsaigon.com/san-pham/may-ly-tam-hettich-universal-320-p443</loc>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.5120</priority>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/263/content_Hettich-Universal--320.jpg</image:loc>
+       </image:image>
+       <image:image>
+         <image:loc>http://stechsaigon.com/uploads/ckeditor/pictures/264/content_Hettich-Universal-320-dong-mo.jpg</image:loc>
+       </image:image>
+  </url>
+  <url>
        <loc>http://stechsaigon.com/san-pham/may-ly-tam-lanhhettich-rotina-380r-p453</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.5120</priority>
        <image:image>
@@ -1844,7 +1844,7 @@
   </url>
   <url>
        <loc>http://stechsaigon.com/san-pham/may-li-tam-hermle-ong-15ml50ml-z306-p367</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.5120</priority>
        <image:image>
@@ -1871,7 +1871,7 @@
   </url>
   <url>
        <loc>http://stechsaigon.com/san-pham/may-li-tam-hermle-ong-15ml50ml-z326-p371</loc>
-       <lastmod>2020-04-03T14:52:17+00:00</lastmod>
+       <lastmod>2020-04-03T19:20:38+00:00</lastmod>
        <changefreq>daily</changefreq>
        <priority>0.5120</priority>
        <image:image>

@@ -44,6 +44,9 @@ gem "cloudinary"
 # gem "image_optim_rails"
 # gem "image_optim_pack"
 
+# Lazy load images
+gem "lazyload-rails"
+
 # Setting
 gem "config"
 
