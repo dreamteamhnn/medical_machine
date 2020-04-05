@@ -12,11 +12,7 @@
               <div class="blog-image img-block">
                 <%= link_to @first_project.link do %>
                   <% if @first_project.img.url.present? %>
-                    <picture>
-                      <source srcset="<%= @first_project.img_url(:project_webp) %>.webp" type="image/webp">
-                      <source srcset="<%= @first_project.img_url(:project_thumb) %>" type="image/jpeg">
-                      <img src="<%= @first_project.img_url(:project_thumb) %>" class="lazy" alt="<%= @first_project.title.convert_vietnamese_to_unicode} %>-alt" title="<%= @first_project.title.convert_vietnamese_to_unicode}%>-title">
-                    </picture>
+                    <%= image_tag @first_project.img_url(:project_thumb), class: "lazy", alt: "#{@first_project.title.convert_vietnamese_to_unicode}-alt", title: "#{@first_project.title.convert_vietnamese_to_unicode}-title" %>
                   <% else %>
                     <%= image_tag "1200_628.jpg", alt: "Image size 1200x628" %>
                   <% end %>
@@ -39,11 +35,7 @@
                 <div class="col-xs-6 blog-image-custom img-block-custom">
                   <%= link_to project.link do %>
                     <% if project.img.url.present? %>
-                      <picture>
-                        <source srcset="<%= project.img_url(:project_webp) %>.webp" type="image/webp">
-                        <source srcset="<%= project.img_url(:project_thumb) %>" type="image/jpeg">
-                        <img src="<%= project.img_url(:project_thumb) %>" class="lazy" alt="<%= project.title.convert_vietnamese_to_unicode} %>-alt" title="<%= project.title.convert_vietnamese_to_unicode}%>-title">
-                      </picture>
+                      <%= image_tag project.img_url(:project_thumb), class: "lazy", alt: "#{project.title.convert_vietnamese_to_unicode}-alt", title: "#{project.title.convert_vietnamese_to_unicode}-title" %>
                     <% else %>
                       <%= image_tag "1200_628.jpg", alt: "Image size 1200x628" %>
                     <% end %>

@@ -9,11 +9,7 @@
       <div class="col-sm-6 the-most-product">
         <div class="project-image-1">
           <%= link_to @first_project.link do %>
-            <picture>
-              <source srcset="<%= @first_project.img_url(:project_webp) %>.webp" type="image/webp">
-              <source srcset="<%= @first_project.img_url(:project_thumb) %>" type="image/jpeg">
-              <img src="<%= @first_project.img_url(:project_thumb) %>" class="lazy img-responsive width-100-percent">
-            </picture>
+            <%= image_tag @first_project.img_url(:project_thumb), class: "lazy img-responsive width-100-percent" %>
             <p class="project-title"><%= @first_project.title %></p>
           <% end %>
         </div>
@@ -24,11 +20,7 @@
             <div class="col-sm-6 #{'config-padding-30-0' if idx%2 == 0}">
               <div class="project-image-2">
                 <%= link_to project.link do %>
-                  <picture>
-                    <source srcset="<%= project.img_url(:project_webp) %>.webp" type="image/webp">
-                    <source srcset="<%= project.img_url(:project_thumb) %>" type="image/jpeg">
-                    <img src="<%= project.img_url(:project_thumb) %>" class="lazy img-responsive width-100-percent">
-                  </picture>
+                  <%= image_tag project.img_url(:project_thumb), class: "lazy img-responsive width-100-percent" %>
                   <p class="project-title"><%= project.title %></p>
                 <% end %>
               </div>
