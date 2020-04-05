@@ -100,6 +100,6 @@ $(document).on('turbolinks:load', function(){
           return $(this).val();
         }).get();
 
-        $('input:hidden[name=unselectedIds]').val(unSelectedIds);
+        $('input:hidden[name=unselectedIds]').val(unAllSelectedIds);
     })
 });
