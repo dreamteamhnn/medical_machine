@@ -54,6 +54,17 @@ en:
   time:
     formats:
       with_time: "Lúc %k:%M Ngày %d/%m/%Y"
+      short: "Lúc %k:%M Ngày %d/%m/%Y"
+
+  ckeditor:
+    page_title: "CKEditor Files Manager"
+    confirm_delete: "Delete file?"
+    buttons:
+      cancel: "Cancel"
+      upload: "Upload"
+      delete: "Delete"
+      next: "Next"
+
 
   activerecord:
     models:
