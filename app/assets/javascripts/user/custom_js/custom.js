@@ -127,7 +127,7 @@ $(document).on('turbolinks:load', function(){
       $(".fa-long-arrow-down").addClass("fa-long-arrow-up").removeClass("fa-long-arrow-down");
       $(".detail-button").text("Ẩn bớt");
     } else {
-      $(".detail_cate").css("height", "400px");
+      $(".detail_cate").css("height", "300px");
       $(this).data("attr", "show");
       $(".fa-long-arrow-up").addClass("fa-long-arrow-down").removeClass("fa-long-arrow-up");
       $(".detail-button").text("Xem thêm");

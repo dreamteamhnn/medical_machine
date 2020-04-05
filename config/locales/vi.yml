@@ -54,6 +54,7 @@ vi:
   time:
     formats:
       with_time: "Lúc %k:%M Ngày %d/%m/%Y"
+      short: "Lúc %k:%M Ngày %d/%m/%Y"
 
   activerecord:
     models:
