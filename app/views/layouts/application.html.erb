@@ -7,8 +7,7 @@
   <%= display_meta_tags site: 'stechsaigon.com' %>
   <%= render 'layouts/google_analytic' if Rails.env.production? %>
 
-  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" unless @is_mobile %>
-  <%= stylesheet_link_tag "application_mobile", media: "all", "data-turbolinks-track": "reload" if @is_mobile %>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
   
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' unless @is_mobile %>
   <%= javascript_include_tag 'application_mobile', 'data-turbolinks-track': 'reload' if @is_mobile %>
