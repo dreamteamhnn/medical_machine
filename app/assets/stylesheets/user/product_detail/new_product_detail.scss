@@ -270,6 +270,17 @@ a:hover {
   text-transform: none !important;
 }
 
+.list_brands h2 {
+  font-size: 16px !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  font-weight: normal !important;
+  padding-top: 12px !important;
+  &:before {
+    display: none !important;
+  }
+}
+
 #tab-description,
 #tab-contact,
 #view-more-blogs,
