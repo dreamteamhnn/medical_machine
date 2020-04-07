@@ -12,6 +12,8 @@
 //
 //= require rails-ujs
 //= require jquery
+//= require bootstrap-sprockets
+//= require turbolinks
 
 //= require_tree ./user/left_menu_js/
 //= require ./user/slider_jssor_js/jssor.slider.min.js
