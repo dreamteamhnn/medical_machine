@@ -43,9 +43,11 @@ class PagesController < ApplicationController
 
   def meta_tags_hash
     description = "#{@company.logo_alt}. #{@company.about}"
+    description = "Stech Sài Gòn: Chuyên cung cấp Thiết bị khoa học, Thiết bị thí nghiệm, Thiết bị y tế, ... Uy tín và chuyên nghiệp. Với các sản phẩm được nhập khẩu chính hãng, hàng có sẵn tại Hà Nội và Hồ Chí Minh. Stech cam kết: Giao hàng nhanh nhất - Giá rẻ nhất - Bảo hành 12 tháng!"
     {
+      title: "Stech Sài Gòn - Cung cấp Thiết bị - Vật tư khoa học Uy tín!",
       description: description,
-      keywords: ["stechsaigon.com", "thiết bị thí nghiệm", "thiết bị y tế", "thiết bị khoa học kỹ thuật"],
+      keywords: ["Stech Sài Gòn"], #, "thiết bị thí nghiệm", "thiết bị y tế", "thiết bị khoa học kỹ thuật"
       index: true,
       og: {
         title: I18n.t("site_name"),

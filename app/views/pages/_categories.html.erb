@@ -6,7 +6,7 @@
     <div class="category-box-item">
       <%= link_to product_categories_path(category), class: "category-item", title: category.name do %>
         <i class="<%= array_icon[i] %> custom-icon"></i>
-        <span class="category-item-name"><%= category.name %></span>
+        <h2 class="category-item-name"><%= category.name %></h2>
       <% end %>
       <ul class="sub-menu-category">
         <% category.childrens.order(:category_order).each do |second| %>

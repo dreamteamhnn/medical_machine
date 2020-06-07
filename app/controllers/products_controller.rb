@@ -11,6 +11,7 @@ class ProductsController < ApplicationController
     @top_categories = Category.top_categories
     @brand_logos = Brand.where("image IS NOT NULL AND home_order IS NOT NULL")
                         .order(:home_order)
+    set_meta_tags meta_tags_hash_index
   end
 
   def show
@@ -18,7 +19,7 @@ class ProductsController < ApplicationController
     @brand_logos = Brand.where("image IS NOT NULL AND home_order IS NOT NULL")
                         .order(:home_order)
     @blogs = Blog.new_articles_for_related
-    set_meta_tags @product
+    set_meta_tags meta_tags_hash
   end
 
   def order
@@ -41,6 +42,54 @@ class ProductsController < ApplicationController
   end
 
   private
+
+  def meta_tags_hash_index
+    description = @category.description
+    parent = @category.parents.first&.parents&.first&.name || @category.parents.first.name
+    {
+      description: description,
+      keywords: [@category.name, parent, "Stech Sài Gòn"],
+      index: true,
+      og: {
+        title: I18n.t("site_name"),
+        type: "article",
+        description: description,
+        url: request.url,
+        site_name: I18n.t('site_name')
+      },
+      twitter: {
+        card: "summary",
+        site: "@publisher_handle",
+        title: I18n.t("site_name"),
+        description: description,
+        creator: "@author_handle",
+      }
+    }
+  end
+
+  def meta_tags_hash
+    description = @product.description
+    {
+      description: description,
+      keywords: [@product.name, @product.model, @product.brand.name, @product.categories.last.name, @product.categories.first.name],
+      index: true,
+      og: {
+        title: I18n.t("site_name"),
+        type: "article",
+        description: description,
+        url: request.url,
+        site_name: I18n.t('site_name')
+      },
+      twitter: {
+        card: "summary",
+        site: "@publisher_handle",
+        title: I18n.t("site_name"),
+        description: description,
+        creator: "@author_handle",
+      }
+    }
+  end
+
   def load_left_menu_data is_current_category = false
     mang_ong = []
     ongs = Category.where(level: Settings.category.highest_level)

@@ -7443,3 +7443,32 @@ h1, h2, .post-navigation .nav-previous > a, .post-navigation .nav-next > a {
 .aside-product .block_product_thumbnail {
     height: 182px;
 }
+
+.category-box-item h1 {
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    line-height: 1.75 !important;
+    letter-spacing: 0em !important;
+    text-align: left !important;
+    text-transform: none !important;
+}
+
+.blog-most-popular h2, .blog-product-custom h2 {
+    font-style: normal !important;
+    font-weight: 600 !important;
+    line-height: 1.36 !important;
+    text-align: inherit !important;
+    text-transform: none !important;
+    font-size: 14px !important;
+}
+
+.project-image-1 .blog-content {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-height: 25px;
+    max-height: 50px;
+}

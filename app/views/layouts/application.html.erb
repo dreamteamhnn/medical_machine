@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="vi">
 
 <head>
   <%= csrf_meta_tags %>
   <%= favicon_link_tag 'favicon.ico' %>
-  <%= display_meta_tags site: 'stechsaigon.com' %>
+  <%= display_meta_tags site: '' %>
+
   <%= render 'layouts/google_analytic' if Rails.env.production? %>
 
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
-  
+
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' unless @is_mobile %>
   <%= javascript_include_tag 'application_mobile', 'data-turbolinks-track': 'reload' if @is_mobile %>
 <!--   <script async defer

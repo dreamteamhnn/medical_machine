@@ -2,7 +2,7 @@
   <div class="row-mobile-custom">
     <div class="tm-posts_listing">
       <div class="tab-pane fade in">
-        <% @products_from_menu.each do |product| %>
+        <% @products_from_menu.uniq.each do |product| %>
           <div class="col-xs-6 col-sm-3 col-mobile-custom">
             <%= render "page_product_field", product: product %>
           </div>
