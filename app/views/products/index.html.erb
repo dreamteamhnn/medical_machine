@@ -1,3 +1,4 @@
+<% title "#{@category.name} | Stech Sài Gòn" %>
 <%= render "pages/list_categories", menu_detail: true %>
 <div class="site-content_wrap container">
   <div id="product-order-placeholder"></div>
@@ -28,7 +29,7 @@
                   <%= render "product_block", block: child%>
                 <% end %>
               <% else %>
-                <% @products_from_menu.each do |product| %>
+                <% @products_from_menu.uniq.each do |product| %>
                   <div class="col-sm-4 typical-products">
                     <%= render "pages/product_field", product: product %>
                   </div>

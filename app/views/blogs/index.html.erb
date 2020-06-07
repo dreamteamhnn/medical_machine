@@ -1,3 +1,8 @@
+<% if @category %>
+  <% title "#{@category.name} | Stech Sài Gòn" %>
+<% else %>
+  <% title "Tin công nghệ | Stech Sài Gòn" %>
+<% end %>
 <div class="blogs-page">
   <%= render "left_sidebar", menu_detail: false %>
   <div class="site-content_wrap container">
@@ -28,9 +33,9 @@
                       <% end %>
                     </div>
                     <div class="caption">
-                      <h3 class="blog-product-title blog-product-special">
-                        <%= link_to @blogs.first.title, blog_detail_path(@blogs.first), class: "blog-title" %>
-                      </h3>
+                      <span class="blog-product-title blog-product-special">
+                        <h2><%= link_to @blogs.first.title, blog_detail_path(@blogs.first), class: "blog-title" %></h2>
+                      </span>
                       <div class="thumbnail blog-content">
                         <i class="blog-content-preview"><%= @blogs.first.content&.html_safe %></i>
                       </div>
@@ -51,9 +56,9 @@
                         <% end %>
                       </div>
                       <div class="col-xs-6 caption">
-                        <h3 class="blog-product-title">
-                          <%= link_to blog.title, blog_detail_path(blog), class: "blog-title" %>
-                        </h3>
+                        <span class="blog-product-title">
+                          <h2><%= link_to blog.title, blog_detail_path(blog), class: "blog-title" %></h2>
+                        </span>
                         <div class="clearfix"></div>
                       </div>
                     </div>

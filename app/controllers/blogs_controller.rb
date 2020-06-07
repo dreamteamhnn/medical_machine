@@ -10,7 +10,7 @@ class BlogsController < ApplicationController
   end
 
   def show
-    set_meta_tags @blog
+    set_meta_tags meta_tags_hash_show
     @top_categories = Category.top_categories
     @brand_logos = Brand.where("image IS NOT NULL AND home_order IS NOT NULL")
                         .order(:home_order)
@@ -98,14 +98,39 @@ class BlogsController < ApplicationController
     Blog.where("id < ?", params[:id]).last
   end
 
+  def meta_tags_hash_show
+    simple_title = @blog.title
+    description = @blog.content
+    {
+      title: simple_title,
+      description: description,
+      keywords: [@blog.title, @blog.blog_categories.first.name, "Stech Sài Gòn"],
+      index: true,
+      og: {
+        title: simple_title,
+        type: "article",
+        description: description,
+        url: request.url,
+        site_name: I18n.t('site_name')
+      },
+      twitter: {
+        card: "summary",
+        site: "@publisher_handle",
+        title: simple_title,
+        description: description,
+        creator: "@author_handle"
+      }
+    }
+  end
+
   def meta_tags_hash category=nil
     simple_title = category.present? ? category.name : 'Tin công nghệ'
-    description = "#{simple_title} - #{t("site_name")} - #{Company.first.about}"
+    description = "#{simple_title} - Stech Sài Gòn - #{Company.first.about}"
     url = request.url
     {
       title: simple_title,
       description: description,
-      keywords: ['Tin công nghệ', t("site_name")],
+      keywords: [category.name, 'Tin tức công nghệ', "Stech Sài Gòn"],
       index: true,
       og: {
         title: simple_title,

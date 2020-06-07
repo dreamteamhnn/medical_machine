@@ -7,7 +7,7 @@
           <ul class="nav nav-tabs nav-tabs-custom tab-links">
             <% block.each_with_index do |category, index| %>
               <li class="typical-product-brand list-product-category <%= 'active' if index == 0 %>">
-                <a data-toggle="tab" href="#menu<%= category[:id] %>"><%= category[:title] %></a>
+                <a data-toggle="tab" href="#menu<%= category[:id] %>"><h3><%= category[:title] %></h3></a>
               </li>
             <% end %>
           </ul>

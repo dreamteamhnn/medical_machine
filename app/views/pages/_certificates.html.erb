@@ -16,7 +16,7 @@
                     <div class="col-sm-4">
                       <%= image_tag cert.img_url(:cetificate_thumb), class: "lazy img-responsive certificate-img width-100-percent", data: {cert: cert.id} %>
                       <div class="certificate-title iframe-video-image" data-video="<%= cert.id %>">
-                        <p class="image-link"><%= cert&.title %></p>
+                        <h5 class="image-link"><%= cert&.title %></h5>
                       </div>
                     </div>
                   <% end %>
@@ -32,7 +32,7 @@
                   <div class="col-xs-12">
                     <%= image_tag cert.img_url(:cetificate_thumb), class: "lazy img-responsive width-100-percent" %>
                     <div class="certificate-title iframe-video-image" data-video="<%= cert.id %>">
-                      <p class="image-link"><%= cert&.title %></p>
+                      <h5 class="image-link"><%= cert&.title %></h5>
                     </div>
                   </div>
                 <% end %>

@@ -16,7 +16,7 @@ class CategoriesController < ApplicationController
     description = @category.description
     {
       description: description,
-      keywords: ["stechsaigon.com", @category.name],
+      keywords: ["stech sài gòn", @category.name],
       index: true,
       og: {
         title: I18n.t("site_name"),
