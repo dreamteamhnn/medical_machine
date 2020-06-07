@@ -11,7 +11,7 @@
         <div class="list-categories-content">
           <% @blog_categories.each do |category| %>
             <div class="category-box-item <%= 'current-cat' if category.slug == params[:blog_category_id] %>">
-              <%= link_to category.name, blog_list_category_path(category), class: "category-item media-custom", title: category.name %>
+              <h1><%= link_to category.name, blog_list_category_path(category), class: "category-item media-custom", title: category.name %></h1>
             </div>
           <% end %>
         </div>

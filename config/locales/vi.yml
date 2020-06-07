@@ -30,6 +30,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 vi:
   site_name: "stechsaigon.com"
+  home_title: "Stech Sài Gòn"
   views:
     pagination:
       first: "<<"

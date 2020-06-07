@@ -10,7 +10,10 @@
         <div class="project-image-1">
           <%= link_to @first_project.link do %>
             <%= image_tag @first_project.img_url(:project_thumb), class: "lazy img-responsive width-100-percent" %>
-            <p class="project-title"><%= @first_project.title %></p>
+            <h4 class="project-title"><%= @first_project.title %></h4>
+            <div class="blog-content">
+              <i class="blog-content-preview"><%= @first_project.content.html_safe %></i>
+            </div>
           <% end %>
         </div>
       </div>
@@ -21,7 +24,7 @@
               <div class="project-image-2">
                 <%= link_to project.link do %>
                   <%= image_tag project.img_url(:project_thumb), class: "lazy img-responsive width-100-percent" %>
-                  <p class="project-title"><%= project.title %></p>
+                  <h4 class="project-title"><%= project.title %></h4>
                 <% end %>
               </div>
             </div>
