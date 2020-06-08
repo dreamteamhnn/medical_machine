@@ -130,7 +130,7 @@ class BlogsController < ApplicationController
     {
       title: simple_title,
       description: description,
-      keywords: [category.name, 'Tin tức công nghệ', "Stech Sài Gòn"],
+      keywords: [simple_title, 'Tin tức công nghệ', "Stech Sài Gòn"],
       index: true,
       og: {
         title: simple_title,
