@@ -4,6 +4,8 @@
     <a class="btn btn-primary btn-sm btn-update-category" title="Sửa" data-id="<%= category.id %>" data-name="<%= category.name %>" data-slug="<%= category.slug %>" data-des="<%= category.description %>" data-img="<%= category.img %>" data-img-url="<%= category.img.url %>"
       data-category-order="<%= category.category_order %>" data-home-block-id="<%= category.home_block_id%>"
       data-home-order-id="<%= category.home_order_id %>"
+      data-meta-description="<%= category.meta_description %>"
+      data-meta-keyword="<%= category.meta_keyword %>"
       data-highest="<%= category.level == 1 %>" data-toggle="modal" data-target="#update-category">
       <span class="fa fa-edit" data-id="<%= category.id %>"></span>
     </a>
@@ -17,6 +19,8 @@
         data-name="<%= second.name %>" data-id="<%= second.id %>"><span class="fa fa-plus"></span></a>
       <a class="btn btn-primary btn-sm btn-update-category" title="Sửa" data-id="<%= second.id %>" data-name="<%= second.name %>" data-slug="<%= second.slug %>" data-des="<%= second.description %>" data-img="<%= second.img %>" data-img-url="<%= second.img&.url %>"
         data-category-order="<%= second.category_order %>" data-home-block-id="<%= second.home_block_id%>"
+        data-meta-description="<%= second.meta_description %>"
+        data-meta-keyword="<%= second.meta_keyword %>"
         data-home-order-id="<%= second.home_order_id %>" data-toggle="modal" data-target="#update-category">
         <span class="fa fa-edit" data-id="<%= second.id %>"></span>
       </a>

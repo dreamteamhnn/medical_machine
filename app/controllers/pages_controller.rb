@@ -47,7 +47,7 @@ class PagesController < ApplicationController
     {
       title: "Stech Sài Gòn - Cung cấp Thiết bị - Vật tư khoa học Uy tín!",
       description: description,
-      keywords: ["Stech Sài Gòn"], #, "thiết bị thí nghiệm", "thiết bị y tế", "thiết bị khoa học kỹ thuật"
+      keywords: ["Stech Sài Gòn"] + Category.where(level: 1).pluck(:name), #, "thiết bị thí nghiệm", "thiết bị y tế", "thiết bị khoa học kỹ thuật"
       index: true,
       og: {
         title: I18n.t("site_name"),

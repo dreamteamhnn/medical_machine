@@ -78,6 +78,12 @@
                   <%= f.number_field :category_order, class: "form-control category-order-create", placeholder: "Thứ tự hiển thị trong danh mục cha", required: true%>
                 </div>
                 <div class="form-group">
+                  <%= f.text_area :meta_description, class: "form-control category-des-create", placeholder: "Meta description"%>
+                </div>
+                <div class="form-group">
+                  <%= f.text_area :meta_keyword, class: "form-control category-des-create", placeholder: "Meta keyword"%>
+                </div>
+                <div class="form-group">
                   <%= f.number_field :home_block_id, class: "form-control category-order-create", placeholder: "Hiển thị trên trang chủ (1: trên hoặc 2: dưới)"%>
                 </div>
                 <div class="form-group">
@@ -123,6 +129,14 @@
             <div class="form-group category-order-update-div">
               <strong>Thứ tự hiển thị</strong></br>
               <input class="form-control category-order-update" name="category[category_order]" type="number" placeholder="Thứ tự hiển thị" required>
+            </div>
+            <div class="form-group category-order-update-div">
+              <strong>Meta description</strong></br>
+              <textarea class="form-control category-meta-description" name="category[meta_description]" type="text" placeholder="Meta description"></textarea>
+            </div>
+            <div class="form-group category-order-update-div">
+              <strong>Meta keyword</strong></br>
+              <textarea class="form-control category-meta-keyword" name="category[meta_keyword]" type="text" placeholder="Meta keyword"></textarea>
             </div>
             <div class="form-group category-block-update-div">
               <strong>Hiển thị trên trang chủ (1: trên hoặc 2: dưới)</strong></br>
