@@ -71,7 +71,7 @@ class ProductsController < ApplicationController
     description = @product.description
     {
       description: description,
-      keywords: [@product.name, @product.model, @product.brand.name, @product.categories.last.name, @product.categories.first.name],
+      keywords: [@product&.name, @product.model, @product.brand&.name, @product.categories.last&.name, @product.categories.first&.name],
       index: true,
       og: {
         title: I18n.t("site_name"),
