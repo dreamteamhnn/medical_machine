@@ -43,6 +43,7 @@ module MedicalMachine
     config.i18n.available_locales = [:en, :vi]
     config.i18n.default_locale = :vi
     config.middleware.use Rack::Deflater
+    config.exceptions_app = self.routes
     require 'monkey_patch/string'
   end
 end
