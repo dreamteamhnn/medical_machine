@@ -28,7 +28,7 @@ class Category < ApplicationRecord
   # validates :img, presence: true
 
   CATEGORY_ATTRS = [:name, :description, :category_order, :home_block_id,
-    :home_order_id, :slug, :img]
+    :home_order_id, :slug, :img, :meta_description, :meta_keyword]
 
   scope :top_categories,-> do
     where("level = ?", Settings.category.highest_level).order "category_order"

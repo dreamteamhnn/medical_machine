@@ -14,9 +14,14 @@ class CategoriesController < ApplicationController
 
   def meta_tags_hash
     description = @category.description
+    keywords = ["stech sài gòn", @category.name]
+    if @category&.level == 1
+      description = @category.meta_description
+      keywords = @category.meta_keyword
+    end
     {
       description: description,
-      keywords: ["stech sài gòn", @category.name],
+      keywords: keywords,
       index: true,
       og: {
         title: I18n.t("site_name"),
@@ -84,7 +89,7 @@ class CategoriesController < ApplicationController
           @breads << {title: grand_parent.name, link: products_path(category_id: grand_parent.id)}
         end
       end
-      @breads << {title: "Tất cả sản phẩm", link: all_products_path}
+      # @breads << {title: "Tất cả sản phẩm", link: all_products_path}
       @breads = @breads.reverse
     elsif params[:id]
       @breads = [{title: strip_tags(@product.name), link: ""}]
@@ -107,7 +112,7 @@ class CategoriesController < ApplicationController
       @breads = [{title: "Lĩnh vực", link: all_products_path()}]
       @breads << {title: field.name, link: ""}
     else
-      @breads = [{title: "Tất cả sản phẩm", link: ""}]
+      # @breads = [{title: "Tất cả sản phẩm", link: ""}]
     end
   end
 

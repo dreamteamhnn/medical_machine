@@ -16,6 +16,8 @@ $(document).on('turbolinks:load', function(){
     var homeBlock = $(this)[0].getAttribute("data-home-block-id");
     var homeOrder = $(this)[0].getAttribute("data-home-order-id");
     var highest = $(this)[0].getAttribute("data-highest");
+    var metaDescription = $(this)[0].getAttribute("data-meta-description");
+    var metaKeyword = $(this)[0].getAttribute("data-meta-keyword");
 
     $(".edit_category").attr('id', 'edit_category_' + id);
     $(".edit_category").attr('action', '/admin/categories/' + slug);
@@ -33,6 +35,8 @@ $(document).on('turbolinks:load', function(){
     $(".category-order-update").val(categoryOrder);
     $(".category-block-update").val(homeBlock);
     $(".category-order-block-update").val(homeOrder);
+    $(".category-meta-description").val(metaDescription);
+    $(".category-meta-keyword").val(metaKeyword);
     if (highest) {
       $(".category-order-block-update-div")[0].style.display = 'none';
       $(".category-block-update-div")[0].style.display = 'none';
