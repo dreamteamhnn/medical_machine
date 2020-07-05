@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'errors/file_not_found'
+  get 'errors/unprocessable'
+  get 'errors/internal_server_error'
+
   mount Ckeditor::Engine => '/ckeditor'
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
@@ -11,6 +15,10 @@ Rails.application.routes.draw do
       post :send_order
     end
   end
+
+  match "/404", to: "errors#file_not_found", via: :all
+  match "/422", to: "errors#unprocessable'", via: :all
+  match "/500", to: "errors#internal_server_error", via: :all
 
   get '/loai-san-pham/:category_id' => 'categories#index', as: :product_categories
   get '/danh-sach-san-pham/:category_id' => 'products#index', as: :category_products

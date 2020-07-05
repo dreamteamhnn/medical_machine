@@ -44,11 +44,19 @@ class ProductsController < ApplicationController
   private
 
   def meta_tags_hash_index
-    description = @category.description
-    parent = @category.parents.first&.parents&.first&.name || @category.parents.first.name
+    description = @category&.description
+    parent = @category&.parents&.first&.parents&.first&.name || @category&.parents&.first&.name
+    keywords = [@category&.name, parent, "Stech Sài Gòn"]
+    if @category&.level == 2
+      description = 'Bể rửa siêu âm nhập khẩu chính hãng bởi Stech Sài Gòn. Sản phẩm đa dạng - Hàng có sẵn tại Hà Nội và HCM. Cam kết: Giao hàng nhanh nhất - Giá tốt nhất - Bảo hành trên 12 tháng!'
+      keywords = [@category.name] + @category&.childrens.pluck(:name) + ["Stech Sài Gòn"]
+    elsif @category&.level == 3
+      description = 'Bể rửa siêu âm nhập khẩu chính hãng bởi Stech Sài Gòn. Sản phẩm đa dạng - Hàng có sẵn tại Hà Nội và HCM. Cam kết: Giao hàng nhanh nhất - Giá tốt nhất - Bảo hành trên 12 tháng!'
+      keywords = [@category.name, @category&.parents&.first&.name, @category&.parents&.first&.parents&.first&.name ,"Stech Sài Gòn"]
+    end
     {
       description: description,
-      keywords: [@category.name, parent, "Stech Sài Gòn"],
+      keywords: keywords,
       index: true,
       og: {
         title: I18n.t("site_name"),
@@ -71,7 +79,7 @@ class ProductsController < ApplicationController
     description = @product.description
     {
       description: description,
-      keywords: [@product&.name, @product.model, @product.brand&.name, @product.categories.last&.name, @product.categories.first&.name],
+      keywords: [@product&.name, @product.model, @product.brand&.name, @product.origin, @product.categories.first&.parents&.first&.name, 'Stech Sài Gòn'],
       index: true,
       og: {
         title: I18n.t("site_name"),
@@ -191,7 +199,7 @@ class ProductsController < ApplicationController
           @breads << {title: grand_parent.name, link: category_products_path(category_id: grand_parent.slug)}
         end
       end
-      @breads << {title: "Tất cả sản phẩm", link: all_products_path}
+      # @breads << {title: "Tất cả sản phẩm", link: all_products_path}
       @breads = @breads.reverse
     elsif params[:id]
       @breads = [{title: strip_tags(@product.name), link: ""}]
@@ -214,7 +222,7 @@ class ProductsController < ApplicationController
       @breads = [{title: "Lĩnh vực", link: all_products_path()}]
       @breads << {title: field.name, link: ""}
     else
-      @breads = [{title: "Tất cả sản phẩm", link: ""}]
+      # @breads = [{title: "Tất cả sản phẩm", link: ""}]
     end
   end
 

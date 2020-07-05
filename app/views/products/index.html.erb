@@ -1,4 +1,4 @@
-<% title "#{@category.name} | Stech Sài Gòn" %>
+<% title "#{@category&.name} #{@category&.level == 2 ? 'chính hãng - Hàng có sẵn tại Stech Sài Gòn' : 'giá tốt nhất tại Stech Sài Gòn'}" %>
 <%= render "pages/list_categories", menu_detail: true %>
 <div class="site-content_wrap container">
   <div id="product-order-placeholder"></div>
