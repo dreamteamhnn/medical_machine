@@ -87,7 +87,8 @@ class ProductsController < ApplicationController
         description: @product.short_description&.html_safe,
         image: @product&.img_1,
         url: request.url,
-        site_name: I18n.t('site_name')
+        site_name: I18n.t('site_name'),
+        updated_time: Time.now.to_i
       },
       twitter: {
         card: "summary",
@@ -96,6 +97,7 @@ class ProductsController < ApplicationController
         description: @product.short_description&.html_safe,
         image: @product&.img_1,
         creator: "@author_handle",
+        updated_time: Time.now.to_i
       }
     }
   end
