@@ -78,7 +78,7 @@ class ProductsController < ApplicationController
   def meta_tags_hash
     description = @product.description
     {
-      description: @product.short_description&.html_safe,
+      description: "@product.short_description&.html_safe",
       keywords: [@product&.name, @product.model, @product.brand&.name, @product.origin, @product.categories.first&.parents&.first&.name, 'Stech Sài Gòn'],
       index: true,
       og: {
