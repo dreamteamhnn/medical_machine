@@ -85,6 +85,7 @@ class ProductsController < ApplicationController
         title: I18n.t("site_name"),
         type: "article",
         description: @product.short_description&.html_safe,
+        image: @product&.img_1,
         url: request.url,
         site_name: I18n.t('site_name')
       },
@@ -93,6 +94,7 @@ class ProductsController < ApplicationController
         site: "@publisher_handle",
         title: I18n.t("site_name"),
         description: @product.short_description&.html_safe,
+        image: @product&.img_1,
         creator: "@author_handle",
       }
     }
