@@ -78,13 +78,13 @@ class ProductsController < ApplicationController
   def meta_tags_hash
     description = @product.description
     {
-      description: "@product.short_description&.html_safe",
+      description: description,
       keywords: [@product&.name, @product.model, @product.brand&.name, @product.origin, @product.categories.first&.parents&.first&.name, 'Stech Sài Gòn'],
       index: true,
       og: {
         title: I18n.t("site_name"),
         type: "article",
-        description: @product.short_description&.html_safe,
+        description: strip_tags(@product.short_description&.html_safe),
         image: "#{@product&.img_1}?v=#{Time.now.to_i}",
         url: request.url,
         site_name: I18n.t('site_name'),
@@ -94,7 +94,7 @@ class ProductsController < ApplicationController
         card: "summary",
         site: "@publisher_handle",
         title: I18n.t("site_name"),
-        description: @product.short_description&.html_safe,
+        description: strip_tags(@product.short_description&.html_safe),
         image: "#{@product&.img_1}?v=#{Time.now.to_i}",
         creator: "@author_handle",
         updated_time: Time.now.to_i
