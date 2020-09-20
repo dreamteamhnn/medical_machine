@@ -55,13 +55,13 @@ class ProductsController < ApplicationController
       keywords = [@category.name, @category&.parents&.first&.name, @category&.parents&.first&.parents&.first&.name ,"Stech Sài Gòn"]
     end
     {
-      description: description,
+      description: description&.html_safe,
       keywords: keywords,
       index: true,
       og: {
         title: I18n.t("site_name"),
         type: "article",
-        description: description,
+        description: description&.html_safe,
         url: request.url,
         site_name: I18n.t('site_name')
       },
@@ -69,7 +69,7 @@ class ProductsController < ApplicationController
         card: "summary",
         site: "@publisher_handle",
         title: I18n.t("site_name"),
-        description: description,
+        description: description&.html_safe,
         creator: "@author_handle",
       }
     }
@@ -78,13 +78,13 @@ class ProductsController < ApplicationController
   def meta_tags_hash
     description = @product.description
     {
-      description: description,
+      description: @product.short_description&.html_safe,
       keywords: [@product&.name, @product.model, @product.brand&.name, @product.origin, @product.categories.first&.parents&.first&.name, 'Stech Sài Gòn'],
       index: true,
       og: {
         title: I18n.t("site_name"),
         type: "article",
-        description: description,
+        description: @product.short_description&.html_safe,
         url: request.url,
         site_name: I18n.t('site_name')
       },
@@ -92,7 +92,7 @@ class ProductsController < ApplicationController
         card: "summary",
         site: "@publisher_handle",
         title: I18n.t("site_name"),
-        description: description,
+        description: @product.short_description&.html_safe,
         creator: "@author_handle",
       }
     }
