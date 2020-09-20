@@ -85,7 +85,7 @@ class ProductsController < ApplicationController
         title: I18n.t("site_name"),
         type: "article",
         description: @product.short_description&.html_safe,
-        image: @product&.img_1,
+        image: "#{@product&.img_1}?v=#{Time.now.to_i}",
         url: request.url,
         site_name: I18n.t('site_name'),
         updated_time: Time.now.to_i
@@ -95,7 +95,7 @@ class ProductsController < ApplicationController
         site: "@publisher_handle",
         title: I18n.t("site_name"),
         description: @product.short_description&.html_safe,
-        image: @product&.img_1,
+        image: "#{@product&.img_1}?v=#{Time.now.to_i}",
         creator: "@author_handle",
         updated_time: Time.now.to_i
       }
