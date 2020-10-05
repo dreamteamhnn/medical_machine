@@ -77,7 +77,7 @@ class BlogsController < ApplicationController
   end
 
   def load_blog
-    @blog = Blog.friendly.find_by id: params[:id]
+    @blog = Blog.friendly.find_by slug: params[:id]
     @category = @blog&.blog_categories&.first
     @more_blogs = Blog.by_category(@category&.id).where.not(id: @blog&.id).order("RAND()").limit(5)
     @suggestion_blogs = Blog.where.not(id: [@blog&.id] + @more_blogs.map(&:id)).order("RAND()").limit(8)
