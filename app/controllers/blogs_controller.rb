@@ -77,17 +77,17 @@ class BlogsController < ApplicationController
   end
 
   def load_blog
-    @blog = Blog.friendly.find params[:id]
-    @category = @blog.blog_categories.first
-    @more_blogs = Blog.by_category(@category.id).where.not(id: @blog.id).order("RAND()").limit(5)
-    @suggestion_blogs = Blog.where.not(id: [@blog.id] + @more_blogs.map(&:id)).order("RAND()").limit(8)
+    @blog = Blog.friendly.find_by id: params[:id]
+    @category = @blog&.blog_categories&.first
+    @more_blogs = Blog.by_category(@category&.id).where.not(id: @blog&.id).order("RAND()").limit(5)
+    @suggestion_blogs = Blog.where.not(id: [@blog&.id] + @more_blogs.map(&:id)).order("RAND()").limit(8)
     # @next = next_blog
     # @prev = prev_blog
     # @blog_relate_1 = Blog.find_by id: @blog.relation_blog_id_1
     # @blog_relate_2 = Blog.find_by id: @blog.relation_blog_id_2
     @breads = [{title: "Tin công nghệ", link: blog_list_path()}]
-    @breads << {title: @category.name, link: blog_list_category_path(@category)}
-    @breads << {title: @blog.title, link: ""}
+    @breads << {title: @category&.name, link: blog_list_category_path(@category)} if @category
+    @breads << {title: @blog&.title, link: ""} if @blog
   end
 
   def next_blog
@@ -99,12 +99,12 @@ class BlogsController < ApplicationController
   end
 
   def meta_tags_hash_show
-    simple_title = @blog.title
-    description = @blog.content
+    simple_title = @blog&.title
+    description = @blog&.content
     {
       title: simple_title,
       description: description,
-      keywords: [@blog.title, @blog.blog_categories.first.name, "Stech Sài Gòn"],
+      keywords: [@blog&.title, @blog&.blog_categories&.first&.name, "Stech Sài Gòn"],
       index: true,
       og: {
         title: simple_title,
