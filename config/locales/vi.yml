@@ -30,7 +30,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 vi:
   social_share_button:
-    share_to: Chia sẻ
+    share_to: Chia sẻ %{name}
     linkedin: Linkedin
     facebook: Facebook
     twitter: Twitter
