@@ -26,7 +26,7 @@ class CategoriesController < ApplicationController
       og: {
         title: I18n.t("site_name"),
         type: "article",
-        description: description.html_safe,
+        description: description&.html_safe,
         url: request.url,
         site_name: I18n.t('site_name')
       },
@@ -34,7 +34,7 @@ class CategoriesController < ApplicationController
         card: "summary",
         site: "@publisher_handle",
         title: I18n.t("site_name"),
-        description: description.html_safe,
+        description: description&.html_safe,
         creator: "@author_handle",
       }
     }
