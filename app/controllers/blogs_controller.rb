@@ -109,9 +109,11 @@ class BlogsController < ApplicationController
       og: {
         title: simple_title,
         type: "article",
-        description: description,
+        description: strip_tags(@blog&.content&.html_safe),
+        image: "#{@blog.blog_images&.first&.url&.url}?v=#{Time.now.to_i}",
         url: request.url,
-        site_name: I18n.t('site_name')
+        site_name: I18n.t('site_name'),
+        updated_time: Time.now.to_i
       },
       twitter: {
         card: "summary",
