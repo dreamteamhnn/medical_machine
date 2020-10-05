@@ -29,6 +29,12 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 vi:
+  social_share_button:
+    share_to: Chia sẻ
+    linkedin: Linkedin
+    facebook: Facebook
+    twitter: Twitter
+    pinterest: Pinterest
   site_name: "stechsaigon.com"
   home_title: "Stech Sài Gòn"
   views:

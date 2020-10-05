@@ -18,3 +18,4 @@
 //= require jquery
 //= require ckeditor/init
 //= require_tree ./user/
+//= require social-share-button

@@ -329,6 +329,8 @@ GEM
       hashie
     simple_calendar (2.3.0)
       rails (>= 3.0)
+    social-share-button (1.2.3)
+      coffee-rails
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -419,6 +421,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   searchkick (~> 3)
   simple_calendar (~> 2.0)
+  social-share-button
   spring
   spring-watcher-listen (~> 2.0.0)
   sprockets-rails

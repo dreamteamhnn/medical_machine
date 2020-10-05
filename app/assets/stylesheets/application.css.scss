@@ -13,9 +13,11 @@
  *= require_self
  *= require_tree ./user/
  *= require font-awesome
+ *= require social-share-button
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "social-share-button";
 
 body {
   font-family: 'Arial', sans-serif !important;
@@ -27,4 +29,12 @@ h1, h2, h3, h4, h5, h6, p, span, b {
 
 .glyphicon {
   font-family: "Glyphicons Halflings" !important;
+}
+
+.social-share-button .ssb-icon {
+  background-size: 35px 35px !important;
+  height: 35px !important;
+  width: 35px !important;
+  border-radius: 50% !important;
+  margin-right: 4px !important;
 }

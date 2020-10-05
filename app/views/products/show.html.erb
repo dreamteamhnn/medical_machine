@@ -92,18 +92,7 @@
                             "data-product-id": @product.id, class: "single_add_to_cart_button button alt custom-button" %>
 
                           <div class="social-network">
-                            <a href="#">
-                              <%= image_tag "facebook.svg", alt: "Facebook", width: "35", height: "35" %>
-                            </a>
-                            <a href="#">
-                              <%= image_tag "linkedin.svg", alt: "linkedin", width: "35", height: "35" %>
-                            </a>
-                            <a href="#">
-                              <%= image_tag "twitter.svg", alt: "twitter", width: "35", height: "35" %>
-                            </a>
-                            <a href="#">
-                              <%= image_tag "printerest.png", alt: "printerest", width: "35", height: "35" %>
-                            </a>
+                            <%= social_share_button_tag(@product.name, url: "/san-pham/#{@product.slug}", desc: @product.name) %>
                           </div>
                         </div>
                       </form>
