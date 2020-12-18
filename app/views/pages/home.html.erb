@@ -1,1 +1,70 @@
-toanlh test
+<div id="product-order-placeholder"></div>
+<div id="order-result-placeholder"></div>
+<div id="primary">
+  <main id="main" class="site-main" role="main">
+    <article id="post-48" class="post-48 page type-page status-publish hentry no-thumb">
+      <header class="entry-header">
+        <h1 class="entry-title screen-reader-text">Stech Sài Gòn</h1>
+      </header>
+      <%= render "list_categories", menu_detail: false %>
+
+      <div class="container">
+        <div class="banner">
+          <div class="row">
+            <div class="col-sm-12">
+              <div id="banner-images" class="carousel slide banner-images-class" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <% @sliders.each_with_index do |slider, index| %>
+                    <li data-target="#banner-images" data-slide-to="<%= index %>" class="<%= 'active' if index == 0 %>"></li>
+                  <% end %>
+                </ol>
+                <div class="carousel-inner">
+                  <% @sliders.each_with_index do |slider, index| %>
+                    <div class="item <%= 'active' if index == 0 %> item-1">
+                      <%= link_to "#{image_tag slider.url_url(:slider_thumb), style: 'height:100%;width:auto;', title: slider.title, alt: slider.alt}".html_safe, products_path(), class: "lazy" %>
+                    </div>
+                  <% end %>
+                </div>
+                <a class="left carousel-control" href="#banner-images" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                <a class="right carousel-control" href="#banner-images" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <% unless @is_mobile %>
+        <%= render "projects" %>
+        <%= render "products" %>
+      <% else %>
+        <%= render "projects_mobile" %>
+        <%= render "products_mobile" %>
+      <% end %>
+
+      <%= render "customer_messages" %>
+
+      <%= render "certificates" %>
+
+      <% unless @is_mobile %>
+        <%= render "blog" %>
+      <% else %>
+        <%= render "blog_mobile" %>
+      <% end %>
+      <!-- .entry-content -->
+
+      <footer class="entry-footer">
+      </footer>
+      <!-- .entry-footer -->
+      <% unless @is_mobile %>
+        <%= render "brand_slider" %>
+      <% end %>
+    </article>
+    <!-- #post-## -->
+
+  </main>
+</div>
+<script type="text/javascript">
+  $(function () {
+    $("img.lazy").lazyload();
+  })
+</script>
