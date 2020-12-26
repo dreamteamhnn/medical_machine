@@ -45,5 +45,9 @@ module MedicalMachine
     config.middleware.use Rack::Deflater
     config.exceptions_app = self.routes
     require 'monkey_patch/string'
+
+    config.action_dispatch.default_headers = {
+      'X-Frame-Options' => 'ALLOWALL'
+    }
   end
 end
