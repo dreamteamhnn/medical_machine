@@ -1,5 +1,4 @@
 class BlogsController < ApplicationController
-  include ActionView::Helpers::SanitizeHelper
   before_action :load_blog, only: :show
   before_action :load_blogs, only: :index
   before_action :load_left_menu, only: [:show, :index]
