@@ -29,7 +29,7 @@ class Medium < ApplicationRecord
     {
       title: title,
       description: description,
-      custom_category: custom_category.name,
+      custom_category: custom_category&.name,
       media_type: media_type
     }
   end
