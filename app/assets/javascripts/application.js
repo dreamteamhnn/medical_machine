@@ -13,7 +13,6 @@
 //= require rails-ujs
 //= require jquery
 //= require bootstrap-sprockets
-//= require turbolinks
 //= require lodash
 //= require jquery
 //= require ckeditor/init
