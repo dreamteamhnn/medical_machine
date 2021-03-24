@@ -30,3 +30,4 @@ config/secrets.yml
 .env
 .DS_Store
 app/assets/.DS_Store
+.ruby-version
