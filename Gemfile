@@ -38,7 +38,7 @@ gem 'axlsx_rails'
 
 # Upload file
 gem "mini_magick"
-gem "carrierwave", "~> 1.0"
+gem "carrierwave", "~> 2.2"
 gem "cloudinary"
 
 # Image optimizing
